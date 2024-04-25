@@ -1,0 +1,12 @@
+/*
+Theme Name: Encrage
+Author: Pierre-Yves LOUKAKOU
+Author URI: https://loukakode.fr
+Description: ENCRAGE représente les actualités, reportages et documentaires de 16 photographes.
+Requires at least: WordPress 5.0
+Version: 1.0
+*/
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;

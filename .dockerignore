@@ -8,6 +8,7 @@ website/wp-content/plugins/hello.php
 website/wp-content/plugins/akismet
 
 # keep twentytwenty
+website/wp-content/themes/encrage/node_modules
 website/wp-content/themes/twenty*
 !website/wp-content/themes/twentytwenty
 website/wp-includes
