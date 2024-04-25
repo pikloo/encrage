@@ -22,4 +22,12 @@ Version: 1.0
   h3 {
     @apply uppercase;
   }
+
+  .slider-home {
+    @apply flex flex-col items-center justify-center;
+  }
+
+  .slider-home .swiper-slide > img {
+    @apply w-full h-full object-cover;
+  }
 }
