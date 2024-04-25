@@ -636,7 +636,7 @@ h2::after {
 }
 
 h3 {
-  text-transform: capitalize;
+  text-transform: uppercase;
 }
 
 h3::first-letter {
@@ -699,8 +699,20 @@ h3::first-letter {
   margin-bottom: 2rem !important;
 }
 
+.ml-2 {
+  margin-left: 0.5rem !important;
+}
+
 .mr-auto {
   margin-right: auto !important;
+}
+
+.mt-4 {
+  margin-top: 1rem !important;
+}
+
+.inline-block {
+  display: inline-block !important;
 }
 
 .flex {
@@ -833,11 +845,6 @@ h3::first-letter {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity)) !important;
 }
 
-.object-none {
-  -o-object-fit: none !important;
-     object-fit: none !important;
-}
-
 .p-10 {
   padding: 2.5rem !important;
 }
@@ -893,8 +900,45 @@ h3::first-letter {
   text-transform: capitalize !important;
 }
 
+.text-slate-500 {
+  --tw-text-opacity: 1 !important;
+  color: rgb(100 116 139 / var(--tw-text-opacity)) !important;
+}
+
+.text-white {
+  --tw-text-opacity: 1 !important;
+  color: rgb(255 255 255 / var(--tw-text-opacity)) !important;
+}
+
 .opacity-25 {
   opacity: 0.25 !important;
+}
+
+.before\:absolute::before {
+  content: var(--tw-content) !important;
+  position: absolute !important;
+}
+
+.before\:-inset-1::before {
+  content: var(--tw-content) !important;
+  inset: -0.25rem !important;
+}
+
+.before\:block::before {
+  content: var(--tw-content) !important;
+  display: block !important;
+}
+
+.before\:-skew-y-3::before {
+  content: var(--tw-content) !important;
+  --tw-skew-y: -3deg !important;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) !important;
+}
+
+.before\:bg-black::before {
+  content: var(--tw-content) !important;
+  --tw-bg-opacity: 1 !important;
+  background-color: rgb(0 0 0 / var(--tw-bg-opacity)) !important;
 }
 
 .after\:relative::after {
@@ -950,6 +994,14 @@ h3::first-letter {
 }
 
 @media (min-width: 1280px) {
+  .xl\:absolute {
+    position: absolute !important;
+  }
+
+  .xl\:bottom-0 {
+    bottom: 0px !important;
+  }
+
   .xl\:block {
     display: block !important;
   }
@@ -960,5 +1012,60 @@ h3::first-letter {
 
   .xl\:grid-cols-4 {
     grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  }
+
+  .xl\:overflow-hidden {
+    overflow: hidden !important;
+  }
+
+  .xl\:bg-black {
+    --tw-bg-opacity: 1 !important;
+    background-color: rgb(0 0 0 / var(--tw-bg-opacity)) !important;
+  }
+
+  .xl\:px-4 {
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  .xl\:text-black {
+    --tw-text-opacity: 1 !important;
+    color: rgb(0 0 0 / var(--tw-text-opacity)) !important;
+  }
+
+  .xl\:text-white {
+    --tw-text-opacity: 1 !important;
+    color: rgb(255 255 255 / var(--tw-text-opacity)) !important;
+  }
+
+  .xl\:before\:bg-white::before {
+    content: var(--tw-content) !important;
+    --tw-bg-opacity: 1 !important;
+    background-color: rgb(255 255 255 / var(--tw-bg-opacity)) !important;
+  }
+
+  .xl\:after\:bg-white::after {
+    content: var(--tw-content) !important;
+    --tw-bg-opacity: 1 !important;
+    background-color: rgb(255 255 255 / var(--tw-bg-opacity)) !important;
+  }
+
+  .group:hover .xl\:group-hover\:block {
+    display: block !important;
+  }
+
+  @keyframes slide-in-up {
+    0% {
+      visibility: visible;
+      transform: translate3d(0, 100%, 0);
+    }
+
+    100% {
+      transform: translate3d(0, 0, 0);
+    }
+  }
+
+  .group:hover .xl\:group-hover\:animate-slideInUp {
+    animation: slide-in-up 0.5s ease-in-out !important;
   }
 }

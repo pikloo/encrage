@@ -20,7 +20,7 @@ Version: 1.0
   }
 
   h3 {
-    @apply capitalize first-letter:text-2xl;
+    @apply uppercase first-letter:text-2xl;
   }
 
   .slider-home {
@@ -29,5 +29,9 @@ Version: 1.0
 
   .slider-home .swiper-slide > img {
     @apply w-full h-full object-cover;
+  }
+
+  button {
+    @apply uppercase px-4 py-2 text-white bg-gray-800 border border-transparent rounded-md font-semibold text-xs uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:ring ring-gray-300 disabled:opacity-25 transition ease-in-out duration-150;
   }
 }
