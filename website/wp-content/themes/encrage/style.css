@@ -598,19 +598,24 @@ video {
 }
 
 h2 {
-  margin-bottom: 1.5rem;
-  overflow: hidden;
+  position: relative;
+  margin-bottom: 2.5rem;
+  width: -moz-fit-content;
+  width: fit-content;
   font-size: 2.25rem;
   line-height: 2.5rem;
   font-weight: 500;
   text-transform: uppercase;
 }
 
+h2::first-letter {
+  font-size: 3rem;
+  line-height: 1;
+}
+
 h2::before {
-  position: relative;
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
-  display: block;
+  position: absolute;
+  top: -0.5rem;
   height: 2px;
   width: 100%;
   content: var(--tw-content);
@@ -619,19 +624,24 @@ h2::before {
 }
 
 h2::after {
-  position: relative;
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
-  display: block;
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+  bottom: -0.5rem;
   height: 2px;
-  width: 100%;
+  width: 10%;
   content: var(--tw-content);
   --tw-bg-opacity: 1;
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
 }
 
 h3 {
-  text-transform: uppercase;
+  text-transform: capitalize;
+}
+
+h3::first-letter {
+  font-size: 1.5rem;
+  line-height: 2rem;
 }
 
 .slider-home {
@@ -713,10 +723,6 @@ h3 {
   height: 16rem !important;
 }
 
-.h-full {
-  height: 100% !important;
-}
-
 .w-5\/6 {
   width: 83.333333% !important;
 }
@@ -727,10 +733,6 @@ h3 {
 
 .w-64 {
   width: 16rem !important;
-}
-
-.w-full {
-  width: 100% !important;
 }
 
 .max-w-sm {
@@ -813,13 +815,27 @@ h3 {
   border-radius: 9999px !important;
 }
 
+.border {
+  border-width: 1px !important;
+}
+
 .border-r {
   border-right-width: 1px !important;
+}
+
+.border-black {
+  --tw-border-opacity: 1 !important;
+  border-color: rgb(0 0 0 / var(--tw-border-opacity)) !important;
 }
 
 .bg-white {
   --tw-bg-opacity: 1 !important;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity)) !important;
+}
+
+.object-none {
+  -o-object-fit: none !important;
+     object-fit: none !important;
 }
 
 .p-10 {
@@ -828,6 +844,11 @@ h3 {
 
 .p-3 {
   padding: 0.75rem !important;
+}
+
+.px-4 {
+  padding-left: 1rem !important;
+  padding-right: 1rem !important;
 }
 
 .px-6 {
@@ -843,10 +864,6 @@ h3 {
 .py-6 {
   padding-top: 1.5rem !important;
   padding-bottom: 1.5rem !important;
-}
-
-.pl-4 {
-  padding-left: 1rem !important;
 }
 
 .text-2xl {
@@ -872,8 +889,48 @@ h3 {
   text-transform: uppercase !important;
 }
 
+.capitalize {
+  text-transform: capitalize !important;
+}
+
 .opacity-25 {
   opacity: 0.25 !important;
+}
+
+.after\:relative::after {
+  content: var(--tw-content) !important;
+  position: relative !important;
+}
+
+.after\:ml-1::after {
+  content: var(--tw-content) !important;
+  margin-left: 0.25rem !important;
+}
+
+.after\:inline-block::after {
+  content: var(--tw-content) !important;
+  display: inline-block !important;
+}
+
+.after\:h-\[1px\]::after {
+  content: var(--tw-content) !important;
+  height: 1px !important;
+}
+
+.after\:w-\[20px\]::after {
+  content: var(--tw-content) !important;
+  width: 20px !important;
+}
+
+.after\:bg-black::after {
+  content: var(--tw-content) !important;
+  --tw-bg-opacity: 1 !important;
+  background-color: rgb(0 0 0 / var(--tw-bg-opacity)) !important;
+}
+
+.after\:align-middle::after {
+  content: var(--tw-content) !important;
+  vertical-align: middle !important;
 }
 
 @media (min-width: 768px) {

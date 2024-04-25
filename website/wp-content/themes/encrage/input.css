@@ -13,14 +13,14 @@ Version: 1.0
 
 @layer components {
   h2 {
-    @apply mb-6 text-4xl uppercase font-medium overflow-hidden before:h-[2px] after:h-[2px] after:bg-black 
-       after:block after:relative after:w-full
-       before:bg-black before:block before:relative 
-       before:w-full after:my-2 before:my-2;
+    @apply mb-10 w-fit relative text-4xl uppercase font-medium  before:h-[2px] after:h-[2px] after:bg-black 
+       after:absolute after:w-[10%]
+       before:bg-black before:absolute 
+       before:w-full after:right-0 after:bottom-0 before:-top-2 after:-bottom-2 first-letter:text-5xl;
   }
 
   h3 {
-    @apply uppercase;
+    @apply capitalize first-letter:text-2xl;
   }
 
   .slider-home {

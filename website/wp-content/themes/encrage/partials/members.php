@@ -142,13 +142,13 @@ $photographers = [
 ?>
 
 <section class="container mx-auto py-10">
-    <h2><span class="pl-4">Les photographes</span></h2>
+    <h2>Les photographes</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-y-10">
         <?php foreach ($photographers as $photographer) : ?>
             <!-- PHOTOGRAPHE -->
             <div class="flex flex-col justify-center items-center gap-4">
-                <img class="h-64 w-64 rounded-full" src="./wp-content/themes/encrage/assets/images/<?=  $photographer['image'] ? 'leo.png' : 'logo-encrage.png' ?>" alt="" />
-                <h3 class="text-xl font-medium capitilize"><?= $photographer['firstname'] && $photographer['lastname'] ?  $photographer['firstname'] . ' ' . $photographer['lastname'] : $photographer['nickname'] ?></h3>
+                <img class="h-64 w-64 rounded-full <?php if(!$photographer['image']) echo "border border-black" ?>" src="./wp-content/themes/encrage/assets/images/<?=  $photographer['image'] ? 'leo.png' : 'default_member.png' ?>" alt="" />
+                <h3 class="text-xl font-medium capitalize"><?= $photographer['firstname'] && $photographer['lastname'] ?  $photographer['firstname'] . ' ' . $photographer['lastname'] : $photographer['nickname'] ?></h3>
                 <ul class="md:hidden">
                     
                     <?php if ($photographer['instagram']): ?>
