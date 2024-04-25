@@ -10,3 +10,16 @@ Version: 1.0
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  h2 {
+    @apply mb-6 text-4xl uppercase font-medium overflow-hidden before:h-[2px] after:h-[2px] after:bg-black 
+       after:block after:relative after:w-full
+       before:bg-black before:block before:relative 
+       before:w-full after:my-2 before:my-2;
+  }
+
+  h3 {
+    @apply uppercase;
+  }
+}
