@@ -71,6 +71,13 @@ module.exports = ( env, argv ) => ({
 	entry: entry,
 	output: output,
     context: __dirname,
+    devServer: {
+        static: {
+          directory: path.join(__dirname, 'build'),
+        },
+        compress: true,
+        port: 9000,
+      },
 	/**
 	 * A full SourceMap is emitted as a separate file ( e.g.  main.js.map )
 	 * It adds a reference comment to the bundle so development tools know where to find it.
