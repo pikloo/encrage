@@ -1,33 +1,33 @@
 .env*
-website/wp-admin
-website/wp-content/uploads
-website/wp-content/themes/encrage/node_modules
-# default plugins, if we don't need them
-website/wp-content/plugins/hello.php
-website/wp-content/plugins/akismet
+# website/wp-admin
+# website/wp-content/uploads
+# website/wp-content/themes/encrage/node_modules
+# # default plugins, if we don't need them
+# website/wp-content/plugins/hello.php
+# website/wp-content/plugins/akismet
 
-# themes - this is important, you should not modify them, so put them here as a reminder
-website/wp-content/themes/twenty*
+# # themes - this is important, you should not modify them, so put them here as a reminder
+# website/wp-content/themes/twenty*
 
-website/wp-includes
+# website/wp-includes
 
-website/.htaccess
+# website/.htaccess
 
-website/index.php
+# website/index.php
 
-website/license.txt
-website/readme.html
-website/wp-activate.php
-website/wp-blog-header.php
-website/wp-comments-post.php
-website/wp-config.php
-website/wp-config-sample.php
-website/wp-cron.php
-website/wp-links-opml.php
-website/wp-load.php
-website/wp-login.php
-website/wp-mail.php
-website/wp-settings.php
-website/wp-signup.php
-website/wp-trackback.php
-website/xmlrpc.php
+# website/license.txt
+# website/readme.html
+# website/wp-activate.php
+# website/wp-blog-header.php
+# website/wp-comments-post.php
+# website/wp-config.php
+# website/wp-config-sample.php
+# website/wp-cron.php
+# website/wp-links-opml.php
+# website/wp-load.php
+# website/wp-login.php
+# website/wp-mail.php
+# website/wp-settings.php
+# website/wp-signup.php
+# website/wp-trackback.php
+# website/xmlrpc.php

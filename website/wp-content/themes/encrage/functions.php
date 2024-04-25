@@ -31,7 +31,7 @@ if (!function_exists('load_assets')) {
      */
     function load_assets()
     {
-        wp_enqueue_style('styleCss', get_theme_file_uri('style.css'));
+        wp_enqueue_style('styleCss', get_theme_file_uri('style.css'), [], time());
         // wp_enqueue_script('JS', get_theme_file_uri('index.js'), [], null, true);
         wp_enqueue_script( 'bundle', get_theme_file_uri('/build/main.js'), [], '1.0', true );
         wp_enqueue_style('swiper', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css');

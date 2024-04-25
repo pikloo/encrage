@@ -2,9 +2,10 @@
  * Webpack configuration.
  */
 const path = require( 'path' );
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require( 'mini-css-extract-plugin' );
 // const OptimizeCssAssetsPlugin = require( 'optimize-css-assets-webpack-plugin' );
-const cssnano = require( 'cssnano' ); // https://cssnano.co/
+// const cssnano = require( 'cssnano' ); // https://cssnano.co/
 const { CleanWebpackPlugin } = require( 'clean-webpack-plugin' );
 // const UglifyJsPlugin = require( 'uglifyjs-webpack-plugin' );
 // JS Directory path.
@@ -26,6 +27,9 @@ const plugins = ( argv ) => [
 	new MiniCssExtractPlugin( {
 		filename: 'css/[name].css'
 	} ),
+    new HtmlWebpackPlugin({
+        name:"encrage"
+      })
 ];
 const rules = [
 	{
@@ -34,10 +38,6 @@ const rules = [
 		exclude: /node_modules/,
 		use: 'babel-loader'
 	},
-    {
-        test: /\.css$/,
-        use: [ 'style-loader', 'css-loader' ]
-     },
 	{
 		test: /\.scss$/,
 		exclude: /node_modules/,
@@ -68,6 +68,7 @@ const rules = [
  * @see https://webpack.js.org/configuration/configuration-types/#exporting-a-function
  */
 module.exports = ( env, argv ) => ({
+    mode: 'development',
 	entry: entry,
 	output: output,
     context: __dirname,
@@ -84,22 +85,22 @@ module.exports = ( env, argv ) => ({
 	 * set this to false if you don't need it
 	 */
 	devtool: 'source-map',
-	// module: {
-	// 	rules: rules,
+	module: {
+		rules: rules,
+	},
+	// optimization: {
+	// 	minimizer: [
+	// 		new OptimizeCssAssetsPlugin( {
+	// 			cssProcessor: cssnano
+	// 		} ),
+	// 		new UglifyJsPlugin( {
+	// 			cache: false,
+	// 			parallel: true,
+	// 			sourceMap: false
+	// 		} )
+	// 	]
 	// },
-	// // optimization: {
-	// // 	minimizer: [
-	// // 		new OptimizeCssAssetsPlugin( {
-	// // 			cssProcessor: cssnano
-	// // 		} ),
-	// // 		new UglifyJsPlugin( {
-	// // 			cache: false,
-	// // 			parallel: true,
-	// // 			sourceMap: false
-	// // 		} )
-	// // 	]
-	// // },
-	// plugins: plugins( argv ),
+	plugins: plugins( argv ),
 	// externals: {
 	// 	jquery: 'jQuery'
 	// }

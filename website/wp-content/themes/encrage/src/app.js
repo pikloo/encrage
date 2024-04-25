@@ -1,4 +1,5 @@
 import Swiper from 'swiper/bundle';
+// import 'swiper/swiper-bundle.min.css'
 
 // init Swiper:
 const sliderHome = new Swiper(".slider-home", {
