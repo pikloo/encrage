@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+  webserver:
+    depends_on:
+      - wp
+    image: nginx:latest
+    container_name: webserver
+    restart: unless-stopped
+    ports:
+      - "80:80"
+    volumes:
+      - wordpress:/var/www/html
+      - ./nginx-conf:/etc/nginx/conf.d
+      - certbot-etc:/etc/letsencrypt
+    networks:
+      - app-network
+
+  certbot:
+    depends_on:
+      - webserver
+    image: certbot/certbot
+    container_name: certbot
+    volumes:
+      - certbot-etc:/etc/letsencrypt
+      - wordpress:/var/www/html
+    command: certonly --webroot --webroot-path=/var/www/html --email sammy@pikloo-dev.online --agree-tos --no-eff-email --staging -d pikloo-dev.online -d www.pikloo-dev.online
