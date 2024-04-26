@@ -12,6 +12,14 @@ const sliderHome = new Swiper(".slider-home", {
       },
 });
 
+
+const postsCarousel = new Swiper(".blogpost-carousel", {
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+});
+
 document.addEventListener( 'DOMContentLoaded', function() {
 // Menu
 //Open Menu
@@ -58,8 +66,11 @@ const backToTop = () => {
  };
 
 // Scroll to top
-const toTopButton = document.querySelector(".to-top");
-toTopButton.addEventListener("click", backToTop);
+const toTopButtons = document.querySelectorAll(".to-top");
+toTopButtons.forEach(function(button) { 
+    button.addEventListener("click", backToTop);
+});
+
 
 
 

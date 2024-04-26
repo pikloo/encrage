@@ -31,7 +31,7 @@ Version: 1.0
     @apply w-full h-full object-cover;
   }
 
-  button {
+  .button {
     @apply uppercase block w-fit mx-auto xl:text-xl relative before:h-[2px] after:h-[2px] after:bg-black 
     after:absolute after:w-[120%] after:-left-[10%] before:-right-[10%]
     before:bg-black before:absolute 

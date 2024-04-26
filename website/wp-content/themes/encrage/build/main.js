@@ -10407,6 +10407,14 @@ const sliderHome = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"](".s
       },
 });
 
+
+const postsCarousel = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"](".blogpost-carousel", {
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+});
+
 document.addEventListener( 'DOMContentLoaded', function() {
 // Menu
 //Open Menu
@@ -10453,8 +10461,11 @@ const backToTop = () => {
  };
 
 // Scroll to top
-const toTopButton = document.querySelector(".to-top");
-toTopButton.addEventListener("click", backToTop);
+const toTopButtons = document.querySelectorAll(".to-top");
+toTopButtons.forEach(function(button) { 
+    button.addEventListener("click", backToTop);
+});
+
 
 
 
