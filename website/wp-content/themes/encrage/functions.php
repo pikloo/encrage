@@ -7,6 +7,7 @@
  * @package encrage
  */
 
+ require_once WP_CONTENT_DIR . '/themes/encrage/inc/cpt-generator.php';
 
  if (!function_exists('theme_encrage_init')) {
     /**
@@ -61,4 +62,21 @@ function module_support( $tag, $handle ) {
 add_filter( 'script_loader_tag', 'module_support', PHP_INT_MAX, 2 );
 
 
-require_once get_theme_file_uri('/inc/post-types/member.php');
+
+if (!function_exists('custom_cpts')) {
+    /**
+     * Création des CPT Membres, Séries et publications
+     * 
+     * @return void
+     */
+    function custom_cpts()
+    {
+        create_post_type('member','Membre', 'Membres', 'dashicons-id');
+        create_post_type('serie','Série', 'Séries', 'dashicons-portfolio');
+        create_post_type('release', 'Publication', 'Publications', 'dashicons-format-quote');
+    }
+}
+
+add_action('init', 'custom_cpts');
+
+require_once WP_CONTENT_DIR . '/themes/encrage/inc/post-types/member.php';
