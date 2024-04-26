@@ -14,6 +14,7 @@ const sliderHome = new Swiper(".slider-home", {
 
 
 const postsCarousel = new Swiper(".blogpost-carousel", {
+    centeredSlides: true,
     navigation: {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",

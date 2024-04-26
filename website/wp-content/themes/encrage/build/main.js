@@ -10409,6 +10409,7 @@ const sliderHome = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"](".s
 
 
 const postsCarousel = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"](".blogpost-carousel", {
+    centeredSlides: true,
     navigation: {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",

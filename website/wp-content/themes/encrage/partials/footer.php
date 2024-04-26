@@ -1,25 +1,88 @@
-<footer class="bg-black text-white">
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 justify-around">
-    <div>
-        <img src="./wp-content/themes/encrage/assets/images/logo-encrage-white.png" alt="" />
-        <a mailto="bureau@encrage.photo">bureau@encrage.photo</a>
+<footer class="bg-black text-white p-6 md:pt-10">
+    <div class="grid grid-cols-1 md:grid-cols-3 justify-around gap-y-6 md:gap-y-0 mb-4 md:mb-10 md:items-center md:justify-items-center">
+        <div>
+            <img src="./wp-content/themes/encrage/assets/images/logo-encrage-white.png" alt="" />
+            <a mailto="bureau@encrage.photo">bureau@encrage.photo</a>
+        </div>
+        <ul class="flex flex-col">
+            <li><a href="#">L'agence</a></li>
+            <li><a href="#">Les photographes</a></li>
+            <li><a href="#">Contact</a></li>
+
+        </ul>
+        <div class="flex flex-col w-fit mx-auto">
+            <ul class="flex gap-x-2">
+                <li><a href="#"><svg viewBox="0 0 512.00096 512.00096" width="24" height="24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" id="fi_1077042">
+                            <path d="m373.40625 0h-234.8125c-76.421875 0-138.59375 62.171875-138.59375 138.59375v234.816406c0 76.417969 62.171875 138.589844 138.59375 138.589844h234.816406c76.417969 0 138.589844-62.171875 138.589844-138.589844v-234.816406c0-76.421875-62.171875-138.59375-138.59375-138.59375zm108.578125 373.410156c0 59.867188-48.707031 108.574219-108.578125 108.574219h-234.8125c-59.871094 0-108.578125-48.707031-108.578125-108.574219v-234.816406c0-59.871094 48.707031-108.578125 108.578125-108.578125h234.816406c59.867188 0 108.574219 48.707031 108.574219 108.578125zm0 0"></path>
+                            <path d="m256 116.003906c-77.195312 0-139.996094 62.800782-139.996094 139.996094s62.800782 139.996094 139.996094 139.996094 139.996094-62.800782 139.996094-139.996094-62.800782-139.996094-139.996094-139.996094zm0 249.976563c-60.640625 0-109.980469-49.335938-109.980469-109.980469 0-60.640625 49.339844-109.980469 109.980469-109.980469 60.644531 0 109.980469 49.339844 109.980469 109.980469 0 60.644531-49.335938 109.980469-109.980469 109.980469zm0 0"></path>
+                            <path d="m399.34375 66.285156c-22.8125 0-41.367188 18.558594-41.367188 41.367188 0 22.8125 18.554688 41.371094 41.367188 41.371094s41.371094-18.558594 41.371094-41.371094-18.558594-41.367188-41.371094-41.367188zm0 52.71875c-6.257812 0-11.351562-5.09375-11.351562-11.351562 0-6.261719 5.09375-11.351563 11.351562-11.351563 6.261719 0 11.355469 5.089844 11.355469 11.351563 0 6.257812-5.09375 11.351562-11.355469 11.351562zm0 0"></path>
+                        </svg></a></li>
+                <li><a href="#"><svg version="1.1" id="fi_220342" width="24" height="24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+                            <g transform="translate(1 1)">
+                                <g>
+                                    <path d="M468.333-1H41.667C17.773-1-1,17.773-1,41.667v426.667C-1,492.227,17.773,511,41.667,511h196.267h102.4h128
+			C492.227,511,511,492.227,511,468.333V41.667C511,17.773,492.227-1,468.333-1z M255,493.933V323.267h-68.267V255H255v-59.733
+			c0-48.64,37.547-89.6,85.333-93.867h76.8v68.267h-68.267c-14.507,0-25.6,11.093-25.6,25.6V255H408.6v68.267h-85.333v170.667H255z
+			 M493.933,468.333c0,14.507-11.093,25.6-25.6,25.6h-128v-153.6h85.333v-102.4h-85.333v-42.667c0-5.12,3.413-8.533,8.533-8.533
+			H434.2v-102.4h-94.72c-57.173,5.12-101.547,53.76-101.547,110.933v42.667h-68.267v102.4h68.267v153.6H41.667
+			c-14.507,0-25.6-11.093-25.6-25.6V41.667c0-14.507,11.093-25.6,25.6-25.6h426.667c14.507,0,25.6,11.093,25.6,25.6V468.333z"></path>
+                                </g>
+                            </g>
+                            <g>
+                            </g>
+                            <g>
+                            </g>
+                            <g>
+                            </g>
+                            <g>
+                            </g>
+                            <g>
+                            </g>
+                            <g>
+                            </g>
+                            <g>
+                            </g>
+                            <g>
+                            </g>
+                            <g>
+                            </g>
+                            <g>
+                            </g>
+                            <g>
+                            </g>
+                            <g>
+                            </g>
+                            <g>
+                            </g>
+                            <g>
+                            </g>
+                            <g>
+                            </g>
+                        </svg></a></li>
+                <li><a href="#"><svg id="fi_5968958" width="24" height="24" fill="currentColor" enable-background="new 0 0 1226.37 1226.37" viewBox="0 0 1226.37 1226.37" xmlns="http://www.w3.org/2000/svg">
+                            <path d="m727.348 519.284 446.727-519.284h-105.86l-387.893 450.887-309.809-450.887h-357.328l468.492 681.821-468.492 544.549h105.866l409.625-476.152 327.181 476.152h357.328l-485.863-707.086zm-144.998 168.544-47.468-67.894-377.686-540.24h162.604l304.797 435.991 47.468 67.894 396.2 566.721h-162.604l-323.311-462.446z"></path>
+                            <g></g>
+                            <g></g>
+                            <g></g>
+                            <g></g>
+                            <g></g>
+                            <g></g>
+                            <g></g>
+                            <g></g>
+                            <g></g>
+                            <g></g>
+                            <g></g>
+                            <g></g>
+                            <g></g>
+                            <g></g>
+                            <g></g>
+                        </svg></a></li>
+            </ul>
+            <p>Retrouvez aussi nos photos sur</p>
+        </div>
     </div>
-    <ul>
-        <li>
-            <a href="#">Encrage, l'agence</a>
-            <a href="#">Les photographes</a>
-            <a href="#">Contact</a>
-        </li>
-    </ul>
-    <div class="flex flex-col">
-        <ul>
-        <li>
-            <a href="#">L'agence</a>
-            <a href="#">Les photographes</a>
-            <a href="#">Contact</a>
-        </li>
-    </ul>
+    <div class="text-sm text-center">
+        <hr class="h-px my-2 bg-gray-200 border-0">
+        <a href="#">Conditions générales d’utilisation</a>
     </div>
-    
-</div>
 </footer>

@@ -43,7 +43,7 @@ $releases = [
     <h2>publications</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-4">
         <?php for($i=0;$i<3;$i++) :?>
-        <figure class="relative group">
+        <figure class="relative group mx-auto max-w-sm">
             <img src="./wp-content/themes/encrage/assets/images/publi<?= $i ?>.png" alt="" />
             <figcaption>
                 <div class="xl:text-xl">
