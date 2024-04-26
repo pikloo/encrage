@@ -1,4 +1,5 @@
 import Swiper from 'swiper/bundle';
+import GLightbox from 'glightbox';
 // import 'swiper/swiper-bundle.min.css'
 
 // init Swiper:
@@ -72,9 +73,5 @@ toTopButtons.forEach(function(button) {
     button.addEventListener("click", backToTop);
 });
 
-//Zoom Image
-const imagesToZoom = document.querySelectorAll('.gslightbox');
-const lightbox = new GLightbox(imagesToZoom);
-
-
+const lightbox = GLightbox({});
 } );

@@ -60,4 +60,5 @@ function module_support( $tag, $handle ) {
 
 add_filter( 'script_loader_tag', 'module_support', PHP_INT_MAX, 2 );
 
-// require_once dirname(__FILE__) . '/inc/wp-swiper-slider.php';
+
+require_once get_theme_file_uri('/inc/post-types/member.php');
