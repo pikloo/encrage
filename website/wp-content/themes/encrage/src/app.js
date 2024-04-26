@@ -60,19 +60,21 @@ if ( backdrop.length ) {
     }
 }
 
-
+// Scroll to top
 const backToTop = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
    
  };
 
-// Scroll to top
+
 const toTopButtons = document.querySelectorAll(".to-top");
 toTopButtons.forEach(function(button) { 
     button.addEventListener("click", backToTop);
 });
 
-
+//Zoom Image
+const imagesToZoom = document.querySelectorAll('.gslightbox');
+const lightbox = new GLightbox(imagesToZoom);
 
 
 } );

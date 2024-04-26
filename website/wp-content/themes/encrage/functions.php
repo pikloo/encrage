@@ -36,6 +36,8 @@ if (!function_exists('load_assets')) {
         wp_enqueue_script( 'bundle', get_theme_file_uri('/build/main.js'), [], '1.0', true );
         wp_enqueue_style('swiper', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css');
         wp_enqueue_style('googleFont', 'https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+        wp_enqueue_script('glightbox', get_theme_file_uri('/assets/js/glightbox.min.js'));
+      wp_enqueue_style('glightbox', get_theme_file_uri('/assets/css/glightbox.min.css'));
     }
 }
 
