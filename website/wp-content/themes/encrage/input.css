@@ -32,6 +32,9 @@ Version: 1.0
   }
 
   button {
-    @apply uppercase px-4 py-2 text-white bg-gray-800 border border-transparent rounded-md font-semibold text-xs uppercase tracking-widest hover:bg-gray-700 active:bg-gray-900 focus:outline-none focus:border-gray-900 focus:ring ring-gray-300 disabled:opacity-25 transition ease-in-out duration-150;
+    @apply uppercase block w-fit mx-auto xl:text-xl relative before:h-[2px] after:h-[2px] after:bg-black 
+    after:absolute after:w-[120%] after:-left-[10%] before:-right-[10%]
+    before:bg-black before:absolute 
+    before:w-[120%] after:bottom-0 before:-top-2 after:-bottom-2;
   }
 }

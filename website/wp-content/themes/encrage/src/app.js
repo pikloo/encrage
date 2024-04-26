@@ -50,4 +50,15 @@ if ( backdrop.length ) {
         } );
     }
 }
+
+// Scroll to top
+const toTopButton = document.querySelector(".to-top");
+console.log( toTopButton );
+toTopButton.addEventListener("click", backToTop);
+
+const backToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    console.log( "aa")
+  };
+
 } );
