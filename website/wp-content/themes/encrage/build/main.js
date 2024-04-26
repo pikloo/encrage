@@ -10445,6 +10445,19 @@ if ( backdrop.length ) {
         } );
     }
 }
+
+
+const backToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+   
+ };
+
+// Scroll to top
+const toTopButton = document.querySelector(".to-top");
+toTopButton.addEventListener("click", backToTop);
+
+
+
 } );
 })();
 
