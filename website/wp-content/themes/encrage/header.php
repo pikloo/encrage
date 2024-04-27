@@ -9,4 +9,4 @@
   ?>
 </head>
 
-<body class="text-ibm">
+<body class="text-ibm relative">

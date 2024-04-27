@@ -9,8 +9,8 @@ const MiniCssExtractPlugin = require( 'mini-css-extract-plugin' );
 const { CleanWebpackPlugin } = require( 'clean-webpack-plugin' );
 // const UglifyJsPlugin = require( 'uglifyjs-webpack-plugin' );
 // JS Directory path.
-const JS_DIR = path.resolve( __dirname, 'js' );
-const IMG_DIR = path.resolve( __dirname, 'images' );
+const JS_DIR = path.resolve( __dirname, 'src' );
+const IMG_DIR = path.resolve( __dirname, 'assets/images' );
 const BUILD_DIR = path.resolve( __dirname, 'build' );
 const entry = "./src/app.js"
 const output = {
@@ -25,7 +25,7 @@ const plugins = ( argv ) => [
 		cleanStaleWebpackAssets: ( argv.mode === 'production' ) // Automatically remove all unused webpack assets on rebuild, when set to true in production. ( https://www.npmjs.com/package/clean-webpack-plugin#options-and-defaults-optional )
 	} ),
 	new MiniCssExtractPlugin( {
-		filename: 'css/[name].css'
+		filename: '[name].css'
 	} ),
     new HtmlWebpackPlugin({
         name:"encrage"

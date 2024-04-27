@@ -5,12 +5,12 @@ import 'swiper/css/bundle';
 // init Swiper:
 const sliderHome = new Swiper(".slider-home", {
     autoplay: {
-        delay: 4000,
+        delay: 5000,
       },
       effect: "fade",
-      fadeEffect: {
-        crossFade: true,
-      },
+    //   fadeEffect: {
+    //     crossFade: true,
+    //   },
 });
 
 
