@@ -33,6 +33,7 @@ if (!function_exists('member_informations_meta_box_html')) {
         $fb = get_post_meta($post->ID, 'fb', true);
         $x = get_post_meta($post->ID, 'x', true);
         $website = get_post_meta($post->ID, 'website', true);
+        $place = get_post_meta($post->ID, 'place', true);
 
         wp_nonce_field('member_informations' . $post->ID, '_wp_nonce_informations');
 
@@ -54,6 +55,10 @@ if (!function_exists('member_informations_meta_box_html')) {
                 <tr>
                     <th><label for="website">Site</label></th>
                     <td><input type="text" id="website" name="_website" value='<?= esc_attr($website) ?>'></td>
+                </tr>
+                <tr>
+                    <th><label for="place">Lieu</label></th>
+                    <td><input type="text" id="website" name="_place" value='<?= esc_attr($place) ?>'></td>
                 </tr>
             </tbody>
         </table>
@@ -94,6 +99,9 @@ if (!function_exists('member_informations_save_meta')) {
         }
         if (isset($_POST['_website'])) {
             update_post_meta($post_id, 'website', sanitize_text_field($_POST['_website']));
+        }
+        if (isset($_POST['_place'])) {
+            update_post_meta($post_id, 'place', sanitize_text_field($_POST['_place']));
         }
 
         return $post_id;

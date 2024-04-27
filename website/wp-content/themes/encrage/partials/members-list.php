@@ -1,20 +1,26 @@
 <section class="container mx-auto py-10">
     <h2>Les photographes</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-y-10">
-    <?php $loop = new WP_Query(array(
-            'post_type' => 'member', 'orderby' => 'post_date',
+        <?php $loop = new WP_Query(array(
+            'post_type' => 'member', 'orderby' => 'post_date', 'posts_per_page' => '16',
             'order' => 'ASC'
         )); ?>
-            <?php while ($loop->have_posts()) : ?>
-            <?php $loop->the_post(); ?>
-            <!-- PHOTOGRAPHE -->
+        <?php while ($loop->have_posts()) : ?>
+            <?php $loop->the_post();
+            $thumbnailUrl = null;
+            if (get_the_post_thumbnail()) {
+                $thumbnailUrl = get_the_post_thumbnail_url(get_the_ID(), 'thumbnail');
+            } else {
+                $thumbnailUrl = get_template_directory_uri() . '/assets/images/default_member.png';
+            }
+            ?>
             <div class="flex flex-col justify-center items-center gap-4">
-                <img class="h-64 w-64 rounded-full <?php if (!get_the_post_thumbnail()) echo "border border-black" ?>" src="<?php get_the_post_thumbnail() ? the_post_thumbnail_url() : './wp-content/themes/encrage/assets/images/default_member.png' ?>" alt="" />
+                <img class="h-64 w-64 rounded-full object-contain <?php if (!get_the_post_thumbnail()) echo "border border-black" ?>" src=<?= $thumbnailUrl; ?> alt="" />
                 <div class="text-center">
                     <div class="-translate-y-6 before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-black relative inline-block">
                         <h3 class="relative text-xl font-medium uppercase text-white"><?php the_title(); ?></h3>
                     </div>
-                    <ul class="md:hidden">
+                    <ul class="md:hidden text-center">
                         <?php if (get_post_meta(get_the_ID(), 'insta', true)) : ?>
                             <li class="flex text-sm items-center gap-2">
                                 <svg viewBox="0 0 512.00096 512.00096" height="14" width="14" xmlns="http://www.w3.org/2000/svg">
@@ -68,8 +74,6 @@
                 </div>
 
             </div>
-            <!--  FIN PHOTOGRAPHE -->
-            <?php endwhile; ?>
-        <?php wp_reset_query(); ?>
+        <?php endwhile; ?>
     </div>
 </section>

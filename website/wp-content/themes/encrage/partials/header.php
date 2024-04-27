@@ -1,5 +1,5 @@
-<header>
-      <nav class="relative p-10 flex justify-between items-center mx-auto">
+<header class="h-10">
+      <nav class="relative flex justify-between items-center mx-auto">
         <a href="#"><img src="./wp-content/themes/encrage/assets/images/logo-encrage.png" alt="Encrage" /></a>
         <div class="xl:hidden">
           <button class="navbar-burger flex items-center p-3">

@@ -1,6 +1,6 @@
 import Swiper from 'swiper/bundle';
 import GLightbox from 'glightbox';
-// import 'swiper/swiper-bundle.min.css'
+import 'swiper/css/bundle';
 
 // init Swiper:
 const sliderHome = new Swiper(".slider-home", {

@@ -39,8 +39,8 @@ const rules = [
 		use: 'babel-loader'
 	},
 	{
-		test: /\.scss$/,
-		exclude: /node_modules/,
+		test: /\.css$/,
+		// exclude: /node_modules/,
 		use: [
 			MiniCssExtractPlugin.loader,
 			'css-loader',

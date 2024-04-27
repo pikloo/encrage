@@ -34,8 +34,9 @@ if (!function_exists('load_assets')) {
     {
         wp_enqueue_style('styleCss', get_theme_file_uri('style.css'), [], time());
         // wp_enqueue_script('JS', get_theme_file_uri('index.js'), [], null, true);
+        wp_enqueue_style('swiperCss', get_theme_file_uri('/build/css/main.css'), [], time());
         wp_enqueue_script( 'bundle', get_theme_file_uri('/build/main.js'), [], '1.0', true );
-        wp_enqueue_style('swiper', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css');
+        // wp_enqueue_style('swiper', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css');
         wp_enqueue_style('googleFont', 'https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
         wp_enqueue_script('glightbox', get_theme_file_uri('/assets/js/glightbox.min.js'));
       wp_enqueue_style('glightbox', get_theme_file_uri('/assets/css/glightbox.min.css'));
@@ -73,7 +74,7 @@ if (!function_exists('custom_cpts')) {
     {
         create_post_type('member','Membre', 'Membres', 'dashicons-id');
         create_post_type('serie','Série', 'Séries', 'dashicons-portfolio');
-        create_post_type('release', 'Publication', 'Publications', 'dashicons-format-quote');
+        create_post_type('relea', 'Publication', 'Publications', 'dashicons-format-quote');
     }
 }
 
