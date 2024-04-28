@@ -42,10 +42,12 @@ if (!function_exists('serie_informations_meta_box_html')) {
             'post_type' => 'member',
             'posts_per_page' => -1,
             'post_status' => 'publish',
+            'orderby' => 'title',
+            'post_status' => 'publish',
+            'order' => 'ASC',
         ];
 
         $members = new WP_Query($args);
-        // var_dump($members);exit();
 ?>
         <table>
             <tbody>
@@ -55,14 +57,23 @@ if (!function_exists('serie_informations_meta_box_html')) {
                         <select name="_year" id="year">
                             <option value="">Sélectionner une année</option>
                             <?php for ($i = $start_year; $i <= date('Y'); $i++) : ?>
-                                <option value="<?= $i ?>" <?php selected($year, $i); ?>><?= $i ?></option>
+                                <option value="<?= $i ?>" <?php selected((int)$year, $i); ?>><?= $i ?></option>
                             <?php endfor; ?>
                         </select>
                     </td>
                 </tr>
                 <tr>
                     <th><label for="photographer">Photographe</label></th>
-                    <td><input type="text" id="photographer" name="_photographer" value='<?= esc_attr($photographer) ?>'></td>
+                    <td>
+                        <select name="_photographer" id="photographer">
+                            <option value="" <?php if (empty($photographer)) echo 'selected'; ?>>Sélectionner un(e) photographe</option>
+                            <?php while ($members->have_posts()) : $members->the_post(); ?>
+                                <option value="<?= the_ID() ?>" <?= (!empty($photographer)) && $photographer == get_the_ID() ?  'selected' : '' ?>>
+                                    <?php the_title(); ?>
+                                </option>
+                            <?php endwhile; ?>
+                        </select>
+                    </td>
                 </tr>
             </tbody>
         </table>
@@ -92,20 +103,11 @@ if (!function_exists('serie_informations_save_meta')) {
 
         if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) return;
 
-        if (isset($_POST['_insta'])) {
-            update_post_meta($post_id, 'insta', sanitize_text_field($_POST['_insta']));
+        if (isset($_POST['_year'])) {
+            update_post_meta($post_id, 'year', sanitize_text_field($_POST['_year']));
         }
-        if (isset($_POST['_x'])) {
-            update_post_meta($post_id, 'x', sanitize_text_field($_POST['_x']));
-        }
-        if (isset($_POST['_fb'])) {
-            update_post_meta($post_id, 'fb', sanitize_text_field($_POST['_fb']));
-        }
-        if (isset($_POST['_website'])) {
-            update_post_meta($post_id, 'website', sanitize_text_field($_POST['_website']));
-        }
-        if (isset($_POST['_place'])) {
-            update_post_meta($post_id, 'place', sanitize_text_field($_POST['_place']));
+        if (isset($_POST['_photographer'])) {
+            update_post_meta($post_id, 'photographer', sanitize_text_field($_POST['_photographer']));
         }
 
         return $post_id;
@@ -113,3 +115,51 @@ if (!function_exists('serie_informations_save_meta')) {
 }
 
 add_action('save_post', 'serie_informations_save_meta', 10, 2);
+
+
+if (!function_exists('serie_list_table_head')) {
+    /**
+     * Customisation du header de la liste des portfolios
+     *
+     * @param [type] $defaults
+     * @return void
+     */
+    function serie_list_table_head($defaults)
+    {
+        $defaults['_photographer'] = 'Photographe';
+        $defaults['_year'] = 'Année';
+        return $defaults;
+    }
+}
+
+add_filter('manage_serie_posts_columns', 'serie_list_table_head');
+
+
+/**
+ * Affichage du header custom de la liste des portfolios
+ *
+ * @param [type] $column_name
+ * @param [type] $post_id
+ * @return void
+ */
+function serie_list_table_content($column_name, $post_id)
+{
+    if ($column_name == '_photographer') {
+        $args = [
+            'post_type' => 'member',
+            'posts_per_page' => 1,
+            'post_status' => 'publish',
+            'p' => get_post_meta($post_id, 'photographer', true),
+        ];
+
+        $photographer = new WP_Query($args);
+        while ($photographer->have_posts()) : $photographer->the_post();
+            the_title();
+        endwhile;
+    }
+    if ($column_name == '_year') {
+        echo  esc_attr(get_post_meta($post_id, 'year', true));
+    }
+}
+
+add_action('manage_serie_posts_custom_column', 'serie_list_table_content', 10, 2);
