@@ -37,7 +37,7 @@ Aujourd’hui, nous revenons sur un événement fédérateur qui est né dans no
                         <span class="inline-block text-gray-500"><?= $post['date'] ?></span>
                     </header>
                     <main class="grid grid-cols-1 lg:grid-cols-2 items-center justify-center justify-items-center px-14 gap-y-4 lg:gap-y-0 w-full mx-auto">
-                        <aside class="max-w-sm"><img src="./wp-content/themes/encrage/assets/images/post<?= $key ?>.png" alt="" /></aside>
+                        <aside class="max-w-sm"><img src="<?= get_template_directory_uri(); ?>/assets/images/post<?= $key ?>.png" alt="" /></aside>
                         <article class="max-w-sm">
                             <p class="text-justify"><?= $post['text'] ?></p>
                         </article>

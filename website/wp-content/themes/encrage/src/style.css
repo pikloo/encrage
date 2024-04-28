@@ -1051,6 +1051,10 @@ h3::first-letter {
   padding-left: 2.5rem !important;
 }
 
+.pt-36 {
+  padding-top: 9rem !important;
+}
+
 .text-center {
   text-align: center !important;
 }
