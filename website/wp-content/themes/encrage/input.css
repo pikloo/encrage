@@ -38,3 +38,9 @@ Version: 1.0
     before:w-[120%] after:bottom-0 before:-top-2 after:-bottom-2;
   }
 }
+
+
+.medium-zoom-overlay,
+.medium-zoom-image--opened {
+  z-index: 999;
+}

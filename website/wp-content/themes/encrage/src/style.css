@@ -722,20 +722,20 @@ h3::first-letter {
   left: 0px !important;
 }
 
-.top-0 {
-  top: 0px !important;
-}
-
 .right-0 {
   right: 0px !important;
 }
 
-.z-\[60\] {
-  z-index: 60 !important;
+.top-0 {
+  top: 0px !important;
 }
 
 .z-10 {
   z-index: 10 !important;
+}
+
+.z-\[60\] {
+  z-index: 60 !important;
 }
 
 .mx-auto {
@@ -796,6 +796,10 @@ h3::first-letter {
   display: none !important;
 }
 
+.h-36 {
+  height: 9rem !important;
+}
+
 .h-6 {
   height: 1.5rem !important;
 }
@@ -811,18 +815,6 @@ h3::first-letter {
 
 .h-px {
   height: 1px !important;
-}
-
-.h-10 {
-  height: 2.5rem !important;
-}
-
-.h-40 {
-  height: 10rem !important;
-}
-
-.h-36 {
-  height: 9rem !important;
 }
 
 .h-screen {
@@ -992,18 +984,6 @@ h3::first-letter {
   background-color: rgb(255 255 255 / var(--tw-bg-opacity)) !important;
 }
 
-.bg-white\/100 {
-  background-color: rgb(255 255 255 / 1) !important;
-}
-
-.bg-white\/10 {
-  background-color: rgb(255 255 255 / 0.1) !important;
-}
-
-.bg-white\/50 {
-  background-color: rgb(255 255 255 / 0.5) !important;
-}
-
 .bg-white\/70 {
   background-color: rgb(255 255 255 / 0.7) !important;
 }
@@ -1013,16 +993,17 @@ h3::first-letter {
      object-fit: contain !important;
 }
 
-.p-10 {
-  padding: 2.5rem !important;
-}
-
 .p-3 {
   padding: 0.75rem !important;
 }
 
 .p-6 {
   padding: 1.5rem !important;
+}
+
+.px-10 {
+  padding-left: 2.5rem !important;
+  padding-right: 2.5rem !important;
 }
 
 .px-14 {
@@ -1048,21 +1029,6 @@ h3::first-letter {
 .py-6 {
   padding-top: 1.5rem !important;
   padding-bottom: 1.5rem !important;
-}
-
-.px-10 {
-  padding-left: 2.5rem !important;
-  padding-right: 2.5rem !important;
-}
-
-.px-5 {
-  padding-left: 1.25rem !important;
-  padding-right: 1.25rem !important;
-}
-
-.px-3 {
-  padding-left: 0.75rem !important;
-  padding-right: 0.75rem !important;
 }
 
 .pl-20 {
@@ -1126,6 +1092,11 @@ h3::first-letter {
 
 .opacity-25 {
   opacity: 0.25 !important;
+}
+
+.medium-zoom-overlay,
+.medium-zoom-image--opened {
+  z-index: 999;
 }
 
 .before\:absolute::before {

@@ -1,6 +1,6 @@
 import Swiper from 'swiper/bundle';
-import GLightbox from 'glightbox';
 import 'swiper/css/bundle';
+import mediumZoom from 'medium-zoom'
 
 // init Swiper:
 const sliderHome = new Swiper(".slider-home", {
@@ -21,6 +21,14 @@ const postsCarousel = new Swiper(".blogpost-carousel", {
         prevEl: ".swiper-button-prev",
       },
 });
+
+
+const zoom = mediumZoom(document.querySelectorAll('.release'), {
+    scrollOffset: 0,
+    background: 'rgba(148, 148, 148, 0.97)',
+    margin: 24,
+});
+
 
 document.addEventListener( 'DOMContentLoaded', function() {
 // Menu
@@ -73,5 +81,9 @@ toTopButtons.forEach(function(button) {
     button.addEventListener("click", backToTop);
 });
 
-const lightbox = GLightbox({});
+
+
+
+
+
 } );
