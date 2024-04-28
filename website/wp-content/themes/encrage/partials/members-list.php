@@ -15,9 +15,11 @@
             }
             ?>
             <div class="flex flex-col justify-center items-center gap-4">
+                <a href="<?= esc_url(get_permalink()); ?>">
                 <img class="h-64 w-64 rounded-full object-contain <?php if (!get_the_post_thumbnail()) echo "border border-black" ?>" src=<?= $thumbnailUrl; ?> alt="" />
+                </a>
                 <div class="text-center">
-                    <div class="-translate-y-6 before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-black relative inline-block">
+                    <div class="-translate-y-6 before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-black before:shadow-lg before:shadow-black/50 relative inline-block">
                         <h3 class="relative text-xl font-medium uppercase text-white"><?php the_title(); ?></h3>
                     </div>
                     <ul class="md:hidden text-center">

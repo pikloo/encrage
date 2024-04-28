@@ -53,7 +53,7 @@ $series = [
                             <span class="relative text-white xl:text-black"><?= $series[$i]['author'] ?></span>
                         </span>
                     </h3>
-                    <span class="text-slate-500"><?= $series[$i]['year'] ?></span>
+                    <span class="text-gray-500 lg:text-white font-light"><?= $series[$i]['year'] ?></span>
                 </div>
             </figcaption>
         </figure>

@@ -850,6 +850,10 @@ h3::first-letter {
   max-width: 24rem !important;
 }
 
+.max-w-96 {
+  max-width: 24rem !important;
+}
+
 .-translate-y-6 {
   --tw-translate-y: -1.5rem !important;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) !important;
@@ -885,6 +889,10 @@ h3::first-letter {
 
 .justify-around {
   justify-content: space-around !important;
+}
+
+.justify-items-center {
+  justify-items: center !important;
 }
 
 .gap-2 {
@@ -1001,6 +1009,10 @@ h3::first-letter {
   padding: 1.5rem !important;
 }
 
+.p-10 {
+  padding: 2.5rem !important;
+}
+
 .px-10 {
   padding-left: 2.5rem !important;
   padding-right: 2.5rem !important;
@@ -1035,6 +1047,10 @@ h3::first-letter {
   padding-left: 5rem !important;
 }
 
+.pl-10 {
+  padding-left: 2.5rem !important;
+}
+
 .text-center {
   text-align: center !important;
 }
@@ -1060,6 +1076,14 @@ h3::first-letter {
 
 .font-medium {
   font-weight: 500 !important;
+}
+
+.font-light {
+  font-weight: 300 !important;
+}
+
+.font-extralight {
+  font-weight: 200 !important;
 }
 
 .uppercase {
@@ -1094,6 +1118,23 @@ h3::first-letter {
   opacity: 0.25 !important;
 }
 
+.shadow-xl {
+  --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1) !important;
+  --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color) !important;
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow) !important;
+}
+
+.shadow-2xl {
+  --tw-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25) !important;
+  --tw-shadow-colored: 0 25px 50px -12px var(--tw-shadow-color) !important;
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow) !important;
+}
+
+.shadow-indigo-500\/50 {
+  --tw-shadow-color: rgb(99 102 241 / 0.5) !important;
+  --tw-shadow: var(--tw-shadow-colored) !important;
+}
+
 .medium-zoom-overlay,
 .medium-zoom-image--opened {
   z-index: 999;
@@ -1124,6 +1165,51 @@ h3::first-letter {
   content: var(--tw-content) !important;
   --tw-bg-opacity: 1 !important;
   background-color: rgb(0 0 0 / var(--tw-bg-opacity)) !important;
+}
+
+.before\:shadow-2xl::before {
+  content: var(--tw-content) !important;
+  --tw-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25) !important;
+  --tw-shadow-colored: 0 25px 50px -12px var(--tw-shadow-color) !important;
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow) !important;
+}
+
+.before\:shadow-xl::before {
+  content: var(--tw-content) !important;
+  --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1) !important;
+  --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color) !important;
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow) !important;
+}
+
+.before\:shadow-lg::before {
+  content: var(--tw-content) !important;
+  --tw-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1) !important;
+  --tw-shadow-colored: 0 10px 15px -3px var(--tw-shadow-color), 0 4px 6px -4px var(--tw-shadow-color) !important;
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow) !important;
+}
+
+.before\:shadow-indigo-500\/50::before {
+  content: var(--tw-content) !important;
+  --tw-shadow-color: rgb(99 102 241 / 0.5) !important;
+  --tw-shadow: var(--tw-shadow-colored) !important;
+}
+
+.before\:shadow-black::before {
+  content: var(--tw-content) !important;
+  --tw-shadow-color: #000 !important;
+  --tw-shadow: var(--tw-shadow-colored) !important;
+}
+
+.before\:shadow-black\/50::before {
+  content: var(--tw-content) !important;
+  --tw-shadow-color: rgb(0 0 0 / 0.5) !important;
+  --tw-shadow: var(--tw-shadow-colored) !important;
+}
+
+.before\:shadow-white\/50::before {
+  content: var(--tw-content) !important;
+  --tw-shadow-color: rgb(255 255 255 / 0.5) !important;
+  --tw-shadow: var(--tw-shadow-colored) !important;
 }
 
 .after\:relative::after {
@@ -1205,6 +1291,18 @@ h3::first-letter {
     max-width: 768px !important;
   }
 
+  .lg\:max-w-screen-lg {
+    max-width: 1024px !important;
+  }
+
+  .lg\:max-w-screen-sm {
+    max-width: 640px !important;
+  }
+
+  .lg\:max-w-screen-xl {
+    max-width: 1280px !important;
+  }
+
   .lg\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
   }
@@ -1220,6 +1318,11 @@ h3::first-letter {
 
   .lg\:gap-y-0 {
     row-gap: 0px !important;
+  }
+
+  .lg\:text-white {
+    --tw-text-opacity: 1 !important;
+    color: rgb(255 255 255 / var(--tw-text-opacity)) !important;
   }
 }
 

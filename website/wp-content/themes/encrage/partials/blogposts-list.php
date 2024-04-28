@@ -26,19 +26,19 @@ Aujourd’hui, nous revenons sur un événement fédérateur qui est né dans no
 
 ?>
 
-<section class="container mx-auto py-10">
+<section class="container mx-auto p-10">
     <h2>nos actus</h2>
-    <div class="swiper blogpost-carousel h-fit">
-        <div class="swiper-wrapper lg:max-w-screen-md">
+    <div class="swiper blogpost-carousel lg:max-w-screen-lg  h-fit">
+        <div class="swiper-wrapper">
             <?php foreach ($posts as $key => $post) : ?>
                 <a class="swiper-slide">
-                    <header class="pl-20 mb-8 text-xl uppercase">
+                    <header class="pl-10 mb-8 text-xl uppercase">
                         <h3><?= $post['title'] ?></h3>
                         <span class="inline-block text-gray-500"><?= $post['date'] ?></span>
                     </header>
-                    <main class="grid grid-cols-1 lg:grid-cols-2 items-center justify-center px-14 gap-y-4 lg:gap-y-0 lg:gap-x-8 xl:gap-x-2">
-                        <aside class="max-w-md lg:max-w-lg mx-auto"><img src="./wp-content/themes/encrage/assets/images/post<?= $key ?>.png" alt="" /></aside>
-                        <article class="max-w-md mx-auto">
+                    <main class="grid grid-cols-1 lg:grid-cols-2 items-center justify-center justify-items-center px-14 gap-y-4 lg:gap-y-0 w-full mx-auto">
+                        <aside class="max-w-sm"><img src="./wp-content/themes/encrage/assets/images/post<?= $key ?>.png" alt="" /></aside>
+                        <article class="max-w-sm">
                             <p class="text-justify"><?= $post['text'] ?></p>
                         </article>
                     </main>

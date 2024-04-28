@@ -50,7 +50,7 @@ $releases = [
                         <h3 class="mt-4">
                             <span class="after:h-[1px] after:bg-black
               after:inline-block after:relative after:w-[20px] after:align-middle after:ml-1"><?= $releases[$i]['media_name'] ?></span>
-                            <span class="ml-2 before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-black relative inline-block">
+                            <span class="ml-2 before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-black before:shadow-lg before:shadow-black/50 relative inline-block">
                                 <span class="relative text-white"><?= $releases[$i]['author'] ?></span>
                             </span>
                         </h3>
