@@ -4,6 +4,7 @@ $args =  [
     'post_type' => 'member',
     'orderby' => 'title',
     'posts_per_page' => $is_home_page ? -1 : 1,
+    'post_status' => 'publish',
     'order' => 'ASC',
     'p' => $is_home_page ? null : $post->ID
 ];

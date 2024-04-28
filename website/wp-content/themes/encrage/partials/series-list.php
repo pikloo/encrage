@@ -38,7 +38,7 @@ $series = [
 ]
 ?>
 
-<section class="container mx-auto py-10">
+<section class="container mx-auto py-10 xl:px-10">
     <h2>Séries</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-4">
         <?php for($i=1;$i<4;$i++) :?>

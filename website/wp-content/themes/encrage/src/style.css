@@ -1265,6 +1265,11 @@ h3::first-letter {
     row-gap: 0px !important;
   }
 
+  .lg\:px-10 {
+    padding-left: 2.5rem !important;
+    padding-right: 2.5rem !important;
+  }
+
   .lg\:text-xl {
     font-size: 1.25rem !important;
     line-height: 1.75rem !important;
@@ -1319,6 +1324,11 @@ h3::first-letter {
   .xl\:px-4 {
     padding-left: 1rem !important;
     padding-right: 1rem !important;
+  }
+
+  .xl\:px-10 {
+    padding-left: 2.5rem !important;
+    padding-right: 2.5rem !important;
   }
 
   .xl\:text-xl {

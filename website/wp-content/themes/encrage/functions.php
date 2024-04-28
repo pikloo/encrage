@@ -73,11 +73,12 @@ if (!function_exists('custom_cpts')) {
     function custom_cpts()
     {
         create_post_type('member','Membre', 'Membres', 'dashicons-id');
-        create_post_type('serie','Série', 'Séries', 'dashicons-portfolio');
-        create_post_type('relea', 'Publication', 'Publications', 'dashicons-format-quote');
+        create_post_type('serie','Portfolio', 'Portolios', 'dashicons-portfolio');
+        create_post_type('release', 'Publication', 'Publications', 'dashicons-format-quote');
     }
 }
 
 add_action('init', 'custom_cpts');
 
 require_once WP_CONTENT_DIR . '/themes/encrage/inc/post-types/member.php';
+require_once WP_CONTENT_DIR . '/themes/encrage/inc/post-types/serie.php';
