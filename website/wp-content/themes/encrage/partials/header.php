@@ -4,7 +4,7 @@ $bg = $is_home_page ? 'bg-white/70' : 'bg-white';
 ?>
 <header class="h-36 px-10 flex items-center w-full fixed top-0 left-0 right-0 z-10 <?= $bg ?>">
   <nav class="relative flex justify-between items-center w-full">
-    <a href="#"><img src="<?= get_template_directory_uri(); ?>/assets/images/logo-encrage.png" alt="Encrage" /></a>
+    <a href=<?= home_url(); ?>><img src="<?= get_template_directory_uri(); ?>/assets/images/logo-encrage.png" alt="Encrage" /></a>
     <div class="xl:hidden">
       <button class="navbar-burger flex items-center p-3">
         <svg width="22" height="17" viewBox="0 0 22 17" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -35,7 +35,7 @@ $bg = $is_home_page ? 'bg-white/70' : 'bg-white';
     <div class="navbar-backdrop fixed inset-0 opacity-25"></div>
     <nav class="fixed bg-white top-0 left-0 bottom-0 flex flex-col w-5/6 max-w-sm py-6 px-6 bg-white border-r overflow-y-auto">
       <div class="flex items-center mb-8">
-        <a class="mr-auto" href="#">
+        <a class="mr-auto" href=<?= home_url(); ?>>
           <img src="<?= get_template_directory_uri(); ?>/assets/images/logo-encrage.png" alt="Encrage" />
         </a>
         <button class="navbar-close">
