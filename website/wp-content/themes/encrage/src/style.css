@@ -825,6 +825,10 @@ h3::first-letter {
   height: 100vh !important;
 }
 
+.h-72 {
+  height: 18rem !important;
+}
+
 .w-5\/6 {
   width: 83.333333% !important;
 }
@@ -1005,6 +1009,11 @@ h3::first-letter {
 .object-contain {
   -o-object-fit: contain !important;
      object-fit: contain !important;
+}
+
+.object-cover {
+  -o-object-fit: cover !important;
+     object-fit: cover !important;
 }
 
 .p-10 {
@@ -1306,6 +1315,16 @@ h3::first-letter {
 
   .xl\:hidden {
     display: none !important;
+  }
+
+  .xl\:w-fit {
+    width: -moz-fit-content !important;
+    width: fit-content !important;
+  }
+
+  .xl\:w-min {
+    width: -moz-min-content !important;
+    width: min-content !important;
   }
 
   .xl\:grid-cols-4 {

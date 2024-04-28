@@ -6,9 +6,11 @@ $args =  [
     'posts_per_page' => $is_home_page ? -1 : 1,
     'post_status' => 'publish',
     'order' => 'ASC',
-    'p' => $is_home_page ? null : $post->ID
+    'p' => $is_home_page ? null : $post->ID,
+    
 ];
-$loop = new WP_Query($args); ?>
+$loop = new WP_Query($args);
+?>
 <?php while ($loop->have_posts()) : ?>
     <?php $loop->the_post();
     $thumbnailUrl = null;
@@ -86,4 +88,6 @@ $loop = new WP_Query($args); ?>
         <div class="max-w-sm mx-auto space-y-2 mt-6 text-justify lg:text-lg"><?php the_content(); ?></div>
     </section>
     <?php endif; ?>
-<?php endwhile; ?>
+<?php endwhile;
+wp_reset_postdata();
+?>
