@@ -2,8 +2,7 @@
 $is_home_page = is_front_page() && is_home();
 
 $single_pageID = match (true) {
-    is_page() => get_the_ID(),
-    is_single() && 'serie' != get_post_type() => get_the_ID(),
+    !is_page() && is_single() && 'serie' != get_post_type() => get_the_ID(),
     'serie' == get_post_type() && is_single() => get_post_meta($post->ID, 'photographer', true),
     default => null,
 };
@@ -11,7 +10,7 @@ $single_pageID = match (true) {
 $args =  [
     'post_type' => 'member',
     'orderby' => 'title',
-    'posts_per_page' => $is_home_page ? -1 : 1,
+    'posts_per_page' => $is_home_page || is_page() ? -1 : 1,
     'post_status' => 'publish',
     'order' => 'ASC',
     'p' => $single_pageID,
@@ -28,7 +27,7 @@ $loop = new WP_Query($args);
         $thumbnailUrl = get_template_directory_uri() . '/assets/images/default_member.png';
     }
     ?>
-    <?php if (is_singular() && 'serie' != get_post_type()) : ?>
+    <?php if (is_singular() && !is_page() && 'serie' != get_post_type()) : ?>
         <section class="grid grid-cols-1 lg:grid-cols-2 lg:items-center lg:max-w-screen-lg lg:mx-auto">
         <? endif; ?>
         <div class="profil flex flex-col justify-center items-center gap-4">
@@ -39,7 +38,7 @@ $loop = new WP_Query($args);
                 <div class="-translate-y-6 before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-black before:shadow-lg before:shadow-black/50 relative inline-block">
                     <h3 class="relative text-xl font-medium uppercase text-white"><?php the_title(); ?></h3>
                 </div>
-                <ul class="<?php if ($is_home_page) echo 'md:hidden' ?> text-center">
+                <ul class="<?php if ($is_home_page || is_page()) echo 'md:hidden' ?> text-center">
                     <?php if (get_post_meta(get_the_ID(), 'insta', true)) : ?>
                         <li class="flex items-center gap-2">
                             <svg viewBox="0 0 512.00096 512.00096" height="14" width="14" xmlns="http://www.w3.org/2000/svg">
@@ -92,7 +91,7 @@ $loop = new WP_Query($args);
                 </ul>
             </div>
         </div>
-        <?php if (is_singular()) : ?>
+        <?php if (is_singular() && !is_page())  : ?>
             <div class="max-w-sm  md:max-w-md mx-auto space-y-2 mt-6 text-justify lg:text-lg"><?php the_content(); ?></div>
         </section>
     <?php endif; ?>
