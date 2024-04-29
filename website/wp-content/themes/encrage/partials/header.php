@@ -11,6 +11,14 @@ $membersArgs =  [
 ];
 $membersMenu = new WP_Query($membersArgs);
 
+$menu_main = wp_nav_menu([
+  'menu' => 'Main',
+  'container' => 'ul',
+  'menu_class' => 'main-menu',
+  'echo' => false,
+  'container_aria_label' => 'Navigation principal',
+]);
+
 ?>
 <header class="flex items-center w-fit fixed top-0 left-0 right-0 z-10 bg-white">
   <nav class="relative flex justify-between items-center bg-white">
@@ -31,17 +39,13 @@ $membersMenu = new WP_Query($membersArgs);
         <!-- <a href="javascript:void(0)" class="text-3xl absolute top-0 right-0 mr-3 mt-2">&times;</a> -->
         <!--menu links-->
         <div id="sideLinks" class="flex flex-col items-center divide-y-2 divide-black justify-content duration-500 delay-2">
-          <ul class=" py-6">
-            <li class="p-2"><a href="#">L'Agence</a></li>
-            <li class="p-2"><a href="#">Publications</a></li>
-            <li class="p-2"><a href="#">Séries</a></li>
-            <li class="p-2"><a href="#">Nos Actus</a></li>
-          </ul>
+          <?= $menu_main; ?>
           <ul class="grid grid-cols-2 justify-items-center py-6">
             <?php while ($membersMenu->have_posts()) : $membersMenu->the_post(); ?>
               <li><a href=<?= the_permalink() ?>><?= the_title(); ?></a></li>
-            <?php endwhile;  wp_reset_postdata();?>
-            
+            <?php endwhile;
+            wp_reset_postdata(); ?>
+
           </ul>
           <div class="py-6 space-y-6 text-xl sm:text-2xl text-center">
             <div>

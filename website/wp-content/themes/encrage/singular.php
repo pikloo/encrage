@@ -14,7 +14,15 @@ $loop = new WP_Query($args);
 <main class="overflow-hidden pt-36">
     <?php while ($loop->have_posts()) : $loop->the_post(); ?>
         <h1><?= the_title(); ?></h1>
-        <article class="px-6 text-justify"><?= the_content(); ?></article>
+        <div class="px-6 text-justify flex flex-col gap-y-10 lg:flex-row lg:gap-x-10">
+            <?php if (has_post_thumbnail()) : ?>
+                <aside class="max-w-sm md:max-w-md">
+                    <?php the_post_thumbnail(); ?>
+                </aside>
+            <?php endif; ?>
+            <article class="lg:max-w-xl first-letter:text-7xl first-letter:font-semibold first-letter:mr-2 first-letter:float-left">
+                <?= the_content(); ?></article>
+        </div>
     <?php endwhile; ?>
 </main>
 <aside>

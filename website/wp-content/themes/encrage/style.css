@@ -635,6 +635,20 @@ h2::after {
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
 }
 
+h1 {
+  width: -moz-fit-content;
+  width: fit-content;
+  --tw-translate-y: 1.5rem;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
+  padding: 0.5rem;
+  font-size: 3rem;
+  line-height: 1;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
 h3 {
   text-transform: uppercase;
 }
@@ -819,6 +833,15 @@ h3.portfolio-title::first-letter {
   opacity: 0;
 }
 
+.main-menu {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.main-menu li {
+  padding: 0.5rem;
+}
+
 .static {
   position: static !important;
 }
@@ -979,6 +1002,10 @@ h3.portfolio-title::first-letter {
   max-width: 24rem !important;
 }
 
+.max-w-xl {
+  max-width: 36rem !important;
+}
+
 .-translate-y-6 {
   --tw-translate-y: -1.5rem !important;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) !important;
@@ -1059,16 +1086,16 @@ h3.portfolio-title::first-letter {
   margin-bottom: calc(0.5rem * var(--tw-space-y-reverse)) !important;
 }
 
-.space-y-6 > :not([hidden]) ~ :not([hidden]) {
-  --tw-space-y-reverse: 0 !important;
-  margin-top: calc(1.5rem * calc(1 - var(--tw-space-y-reverse))) !important;
-  margin-bottom: calc(1.5rem * var(--tw-space-y-reverse)) !important;
-}
-
 .space-y-4 > :not([hidden]) ~ :not([hidden]) {
   --tw-space-y-reverse: 0 !important;
   margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse))) !important;
   margin-bottom: calc(1rem * var(--tw-space-y-reverse)) !important;
+}
+
+.space-y-6 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0 !important;
+  margin-top: calc(1.5rem * calc(1 - var(--tw-space-y-reverse))) !important;
+  margin-bottom: calc(1.5rem * var(--tw-space-y-reverse)) !important;
 }
 
 .divide-y-2 > :not([hidden]) ~ :not([hidden]) {
@@ -1146,10 +1173,6 @@ h3.portfolio-title::first-letter {
 
 .p-10 {
   padding: 2.5rem !important;
-}
-
-.p-2 {
-  padding: 0.5rem !important;
 }
 
 .p-6 {
@@ -1279,6 +1302,42 @@ h3.portfolio-title::first-letter {
 
 .duration-500 {
   transition-duration: 500ms !important;
+}
+
+.first-letter\:float-left::first-letter {
+  float: left !important;
+}
+
+.first-letter\:mr-3::first-letter {
+  margin-right: 0.75rem !important;
+}
+
+.first-letter\:mr-2::first-letter {
+  margin-right: 0.5rem !important;
+}
+
+.first-letter\:text-6xl::first-letter {
+  font-size: 3.75rem !important;
+  line-height: 1 !important;
+}
+
+.first-letter\:text-8xl::first-letter {
+  font-size: 6rem !important;
+  line-height: 1 !important;
+}
+
+.first-letter\:text-5xl::first-letter {
+  font-size: 3rem !important;
+  line-height: 1 !important;
+}
+
+.first-letter\:text-7xl::first-letter {
+  font-size: 4.5rem !important;
+  line-height: 1 !important;
+}
+
+.first-letter\:font-semibold::first-letter {
+  font-weight: 600 !important;
 }
 
 .before\:absolute::before {
@@ -1427,6 +1486,10 @@ h3.portfolio-title::first-letter {
     max-width: 1024px !important;
   }
 
+  .lg\:max-w-xl {
+    max-width: 36rem !important;
+  }
+
   .lg\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
   }
@@ -1435,8 +1498,17 @@ h3.portfolio-title::first-letter {
     grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
   }
 
+  .lg\:flex-row {
+    flex-direction: row !important;
+  }
+
   .lg\:items-center {
     align-items: center !important;
+  }
+
+  .lg\:gap-x-10 {
+    -moz-column-gap: 2.5rem !important;
+         column-gap: 2.5rem !important;
   }
 
   .lg\:gap-y-0 {
