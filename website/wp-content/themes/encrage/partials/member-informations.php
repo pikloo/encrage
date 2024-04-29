@@ -85,7 +85,7 @@ $loop = new WP_Query($args);
         </div>
     </div>
     <?php if (is_singular()) : ?>
-        <div class="max-w-sm mx-auto space-y-2 mt-6 text-justify lg:text-lg"><?php the_content(); ?></div>
+        <div class="max-w-sm  md:max-w-md mx-auto space-y-2 mt-6 text-justify lg:text-lg"><?php the_content(); ?></div>
     </section>
     <?php endif; ?>
 <?php endwhile;

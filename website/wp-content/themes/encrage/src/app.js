@@ -22,6 +22,43 @@ const postsCarousel = new Swiper(".blogpost-carousel", {
       },
 });
 
+const serieGalleryThumbnails = new Swiper(".thumbnails", {
+    spaceBetween: 10,
+    slidesPerView: 4,
+    freeMode: true,
+    watchSlidesProgress: true,
+  });
+
+
+const serieGallery = new Swiper(".gallery", {
+    spaceBetween: 10,
+    navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+     thumbs: {
+        swiper: serieGalleryThumbnails,
+      },
+});
+
+
+// const swiper = new Swiper(".mySwiper", {
+//     spaceBetween: 10,
+//     slidesPerView: 4,
+//     freeMode: true,
+//     watchSlidesProgress: true,
+//   });
+
+// const swiper2 = new Swiper(".mySwiper2", {
+//     spaceBetween: 10,
+//     navigation: {
+//       nextEl: ".swiper-button-next",
+//       prevEl: ".swiper-button-prev",
+//     },
+//     thumbs: {
+//       swiper: swiper,
+//     },
+//   });
 
 const zoom = mediumZoom(document.querySelectorAll('.release'), {
     scrollOffset: 0,
@@ -81,9 +118,5 @@ toTopButtons.forEach(function(button) {
     button.addEventListener("click", backToTop);
 });
 
-
-
-
-
-
 } );
+

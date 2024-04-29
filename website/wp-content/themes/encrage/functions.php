@@ -33,18 +33,32 @@ if (!function_exists('load_assets')) {
     function load_assets()
     {
         wp_enqueue_style('styleCss', get_theme_file_uri('/src/style.css'), [], time());
-        // wp_enqueue_script('JS', get_theme_file_uri('index.js'), [], null, true);
         wp_enqueue_style('swiperCss', get_theme_file_uri('/build/main.css'), [], time());
         wp_enqueue_script( 'bundle', get_theme_file_uri('/build/main.js'), [], '1.0', true );
-        // wp_enqueue_style('swiper', 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css');
         wp_enqueue_style('googleFont', 'https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
-    //     wp_enqueue_script('glightbox', get_theme_file_uri('/assets/js/glightbox.min.js'));
-    //   wp_enqueue_style('glightbox', get_theme_file_uri('/assets/css/glightbox.min.css'));
+
     }
 }
 
 add_action('wp_enqueue_scripts', 'load_assets');
 
+if (!function_exists('load_admin_assets')) {
+    /**
+     * Chargement des scripts et des styles dans l'admin
+     *
+     * @return void
+     */
+    function load_admin_assets()
+    {
+        if ('serie' === get_current_screen()->id) {
+            wp_enqueue_style('gallery', get_theme_file_uri('/src/admin-gallery.css') , [], time());
+            wp_enqueue_style('JQueryCss', 'https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.3/themes/ui-lightness/jquery-ui.min.css');
+            wp_enqueue_script( 'JQuery','https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.3/jquery-ui.min.js', [], null, true );
+        }
+    }
+}
+
+add_action('admin_enqueue_scripts', 'load_admin_assets');
 
 
 function module_support( $tag, $handle ) {
@@ -61,7 +75,6 @@ function module_support( $tag, $handle ) {
 }
 
 add_filter( 'script_loader_tag', 'module_support', PHP_INT_MAX, 2 );
-
 
 
 if (!function_exists('custom_cpts')) {
@@ -82,3 +95,4 @@ add_action('init', 'custom_cpts');
 
 require_once WP_CONTENT_DIR . '/themes/encrage/inc/post-types/member.php';
 require_once WP_CONTENT_DIR . '/themes/encrage/inc/post-types/serie.php';
+require_once WP_CONTENT_DIR . '/themes/encrage/inc/gallery.php';

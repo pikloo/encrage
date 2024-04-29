@@ -78,15 +78,23 @@ if (!function_exists('member_informations_save_meta')) {
     function member_informations_save_meta($post_id)
     {
 
-        if (!isset($_POST['_wp_nonce_informations'])) {
+        if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
             return;
         }
-
-        if (!wp_verify_nonce($_POST['_wp_nonce_informations'], 'member_informations' . $post_id)) {
+        $is_autosave = wp_is_post_autosave( $post_id );
+        $is_revision = wp_is_post_revision( $post_id );
+        $is_valid_nonce = ( isset($_POST['_wp_nonce_informations'] ) && wp_verify_nonce($_POST['_wp_nonce_informations'], 'member_informations' . $post_id));
+        
+        if ( $is_autosave || $is_revision || !$is_valid_nonce ) {
+                return;
+        }
+        if ( ! current_user_can( 'edit_post', $post_id ) ) {
             return;
         }
-
-        if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) return;
+    
+        if ( 'member' != $_POST['post_type'] )
+            return;
+     
 
         if (isset($_POST['_insta'])) {
             update_post_meta($post_id, 'insta', sanitize_text_field($_POST['_insta']));

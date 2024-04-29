@@ -1,6 +1,6 @@
 <?php
 $is_home_page = is_front_page() && is_home();
-$bg = $is_home_page ? 'bg-white/70' : 'bg-white';
+$bg = $is_home_page || 'serie' == get_post_type() ? 'bg-white/70' : 'bg-white';
 ?>
 <header class="h-36 px-10 flex items-center w-full fixed top-0 left-0 right-0 z-10 <?= $bg ?>">
   <nav class="relative flex justify-between items-center w-full">
