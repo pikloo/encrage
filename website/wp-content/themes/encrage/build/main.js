@@ -11086,9 +11086,28 @@ var serieGallery = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"](".g
     prevEl: ".swiper-button-prev"
   },
   thumbs: {
-    swiper: swiper
+    swiper: serieGalleryThumbnails
   }
 });
+
+// const swiper = new Swiper(".mySwiper", {
+//     spaceBetween: 10,
+//     slidesPerView: 4,
+//     freeMode: true,
+//     watchSlidesProgress: true,
+//   });
+
+// const swiper2 = new Swiper(".mySwiper2", {
+//     spaceBetween: 10,
+//     navigation: {
+//       nextEl: ".swiper-button-next",
+//       prevEl: ".swiper-button-prev",
+//     },
+//     thumbs: {
+//       swiper: swiper,
+//     },
+//   });
+
 var zoom = (0,medium_zoom__WEBPACK_IMPORTED_MODULE_2__["default"])(document.querySelectorAll('.release'), {
   scrollOffset: 0,
   background: 'rgba(148, 148, 148, 0.97)',
