@@ -3,7 +3,9 @@ $is_member_page = get_query_var('is_member_page');
 ?>
 <a href="<?= esc_url(get_permalink()); ?>">
     <figure class="relative group xl:overflow-hidden">
-        <img class="w-full h-72  object-cover" src="<?= esc_url(get_the_post_thumbnail_url(get_the_ID(), 'thumbnail')) ?>" alt="<?= the_title(); ?>" />
+        <?php if (has_post_thumbnail(get_the_ID())) : ?>
+            <img class="w-full h-72  object-cover" src="<?= esc_url(get_the_post_thumbnail_url(get_the_ID(), 'medium_large')) ?>" alt="<?= the_title(); ?>" />
+        <?php endif; ?>
         <figcaption class="xl:hidden xl:absolute xl:group-hover:block xl:bottom-0 xl:text-white xl:group-hover:animate-slideInUp">
             <div class="xl:bg-black xl:px-4 xl:text-xl xl:w-fit">
                 <h3 class="mt-4 <?php if ($is_member_page) echo 'inline-block' ?>">

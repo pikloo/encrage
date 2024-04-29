@@ -20,7 +20,7 @@ $menu_main = wp_nav_menu([
 ]);
 
 ?>
-<header class="flex items-center w-fit fixed top-0 left-0 right-0 z-10 bg-white">
+<header class="main-header flex items-center w-fit fixed top-0 left-0 right-0 z-10 bg-white">
   <nav class="relative flex justify-between items-center bg-white">
     <button class="menu-toggle z-20" id="menu-toggle" aria-expanded="false"><span class="screen-reader-text">Menu</span>
       <svg class="icon icon-menu-toggle" aria-hidden="true" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100">
@@ -34,13 +34,13 @@ $menu_main = wp_nav_menu([
     <a class="z-20 bg-white" href=<?= home_url(); ?>><img src="<?= get_template_directory_uri(); ?>/assets/images/ancrage_logo.png" alt="<?= esc_html(get_bloginfo('description')) ?> " class="w-[250px] px-10" /></a>
     <div id="sideBar" class="fixed top-0 left-0 bg-transparent h-full overflow-x-hidden duration-500 z-10">
       <!--navigation menu box-->
-      <div id="sideNav" class="text-2xl sm:text-3xl fixed top-0 left-0 bg-white text-black h-full flex flex-col justify-center items-center overflow-x-hidden duration-500 font-bold z-50">
+      <div id="sideNav" class="text-2xl sm:text-3xl fixed top-0 left-0 bg-white text-black h-full flex flex-col justify-center items-center overflow-x-hidden duration-500 z-50">
         <!--exit icon, will close navbar when clicked-->
         <!-- <a href="javascript:void(0)" class="text-3xl absolute top-0 right-0 mr-3 mt-2">&times;</a> -->
         <!--menu links-->
         <div id="sideLinks" class="flex flex-col items-center divide-y-2 divide-black justify-content duration-500 delay-2">
           <?= $menu_main; ?>
-          <ul class="grid grid-cols-2 justify-items-center py-6">
+          <ul class="grid grid-cols-2 justify-items-center py-6 font-bold">
             <?php while ($membersMenu->have_posts()) : $membersMenu->the_post(); ?>
               <li><a href=<?= the_permalink() ?>><?= the_title(); ?></a></li>
             <?php endwhile;

@@ -1,11 +1,14 @@
 <?php
 $is_home_page = is_front_page() && is_home();
 
+$post_type = ['serie', 'release'];
+
 $single_pageID = match (true) {
-    !is_page() && is_single() && 'serie' != get_post_type() => get_the_ID(),
-    'serie' == get_post_type() && is_single() => get_post_meta($post->ID, 'photographer', true),
+    !is_page() && is_single() && !in_array(get_post_type(), $post_type) && is_single() => get_the_ID(),
+    in_array(get_post_type(), $post_type) && is_single() => get_post_meta($post->ID, 'photographer', true),
     default => null,
 };
+
 
 $args =  [
     'post_type' => 'member',

@@ -131,10 +131,10 @@ Version: 1.0
   }
 
   .main-menu {
-    @apply py-6;
+    @apply py-6 flex;
   }
 
   .main-menu li {
-    @apply p-2;
+    @apply p-2 font-medium;
   }
 }

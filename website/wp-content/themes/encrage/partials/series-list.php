@@ -41,8 +41,6 @@ $wp_query = new WP_Query($args);
         </svg>
         <?php if ($wp_query->max_num_pages > 1) : ?>
             <button class="button load-more" type="button">plus de séries</button> 
-        <?php else : ?>
-		
         <?php endif; ?>
     </div>
 </section>

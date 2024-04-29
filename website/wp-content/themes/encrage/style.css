@@ -834,12 +834,14 @@ h3.portfolio-title::first-letter {
 }
 
 .main-menu {
+  display: flex;
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
 }
 
 .main-menu li {
   padding: 0.5rem;
+  font-weight: 500;
 }
 
 .static {
@@ -1000,10 +1002,6 @@ h3.portfolio-title::first-letter {
 
 .max-w-sm {
   max-width: 24rem !important;
-}
-
-.max-w-xl {
-  max-width: 36rem !important;
 }
 
 .-translate-y-6 {
@@ -1308,27 +1306,8 @@ h3.portfolio-title::first-letter {
   float: left !important;
 }
 
-.first-letter\:mr-3::first-letter {
-  margin-right: 0.75rem !important;
-}
-
 .first-letter\:mr-2::first-letter {
   margin-right: 0.5rem !important;
-}
-
-.first-letter\:text-6xl::first-letter {
-  font-size: 3.75rem !important;
-  line-height: 1 !important;
-}
-
-.first-letter\:text-8xl::first-letter {
-  font-size: 6rem !important;
-  line-height: 1 !important;
-}
-
-.first-letter\:text-5xl::first-letter {
-  font-size: 3rem !important;
-  line-height: 1 !important;
 }
 
 .first-letter\:text-7xl::first-letter {

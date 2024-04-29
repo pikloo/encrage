@@ -13,6 +13,7 @@ toTopButtons.forEach(function(button) {
 
 // Gestion du menu toogle
 const menuToogle = document.getElementById( 'menu-toggle' );
+
 const onClickOnMenuToggle = () => {
 	
     // Toggle class "opened". Set also aria-expanded to true or false.

@@ -46,3 +46,16 @@ const zoom = mediumZoom(document.querySelectorAll('.release'), {
     background: 'rgba(148, 148, 148, 0.97)',
     margin: 24,
 });
+
+const header = document.querySelector('.main-header');
+
+zoom.on(
+  'open',
+  event => {
+    header.style.setProperty("z-index", "0", "important");
+  }
+)
+
+zoom.on('closed', event => {
+  header.style.setProperty("z-index", "10", "important");
+})

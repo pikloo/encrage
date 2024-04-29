@@ -110,5 +110,6 @@ add_action('init', 'custom_cpts');
 
 require_once WP_CONTENT_DIR . '/themes/encrage/inc/post-types/member.php';
 require_once WP_CONTENT_DIR . '/themes/encrage/inc/post-types/serie.php';
+require_once WP_CONTENT_DIR . '/themes/encrage/inc/post-types/release.php';
 require_once WP_CONTENT_DIR . '/themes/encrage/inc/admin/gallery.php';
 require_once WP_CONTENT_DIR . '/themes/encrage/inc/load-more.php';

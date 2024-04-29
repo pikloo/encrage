@@ -58,7 +58,7 @@ if (!function_exists('member_informations_meta_box_html')) {
                 </tr>
                 <tr>
                     <th><label for="place">Lieu</label></th>
-                    <td><input type="text" id="website" name="_place" value='<?= esc_attr($place) ?>'></td>
+                    <td><input type="text" id="place" name="_place" value='<?= esc_attr($place) ?>'></td>
                 </tr>
             </tbody>
         </table>
