@@ -58,6 +58,11 @@ const zoom = mediumZoom(document.querySelectorAll('.release'), {
 });
 
 
+
+
+
+document.addEventListener( 'DOMContentLoaded', function() {
+
 // Gestion du menu toogle
 const menuToogle = document.getElementById( 'menu-toggle' );
 
@@ -68,15 +73,22 @@ menuToogle.onclick = function() {
   if ( -1 !== menuToogle.className.indexOf( 'opened' ) ) {
     menuToogle.className = menuToogle.className.replace( ' opened', '' );
     menuToogle.setAttribute( 'aria-expanded', 'false' );
+    document.getElementById("sideBar").style.width = "0";
+    document.getElementById("sideNav").style.width = "0";
+    document.getElementById("sideLinks").style.opacity = "0";
   } else {
     menuToogle.className += ' opened';
     menuToogle.setAttribute( 'aria-expanded', 'true' );
+    document.getElementById("sideBar").style.width = "100%";
+    document.getElementById("sideNav").style.width = "100%";
+    document.getElementById("sideLinks").style.opacity = "1";
    }
     
  };
 
 
-document.addEventListener( 'DOMContentLoaded', function() {
+
+
 // Menu
 //Open Menu
 const burger = document.querySelectorAll( '.navbar-burger' );

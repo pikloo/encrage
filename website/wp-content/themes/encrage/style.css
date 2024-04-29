@@ -796,12 +796,24 @@ h3::first-letter {
   overflow: hidden;
 }
 
+#sideBar, #sideNav {
+  width: 0;
+}
+
+#sideLinks {
+  opacity: 0;
+}
+
 .static {
   position: static !important;
 }
 
 .fixed {
   position: fixed !important;
+}
+
+.absolute {
+  position: absolute !important;
 }
 
 .relative {
@@ -824,6 +836,14 @@ h3::first-letter {
   z-index: 10 !important;
 }
 
+.z-20 {
+  z-index: 20 !important;
+}
+
+.z-50 {
+  z-index: 50 !important;
+}
+
 .mx-auto {
   margin-left: auto !important;
   margin-right: auto !important;
@@ -844,6 +864,10 @@ h3::first-letter {
 
 .ml-2 {
   margin-left: 0.5rem !important;
+}
+
+.mr-3 {
+  margin-right: 0.75rem !important;
 }
 
 .mt-2 {
@@ -953,6 +977,10 @@ h3::first-letter {
   grid-template-columns: repeat(1, minmax(0, 1fr)) !important;
 }
 
+.grid-cols-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+}
+
 .flex-col {
   flex-direction: column !important;
 }
@@ -1018,8 +1046,23 @@ h3::first-letter {
   margin-bottom: calc(1.5rem * var(--tw-space-y-reverse)) !important;
 }
 
+.divide-y-2 > :not([hidden]) ~ :not([hidden]) {
+  --tw-divide-y-reverse: 0 !important;
+  border-top-width: calc(2px * calc(1 - var(--tw-divide-y-reverse))) !important;
+  border-bottom-width: calc(2px * var(--tw-divide-y-reverse)) !important;
+}
+
+.divide-black > :not([hidden]) ~ :not([hidden]) {
+  --tw-divide-opacity: 1 !important;
+  border-color: rgb(0 0 0 / var(--tw-divide-opacity)) !important;
+}
+
 .overflow-hidden {
   overflow: hidden !important;
+}
+
+.overflow-x-hidden {
+  overflow-x: hidden !important;
 }
 
 .scroll-smooth {
@@ -1053,6 +1096,10 @@ h3::first-letter {
   background-color: rgb(229 231 235 / var(--tw-bg-opacity)) !important;
 }
 
+.bg-transparent {
+  background-color: transparent !important;
+}
+
 .bg-white {
   --tw-bg-opacity: 1 !important;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity)) !important;
@@ -1074,6 +1121,10 @@ h3::first-letter {
 
 .p-10 {
   padding: 2.5rem !important;
+}
+
+.p-2 {
+  padding: 0.5rem !important;
 }
 
 .p-6 {
@@ -1121,6 +1172,16 @@ h3::first-letter {
   text-align: justify !important;
 }
 
+.text-2xl {
+  font-size: 1.5rem !important;
+  line-height: 2rem !important;
+}
+
+.text-3xl {
+  font-size: 1.875rem !important;
+  line-height: 2.25rem !important;
+}
+
 .text-sm {
   font-size: 0.875rem !important;
   line-height: 1.25rem !important;
@@ -1129,6 +1190,10 @@ h3::first-letter {
 .text-xl {
   font-size: 1.25rem !important;
   line-height: 1.75rem !important;
+}
+
+.font-bold {
+  font-weight: 700 !important;
 }
 
 .font-light {
@@ -1145,6 +1210,11 @@ h3::first-letter {
 
 .italic {
   font-style: italic !important;
+}
+
+.text-black {
+  --tw-text-opacity: 1 !important;
+  color: rgb(0 0 0 / var(--tw-text-opacity)) !important;
 }
 
 .text-gray-500 {
@@ -1175,6 +1245,10 @@ h3::first-letter {
 .invert {
   --tw-invert: invert(100%) !important;
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow) !important;
+}
+
+.duration-500 {
+  transition-duration: 500ms !important;
 }
 
 .before\:absolute::before {
@@ -1251,6 +1325,18 @@ h3::first-letter {
 .after\:align-middle::after {
   content: var(--tw-content) !important;
   vertical-align: middle !important;
+}
+
+@media (min-width: 640px) {
+  .sm\:text-2xl {
+    font-size: 1.5rem !important;
+    line-height: 2rem !important;
+  }
+
+  .sm\:text-3xl {
+    font-size: 1.875rem !important;
+    line-height: 2.25rem !important;
+  }
 }
 
 @media (min-width: 768px) {

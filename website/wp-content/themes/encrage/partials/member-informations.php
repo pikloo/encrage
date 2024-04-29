@@ -7,6 +7,8 @@ $single_pageID = match (true) {
     default => null,
 };
 
+// var_dump($single_pageID, get_the_ID(), get_post_type());
+
 $args =  [
     'post_type' => 'member',
     'orderby' => 'title',

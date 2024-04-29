@@ -112,4 +112,13 @@ Version: 1.0
     width: 1px;
     overflow: hidden;
   }
+
+
+  #sideBar, #sideNav {
+    width: 0;
+  }
+
+  #sideLinks {
+    opacity: 0;
+  }
 }
