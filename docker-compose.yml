@@ -31,12 +31,14 @@ services:
     volumes:
       - ./website:/var/www/html
       - ./website/wp-content:/var/www/html/wp-content
+    # command: bash -c "cd /var/www/html/wp-content/themes/encrage && npm run dev && npx tailwindcss -i ./input.css -o ./src/style.css --watch"
     environment:
       WORDPRESS_DB_HOST: db:3306
       WORDPRESS_DB_USER: "${MYSQL_USER}"
       WORDPRESS_DB_PASSWORD: "${MYSQL_PASSWORD}"
       WORDPRESS_DB_NAME: "${MYSQL_DATABASE}"
       WORDPRESS_TABLE_PREFIX: "${WORDPRESS_TABLE_PREFIX}"
+
     ports:
       - "80:80"
     networks:

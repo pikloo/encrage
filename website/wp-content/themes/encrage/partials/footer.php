@@ -1,7 +1,7 @@
 <footer class="bg-black text-white p-6 md:pt-10">
     <div class="grid grid-cols-1 md:grid-cols-3 justify-around gap-y-6 md:gap-y-0 mb-4 md:mb-10 md:items-center md:justify-items-center">
         <div>
-            <img src="./wp-content/themes/encrage/assets/images/logo-encrage-white.png" alt="" />
+            <img src="<?= get_template_directory_uri() ?>/assets/images/ancrage_logo.png" alt="<?= esc_html(get_bloginfo('description')) ?>" class="w-[300px]" />
             <a mailto="bureau@encrage.photo">bureau@encrage.photo</a>
         </div>
         <ul class="flex flex-col">
