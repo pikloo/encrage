@@ -884,6 +884,10 @@ h3::first-letter {
   width: 100px !important;
 }
 
+.w-screen {
+  width: 100vw !important;
+}
+
 .max-w-sm {
   max-width: 24rem !important;
 }
@@ -1265,6 +1269,14 @@ h3::first-letter {
     display: none !important;
   }
 
+  .md\:h-full {
+    height: 100% !important;
+  }
+
+  .md\:w-screen {
+    width: 100vw !important;
+  }
+
   .md\:max-w-md {
     max-width: 28rem !important;
   }
@@ -1287,6 +1299,16 @@ h3::first-letter {
 
   .md\:gap-y-0 {
     row-gap: 0px !important;
+  }
+
+  .md\:object-contain {
+    -o-object-fit: contain !important;
+       object-fit: contain !important;
+  }
+
+  .md\:object-fill {
+    -o-object-fit: fill !important;
+       object-fit: fill !important;
   }
 
   .md\:pt-10 {
