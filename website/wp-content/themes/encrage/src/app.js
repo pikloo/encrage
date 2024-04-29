@@ -2,15 +2,12 @@ import Swiper from 'swiper/bundle';
 import 'swiper/css/bundle';
 import mediumZoom from 'medium-zoom'
 
-// init Swiper:
+//Swiper
 const sliderHome = new Swiper(".slider-home", {
     autoplay: {
         delay: 5000,
       },
       effect: "fade",
-    //   fadeEffect: {
-    //     crossFade: true,
-    //   },
 });
 
 
@@ -41,30 +38,42 @@ const serieGallery = new Swiper(".gallery", {
       },
 });
 
+// Scroll to top
+const backToTop = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+   
+ };
 
-// const swiper = new Swiper(".mySwiper", {
-//     spaceBetween: 10,
-//     slidesPerView: 4,
-//     freeMode: true,
-//     watchSlidesProgress: true,
-//   });
+const toTopButtons = document.querySelectorAll(".to-top");
+toTopButtons.forEach(function(button) { 
+    button.addEventListener("click", backToTop);
+});
 
-// const swiper2 = new Swiper(".mySwiper2", {
-//     spaceBetween: 10,
-//     navigation: {
-//       nextEl: ".swiper-button-next",
-//       prevEl: ".swiper-button-prev",
-//     },
-//     thumbs: {
-//       swiper: swiper,
-//     },
-//   });
+//Zoom Image
 
 const zoom = mediumZoom(document.querySelectorAll('.release'), {
     scrollOffset: 0,
     background: 'rgba(148, 148, 148, 0.97)',
     margin: 24,
 });
+
+
+// Gestion du menu toogle
+const menuToogle = document.getElementById( 'menu-toggle' );
+
+// Click the button.
+menuToogle.onclick = function() {
+	
+  // Toggle class "opened". Set also aria-expanded to true or false.
+  if ( -1 !== menuToogle.className.indexOf( 'opened' ) ) {
+    menuToogle.className = menuToogle.className.replace( ' opened', '' );
+    menuToogle.setAttribute( 'aria-expanded', 'false' );
+  } else {
+    menuToogle.className += ' opened';
+    menuToogle.setAttribute( 'aria-expanded', 'true' );
+   }
+    
+ };
 
 
 document.addEventListener( 'DOMContentLoaded', function() {
@@ -106,17 +115,8 @@ if ( backdrop.length ) {
     }
 }
 
-// Scroll to top
-const backToTop = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-   
- };
 
 
-const toTopButtons = document.querySelectorAll(".to-top");
-toTopButtons.forEach(function(button) { 
-    button.addEventListener("click", backToTop);
-});
 
 } );
 

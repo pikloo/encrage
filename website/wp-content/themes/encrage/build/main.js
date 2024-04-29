@@ -11056,15 +11056,12 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-// init Swiper:
+//Swiper
 var sliderHome = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"](".slider-home", {
   autoplay: {
     delay: 5000
   },
   effect: "fade"
-  //   fadeEffect: {
-  //     crossFade: true,
-  //   },
 });
 var postsCarousel = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"](".blogpost-carousel", {
   centeredSlides: true,
@@ -11090,29 +11087,40 @@ var serieGallery = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"](".g
   }
 });
 
-// const swiper = new Swiper(".mySwiper", {
-//     spaceBetween: 10,
-//     slidesPerView: 4,
-//     freeMode: true,
-//     watchSlidesProgress: true,
-//   });
+// Scroll to top
+var backToTop = function backToTop() {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth"
+  });
+};
+var toTopButtons = document.querySelectorAll(".to-top");
+toTopButtons.forEach(function (button) {
+  button.addEventListener("click", backToTop);
+});
 
-// const swiper2 = new Swiper(".mySwiper2", {
-//     spaceBetween: 10,
-//     navigation: {
-//       nextEl: ".swiper-button-next",
-//       prevEl: ".swiper-button-prev",
-//     },
-//     thumbs: {
-//       swiper: swiper,
-//     },
-//   });
+//Zoom Image
 
 var zoom = (0,medium_zoom__WEBPACK_IMPORTED_MODULE_2__["default"])(document.querySelectorAll('.release'), {
   scrollOffset: 0,
   background: 'rgba(148, 148, 148, 0.97)',
   margin: 24
 });
+
+// Gestion du menu toogle
+var menuToogle = document.getElementById('menu-toggle');
+
+// Click the button.
+menuToogle.onclick = function () {
+  // Toggle class "opened". Set also aria-expanded to true or false.
+  if (-1 !== menuToogle.className.indexOf('opened')) {
+    menuToogle.className = menuToogle.className.replace(' opened', '');
+    menuToogle.setAttribute('aria-expanded', 'false');
+  } else {
+    menuToogle.className += ' opened';
+    menuToogle.setAttribute('aria-expanded', 'true');
+  }
+};
 document.addEventListener('DOMContentLoaded', function () {
   // Menu
   //Open Menu
@@ -11148,18 +11156,6 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     }
   }
-
-  // Scroll to top
-  var backToTop = function backToTop() {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
-    });
-  };
-  var toTopButtons = document.querySelectorAll(".to-top");
-  toTopButtons.forEach(function (button) {
-    button.addEventListener("click", backToTop);
-  });
 });
 })();
 

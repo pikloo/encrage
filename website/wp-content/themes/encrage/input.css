@@ -27,11 +27,10 @@ Version: 1.0
     @apply flex flex-col items-center justify-center;
   }
 
-  .swiper-button-next{
+  .swiper-button-next {
     @apply text-gray-500;
   }
-  
-  
+
   .button {
     @apply uppercase block w-fit mx-auto xl:text-xl relative before:h-[2px] after:h-[2px] after:bg-black 
     after:absolute after:w-[120%] after:-left-[10%] before:-right-[10%]
@@ -63,5 +62,54 @@ Version: 1.0
 
   .thumbnails .swiper-slide-thumb-active {
     opacity: 1;
+  }
+
+  .menu-toggle {
+    @apply border-0 rounded-none bg-black text-white cursor-pointer inline-block p-10 focus:outline focus:-outline-offset-2;
+  }
+
+  .menu-toggle .icon {
+    @apply inline-block fill-current h-8 w-8 align-middle relative top-[-0.0625em];
+  }
+
+  /* Menu toggle styles. */
+
+  .icon-menu-toggle {
+    @apply w-10 h-10 top-0;
+  }
+
+  /* Animate menu icon (lines). */
+  .svg-menu-toggle .line {
+    opacity: 1;
+    transform: rotate(0) translateY(0) translateX(0);
+    transform-origin: 1em 1em;
+    transition:
+      transform 0.3s ease-in-out,
+      opacity 0.2s ease-in-out;
+  }
+  .svg-menu-toggle .line-1 {
+    transform-origin: 1em 2.5em;
+  }
+  .svg-menu-toggle .line-3 {
+    transform-origin: 1em 3.5em;
+  }
+
+  .menu-toggle.opened .svg-menu-toggle .line-1 {
+    transform: rotate(45deg) translateY(0) translateX(0);
+  }
+  .menu-toggle.opened .svg-menu-toggle .line-2 {
+    opacity: 0;
+  }
+  .menu-toggle.opened .svg-menu-toggle .line-3 {
+    transform: rotate(-45deg) translateY(0em) translateX(0em);
+  }
+
+  /* Text meant only for screen readers. */
+  .menu-toggle .screen-reader-text {
+    clip: rect(1px, 1px, 1px, 1px);
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
   }
 }
