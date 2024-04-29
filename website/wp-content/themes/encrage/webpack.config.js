@@ -12,7 +12,7 @@ const { CleanWebpackPlugin } = require( 'clean-webpack-plugin' );
 const JS_DIR = path.resolve( __dirname, 'src' );
 const IMG_DIR = path.resolve( __dirname, 'assets/images' );
 const BUILD_DIR = path.resolve( __dirname, 'build' );
-const entry = "./src/app.js"
+const entry = ["./src/app.js", "./src/load-more.js", "./src/gallery.js"]
 const output = {
 	path: BUILD_DIR,
 	filename: '[name].js'

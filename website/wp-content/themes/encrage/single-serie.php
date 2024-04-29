@@ -19,8 +19,8 @@ $loop = new WP_Query($args);
 
 <main class="overflow-hidden">
     <?php while ($loop->have_posts()) : $loop->the_post(); ?>
-        <section class="space-y-6">
-            <div class="swiper gallery">
+        <section class="space-y-4">
+            <div class="swiper gallery relative">
                 <div class="swiper-wrapper">
                     <?php for ($i = 0; $i < $count; $i++) : ?>
                         <div class="swiper-slide"><img class="gallery-img h-full object-contain mx-auto" src="<?php echo $url_array[$i]; ?>" alt="" /></div>
@@ -28,6 +28,9 @@ $loop = new WP_Query($args);
                 </div>
                 <div class="swiper-button-next text-gray-500"></div>
                 <div class="swiper-button-prev text-gray-500"></div>
+                <div class="absolute z-50 px-10 bottom-[20px] -translate-y-6 text-white before:block before:absolute before:-inset-1 before:skew-y-3 before:bg-black before:shadow-lg before:shadow-black/50 relative inline-block">
+                    <h3 class="portfolio-title"><?php the_title(); ?></h3><p class="text-gray-500 text-xl text-center relative"><?= esc_attr(get_post_meta(get_the_ID(), 'year', true))?></p>
+                </div>
             </div>
             <div thumbsSlider="" class="swiper thumbnails">
                 <div class="swiper-wrapper flex">

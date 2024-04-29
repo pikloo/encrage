@@ -644,6 +644,21 @@ h3::first-letter {
   line-height: 2rem;
 }
 
+h3.portfolio-title {
+  position: relative;
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+  font-weight: 500;
+  text-transform: uppercase;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+
+h3.portfolio-title::first-letter {
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+}
+
 .slider-home {
   display: flex;
   flex-direction: column;
@@ -818,6 +833,10 @@ h3::first-letter {
 
 .relative {
   position: relative !important;
+}
+
+.bottom-\[20px\] {
+  bottom: 20px !important;
 }
 
 .left-0 {
@@ -1046,6 +1065,12 @@ h3::first-letter {
   margin-bottom: calc(1.5rem * var(--tw-space-y-reverse)) !important;
 }
 
+.space-y-4 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0 !important;
+  margin-top: calc(1rem * calc(1 - var(--tw-space-y-reverse))) !important;
+  margin-bottom: calc(1rem * var(--tw-space-y-reverse)) !important;
+}
+
 .divide-y-2 > :not([hidden]) ~ :not([hidden]) {
   --tw-divide-y-reverse: 0 !important;
   border-top-width: calc(2px * calc(1 - var(--tw-divide-y-reverse))) !important;
@@ -1154,6 +1179,11 @@ h3::first-letter {
 .py-10 {
   padding-top: 2.5rem !important;
   padding-bottom: 2.5rem !important;
+}
+
+.py-6 {
+  padding-top: 1.5rem !important;
+  padding-bottom: 1.5rem !important;
 }
 
 .pl-10 {
@@ -1269,6 +1299,12 @@ h3::first-letter {
 .before\:-skew-y-3::before {
   content: var(--tw-content) !important;
   --tw-skew-y: -3deg !important;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) !important;
+}
+
+.before\:skew-y-3::before {
+  content: var(--tw-content) !important;
+  --tw-skew-y: 3deg !important;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) !important;
 }
 

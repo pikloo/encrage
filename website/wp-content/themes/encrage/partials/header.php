@@ -31,19 +31,19 @@ $membersMenu = new WP_Query($membersArgs);
         <!-- <a href="javascript:void(0)" class="text-3xl absolute top-0 right-0 mr-3 mt-2">&times;</a> -->
         <!--menu links-->
         <div id="sideLinks" class="flex flex-col items-center divide-y-2 divide-black justify-content duration-500 delay-2">
-          <ul class=" py-10">
+          <ul class=" py-6">
             <li class="p-2"><a href="#">L'Agence</a></li>
             <li class="p-2"><a href="#">Publications</a></li>
             <li class="p-2"><a href="#">Séries</a></li>
             <li class="p-2"><a href="#">Nos Actus</a></li>
           </ul>
-          <ul class="grid grid-cols-2 justify-items-center py-10">
+          <ul class="grid grid-cols-2 justify-items-center py-6">
             <?php while ($membersMenu->have_posts()) : $membersMenu->the_post(); ?>
               <li><a href=<?= the_permalink() ?>><?= the_title(); ?></a></li>
             <?php endwhile;  wp_reset_postdata();?>
             
           </ul>
-          <div class="py-10 space-y-6 text-xl sm:text-2xl text-center">
+          <div class="py-6 space-y-6 text-xl sm:text-2xl text-center">
             <div>
               <p>Retrouvez aussi nos photos sur</p>
               <a href="https://www.pixpalace.com/" target="_blank"><img src="<?= get_template_directory_uri() ?>/assets/images/logo_pixpalace.png" alt="Retrouvez aussi nos photos sur PixPalace" class="w-[100px] mx-auto" /></a>
