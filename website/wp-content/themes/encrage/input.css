@@ -27,20 +27,41 @@ Version: 1.0
     @apply flex flex-col items-center justify-center;
   }
 
-  .slider-home .swiper-slide > img {
-    @apply w-full h-full object-cover;
+  .swiper-button-next{
+    @apply text-gray-500;
   }
-
+  
+  
   .button {
     @apply uppercase block w-fit mx-auto xl:text-xl relative before:h-[2px] after:h-[2px] after:bg-black 
     after:absolute after:w-[120%] after:-left-[10%] before:-right-[10%]
     before:bg-black before:absolute 
     before:w-[120%] after:bottom-0 before:-top-2 after:-bottom-2;
   }
-}
 
-.medium-zoom-overlay,
-.medium-zoom-image--opened {
-  z-index: 999;
-}
+  .medium-zoom-overlay,
+  .medium-zoom-image--opened {
+    z-index: 999;
+  }
 
+  .gallery .swiper-slide > img {
+    @apply object-contain;
+    height: 100%;
+  }
+
+  .gallery .swiper-slide {
+    height: calc(100vh - 324px);
+  }
+
+  .thumbnails .swiper-slide > img {
+    @apply h-[300px] object-cover;
+  }
+
+  .thumbnails .swiper-slide {
+    opacity: 0.4;
+  }
+
+  .thumbnails .swiper-slide-thumb-active {
+    opacity: 1;
+  }
+}
