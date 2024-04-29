@@ -867,8 +867,8 @@ h3::first-letter {
   width: 16rem !important;
 }
 
-.w-\[300px\] {
-  width: 300px !important;
+.w-\[200px\] {
+  width: 200px !important;
 }
 
 .w-fit {
@@ -882,10 +882,6 @@ h3::first-letter {
 
 .w-\[100px\] {
   width: 100px !important;
-}
-
-.w-\[200px\] {
-  width: 200px !important;
 }
 
 .max-w-sm {
@@ -1174,8 +1170,8 @@ h3::first-letter {
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow) !important;
 }
 
-.brightness-100 {
-  --tw-brightness: brightness(1) !important;
+.grayscale {
+  --tw-grayscale: grayscale(100%) !important;
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow) !important;
 }
 
