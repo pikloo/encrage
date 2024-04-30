@@ -851,12 +851,29 @@ h3.portfolio-title::first-letter {
   display: flex;
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
+  text-align: center;
+}
+
+.main-footer-menu {
+  display: flex;
+  flex-direction: column;
 }
 
 .main-menu li {
   padding: 0.5rem;
   font-weight: 500;
   text-transform: uppercase;
+}
+
+.main-menu li, .menu-item {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.main-menu li:hover, .menu-item:hover {
+  --tw-text-opacity: 1;
+  color: rgb(107 114 128 / var(--tw-text-opacity));
 }
 
 .reveal {
@@ -949,6 +966,10 @@ h3.portfolio-title::first-letter {
   margin-left: 1rem !important;
 }
 
+.ml-6 {
+  margin-left: 1.5rem !important;
+}
+
 .mr-3 {
   margin-right: 0.75rem !important;
 }
@@ -967,6 +988,10 @@ h3.portfolio-title::first-letter {
 
 .mt-6 {
   margin-top: 1.5rem !important;
+}
+
+.block {
+  display: block !important;
 }
 
 .inline-block {
@@ -1012,11 +1037,6 @@ h3.portfolio-title::first-letter {
 
 .h-screen {
   height: 100vh !important;
-}
-
-.min-h-max {
-  min-height: -moz-max-content !important;
-  min-height: max-content !important;
 }
 
 .w-64 {
@@ -1154,21 +1174,6 @@ h3.portfolio-title::first-letter {
   margin-bottom: calc(1.5rem * var(--tw-space-y-reverse)) !important;
 }
 
-.divide-y-2 > :not([hidden]) ~ :not([hidden]) {
-  --tw-divide-y-reverse: 0 !important;
-  border-top-width: calc(2px * calc(1 - var(--tw-divide-y-reverse))) !important;
-  border-bottom-width: calc(2px * var(--tw-divide-y-reverse)) !important;
-}
-
-.divide-black > :not([hidden]) ~ :not([hidden]) {
-  --tw-divide-opacity: 1 !important;
-  border-color: rgb(0 0 0 / var(--tw-divide-opacity)) !important;
-}
-
-.self-end {
-  align-self: flex-end !important;
-}
-
 .overflow-hidden {
   overflow: hidden !important;
 }
@@ -1208,6 +1213,10 @@ h3.portfolio-title::first-letter {
   background-color: rgb(229 231 235 / var(--tw-bg-opacity)) !important;
 }
 
+.bg-gray-200\/30 {
+  background-color: rgb(229 231 235 / 0.3) !important;
+}
+
 .bg-transparent {
   background-color: transparent !important;
 }
@@ -1235,6 +1244,10 @@ h3.portfolio-title::first-letter {
   padding: 2.5rem !important;
 }
 
+.p-4 {
+  padding: 1rem !important;
+}
+
 .p-6 {
   padding: 1.5rem !important;
 }
@@ -1247,6 +1260,11 @@ h3.portfolio-title::first-letter {
 .px-14 {
   padding-left: 3.5rem !important;
   padding-right: 3.5rem !important;
+}
+
+.px-2 {
+  padding-left: 0.5rem !important;
+  padding-right: 0.5rem !important;
 }
 
 .px-4 {
@@ -1262,6 +1280,11 @@ h3.portfolio-title::first-letter {
 .py-10 {
   padding-top: 2.5rem !important;
   padding-bottom: 2.5rem !important;
+}
+
+.py-4 {
+  padding-top: 1rem !important;
+  padding-bottom: 1rem !important;
 }
 
 .py-6 {
@@ -1325,6 +1348,10 @@ h3.portfolio-title::first-letter {
   font-weight: 500 !important;
 }
 
+.font-semibold {
+  font-weight: 600 !important;
+}
+
 .uppercase {
   text-transform: uppercase !important;
 }
@@ -1368,8 +1395,28 @@ h3.portfolio-title::first-letter {
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow) !important;
 }
 
+.transition {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter !important;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter !important;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter !important;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1) !important;
+  transition-duration: 150ms !important;
+}
+
 .duration-500 {
   transition-duration: 500ms !important;
+}
+
+.masonry {
+  -moz-column-gap: 1.5em !important;
+       column-gap: 1.5em !important;
+  -moz-column-count: 2 !important;
+       column-count: 2 !important;
+}
+
+.break-inside {
+  -moz-column-break-inside: avoid !important;
+       break-inside: avoid !important;
 }
 
 .first-letter\:float-left::first-letter {
@@ -1435,6 +1482,11 @@ h3.portfolio-title::first-letter {
   --tw-shadow: var(--tw-shadow-colored) !important;
 }
 
+.after\:absolute::after {
+  content: var(--tw-content) !important;
+  position: absolute !important;
+}
+
 .after\:relative::after {
   content: var(--tw-content) !important;
   position: relative !important;
@@ -1455,6 +1507,16 @@ h3.portfolio-title::first-letter {
   height: 1px !important;
 }
 
+.after\:h-\[2px\]::after {
+  content: var(--tw-content) !important;
+  height: 2px !important;
+}
+
+.after\:w-\[100px\]::after {
+  content: var(--tw-content) !important;
+  width: 100px !important;
+}
+
 .after\:w-\[20px\]::after {
   content: var(--tw-content) !important;
   width: 20px !important;
@@ -1471,6 +1533,16 @@ h3.portfolio-title::first-letter {
   vertical-align: middle !important;
 }
 
+.hover\:scale-105:hover {
+  --tw-scale-x: 1.05 !important;
+  --tw-scale-y: 1.05 !important;
+  transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) !important;
+}
+
+.hover\:bg-gray-200\/50:hover {
+  background-color: rgb(229 231 235 / 0.5) !important;
+}
+
 @media (min-width: 640px) {
   .sm\:text-2xl {
     font-size: 1.5rem !important;
@@ -1481,6 +1553,13 @@ h3.portfolio-title::first-letter {
     font-size: 1.875rem !important;
     line-height: 2.25rem !important;
   }
+
+  .sm\:masonry-sm {
+    -moz-column-gap: 1.5em !important;
+         column-gap: 1.5em !important;
+    -moz-column-count: 2 !important;
+         column-count: 2 !important;
+  }
 }
 
 @media (min-width: 768px) {
@@ -1490,10 +1569,6 @@ h3.portfolio-title::first-letter {
 
   .md\:hidden {
     display: none !important;
-  }
-
-  .md\:min-h-\[300px\] {
-    min-height: 300px !important;
   }
 
   .md\:w-screen {
@@ -1526,6 +1601,13 @@ h3.portfolio-title::first-letter {
 
   .md\:pt-10 {
     padding-top: 2.5rem !important;
+  }
+
+  .md\:masonry-md {
+    -moz-column-gap: 1.5em !important;
+         column-gap: 1.5em !important;
+    -moz-column-count: 3 !important;
+         column-count: 3 !important;
   }
 }
 
@@ -1581,6 +1663,20 @@ h3.portfolio-title::first-letter {
   .lg\:text-white {
     --tw-text-opacity: 1 !important;
     color: rgb(255 255 255 / var(--tw-text-opacity)) !important;
+  }
+
+  .lg\:masonry {
+    -moz-column-gap: 1.5em !important;
+         column-gap: 1.5em !important;
+    -moz-column-count: 2 !important;
+         column-count: 2 !important;
+  }
+
+  .lg\:masonry-lg {
+    -moz-column-gap: 1.5em !important;
+         column-gap: 1.5em !important;
+    -moz-column-count: 4 !important;
+         column-count: 4 !important;
   }
 }
 

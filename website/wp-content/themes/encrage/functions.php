@@ -114,13 +114,14 @@ if(!function_exists('publication_join_member')) {
 
 	add_filter('posts_join', 'publication_join_member', 10, 2);
 
-	function publication_join_member($join, $series) {
+	function publication_join_member($join, $wp_query) {
         global $wpdb;
-        $photographer = $_GET['_photographer'] ?? false;
-        if( is_home() )
+        $post_types = ['serie','release'];
+
+        if( is_home() || is_page() )
 			return;
         
-		if (isset($series) && 'serie' == $series->query['post_type']){
+		if (isset($wp_query) && in_array($wp_query->query['post_type'], $post_types)){
             $restriction1 = 'photographer';
             return $join .="
             INNER JOIN $wpdb->postmeta AS $restriction1 ON(
@@ -143,10 +144,10 @@ if(!function_exists('publication_where_member')) {
 
 	add_filter( 'posts_where', 'publication_where_member', 10, 2 );
 
-	function publication_where_member($where, $series) {
+	function publication_where_member($where, $wp_query) {
         
         $photographer = $_GET['_photographer'] ?? false;
-
+        $post_types = ['serie','release'];
 
 		//we'll get 404 error on single post
 		//we want only list items to affect, disable this feature for single posts:
@@ -155,7 +156,7 @@ if(!function_exists('publication_where_member')) {
 
 		//always start with AND because we have a default WHERE 1=1 in the query
 		//try only fetching posts with comments on them:
-        if (isset($series) && 'serie' == $series->query['post_type'] && $photographer){
+        if (isset($wp_query) && in_array($wp_query->query['post_type'], $post_types)){
             return $where.= " AND cpt_member.post_title = '$photographer'";
         }
         else{

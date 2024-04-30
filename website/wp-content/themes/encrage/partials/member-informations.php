@@ -9,8 +9,9 @@ $single_pageID = match (true) {
     default => null,
 };
 
+extract($args);
 
-$args =  [
+$queryArgs =  [
     'post_type' => 'member',
     'orderby' => 'title',
     'posts_per_page' => $is_home_page || is_page() ? -1 : 1,
@@ -19,7 +20,7 @@ $args =  [
     'p' => $single_pageID,
 
 ];
-$loop = new WP_Query($args);
+$loop = new WP_Query($queryArgs);
 ?>
 <?php while ($loop->have_posts()) : ?>
     <?php $loop->the_post();
@@ -94,7 +95,7 @@ $loop = new WP_Query($args);
                 </ul>
             </div>
         </div>
-        <?php if (is_singular() && !is_page())  : ?>
+        <?php if (isset($post_type) && $post_type == 'member')  : ?>
             <div class="max-w-sm  md:max-w-md mx-auto space-y-2 mt-6 text-justify lg:text-lg"><?php the_content(); ?></div>
         </section>
     <?php endif; ?>

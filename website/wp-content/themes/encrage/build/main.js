@@ -11139,7 +11139,6 @@ var main = document.querySelector(".main");
 var header = document.querySelector(".main-header");
 var footer = document.querySelector("footer");
 var screenHeight = window.screen.height;
-console.log("Screen Height: " + screenHeight, header.offsetHeight, footer.offsetHeight);
 main.style.minHeight = "".concat(screenHeight - footer.offsetHeight - header.offsetHeight, "px");
 })();
 

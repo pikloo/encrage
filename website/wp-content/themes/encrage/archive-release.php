@@ -3,7 +3,7 @@ get_header();
 get_template_part('partials/header', 'header');
 
 $args =  [
-    'post_type' => 'serie',
+    'post_type' => 'release',
     'orderby' => 'year',
     'posts_per_page' => -1,
     'post_status' => 'publish',
@@ -26,8 +26,8 @@ $photographers = new WP_Query($membersArgs);
 get_template_part('partials/archive-publication', 'archive-publication', [
     'query' => $query,
     'photographers' => $photographers,
-    'label' => 'série',
-    'slug' => 'series'
+    'label' => 'publication',
+    'slug' => 'releases'
 ]);
 
 ?>

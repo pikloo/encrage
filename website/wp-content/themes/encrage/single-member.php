@@ -19,7 +19,9 @@ $memberID = get_the_ID();
 
 ?>
 <main class="overflow-hidden pt-36 main">
-    <?php get_template_part('partials/member-informations', 'member-informations'); ?>
+    <?php get_template_part('partials/member-informations', 'member-informations', [
+        'post_type' => 'member'
+    ]); ?>
     <?php get_template_part('partials/series-list', 'series-list'); ?>
     <?php
     if ($has_releases) {

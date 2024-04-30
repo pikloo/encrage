@@ -5,7 +5,7 @@ $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 $args =  [
     'post_type' => 'release',
     'orderby' => 'year',
-    'posts_per_page' => 6,
+    'posts_per_page' => 8,
     'post_status' => 'publish',
     'order' => 'DESC',
 ];
@@ -23,7 +23,7 @@ $is_home = get_query_var('is_home');
 
 <section class="container mx-auto py-10 xl:px-10">
     <h2 class="section">publications</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-4">
+    <div class="masonry sm:masonry-sm md:masonry-md lg:masonry-lg space-y-4">
         <?php if ($releases->have_posts()) : ?>
             <?php while ($releases->have_posts()) : $releases->the_post(); ?>
                 <?php
@@ -40,8 +40,10 @@ $is_home = get_query_var('is_home');
                 <path id="arrow_move_up" d="m3 2v1h17v-1zm12.5 5.40000153v1.09999847l-3.5015625-2.5-.0000001 14h-.9984374v-14l-3.5 2.5v-1.09999847l4-2.90000153z" fill="currentColor"></path>
             </g>
         </svg>
-        <?php if ($releases->max_num_pages > 1) : ?>
-        <button class="button" type="button">plus de publications</button>
+        <?php if ($is_home) : ?>
+            <a class="button" href="<?= esc_url(get_post_type_archive_link('release'))?>">Toutes les publications</a> 
+            <?php elseif (!$is_home && $wp_query->max_num_pages > 1) : ?>
+            <button class="button load-more" type="button">plus de publications</button> 
         <?php endif; ?>
     </div>
 

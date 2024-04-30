@@ -1,11 +1,12 @@
 <?php
-$socials = wp_nav_menu([
-    'menu' => 'Réseaux',
+$menu_main = wp_nav_menu([
+    'menu' => 'Main',
     'container' => 'ul',
-    'menu_class' => 'main',
+    'menu_class' => 'main-footer-menu',
     'echo' => false,
     'container_aria_label' => 'Navigation principal',
-]);
+  ]);
+  
 
 ?>
 
@@ -15,11 +16,7 @@ $socials = wp_nav_menu([
             <img src="<?= get_template_directory_uri() ?>/assets/images/ancrage_logo.png" alt="<?= esc_html(get_bloginfo('description')) ?>" class="w-[200px] invert" />
             <a mailto="bureau@encrage.photo">bureau@encrage.photo</a>
         </div>
-        <ul class="flex flex-col">
-            <li><a href="#">L'agence</a></li>
-            <li><a href="#">Les photographes</a></li>
-            <li><a href="#">Contact</a></li>
-        </ul>
+        <?= $menu_main; ?>
         <div class="flex flex-col w-fit mx-auto">
             <ul class="flex gap-x-2 mx-auto">
                 <li><a href="https://www.instagram.com/encrage_photo" target="_blank"><svg viewBox="0 0 512.00096 512.00096" width="24" height="24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" id="fi_1077042">

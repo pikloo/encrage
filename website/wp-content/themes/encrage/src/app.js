@@ -65,8 +65,6 @@ const header = document.querySelector(".main-header");
 const footer = document.querySelector("footer");
 const screenHeight = window.screen.height;
 
-console.log("Screen Height: " + screenHeight, header.offsetHeight, footer.offsetHeight);
-
 main.style.minHeight = `${screenHeight - footer.offsetHeight - header.offsetHeight }px`;
 
 

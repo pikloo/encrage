@@ -38,11 +38,12 @@ $menu_main = wp_nav_menu([
         <!--exit icon, will close navbar when clicked-->
         <!-- <a href="javascript:void(0)" class="text-3xl absolute top-0 right-0 mr-3 mt-2">&times;</a> -->
         <!--menu links-->
-        <div id="sideLinks" class="flex flex-col items-center divide-y-2 divide-black justify-content duration-500 delay-2">
+        <div id="sideLinks" class="flex flex-col items-center justify-content duration-500 delay-2">
           <?= $menu_main; ?>
-          <ul class="grid grid-cols-2 justify-items-center py-6 font-bold">
+          <ul class="relative grid grid-cols-2 justify-items-center py-6 font-bold after:h-[2px] after:bg-black 
+       after:absolute after:w-[100px]">
             <?php while ($membersMenu->have_posts()) : $membersMenu->the_post(); ?>
-              <li><a href=<?= the_permalink() ?>><?= the_title(); ?></a></li>
+              <li class="menu-item"><a href=<?= the_permalink() ?>><?= the_title(); ?></a></li>
             <?php endwhile;
             wp_reset_postdata(); ?>
 

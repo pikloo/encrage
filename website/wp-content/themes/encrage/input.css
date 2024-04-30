@@ -11,6 +11,28 @@ Version: 1.0
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .masonry {
+    column-gap: 1.5em;
+    column-count: 2;
+  }
+  .masonry-sm {
+    column-gap: 1.5em;
+    column-count: 2;
+  }
+  .masonry-md {
+    column-gap: 1.5em;
+    column-count: 3;
+  }
+  .masonry-lg {
+    column-gap: 1.5em;
+    column-count: 4;
+  }
+  .break-inside {
+    break-inside: avoid;
+  }
+}
+
 @layer components {
   h2 {
     @apply relative text-4xl uppercase font-medium first-letter:text-5xl;
@@ -135,11 +157,19 @@ Version: 1.0
   }
 
   .main-menu {
-    @apply py-6 flex;
+    @apply py-6 flex text-center;
+  }
+
+  .main-footer-menu {
+    @apply flex flex-col;
   }
 
   .main-menu li {
     @apply p-2 font-medium uppercase;
+  }
+
+  .main-menu li, .menu-item {
+    @apply hover:text-gray-500 transition-colors;
   }
 
   .medium-zoom-overlay {
