@@ -17,7 +17,7 @@ $args =  [
 $loop = new WP_Query($args);
 ?>
 
-<main class="overflow-hidden">
+<main class="overflow-hidden main">
     <?php while ($loop->have_posts()) : $loop->the_post(); ?>
         <section class="space-y-4">
             <div class="swiper gallery relative">

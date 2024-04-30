@@ -22,7 +22,7 @@ $is_home = get_query_var('is_home');
 ?>
 
 <section class="container mx-auto py-10 xl:px-10">
-    <h2>publications</h2>
+    <h2 class="section">publications</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-4">
         <?php if ($releases->have_posts()) : ?>
             <?php while ($releases->have_posts()) : $releases->the_post(); ?>

@@ -13,6 +13,10 @@ Version: 1.0
 
 @layer components {
   h2 {
+    @apply relative text-4xl uppercase font-medium first-letter:text-5xl;
+  }
+
+  h2.section {
     @apply mb-10 w-fit relative text-4xl uppercase font-medium  before:h-[2px] after:h-[2px] after:bg-black 
        after:absolute after:w-[10%]
        before:bg-black before:absolute 

@@ -11113,6 +11113,9 @@ var onClickOnMenuToggle = function onClickOnMenuToggle() {
   }
 };
 menuToogle.addEventListener("click", onClickOnMenuToggle);
+
+//Apparition au scroll
+
 var callback = function callback(entries) {
   entries.forEach(function (entry) {
     if (entry.isIntersecting) {
@@ -11129,6 +11132,16 @@ targets.forEach(function (target) {
   target.classList.add("opacity-0");
   observer.observe(target);
 });
+
+//Main min height
+
+var main = document.querySelector(".main");
+var header = document.querySelector(".main-header");
+var footer = document.querySelector("footer");
+var screenHeight = screen.height;
+main.style.minHeight = "calc (".concat(screenHeight, " - ").concat(header.offsetHeight, " - ").concat(footer.offsetHeight, " )");
+var mainHeight = main.offsetHeight;
+main.style.minHeight = mainHeight + "px";
 })();
 
 // This entry need to be wrapped in an IIFE because it need to be isolated against other entry modules.

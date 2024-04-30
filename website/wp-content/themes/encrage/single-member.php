@@ -18,7 +18,7 @@ $has_releases = $releases->found_posts ?? false;
 $memberID = get_the_ID();
 
 ?>
-<main class="overflow-hidden pt-36">
+<main class="overflow-hidden pt-36 main">
     <?php get_template_part('partials/member-informations', 'member-informations'); ?>
     <?php get_template_part('partials/series-list', 'series-list'); ?>
     <?php

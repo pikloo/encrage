@@ -599,9 +599,6 @@ video {
 
 h2 {
   position: relative;
-  margin-bottom: 2.5rem;
-  width: -moz-fit-content;
-  width: fit-content;
   font-size: 2.25rem;
   line-height: 2.5rem;
   font-weight: 500;
@@ -613,7 +610,23 @@ h2::first-letter {
   line-height: 1;
 }
 
-h2::before {
+h2.section {
+  position: relative;
+  margin-bottom: 2.5rem;
+  width: -moz-fit-content;
+  width: fit-content;
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+h2.section::first-letter {
+  font-size: 3rem;
+  line-height: 1;
+}
+
+h2.section::before {
   position: absolute;
   top: -0.5rem;
   height: 2px;
@@ -623,7 +636,7 @@ h2::before {
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
 }
 
-h2::after {
+h2.section::after {
   position: absolute;
   right: 0px;
   bottom: 0px;
@@ -1060,6 +1073,10 @@ h3.portfolio-title::first-letter {
   flex-direction: column !important;
 }
 
+.content-center {
+  align-content: center !important;
+}
+
 .items-center {
   align-items: center !important;
 }
@@ -1095,6 +1112,11 @@ h3.portfolio-title::first-letter {
 .gap-x-2 {
   -moz-column-gap: 0.5rem !important;
        column-gap: 0.5rem !important;
+}
+
+.gap-x-6 {
+  -moz-column-gap: 1.5rem !important;
+       column-gap: 1.5rem !important;
 }
 
 .gap-y-10 {

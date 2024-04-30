@@ -36,6 +36,8 @@ const onClickOnMenuToggle = () => {
 menuToogle.addEventListener("click", onClickOnMenuToggle);
 
 
+//Apparition au scroll
+
 const callback = function (entries) {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
@@ -54,4 +56,20 @@ targets.forEach(function (target) {
   target.classList.add("opacity-0");
   observer.observe(target);
 });
+
+
+//Main min height
+
+let main = document.querySelector(".main");
+const header = document.querySelector(".main-header");
+const footer = document.querySelector("footer");
+const screenHeight = screen.height;
+
+main.style.minHeight = `calc (${screenHeight} - ${header.offsetHeight} - ${footer.offsetHeight} )`;
+
+
+
+const mainHeight = main.offsetHeight;
+
+main.style.minHeight = mainHeight + "px";
 

@@ -22,7 +22,7 @@ $wp_query = new WP_Query($args);
 ?>
 
 <section class="container mx-auto py-10 xl:px-10">
-    <h2>Séries</h2>
+    <h2 class="section">Séries</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-4">
         <?php if ($wp_query->have_posts()) : ?>
             <?php while ($wp_query->have_posts()) : $wp_query->the_post(); ?>
@@ -39,7 +39,9 @@ $wp_query = new WP_Query($args);
                 <path id="arrow_move_up" d="m3 2v1h17v-1zm12.5 5.40000153v1.09999847l-3.5015625-2.5-.0000001 14h-.9984374v-14l-3.5 2.5v-1.09999847l4-2.90000153z" fill="currentColor"></path>
             </g>
         </svg>
-        <?php if ($wp_query->max_num_pages > 1) : ?>
+        <?php if ($is_home_page) : ?>
+            <a class="button" href="<?= esc_url(get_post_type_archive_link('serie'))?>" >plus de séries</a> 
+            <?php elseif (!$is_home_page && $wp_query->max_num_pages > 1) : ?>
             <button class="button load-more" type="button">plus de séries</button> 
         <?php endif; ?>
     </div>

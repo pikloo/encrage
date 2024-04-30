@@ -27,7 +27,7 @@ Aujourd’hui, nous revenons sur un événement fédérateur qui est né dans no
 ?>
 
 <section class="container mx-auto p-10 h-fit <?php if(get_query_var('is_home')) echo 'reveal'?>">
-    <h2>nos actus</h2>
+    <h2 class="section">nos actus</h2>
     <div class="swiper blogpost-carousel lg:max-w-screen-lg">
         <div class="swiper-wrapper h-fit">
             <?php foreach ($posts as $key => $post) : ?>
