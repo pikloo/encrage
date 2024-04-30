@@ -36,23 +36,22 @@ const onClickOnMenuToggle = () => {
 menuToogle.addEventListener("click", onClickOnMenuToggle);
 
 
-function scrollReveal() {
-	const revealPoint = 150;
-	const revealElement = document.querySelectorAll(".reveal");
-	for (var i = 0; i < revealElement.length; i++) {
-		const windowHeight = window.innerHeight;
-		const revealTop = revealElement[i].getBoundingClientRect().top;
-		if (revealTop < windowHeight - revealPoint) {
-			revealElement[i].classList.add("active");
-		}
-    //  else {
-		// 	revealElement[i].classList.remove("active");
-		// }
-	}
-}
+const callback = function (entries) {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("inview");
+    } 
+    // else {
+    //   entry.target.classList.remove("inview");
+    // }
+  });
+};
 
-window.addEventListener("scroll", scrollReveal);
+const observer = new IntersectionObserver(callback);
 
-
-
+const targets = document.querySelectorAll(".reveal");
+targets.forEach(function (target) {
+  target.classList.add("opacity-0");
+  observer.observe(target);
+});
 

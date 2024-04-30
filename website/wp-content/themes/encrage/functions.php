@@ -141,6 +141,11 @@ if (!function_exists('add_query_params')) {
 
 add_action('pre_get_posts', 'add_query_params');
 
+add_filter( 'login_url', 'custom_login_url', PHP_INT_MAX );
+function custom_login_url( $login_url ) {
+	return str_replace( 'wp-login', 'encrage-login', $login_url );
+}
+
 require_once WP_CONTENT_DIR . '/themes/encrage/inc/post-types/member.php';
 require_once WP_CONTENT_DIR . '/themes/encrage/inc/post-types/serie.php';
 require_once WP_CONTENT_DIR . '/themes/encrage/inc/post-types/release.php';

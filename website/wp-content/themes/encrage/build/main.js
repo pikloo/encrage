@@ -11113,21 +11113,22 @@ var onClickOnMenuToggle = function onClickOnMenuToggle() {
   }
 };
 menuToogle.addEventListener("click", onClickOnMenuToggle);
-function scrollReveal() {
-  var revealPoint = 150;
-  var revealElement = document.querySelectorAll(".reveal");
-  for (var i = 0; i < revealElement.length; i++) {
-    var windowHeight = window.innerHeight;
-    var revealTop = revealElement[i].getBoundingClientRect().top;
-    if (revealTop < windowHeight - revealPoint) {
-      revealElement[i].classList.add("active");
+var callback = function callback(entries) {
+  entries.forEach(function (entry) {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("inview");
     }
-    //  else {
-    // 	revealElement[i].classList.remove("active");
+    // else {
+    //   entry.target.classList.remove("inview");
     // }
-  }
-}
-window.addEventListener("scroll", scrollReveal);
+  });
+};
+var observer = new IntersectionObserver(callback);
+var targets = document.querySelectorAll(".reveal");
+targets.forEach(function (target) {
+  target.classList.add("opacity-0");
+  observer.observe(target);
+});
 })();
 
 // This entry need to be wrapped in an IIFE because it need to be isolated against other entry modules.
