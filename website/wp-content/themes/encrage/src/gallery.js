@@ -47,15 +47,16 @@ const zoom = mediumZoom(document.querySelectorAll('.release'), {
     margin: 24,
 });
 
-const header = document.querySelector('.main-header');
+// const header = document.querySelector('.main-header');
 
-zoom.on(
-  'open',
-  event => {
-    header.style.setProperty("z-index", "0", "important");
-  }
-)
+// zoom.on(
+//   'open',
+//   event => {
+//     window.querySelector('.medium-zoom-overlay').style.setProperty("z-index", "20", "important");
+//   },
+//   { once: true }
+// )
 
-zoom.on('closed', event => {
-  header.style.setProperty("z-index", "10", "important");
-})
+// zoom.on('closed', event => {
+//   header.style.setProperty("z-index", "20", "important");
+// })

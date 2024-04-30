@@ -43,7 +43,7 @@ $loop = new WP_Query($args);
         <section class="container xl:px-10 mx-auto py-10">
             <h2>À propos</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 gap-y-10 items-center">
-                <article class="px-6 text-justify grid lg:grid-cols-2"><?php the_content(); ?></article>
+                <article class="px-6 text-justify"><?php the_content(); ?></article>
                 <aside class="px-6">
                     <?php get_template_part('partials/member-informations', 'member-informations'); ?>
                 </aside>

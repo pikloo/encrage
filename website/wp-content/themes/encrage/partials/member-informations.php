@@ -33,7 +33,7 @@ $loop = new WP_Query($args);
     <?php if (is_singular() && !is_page() && 'serie' != get_post_type()) : ?>
         <section class="grid grid-cols-1 lg:grid-cols-2 lg:items-center lg:max-w-screen-lg lg:mx-auto">
         <? endif; ?>
-        <div class="profil flex flex-col justify-center items-center gap-4">
+        <div class="<?php if($is_home_page || is_page() ) echo 'reveal'?> profil flex flex-col justify-center items-center gap-4">
             <a href="<?= esc_url(get_permalink()); ?>">
                 <img class="h-64 w-64 rounded-full object-contain <?php if (!get_the_post_thumbnail()) echo "border border-black" ?>" src=<?= esc_url($thumbnailUrl); ?> alt="" />
             </a>

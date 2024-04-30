@@ -36,5 +36,23 @@ const onClickOnMenuToggle = () => {
 menuToogle.addEventListener("click", onClickOnMenuToggle);
 
 
+function scrollReveal() {
+	const revealPoint = 150;
+	const revealElement = document.querySelectorAll(".reveal");
+	for (var i = 0; i < revealElement.length; i++) {
+		const windowHeight = window.innerHeight;
+		const revealTop = revealElement[i].getBoundingClientRect().top;
+		if (revealTop < windowHeight - revealPoint) {
+			revealElement[i].classList.add("active");
+		}
+    //  else {
+		// 	revealElement[i].classList.remove("active");
+		// }
+	}
+}
+
+window.addEventListener("scroll", scrollReveal);
+
+
 
 

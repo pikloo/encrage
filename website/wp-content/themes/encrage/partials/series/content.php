@@ -2,7 +2,7 @@
 $is_member_page = get_query_var('is_member_page');
 ?>
 <a href="<?= esc_url(get_permalink()); ?>">
-    <figure class="relative group xl:overflow-hidden">
+    <figure class="reveal relative group xl:overflow-hidden">
         <?php if (has_post_thumbnail(get_the_ID())) : ?>
             <img class="w-full h-72  object-cover" src="<?= esc_url(get_the_post_thumbnail_url(get_the_ID(), 'medium_large')) ?>" alt="<?= the_title(); ?>" />
         <?php endif; ?>

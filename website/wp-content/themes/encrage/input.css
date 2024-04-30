@@ -19,15 +19,15 @@ Version: 1.0
        before:w-full after:right-0 after:bottom-0 before:-top-2 after:-bottom-2 first-letter:text-5xl;
   }
 
-  h1{
-    @apply text-5xl bg-black text-white w-fit p-2 translate-y-6; 
+  h1 {
+    @apply text-5xl bg-black text-white w-fit p-2 mb-10 uppercase;
   }
 
   h3 {
     @apply uppercase first-letter:text-2xl;
   }
 
-  h3.portfolio-title  {
+  h3.portfolio-title {
     @apply relative text-3xl first-letter:text-4xl font-medium uppercase text-white;
   }
 
@@ -121,8 +121,8 @@ Version: 1.0
     overflow: hidden;
   }
 
-
-  #sideBar, #sideNav {
+  #sideBar,
+  #sideNav {
     width: 0;
   }
 
@@ -135,6 +135,27 @@ Version: 1.0
   }
 
   .main-menu li {
-    @apply p-2 font-medium;
+    @apply p-2 font-medium uppercase;
+  }
+
+  .medium-zoom-overlay {
+    z-index: 30 !important;
+  }
+
+  .medium-zoom-image--opened {
+    z-index: 30 !important;
+  }
+
+  .reveal {
+    scale: 0.94;
+    opacity: 0;
+    transition: 0.9s;
+    transition-timing-function: cubic-bezier(0.5, 0, 0, 1);
+  }
+
+  .reveal.active {
+    opacity: 1;
+    top: 0;
+    scale: 1;
   }
 }

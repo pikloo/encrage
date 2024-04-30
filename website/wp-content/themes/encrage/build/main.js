@@ -11113,6 +11113,21 @@ var onClickOnMenuToggle = function onClickOnMenuToggle() {
   }
 };
 menuToogle.addEventListener("click", onClickOnMenuToggle);
+function scrollReveal() {
+  var revealPoint = 150;
+  var revealElement = document.querySelectorAll(".reveal");
+  for (var i = 0; i < revealElement.length; i++) {
+    var windowHeight = window.innerHeight;
+    var revealTop = revealElement[i].getBoundingClientRect().top;
+    if (revealTop < windowHeight - revealPoint) {
+      revealElement[i].classList.add("active");
+    }
+    //  else {
+    // 	revealElement[i].classList.remove("active");
+    // }
+  }
+}
+window.addEventListener("scroll", scrollReveal);
 })();
 
 // This entry need to be wrapped in an IIFE because it need to be isolated against other entry modules.
@@ -11207,13 +11222,20 @@ var zoom = (0,medium_zoom__WEBPACK_IMPORTED_MODULE_2__["default"])(document.quer
   background: 'rgba(148, 148, 148, 0.97)',
   margin: 24
 });
-var header = document.querySelector('.main-header');
-zoom.on('open', function (event) {
-  header.style.setProperty("z-index", "0", "important");
-});
-zoom.on('closed', function (event) {
-  header.style.setProperty("z-index", "10", "important");
-});
+
+// const header = document.querySelector('.main-header');
+
+// zoom.on(
+//   'open',
+//   event => {
+//     window.querySelector('.medium-zoom-overlay').style.setProperty("z-index", "20", "important");
+//   },
+//   { once: true }
+// )
+
+// zoom.on('closed', event => {
+//   header.style.setProperty("z-index", "20", "important");
+// })
 })();
 
 /******/ })()

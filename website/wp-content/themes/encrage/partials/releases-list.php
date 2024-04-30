@@ -26,6 +26,7 @@ $releases = new WP_Query($args);
         <?php if ($releases->have_posts()) : ?>
             <?php while ($releases->have_posts()) : $releases->the_post(); ?>
                 <?php
+                set_query_var( 'is_home_page', get_query_var('is_home'));
                 set_query_var('is_member_page', $is_member_page);
                 get_template_part('partials/releases/content', 'content'); ?>
             <?php endwhile; ?>

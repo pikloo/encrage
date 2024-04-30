@@ -108,6 +108,39 @@ if (!function_exists('custom_cpts')) {
 
 add_action('init', 'custom_cpts');
 
+
+
+
+if (!function_exists('add_query_params')) {
+   /**
+    * Ajout de parametres à la requête pour le filtrage
+    *
+    * @param WP_Query $query
+    * @return void
+    */
+    function add_query_params($query)
+    {
+        $post_types = [
+              'serie','release'  
+        ];
+        
+        if ($query->is_main_query() && !is_admin()) {
+            if (in_array($query->get('post_type'), $post_types)) {
+                if (!empty($_GET['_photographer'])) {
+                    $orderParam = explode('-', $_GET['_photographer']);
+                    $orderBy = $orderParam[0];
+                    $order = $orderParam[1];
+                    $query->set('orderby', $orderBy);
+                    $query->set('order', $order);
+                }
+            }
+        }
+    }
+}
+
+
+add_action('pre_get_posts', 'add_query_params');
+
 require_once WP_CONTENT_DIR . '/themes/encrage/inc/post-types/member.php';
 require_once WP_CONTENT_DIR . '/themes/encrage/inc/post-types/serie.php';
 require_once WP_CONTENT_DIR . '/themes/encrage/inc/post-types/release.php';

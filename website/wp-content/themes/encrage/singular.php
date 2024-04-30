@@ -13,7 +13,7 @@ $loop = new WP_Query($args);
 ?>
 <main class="overflow-hidden pt-36">
     <?php while ($loop->have_posts()) : $loop->the_post(); ?>
-        <h1><?= the_title(); ?></h1>
+        <h1 class="<?php if($post->post_name === 'lagence') echo 'translate-y-6 mb-0'?>"><?= the_title(); ?></h1>
         <div class="px-6 text-justify flex flex-col gap-y-10 lg:flex-row lg:gap-x-10">
             <?php if (has_post_thumbnail()) : ?>
                 <aside class="max-w-sm md:max-w-md">
