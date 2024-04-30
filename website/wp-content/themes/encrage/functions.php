@@ -116,7 +116,8 @@ if(!function_exists('publication_join_member')) {
 
 	function publication_join_member($join, $series) {
         global $wpdb;
-        if(is_single() || is_home())
+        $photographer = $_GET['_photographer'] ?? false;
+        if( is_home() )
 			return;
         
 		if (isset($series) && 'serie' == $series->query['post_type']){
@@ -128,7 +129,9 @@ if(!function_exists('publication_join_member')) {
             )
             INNER JOIN $wpdb->posts AS cpt_member ON cpt_member.ID = $restriction1.meta_value
             ";
-         }else {
+         }
+         
+         else {
             return $join;
         }
 	}
@@ -142,10 +145,12 @@ if(!function_exists('publication_where_member')) {
 
 	function publication_where_member($where, $series) {
         
-        $photographer = $_GET['_photographer'] ?? null;
+        $photographer = $_GET['_photographer'] ?? false;
+
+
 		//we'll get 404 error on single post
 		//we want only list items to affect, disable this feature for single posts:
-		if(is_single() || is_home())
+		if(is_single() || is_home() || !$photographer)
 			return $where;
 
 		//always start with AND because we have a default WHERE 1=1 in the query

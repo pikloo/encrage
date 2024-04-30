@@ -27,7 +27,7 @@ $photographers = new WP_Query($membersArgs);
 $currentPhotographer = $_GET['_photographer'] ?? null;
 ?>
 
-<main class="overflow-hidden pt-28 pb-6">
+<main class="overflow-hidden pt-28 pb-6 main flex flex-col">
     <div class='relative flex content-center gap-x-6'>
         <h1>Séries</h1>
         <?php if ($currentPhotographer) : ?>
@@ -57,16 +57,18 @@ $currentPhotographer = $_GET['_photographer'] ?? null;
         <?php endif; ?>
         <?php wp_reset_postdata(); ?>
     </div>
+    <?php if ($series->max_num_pages > 1) : ?>
     <div class="mt-20 flex items-center">
         <svg class="to-top text-gray-500 cursor-pointer" height="40" viewBox="0 0 22 22" width="40" xmlns="http://www.w3.org/2000/svg" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" id="fi_12363698">
             <g id="iOS7" fill="currentColor" fill-rule="evenodd">
                 <path id="arrow_move_up" d="m3 2v1h17v-1zm12.5 5.40000153v1.09999847l-3.5015625-2.5-.0000001 14h-.9984374v-14l-3.5 2.5v-1.09999847l4-2.90000153z" fill="currentColor"></path>
             </g>
         </svg>
-        <?php if ($series->max_num_pages > 1) : ?>
+        
             <button class="button load-more" type="button">plus de séries</button>
-        <?php endif; ?>
+        
     </div>
+    <?php endif; ?>
 </main>
 <?php
 get_template_part('partials/footer', 'footer');

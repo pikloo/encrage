@@ -63,13 +63,10 @@ targets.forEach(function (target) {
 let main = document.querySelector(".main");
 const header = document.querySelector(".main-header");
 const footer = document.querySelector("footer");
-const screenHeight = screen.height;
+const screenHeight = window.screen.height;
 
-main.style.minHeight = `calc (${screenHeight} - ${header.offsetHeight} - ${footer.offsetHeight} )`;
+console.log("Screen Height: " + screenHeight, header.offsetHeight, footer.offsetHeight);
 
+main.style.minHeight = `${screenHeight - footer.offsetHeight - header.offsetHeight }px`;
 
-
-const mainHeight = main.offsetHeight;
-
-main.style.minHeight = mainHeight + "px";
 
