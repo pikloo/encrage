@@ -28,7 +28,6 @@ services:
       dockerfile: wp.Dockerfile
     container_name: wp_wordpress
     restart: always
-    user: 1000:1000
     volumes:
       - ./website:/var/www/html
       - ./website/wp-content:/var/www/html/wp-content

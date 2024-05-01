@@ -10,7 +10,5 @@ RUN getcap /usr/sbin/apache2
 # copy all of our development code
 COPY ./website/wp-content /var/www/html/wp-content
 
-RUN sudo chmod -R 755 ./website/wp-content
-
 # switch to www-data
 USER www-data
