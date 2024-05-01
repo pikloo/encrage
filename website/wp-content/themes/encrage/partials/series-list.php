@@ -30,7 +30,7 @@ $wp_query = new WP_Query($args);
         <?php if ($wp_query->have_posts()) : ?>
             <?php while ($wp_query->have_posts()) : $wp_query->the_post(); ?>
             <?php 
-            set_query_var( 'is_home_page', $is_home);
+            set_query_var( 'is_home_page', $is_home_page);
             set_query_var( 'is_member_page', $is_member_page );
             get_template_part( 'partials/series/content', 'content' ); ?>
             <?php endwhile; ?>

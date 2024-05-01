@@ -54,7 +54,7 @@ if (!function_exists('load_assets')) {
             'current_page' => get_query_var('paged') ? get_query_var('paged') : 1,
             'post_type' => $wp_query->query_vars['post_type'],
             // 'max_page' => $wp_query->max_num_pages,
-        
+
         ));
 
         // wp_localize_script('load_more', 'load_more_params', array(
@@ -121,77 +121,96 @@ if (!function_exists('custom_cpts')) {
 }
 
 
-if(!function_exists('publication_join_member')) {
+if (!function_exists('publication_join_member')) {
 
-	add_filter('posts_join', 'publication_join_member', 10, 2);
+    add_filter('posts_join', 'publication_join_member', 10, 2);
 
-	function publication_join_member($join, $wp_query) {
+    function publication_join_member($join, $wp_query)
+    {
         global $wpdb;
-        $post_types = ['serie','release'];
+        $post_types = ['serie', 'release'];
 
         // var_dump(isset($wp_query->query['post_type']));exit();
 
-        if( is_home() || is_page() ||  !isset($wp_query->query['post_type']))
-			return;
-        
-		if (isset($wp_query) && in_array($wp_query->query['post_type'], $post_types)){
+        if (is_home() || is_page() ||  !isset($wp_query->query['post_type']))
+            return;
+
+        if (isset($wp_query) && in_array($wp_query->query['post_type'], $post_types)) {
             $restriction1 = 'photographer';
-            return $join .="
+            return $join .= "
             INNER JOIN $wpdb->postmeta AS $restriction1 ON(
             $wpdb->posts.ID = $restriction1.post_id
             AND $restriction1.meta_key = '$restriction1'
             )
             INNER JOIN $wpdb->posts AS cpt_member ON cpt_member.ID = $restriction1.meta_value
             ";
-         }
-         
-         else {
+        } else {
             return $join;
         }
-	}
-
+    }
 }
 
 
-if(!function_exists('publication_where_member')) {
+if (!function_exists('publication_where_member')) {
 
-	add_filter( 'posts_where', 'publication_where_member', 10, 2 );
+    add_filter('posts_where', 'publication_where_member', 10, 2);
 
-	function publication_where_member($where, $wp_query) {
-        
+    function publication_where_member($where, $wp_query)
+    {
+
         $photographer = $_GET['_photographer'] ?? false;
-        $post_types = ['serie','release'];
+        $post_types = ['serie', 'release'];
 
-		//we'll get 404 error on single post
-		//we want only list items to affect, disable this feature for single posts:
-		if(is_single() || is_home() || !$photographer)
-			return $where;
+        //we'll get 404 error on single post
+        //we want only list items to affect, disable this feature for single posts:
+        if (is_single() || is_home() || !$photographer)
+            return $where;
 
-		//always start with AND because we have a default WHERE 1=1 in the query
-		//try only fetching posts with comments on them:
-        if (isset($wp_query) && in_array($wp_query->query['post_type'], $post_types)){
-            return $where.= " AND cpt_member.post_title = '$photographer'";
-        }
-        else{
+        //always start with AND because we have a default WHERE 1=1 in the query
+        //try only fetching posts with comments on them:
+        if (isset($wp_query) && in_array($wp_query->query['post_type'], $post_types)) {
+            return $where .= " AND cpt_member.post_title = '$photographer'";
+        } else {
             return $where;
         }
-	}
-
+    }
 }
 
-
-add_filter('login_url', 'custom_login_url', PHP_INT_MAX);
-function custom_login_url($login_url)
-{
-    return str_replace('wp-login', 'encrage-login', $login_url);
+if (!function_exists('custom_login_url')) {
+    add_filter('login_url', 'custom_login_url', PHP_INT_MAX);
+    function custom_login_url($login_url)
+    {
+        return str_replace('wp-login', 'encrage-login', $login_url);
+    }
 }
 
+if (!function_exists('custom_login_url')) {
+    add_filter('logout_url', 'custom_logout_url', PHP_INT_MAX);
+    function custom_logout_url($logout_url, $redirect)
+    {
+        $logout_url = home_url('/encrage-login.php?action=logout');
+        $logout_url = wp_nonce_url($logout_url, 'log-out');
+    }
+}
 
-if(!function_exists('add_categories_to_pages')){
-    function add_categories_to_pages() {
-        register_taxonomy_for_object_type( 'category', 'page' );
+if (!function_exists('custom_redirect_after_logout')) {
+    add_action('wp_logout', 'custom_redirect_after_logout');
+    function custom_redirect_after_logout()
+    {
+        if (!is_admin()) {
+            wp_safe_redirect(home_url());
+            exit();
         }
-        add_action( 'init', 'add_categories_to_pages' );
+    }
+}
+
+
+if (!function_exists('add_categories_to_pages')) {
+    function add_categories_to_pages()
+    {
+        register_taxonomy_for_object_type('category', 'page');
+    }
+    add_action('init', 'add_categories_to_pages');
 }
 
 
