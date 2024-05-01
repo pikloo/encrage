@@ -4,10 +4,11 @@ get_template_part('partials/header', 'header');
 
 $args =  [
     'post_type' => 'serie',
-    'orderby' => 'year',
-    'posts_per_page' => -1,
+    'posts_per_page' => 6,
     'post_status' => 'publish',
     'order' => 'DESC',
+    'meta_key' => 'year',
+    'orderby' => 'meta_value_num',
 ];
 
 
@@ -15,10 +16,10 @@ $query = new WP_Query($args);
 
 $membersArgs =  [
     'post_type' => 'member',
-    'orderby' => 'title',
     'posts_per_page' => -1,
     'post_status' => 'publish',
     'order' => 'ASC',
+    'orderby' => 'title',
 
 ];
 $photographers = new WP_Query($membersArgs);

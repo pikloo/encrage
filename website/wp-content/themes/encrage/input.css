@@ -24,10 +24,11 @@ Version: 1.0
     column-gap: 1.5em;
     column-count: 3;
   }
-  .masonry-lg {
+  .masonry-xl {
     column-gap: 1.5em;
     column-count: 4;
   }
+  
   .break-inside {
     break-inside: avoid;
   }
@@ -53,8 +54,8 @@ Version: 1.0
     @apply uppercase first-letter:text-2xl;
   }
 
-  h3.portfolio-title {
-    @apply relative text-3xl first-letter:text-4xl font-medium uppercase text-white;
+  .portfolio-title h1{
+    @apply relative text-3xl first-letter:text-4xl font-medium uppercase text-white mb-0;
   }
 
   .slider-home {

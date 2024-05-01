@@ -39,20 +39,31 @@ if (!function_exists('load_assets')) {
         wp_enqueue_style('swiperCss', get_theme_file_uri('/build/main.css'), [], time());
         wp_enqueue_script('bundle', get_theme_file_uri('/build/main.js'), [], '1.0', time());
         wp_enqueue_style('googleFont', 'https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
-
+        wp_enqueue_script('jquery_last', '//ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js', 'jquery', null, true);
 
         wp_register_script(
-            'load_more',
-            get_stylesheet_directory_uri() . '/src/load-more.js'
+            'load-more',
+            get_stylesheet_directory_uri() . '/assets/js/load-more.js'
         );
-        wp_enqueue_script('load_more');
-        wp_localize_script('load_more', 'load_more_params', array(
-            'ajaxurl' => site_url() . '/wp-admin/admin-ajax.php',
-            'posts' => json_encode($wp_query->query_vars),
+        wp_enqueue_script('load-more');
+
+        wp_localize_script('load-more', 'ajax_posts', array(
+            'ajaxurl' => admin_url('admin-ajax.php'),
+            'noposts' => __('No older posts found', 'encrage'),
+            'nonce' => wp_create_nonce('load_more_posts'),
             'current_page' => get_query_var('paged') ? get_query_var('paged') : 1,
-            'max_page' => $wp_query->max_num_pages,
-            'nonce' => wp_create_nonce('load_more_nonce')
+            'post_type' => $wp_query->query_vars['post_type'],
+            // 'max_page' => $wp_query->max_num_pages,
+        
         ));
+
+        // wp_localize_script('load_more', 'load_more_params', array(
+        //     'ajaxurl' => site_url() . '/wp-admin/admin-ajax.php',
+        //     'posts' => json_encode($wp_query->query_vars),
+        //     'current_page' => get_query_var('paged') ? get_query_var('paged') : 1,
+        //     'max_page' => $wp_query->max_num_pages,
+        //     'nonce' => wp_create_nonce('load_more_nonce')
+        // ));
     }
 }
 

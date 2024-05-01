@@ -68,3 +68,38 @@ const screenHeight = window.screen.height;
 main.style.minHeight = `${screenHeight - footer.offsetHeight - header.offsetHeight }px`;
 
 
+//Désactivation du clic droit sur les images
+
+const images = document.querySelectorAll("img:not(.logo-site)");
+images.forEach(function (image) {
+  image.addEventListener("contextmenu", function(e) {
+    e.preventDefault();
+  }, false);
+});
+
+
+//Titre fixe lorsqu'il arrive sous le logo(Page Single Série)
+const portfolioTitle = document.querySelector(".portfolio-title");
+const sliderActive = document.querySelector(".gallery");
+
+if(portfolioTitle) {
+  portfolioTitle.setAttribute('style', `top:${sliderActive.offsetHeight - 150}px; z-index:2; position:absolute;`);
+  const basePosition = sliderActive.offsetHeight - 150;
+  
+  
+  document.addEventListener("scroll", (event) => {
+    console.log(portfolioTitle.getBoundingClientRect().top)
+    if (portfolioTitle.getBoundingClientRect().top < header.offsetHeight + 150 ){
+      portfolioTitle.setAttribute('style', `top:${header.offsetHeight + 20}px; z-index:2; position:fixed;`);
+    }
+    console.log(window.scrollY);
+    
+  
+    if(window.scrollY  < basePosition - 20 ) {
+      portfolioTitle.setAttribute('style', `top:${basePosition}px;z-index:2; position:absolute;`);
+    }
+  });
+  
+}
+
+

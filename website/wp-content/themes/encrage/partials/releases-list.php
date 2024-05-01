@@ -1,13 +1,15 @@
 <?php
 $is_home_page = is_front_page() && is_home();
+$is_member_page = 'member' == get_post_type();
 $memberID = get_query_var('member_id') ? get_query_var('member_id') :  null;
 $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 $args =  [
     'post_type' => 'release',
-    'orderby' => 'year',
     'posts_per_page' => 8,
     'post_status' => 'publish',
     'order' => 'DESC',
+    'meta_key' => 'year',
+    'orderby' => 'meta_value_num',
 ];
 
 if ($memberID) {
@@ -23,7 +25,7 @@ $is_home = get_query_var('is_home');
 
 <section class="container mx-auto py-10 xl:px-10">
     <h2 class="section">publications</h2>
-    <div class="masonry sm:masonry-sm md:masonry-md lg:masonry-lg space-y-4">
+    <div class="sm:masonry-sm xl:masonry-md 2xl:masonry-xl space-y-4">
         <?php if ($releases->have_posts()) : ?>
             <?php while ($releases->have_posts()) : $releases->the_post(); ?>
                 <?php

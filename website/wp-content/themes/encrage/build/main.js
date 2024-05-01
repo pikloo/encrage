@@ -11140,46 +11140,33 @@ var header = document.querySelector(".main-header");
 var footer = document.querySelector("footer");
 var screenHeight = window.screen.height;
 main.style.minHeight = "".concat(screenHeight - footer.offsetHeight - header.offsetHeight, "px");
-})();
 
-// This entry need to be wrapped in an IIFE because it need to be isolated against other entry modules.
-(() => {
-/*!**************************!*\
-  !*** ./src/load-more.js ***!
-  \**************************/
-window.addEventListener('DOMContentLoaded', function (event) {
+//Désactivation du clic droit sur les images
 
-  // const loadMoreButton = document.querySelector('.load-more');
-
-  // loadMoreButton.addEventListener('click', async (e) => {
-  //     const data = {
-  //         'action' : 'loadmore',
-  //         'query': load_more_params.posts, // that's how we get params from wp_localize_script() function
-  //         'page' : load_more_params.current_page
-  //     }
-
-  //     await fetch(load_more_params.ajaxurl, {
-  //         method: 'POST',
-  //         body: JSON.stringify(data),
-  //         headers: {
-  //             'Content-Type': 'application/json'
-  //         }
-  //     }).then((response) => {
-  //         return response.text();
-  //     }).then((data) => {
-  //         console.log(data);
-  //         load_more_params.current_page++
-  //         if (data) {
-  //             if ( load_more_params.current_page == load_more_params.max_page ) { 
-  //                 e.currentTarget.remove();
-  //             }
-  //         }else {
-  //             e.currentTarget.remove();
-  //         }
-
-  //     });
-  // });
+var images = document.querySelectorAll("img:not(.logo-site)");
+images.forEach(function (image) {
+  image.addEventListener("contextmenu", function (e) {
+    e.preventDefault();
+  }, false);
 });
+
+//Titre fixe lorsqu'il arrive sous le logo(Page Single Série)
+var portfolioTitle = document.querySelector(".portfolio-title");
+var sliderActive = document.querySelector(".gallery");
+if (portfolioTitle) {
+  portfolioTitle.setAttribute('style', "top:".concat(sliderActive.offsetHeight - 150, "px; z-index:2; position:absolute;"));
+  var basePosition = sliderActive.offsetHeight - 150;
+  document.addEventListener("scroll", function (event) {
+    console.log(portfolioTitle.getBoundingClientRect().top);
+    if (portfolioTitle.getBoundingClientRect().top < header.offsetHeight + 150) {
+      portfolioTitle.setAttribute('style', "top:".concat(header.offsetHeight + 20, "px; z-index:2; position:fixed;"));
+    }
+    console.log(window.scrollY);
+    if (window.scrollY < basePosition - 20) {
+      portfolioTitle.setAttribute('style', "top:".concat(basePosition, "px;z-index:2; position:absolute;"));
+    }
+  });
+}
 })();
 
 // This entry need to be wrapped in an IIFE because it need to be in strict mode.
@@ -11201,13 +11188,19 @@ var sliderHome = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"](".sli
   autoplay: {
     delay: 5000
   },
-  effect: "fade"
+  effect: "fade",
+  keyboard: {
+    enabled: true
+  }
 });
 var postsCarousel = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"](".blogpost-carousel", {
   centeredSlides: true,
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev"
+  },
+  keyboard: {
+    enabled: true
   }
 });
 var serieGalleryThumbnails = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"](".thumbnails", {
@@ -11224,6 +11217,9 @@ var serieGallery = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"](".g
   },
   thumbs: {
     swiper: serieGalleryThumbnails
+  },
+  keyboard: {
+    enabled: true
   }
 });
 

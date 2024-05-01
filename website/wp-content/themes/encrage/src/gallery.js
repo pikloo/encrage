@@ -8,6 +8,9 @@ const sliderHome = new Swiper(".slider-home", {
         delay: 5000,
       },
       effect: "fade",
+      keyboard: {
+        enabled: true,
+      },
 });
 
 
@@ -17,6 +20,9 @@ const postsCarousel = new Swiper(".blogpost-carousel", {
         nextEl: ".swiper-button-next",
         prevEl: ".swiper-button-prev",
       },
+      keyboard: {
+        enabled: true,
+      },
 });
 
 const serieGalleryThumbnails = new Swiper(".thumbnails", {
@@ -24,6 +30,7 @@ const serieGalleryThumbnails = new Swiper(".thumbnails", {
     slidesPerView: 4,
     freeMode: true,
     watchSlidesProgress: true,
+    
   });
 
 
@@ -35,6 +42,9 @@ const serieGallery = new Swiper(".gallery", {
       },
      thumbs: {
         swiper: serieGalleryThumbnails,
+      },
+      keyboard: {
+        enabled: true,
       },
 });
 

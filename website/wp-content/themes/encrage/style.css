@@ -671,8 +671,9 @@ h3::first-letter {
   line-height: 2rem;
 }
 
-h3.portfolio-title {
+.portfolio-title h1 {
   position: relative;
+  margin-bottom: 0px;
   font-size: 1.875rem;
   line-height: 2.25rem;
   font-weight: 500;
@@ -681,7 +682,7 @@ h3.portfolio-title {
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
-h3.portfolio-title::first-letter {
+.portfolio-title h1::first-letter {
   font-size: 2.25rem;
   line-height: 2.5rem;
 }
@@ -904,10 +905,6 @@ h3.portfolio-title::first-letter {
   position: relative !important;
 }
 
-.bottom-\[20px\] {
-  bottom: 20px !important;
-}
-
 .left-0 {
   left: 0px !important;
 }
@@ -988,10 +985,6 @@ h3.portfolio-title::first-letter {
 
 .mt-6 {
   margin-top: 1.5rem !important;
-}
-
-.block {
-  display: block !important;
 }
 
 .inline-block {
@@ -1407,13 +1400,6 @@ h3.portfolio-title::first-letter {
   transition-duration: 500ms !important;
 }
 
-.masonry {
-  -moz-column-gap: 1.5em !important;
-       column-gap: 1.5em !important;
-  -moz-column-count: 2 !important;
-       column-count: 2 !important;
-}
-
 .break-inside {
   -moz-column-break-inside: avoid !important;
        break-inside: avoid !important;
@@ -1665,18 +1651,13 @@ h3.portfolio-title::first-letter {
     color: rgb(255 255 255 / var(--tw-text-opacity)) !important;
   }
 
-  .lg\:masonry {
-    -moz-column-gap: 1.5em !important;
-         column-gap: 1.5em !important;
-    -moz-column-count: 2 !important;
-         column-count: 2 !important;
+  .lg\:first-letter\:mr-3::first-letter {
+    margin-right: 0.75rem !important;
   }
 
-  .lg\:masonry-lg {
-    -moz-column-gap: 1.5em !important;
-         column-gap: 1.5em !important;
-    -moz-column-count: 4 !important;
-         column-count: 4 !important;
+  .lg\:first-letter\:text-8xl::first-letter {
+    font-size: 6rem !important;
+    line-height: 1 !important;
   }
 }
 
@@ -1736,6 +1717,20 @@ h3.portfolio-title::first-letter {
     color: rgb(255 255 255 / var(--tw-text-opacity)) !important;
   }
 
+  .xl\:masonry-md {
+    -moz-column-gap: 1.5em !important;
+         column-gap: 1.5em !important;
+    -moz-column-count: 3 !important;
+         column-count: 3 !important;
+  }
+
+  .xl\:masonry-xl {
+    -moz-column-gap: 1.5em !important;
+         column-gap: 1.5em !important;
+    -moz-column-count: 4 !important;
+         column-count: 4 !important;
+  }
+
   .xl\:before\:bg-white::before {
     content: var(--tw-content) !important;
     --tw-bg-opacity: 1 !important;
@@ -1765,5 +1760,14 @@ h3.portfolio-title::first-letter {
 
   .group:hover .xl\:group-hover\:animate-slideInUp {
     animation: slide-in-up 0.5s ease-in-out !important;
+  }
+}
+
+@media (min-width: 1536px) {
+  .\32xl\:masonry-xl {
+    -moz-column-gap: 1.5em !important;
+         column-gap: 1.5em !important;
+    -moz-column-count: 4 !important;
+         column-count: 4 !important;
   }
 }

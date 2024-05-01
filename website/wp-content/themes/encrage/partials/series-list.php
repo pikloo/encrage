@@ -5,10 +5,11 @@ $memberID = $is_member_page ? get_the_ID() :  null;
 $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 $args =  [
     'post_type' => 'serie',
-    'orderby' => 'year',
     'posts_per_page' => 6,
     'post_status' => 'publish',
     'order' => 'DESC',
+    // 'meta_key' => 'year',
+    'orderby' => 'date',
 ];
 
 if ($memberID) {
@@ -17,6 +18,8 @@ if ($memberID) {
         'value' => $memberID,
         'compare' => '='
     ];
+    $args['meta_key'] = 'year';
+    $args['orderby'] = 'meta_value_num';
 }
 $wp_query = new WP_Query($args);
 ?>

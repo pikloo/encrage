@@ -31,7 +31,7 @@ $menu_main = wp_nav_menu([
         </g>
       </svg>
     </button>
-    <a class="z-20 bg-white" href=<?= home_url(); ?>><img src="<?= get_template_directory_uri(); ?>/assets/images/ancrage_logo.png" alt="<?= esc_html(get_bloginfo('description')) ?> " class="w-[250px] px-10" /></a>
+    <a class="z-20 bg-white" href=<?= home_url(); ?>><img src="<?= get_template_directory_uri(); ?>/assets/images/ancrage_logo.png" alt="<?= esc_html(get_bloginfo('description')) ?> " class="w-[250px] px-10 logo-site" /></a>
     <div id="sideBar" class="fixed top-0 left-0 bg-transparent h-full overflow-x-hidden duration-500 z-10">
       <!--navigation menu box-->
       <div id="sideNav" class="text-2xl sm:text-3xl fixed top-0 left-0 bg-white text-black h-full flex flex-col justify-center items-center overflow-x-hidden duration-500 z-50">

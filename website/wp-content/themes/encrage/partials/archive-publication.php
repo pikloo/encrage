@@ -16,6 +16,7 @@ extract($args);
         <select class="py-4 px-2" name="_photographer" id="photographer">
             <option value="">Sélectionner un(e) photographe</option>
             <?php while ($photographers->have_posts()) : $photographers->the_post(); ?>
+            
                 <option  value="<?php the_title() ?>">
                     <?php the_title(); ?>
                 </option>
@@ -24,7 +25,7 @@ extract($args);
         </select>
         <button class="button inline-block ml-6" type="submit">Filtrer</button>
     </form>
-    <div class="masonry sm:masonry-sm md:masonry-md <?php if($slug == 'releases') echo 'lg:masonry-lg'; ?> space-y-6 px-4">
+    <div class="mgrid sm:masonry-sm md:masonry-md <?php if($slug == 'releases') echo 'xl:masonry-xl'; ?> space-y-6 px-4">
         <?php if ($query->have_posts()) : ?>
             <?php while ($query->have_posts()) : $query->the_post(); ?>
                 <?php
