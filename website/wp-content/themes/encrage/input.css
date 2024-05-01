@@ -11,24 +11,63 @@ Version: 1.0
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .masonry {
+    column-gap: 1.5em;
+    column-count: 2;
+  }
+  .masonry-sm {
+    column-gap: 1.5em;
+    column-count: 2;
+  }
+  .masonry-md {
+    column-gap: 1.5em;
+    column-count: 3;
+  }
+  .masonry-xl {
+    column-gap: 1.5em;
+    column-count: 4;
+  }
+  
+  .break-inside {
+    break-inside: avoid;
+  }
+}
+
 @layer components {
+  html {
+    scroll-behavior: cubic-bezier(0.42, 0, 0.58, 1);
+  }
+
   h2 {
+    @apply relative text-4xl uppercase font-medium first-letter:text-5xl;
+  }
+
+  h2.section {
     @apply mb-10 w-fit relative text-4xl uppercase font-medium  before:h-[2px] after:h-[2px] after:bg-black 
        after:absolute after:w-[10%]
        before:bg-black before:absolute 
        before:w-full after:right-0 after:bottom-0 before:-top-2 after:-bottom-2 first-letter:text-5xl;
   }
 
+  h1 {
+    @apply text-5xl bg-black text-white w-fit p-2 mb-10 uppercase;
+  }
+
   h3 {
     @apply uppercase first-letter:text-2xl;
+  }
+
+  .portfolio-title h1{
+    @apply relative text-3xl first-letter:text-4xl font-medium uppercase text-white mb-0;
   }
 
   .slider-home {
     @apply flex flex-col items-center justify-center;
   }
 
-  .slider-home .swiper-slide > img {
-    @apply w-full h-full object-cover;
+  .swiper-button-next {
+    @apply text-gray-500;
   }
 
   .button {
@@ -36,5 +75,129 @@ Version: 1.0
     after:absolute after:w-[120%] after:-left-[10%] before:-right-[10%]
     before:bg-black before:absolute 
     before:w-[120%] after:bottom-0 before:-top-2 after:-bottom-2;
+  }
+
+  .medium-zoom-overlay,
+  .medium-zoom-image--opened {
+    z-index: 999;
+  }
+
+  .gallery .swiper-slide > img {
+    @apply object-contain;
+    height: 100%;
+  }
+
+  .gallery .swiper-slide {
+    height: calc(100vh - 324px);
+  }
+
+  .thumbnails .swiper-slide > img {
+    @apply h-[300px] object-cover;
+  }
+
+  .thumbnails .swiper-slide {
+    opacity: 0.4;
+  }
+
+  .thumbnails .swiper-slide-thumb-active {
+    opacity: 1;
+  }
+
+  .menu-toggle {
+    @apply border-0 rounded-none bg-black text-white cursor-pointer inline-block p-10 focus:outline focus:-outline-offset-2;
+  }
+
+  .menu-toggle .icon {
+    @apply inline-block fill-current h-8 w-8 align-middle relative top-[-0.0625em];
+  }
+
+  /* Menu toggle styles. */
+
+  .icon-menu-toggle {
+    @apply w-10 h-10 top-0;
+  }
+
+  /* Animate menu icon (lines). */
+  .svg-menu-toggle .line {
+    opacity: 1;
+    transform: rotate(0) translateY(0) translateX(0);
+    transform-origin: 1em 1em;
+    transition:
+      transform 0.3s ease-in-out,
+      opacity 0.2s ease-in-out;
+  }
+  .svg-menu-toggle .line-1 {
+    transform-origin: 1em 2.5em;
+  }
+  .svg-menu-toggle .line-3 {
+    transform-origin: 1em 3.5em;
+  }
+
+  .menu-toggle.opened .svg-menu-toggle .line-1 {
+    transform: rotate(45deg) translateY(0) translateX(0);
+  }
+  .menu-toggle.opened .svg-menu-toggle .line-2 {
+    opacity: 0;
+  }
+  .menu-toggle.opened .svg-menu-toggle .line-3 {
+    transform: rotate(-45deg) translateY(0em) translateX(0em);
+  }
+
+  /* Text meant only for screen readers. */
+  .menu-toggle .screen-reader-text {
+    clip: rect(1px, 1px, 1px, 1px);
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+  }
+
+  #sideBar,
+  #sideNav {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: -100%;
+  }
+
+  /* #sideLinks {
+    opacity: 0;
+  } */
+
+  .main-menu {
+    @apply py-6 flex text-center;
+  }
+
+  .main-footer-menu {
+    @apply flex flex-col;
+  }
+
+  .main-menu li {
+    @apply p-2 font-medium uppercase;
+  }
+
+  .main-menu li, .menu-item {
+    @apply hover:text-gray-500 transition-colors;
+  }
+
+  .medium-zoom-overlay {
+    z-index: 30 !important;
+  }
+
+  .medium-zoom-image--opened {
+    z-index: 30 !important;
+  }
+
+
+  .reveal {
+    transition: all 0.8s;
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  
+  .reveal.inview {
+    opacity: 1;
+    transform: none;
+    transition-delay: 0.3s;
   }
 }

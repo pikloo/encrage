@@ -1,18 +1,21 @@
 /**
  * Webpack configuration.
  */
-const path = require( 'path' );
+const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const MiniCssExtractPlugin = require( 'mini-css-extract-plugin' );
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 // const OptimizeCssAssetsPlugin = require( 'optimize-css-assets-webpack-plugin' );
 // const cssnano = require( 'cssnano' ); // https://cssnano.co/
-const { CleanWebpackPlugin } = require( 'clean-webpack-plugin' );
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 // const UglifyJsPlugin = require( 'uglifyjs-webpack-plugin' );
 // JS Directory path.
-const JS_DIR = path.resolve( __dirname, 'js' );
-const IMG_DIR = path.resolve( __dirname, 'images' );
-const BUILD_DIR = path.resolve( __dirname, 'build' );
-const entry = "./src/app.js"
+const JS_DIR = path.resolve(__dirname, 'src');
+const IMG_DIR = path.resolve(__dirname, 'assets/images');
+const BUILD_DIR = path.resolve(__dirname, 'build');
+const entry = [
+	"./src/app.js",
+	//  "./src/load-more.js",
+	  "./src/gallery.js"]
 const output = {
 	path: BUILD_DIR,
 	filename: '[name].js'
@@ -20,27 +23,27 @@ const output = {
 /**
  * Note: argv.mode will return 'development' or 'production'.
  */
-const plugins = ( argv ) => [
-	new CleanWebpackPlugin( {
-		cleanStaleWebpackAssets: ( argv.mode === 'production' ) // Automatically remove all unused webpack assets on rebuild, when set to true in production. ( https://www.npmjs.com/package/clean-webpack-plugin#options-and-defaults-optional )
-	} ),
-	new MiniCssExtractPlugin( {
-		filename: 'css/[name].css'
-	} ),
-    new HtmlWebpackPlugin({
-        name:"encrage"
-      })
+const plugins = (argv) => [
+	new CleanWebpackPlugin({
+		cleanStaleWebpackAssets: (argv.mode === 'production') // Automatically remove all unused webpack assets on rebuild, when set to true in production. ( https://www.npmjs.com/package/clean-webpack-plugin#options-and-defaults-optional )
+	}),
+	new MiniCssExtractPlugin({
+		filename: '[name].css'
+	}),
+	new HtmlWebpackPlugin({
+		name: "encrage"
+	})
 ];
 const rules = [
 	{
 		test: /\.js$/,
-		include: [ JS_DIR ],
+		include: [JS_DIR],
 		exclude: /node_modules/,
 		use: 'babel-loader'
 	},
 	{
-		test: /\.scss$/,
-		exclude: /node_modules/,
+		test: /\.css$/,
+		// exclude: /node_modules/,
 		use: [
 			MiniCssExtractPlugin.loader,
 			'css-loader',
@@ -67,18 +70,18 @@ const rules = [
  *
  * @see https://webpack.js.org/configuration/configuration-types/#exporting-a-function
  */
-module.exports = ( env, argv ) => ({
-    mode: 'development',
+module.exports = (env, argv) => ({
+	mode: 'development',
 	entry: entry,
 	output: output,
-    context: __dirname,
-    devServer: {
-        static: {
-          directory: path.join(__dirname, 'build'),
-        },
-        compress: true,
-        port: 9000,
-      },
+	context: __dirname,
+	devServer: {
+		static: {
+			directory: path.join(__dirname, 'build'),
+		},
+		compress: true,
+		port: 9000,
+	},
 	/**
 	 * A full SourceMap is emitted as a separate file ( e.g.  main.js.map )
 	 * It adds a reference comment to the bundle so development tools know where to find it.
@@ -100,7 +103,7 @@ module.exports = ( env, argv ) => ({
 	// 		} )
 	// 	]
 	// },
-	plugins: plugins( argv ),
+	plugins: plugins(argv),
 	// externals: {
 	// 	jquery: 'jQuery'
 	// }

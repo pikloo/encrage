@@ -1,23 +1,38 @@
+<?php
+$menu_main = wp_nav_menu([
+    'menu' => 'Main',
+    'container' => 'ul',
+    'menu_class' => 'main-footer-menu',
+    'echo' => false,
+    'container_aria_label' => 'Navigation principal',
+]);
+
+$menu_legal = wp_nav_menu([
+    'menu' => 'Légales',
+    'container' => 'ul',
+    'menu_class' => 'legal-footer-menu',
+    'echo' => false,
+    'container_aria_label' => 'Pages légales',
+]);
+
+
+?>
+
 <footer class="bg-black text-white p-6 md:pt-10">
     <div class="grid grid-cols-1 md:grid-cols-3 justify-around gap-y-6 md:gap-y-0 mb-4 md:mb-10 md:items-center md:justify-items-center">
         <div>
-            <img src="./wp-content/themes/encrage/assets/images/logo-encrage-white.png" alt="" />
+            <img src="<?= get_template_directory_uri() ?>/assets/images/ancrage_logo.png" alt="<?= esc_html(get_bloginfo('description')) ?>" class="w-[200px] invert logo-site" />
             <a mailto="bureau@encrage.photo">bureau@encrage.photo</a>
         </div>
-        <ul class="flex flex-col">
-            <li><a href="#">L'agence</a></li>
-            <li><a href="#">Les photographes</a></li>
-            <li><a href="#">Contact</a></li>
-
-        </ul>
+        <?= $menu_main; ?>
         <div class="flex flex-col w-fit mx-auto">
-            <ul class="flex gap-x-2">
-                <li><a href="#"><svg viewBox="0 0 512.00096 512.00096" width="24" height="24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" id="fi_1077042">
+            <ul class="flex gap-x-2 mx-auto">
+                <li><a href="https://www.instagram.com/encrage_photo" target="_blank"><svg viewBox="0 0 512.00096 512.00096" width="24" height="24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" id="fi_1077042">
                             <path d="m373.40625 0h-234.8125c-76.421875 0-138.59375 62.171875-138.59375 138.59375v234.816406c0 76.417969 62.171875 138.589844 138.59375 138.589844h234.816406c76.417969 0 138.589844-62.171875 138.589844-138.589844v-234.816406c0-76.421875-62.171875-138.59375-138.59375-138.59375zm108.578125 373.410156c0 59.867188-48.707031 108.574219-108.578125 108.574219h-234.8125c-59.871094 0-108.578125-48.707031-108.578125-108.574219v-234.816406c0-59.871094 48.707031-108.578125 108.578125-108.578125h234.816406c59.867188 0 108.574219 48.707031 108.574219 108.578125zm0 0"></path>
                             <path d="m256 116.003906c-77.195312 0-139.996094 62.800782-139.996094 139.996094s62.800782 139.996094 139.996094 139.996094 139.996094-62.800782 139.996094-139.996094-62.800782-139.996094-139.996094-139.996094zm0 249.976563c-60.640625 0-109.980469-49.335938-109.980469-109.980469 0-60.640625 49.339844-109.980469 109.980469-109.980469 60.644531 0 109.980469 49.339844 109.980469 109.980469 0 60.644531-49.335938 109.980469-109.980469 109.980469zm0 0"></path>
                             <path d="m399.34375 66.285156c-22.8125 0-41.367188 18.558594-41.367188 41.367188 0 22.8125 18.554688 41.371094 41.367188 41.371094s41.371094-18.558594 41.371094-41.371094-18.558594-41.367188-41.371094-41.367188zm0 52.71875c-6.257812 0-11.351562-5.09375-11.351562-11.351562 0-6.261719 5.09375-11.351563 11.351562-11.351563 6.261719 0 11.355469 5.089844 11.355469 11.351563 0 6.257812-5.09375 11.351562-11.355469 11.351562zm0 0"></path>
                         </svg></a></li>
-                <li><a href="#"><svg version="1.1" id="fi_220342" width="24" height="24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+                <li><a href="https://www.facebook.com/encrage.photo" target="_blank"><svg version="1.1" id="fi_220342" width="24" height="24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
                             <g transform="translate(1 1)">
                                 <g>
                                     <path d="M468.333-1H41.667C17.773-1-1,17.773-1,41.667v426.667C-1,492.227,17.773,511,41.667,511h196.267h102.4h128
@@ -59,7 +74,7 @@
                             <g>
                             </g>
                         </svg></a></li>
-                <li><a href="#"><svg id="fi_5968958" width="24" height="24" fill="currentColor" enable-background="new 0 0 1226.37 1226.37" viewBox="0 0 1226.37 1226.37" xmlns="http://www.w3.org/2000/svg">
+                <li><a href="https://twitter.com/encrage_photo" target="_blank"><svg id="fi_5968958" width="24" height="24" fill="currentColor" enable-background="new 0 0 1226.37 1226.37" viewBox="0 0 1226.37 1226.37" xmlns="http://www.w3.org/2000/svg">
                             <path d="m727.348 519.284 446.727-519.284h-105.86l-387.893 450.887-309.809-450.887h-357.328l468.492 681.821-468.492 544.549h105.866l409.625-476.152 327.181 476.152h357.328l-485.863-707.086zm-144.998 168.544-47.468-67.894-377.686-540.24h162.604l304.797 435.991 47.468 67.894 396.2 566.721h-162.604l-323.311-462.446z"></path>
                             <g></g>
                             <g></g>
@@ -78,11 +93,12 @@
                             <g></g>
                         </svg></a></li>
             </ul>
-            <p>Retrouvez aussi nos photos sur</p>
+            <p class="mt-6">Retrouvez aussi nos photos sur</p>
+            <a href="https://www.pixpalace.com/" target="_blank"><img src="<?= get_template_directory_uri() ?>/assets/images/logo_pixpalace.png" alt="Retrouvez aussi nos photos sur PixPalace" class="w-[100px] invert grayscale mx-auto" /></a>
         </div>
     </div>
     <div class="text-sm text-center">
         <hr class="h-px my-2 bg-gray-200 border-0">
-        <a href="#">Conditions générales d’utilisation</a>
+        <?= $menu_legal ?>
     </div>
 </footer>

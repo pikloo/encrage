@@ -17,9 +17,18 @@ module.exports = {
 						transform: "translate3d(0, 0, 0)",
 					},
 				},
+				"fade-in": {
+					"0%": {
+						opacity: 0,
+					},
+					"100%": {
+						opacity: 1,
+					},
+				}
 			},
 			animation: {
                 slideInUp: "slide-in-up 0.5s ease-in-out",
+				fadeIn: "fade-in 2s ease-in forwards",
             },
 		},
 	},
