@@ -10,5 +10,5 @@ RUN getcap /usr/sbin/apache2
 # copy all of our development code
 COPY ./website/wp-content /var/www/html/wp-content
 
-# switch to www-data
-USER www-data
+# # switch to www-data
+# USER www-data
