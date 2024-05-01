@@ -26,7 +26,7 @@ $loop = new WP_Query($queryArgs);
     <?php $loop->the_post();
     $thumbnailUrl = null;
     if (get_the_post_thumbnail()) {
-        $thumbnailUrl = get_the_post_thumbnail_url(get_the_ID(), 'thumbnail');
+        $thumbnailUrl = get_the_post_thumbnail_url(get_the_ID(), 'medium_large');
     } else {
         $thumbnailUrl = get_template_directory_uri() . '/assets/images/default_member.png';
     }
