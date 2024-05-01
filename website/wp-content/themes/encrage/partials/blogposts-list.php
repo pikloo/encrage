@@ -1,54 +1,47 @@
 <?php
-$posts = [
-    [
-        'title' => 'La fierté des nôtres - Le podcast',
-        'date' => 'mars 2024',
-        'text' => '40 ans de Marche, Partie 1 : Se souvenir de la Marche.<br /><br />
-Aujourd’hui, nous revenons sur un événement fédérateur qui est né dans nos quartiers populaires. Il y a 40 ans aujourd’hui, quelques banlieusards, enfants d’immigrés, deuxième-troisième génération, militants antiracistes, partent à pied de Marseille le 15 octobre 1983, dans une quasi indifférence médiatique et politique, avec l’objectif de rejoindre Paris, la fin des violences institutionnelles, l’égalité des droits pour toutes et tous, et la lutte contre les discriminations.
-'
-    ],
-    [
-        'title' => 'La fierté des nôtres - Le podcast',
-        'date' => 'juin 2024',
-        'text' => '40 ans de Marche, Partie 1 : Se souvenir de la Marche.<br /><br />
-Aujourd’hui, nous revenons sur un événement fédérateur qui est né dans nos quartiers populaires. Il y a 40 ans aujourd’hui, quelques banlieusards, enfants d’immigrés, deuxième-troisième génération, militants antiracistes, partent à pied de Marseille le 15 octobre 1983, dans une quasi indifférence médiatique et politique, avec l’objectif de rejoindre Paris, la fin des violences institutionnelles, l’égalité des droits pour toutes et tous, et la lutte contre les discriminations.
-'
-    ],
-    [
-        'title' => 'La fierté des nôtres - Le podcast',
-        'date' => 'avril 2024',
-        'text' => '40 ans de Marche, Partie 1 : Se souvenir de la Marche.<br /><br />
-Aujourd’hui, nous revenons sur un événement fédérateur qui est né dans nos quartiers populaires. Il y a 40 ans aujourd’hui, quelques banlieusards, enfants d’immigrés, deuxième-troisième génération, militants antiracistes, partent à pied de Marseille le 15 octobre 1983, dans une quasi indifférence médiatique et politique, avec l’objectif de rejoindre Paris, la fin des violences institutionnelles, l’égalité des droits pour toutes et tous, et la lutte contre les discriminations.
-'
-    ]
-]
+$args =  [
+    'post_type' => 'post',
+    'posts_per_page' => 3,
+    'post_status' => 'publish',
+    'order' => 'DESC',
+    // 'meta_key' => 'year',
+    'orderby' => 'date',
+];
 
+$wp_query = new WP_Query($args);
 
 ?>
 
-<section class="container mx-auto p-10 h-fit <?php if(get_query_var('is_home')) echo 'reveal'?>">
+<section class="container mx-auto p-10 h-fit reveal">
     <h2 class="section">nos actus</h2>
     <div class="swiper blogpost-carousel lg:max-w-screen-lg">
         <div class="swiper-wrapper h-fit">
-            <?php foreach ($posts as $key => $post) : ?>
-                <a class="swiper-slide">
-                    <header class="pl-10 mb-8 text-xl uppercase">
-                        <h3><?= $post['title'] ?></h3>
-                        <span class="inline-block text-gray-500"><?= $post['date'] ?></span>
-                    </header>
-                    <main class="grid grid-cols-1 lg:grid-cols-2 items-center justify-center justify-items-center px-14 gap-y-4 lg:gap-y-0 w-full mx-auto">
-                        <aside class="max-w-sm"><img src="<?= get_template_directory_uri(); ?>/assets/images/post<?= $key ?>.png" alt="" /></aside>
-                        <article class="max-w-sm">
-                            <p class="text-justify"><?= $post['text'] ?></p>
-                        </article>
-                    </main>
-                    <div class="mt-20 flex items-center">
+            <?php if ($wp_query->have_posts()) : ?>
+                <?php while ($wp_query->have_posts()) : $wp_query->the_post(); ?>
+                    <div class="swiper-slide py-4">
+                        <header class="pl-10 mb-8 text-xl uppercase">
+                            <h3><?= the_title(); ?></h3>
+                            <span class="inline-block text-gray-500"><?php the_date(); ?></span>
+                        </header>
+                        <main class="grid grid-cols-1 lg:grid-cols-2 items-center justify-center justify-items-center px-14 gap-y-4 lg:gap-y-0 w-full mx-auto">
+                            <aside class="max-w-sm">
+                                <?php if (has_post_thumbnail(get_the_ID())) : ?>
+                                    <img src="<?= esc_url(get_the_post_thumbnail_url(get_the_ID(), 'medium_large')) ?>" alt="<?= the_title(); ?>" class="cover-contain" />
+                                <?php else : ?>
+                                    <img src="<?= get_template_directory_uri() . '/assets/images/default_member.png' ?>" alt="<?= the_title(); ?>" class="cover-contain" />
+                                <?php endif; ?>
+                            </aside>
+                            <article class="max-w-sm">
+                                <div class="text-justify text-md lg:text-xl"><?= the_excerpt(); ?></div>
+                            </article>
+                        </main>
+                        <div class="mt-20 flex items-center">
 
-                        <button class="button" type="button">lire la suite</button>
+                            <a class="button" href="<?= esc_url(get_permalink()); ?>">lire la suite</a>
+                        </div>
                     </div>
-                </a>
-
-            <?php endforeach; ?>
+                <?php endwhile; ?>
+            <?php endif; ?>
         </div>
         <div class="swiper-button-next text-gray-500"></div>
         <div class="swiper-button-prev text-gray-500"></div>

@@ -987,6 +987,14 @@ h3::first-letter {
   margin-top: 1.5rem !important;
 }
 
+.mb-6 {
+  margin-bottom: 1.5rem !important;
+}
+
+.block {
+  display: block !important;
+}
+
 .inline-block {
   display: inline-block !important;
 }
@@ -1001,6 +1009,10 @@ h3::first-letter {
 
 .grid {
   display: grid !important;
+}
+
+.contents {
+  display: contents !important;
 }
 
 .hidden {
@@ -1301,6 +1313,14 @@ h3::first-letter {
   padding-top: 9rem !important;
 }
 
+.pl-4 {
+  padding-left: 1rem !important;
+}
+
+.text-left {
+  text-align: left !important;
+}
+
 .text-center {
   text-align: center !important;
 }
@@ -1385,6 +1405,10 @@ h3::first-letter {
 
 .invert {
   --tw-invert: invert(100%) !important;
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow) !important;
+}
+
+.filter {
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow) !important;
 }
 
@@ -1646,9 +1670,9 @@ h3::first-letter {
     line-height: 1.75rem !important;
   }
 
-  .lg\:text-white {
-    --tw-text-opacity: 1 !important;
-    color: rgb(255 255 255 / var(--tw-text-opacity)) !important;
+  .lg\:text-xl {
+    font-size: 1.25rem !important;
+    line-height: 1.75rem !important;
   }
 
   .lg\:first-letter\:mr-3::first-letter {

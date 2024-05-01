@@ -129,7 +129,9 @@ if(!function_exists('publication_join_member')) {
         global $wpdb;
         $post_types = ['serie','release'];
 
-        if( is_home() || is_page() )
+        // var_dump(isset($wp_query->query['post_type']));exit();
+
+        if( is_home() || is_page() ||  !isset($wp_query->query['post_type']))
 			return;
         
 		if (isset($wp_query) && in_array($wp_query->query['post_type'], $post_types)){
