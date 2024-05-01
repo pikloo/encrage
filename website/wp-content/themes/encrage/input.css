@@ -35,6 +35,10 @@ Version: 1.0
 }
 
 @layer components {
+  html {
+    scroll-behavior: cubic-bezier(0.42, 0, 0.58, 1);
+  }
+
   h2 {
     @apply relative text-4xl uppercase font-medium first-letter:text-5xl;
   }
@@ -150,12 +154,15 @@ Version: 1.0
 
   #sideBar,
   #sideNav {
-    width: 0;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: -100%;
   }
 
-  #sideLinks {
+  /* #sideLinks {
     opacity: 0;
-  }
+  } */
 
   .main-menu {
     @apply py-6 flex text-center;

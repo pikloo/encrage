@@ -11101,15 +11101,15 @@ var onClickOnMenuToggle = function onClickOnMenuToggle() {
   if (-1 !== menuToogle.className.indexOf('opened')) {
     menuToogle.className = menuToogle.className.replace(' opened', '');
     menuToogle.setAttribute('aria-expanded', 'false');
-    document.getElementById("sideBar").style.width = "0";
-    document.getElementById("sideNav").style.width = "0";
-    document.getElementById("sideLinks").style.opacity = "0";
+    document.getElementById("sideBar").style.left = "-100%";
+    document.getElementById("sideNav").style.left = "-100%";
+    // document.getElementById("sideLinks").style.opacity = "0";
   } else {
     menuToogle.className += ' opened';
     menuToogle.setAttribute('aria-expanded', 'true');
-    document.getElementById("sideBar").style.width = "100%";
-    document.getElementById("sideNav").style.width = "100%";
-    document.getElementById("sideLinks").style.opacity = "1";
+    document.getElementById("sideBar").style.left = "0";
+    document.getElementById("sideNav").style.left = "0";
+    // document.getElementById("sideLinks").style.opacity = "1";
   }
 };
 menuToogle.addEventListener("click", onClickOnMenuToggle);

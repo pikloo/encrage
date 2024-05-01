@@ -20,7 +20,7 @@ $loop = new WP_Query($args);
                     <?php the_post_thumbnail(); ?>
                 </aside>
             <?php endif; ?>
-            <article class="lg:max-w-xl first-letter:text-7xl first-letter:font-semibold first-letter:mr-2 first-letter:float-left">
+            <article class="lg:max-w-xl lg:text-lg first-letter:text-7xl first-letter:font-semibold first-letter:mr-2 first-letter:float-left">
                 <?= the_content(); ?></article>
         </div>
     <?php endwhile; ?>

@@ -11,22 +11,32 @@ $args =  [
 $loop = new WP_Query($args);
 
 ?>
-<main class="overflow-hidden pt-36 main">
+<main class="overflow-hidden pt-36 pb-6 main">
     <?php while ($loop->have_posts()) : $loop->the_post(); ?>
-        <h1 class="<?php if($post->post_name === 'lagence') echo 'translate-y-6 mb-0'?>"><?= the_title(); ?></h1>
+        <?php
+        $categories = get_the_category();
+        ?>
+        <h1 class="<?php if ($post->post_name === 'lagence') echo 'translate-y-6 mb-0' ?>"><?= the_title(); ?></h1>
         <div class="px-6 text-justify flex flex-col gap-y-10 lg:flex-row lg:gap-x-10">
             <?php if (has_post_thumbnail()) : ?>
                 <aside class="max-w-sm md:max-w-md">
                     <?php the_post_thumbnail(); ?>
                 </aside>
             <?php endif; ?>
-            <article class="lg:max-w-xl first-letter:text-7xl first-letter:font-semibold first-letter:mr-2 first-letter:float-left">
+            <article class="reveal lg:text-lg first-letter:text-7xl first-letter:font-semibold first-letter:mr-2 first-letter:float-left
+            <?php if (!empty($categories) && $categories[0]->name == 'Légales') {
+                echo 'mx-auto lg:max-w-screen-lg';
+            } else {
+                echo 'lg:max-w-xl';
+            } ?>
+            ">
                 <?= the_content(); ?></article>
         </div>
     <?php endwhile; ?>
 </main>
 <aside>
-    <?php get_template_part('partials/members-list', 'members-list'); ?>
+    <?php $post->post_name === 'lagence' && get_template_part('partials/members-list', 'members-list'); ?>
+    <?php $post->post_name === 'lagence' && get_template_part('partials/blogposts-list', 'blogposts-list'); ?>
 </aside>
 <?php
 get_template_part('partials/footer', 'footer');

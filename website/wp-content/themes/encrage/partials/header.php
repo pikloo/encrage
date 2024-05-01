@@ -32,9 +32,9 @@ $menu_main = wp_nav_menu([
       </svg>
     </button>
     <a class="z-20 bg-white" href=<?= home_url(); ?>><img src="<?= get_template_directory_uri(); ?>/assets/images/ancrage_logo.png" alt="<?= esc_html(get_bloginfo('description')) ?> " class="w-[250px] px-10 logo-site" /></a>
-    <div id="sideBar" class="fixed top-0 left-0 bg-transparent h-full overflow-x-hidden duration-500 z-10">
+    <div id="sideBar" class="bg-transparent h-full overflow-x-hidden duration-500 z-10">
       <!--navigation menu box-->
-      <div id="sideNav" class="text-2xl sm:text-3xl fixed top-0 left-0 bg-white text-black h-full flex flex-col justify-center items-center overflow-x-hidden duration-500 z-50">
+      <div id="sideNav" class="text-2xl sm:text-3xl bg-white text-black h-full flex flex-col justify-center items-center overflow-x-hidden duration-500 z-50">
         <!--exit icon, will close navbar when clicked-->
         <!-- <a href="javascript:void(0)" class="text-3xl absolute top-0 right-0 mr-3 mt-2">&times;</a> -->
         <!--menu links-->

@@ -180,15 +180,20 @@ if(!function_exists('publication_where_member')) {
 }
 
 
-
-
-
-
 add_filter('login_url', 'custom_login_url', PHP_INT_MAX);
 function custom_login_url($login_url)
 {
     return str_replace('wp-login', 'encrage-login', $login_url);
 }
+
+
+if(!function_exists('add_categories_to_pages')){
+    function add_categories_to_pages() {
+        register_taxonomy_for_object_type( 'category', 'page' );
+        }
+        add_action( 'init', 'add_categories_to_pages' );
+}
+
 
 require_once WP_CONTENT_DIR . '/themes/encrage/inc/post-types/member.php';
 require_once WP_CONTENT_DIR . '/themes/encrage/inc/post-types/serie.php';

@@ -5,8 +5,16 @@ $menu_main = wp_nav_menu([
     'menu_class' => 'main-footer-menu',
     'echo' => false,
     'container_aria_label' => 'Navigation principal',
-  ]);
-  
+]);
+
+$menu_legal = wp_nav_menu([
+    'menu' => 'Légales',
+    'container' => 'ul',
+    'menu_class' => 'legal-footer-menu',
+    'echo' => false,
+    'container_aria_label' => 'Pages légales',
+]);
+
 
 ?>
 
@@ -91,6 +99,6 @@ $menu_main = wp_nav_menu([
     </div>
     <div class="text-sm text-center">
         <hr class="h-px my-2 bg-gray-200 border-0">
-        <a href="#">Conditions générales d’utilisation</a>
+        <?= $menu_legal ?>
     </div>
 </footer>
