@@ -1,7 +1,7 @@
 .env*
 # website/wp-admin
 # website/wp-content/uploads
-# website/wp-content/themes/encrage/node_modules
+website/wp-content/themes/encrage/node_modules
 # # default plugins, if we don't need them
 # website/wp-content/plugins/hello.php
 # website/wp-content/plugins/akismet
