@@ -5,7 +5,7 @@ $is_home = is_home();
 ?>
 <main class="overflow-hidden main">
     <?php get_template_part('partials/home/slider', 'slider-home'); ?>
-    <?php get_template_part('partials/members-list', 'members-list'); ?>
+    <?php get_template_part('partials/members-list', 'members-list', ['is_home' => is_home()]); ?>
     <?php 
     set_query_var('is_home', $is_home);
     get_template_part('partials/series-list', 'series-list'); ?>

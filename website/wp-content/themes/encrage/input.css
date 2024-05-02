@@ -54,6 +54,14 @@ Version: 1.0
     @apply text-3xl first-letter:text-4xl md:text-5xl md:first-letter:text-6xl bg-black text-white w-fit p-2 mb-10 uppercase;
   }
 
+  .main-title h1{
+    @apply bg-transparent text-black m-0 p-0 inline text-2xl first-letter:text-3xl md:text-3xl md:first-letter:text-4xl;
+  }
+
+  .main-title {
+    @apply text-2xl first-letter:text-3xl md:text-3xl md:first-letter:text-4xl w-fit p-2 mb-10 uppercase;
+  }
+
   h3 {
     @apply uppercase first-letter:text-2xl;
   }
