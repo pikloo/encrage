@@ -1,7 +1,17 @@
+<?php
+extract($args);
+?>
 <section class="container xl:px-10 mx-auto py-10">
-    <h2 class="section">Les photographes</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-y-10">
-        <?php get_template_part('partials/member-informations', 'member-informations'); ?>
+    <?php if (!$is_home) : ?>
+        <h2 class="section">Les photographes</h2>
+    <?php else : ?>
+        <div class="main-title">
+            <h1>Une Agence de photographes indépendants</h1>
+            <span>composée de</span>
+        </div>
+    <?php endif; ?>
+    <div class="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-y-10">
+        <?php get_template_part('partials/member-informations', 'member-informations', ['is_home' => $is_home]); ?>
     </div>
     <svg class="to-top" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" id="fi_12363698">
         <g id="iOS7" fill="currentColor" fill-rule="evenodd">

@@ -36,13 +36,13 @@ $loop = new WP_Query($queryArgs);
         <? endif; ?>
         <div class="<?php if($is_home_page || is_page() ) echo 'reveal'?> profil flex flex-col justify-center items-center gap-4">
             <a href="<?= esc_url(get_permalink()); ?>">
-                <img class="h-64 w-64 rounded-full object-contain <?php if (!get_the_post_thumbnail()) echo "border border-black" ?>" src=<?= esc_url($thumbnailUrl); ?> alt="" />
+                <img class="<?php if($is_home || is_singular()) echo 'h-32 w-32 md:h-64 md:w-64'; ?> h-64 w-64  rounded-full object-contain <?php if (!get_the_post_thumbnail()) echo "border border-black" ?>" src=<?= esc_url($thumbnailUrl); ?> alt="" />
             </a>
             <div class="socials text-center text-sm lg:text-base">
                 <div class="-translate-y-6 before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-black before:shadow-lg before:shadow-black/50 relative inline-block">
                     <h3 class="relative text-xl font-medium uppercase text-white"><?php the_title(); ?></h3>
                 </div>
-                <ul class="<?php if ($is_home_page || is_page()) echo 'md:hidden' ?> text-center">
+                <ul class="<?php if ($is_home_page || is_page()) echo 'hidden' ?> text-center">
                     <?php if (get_post_meta(get_the_ID(), 'insta', true)) : ?>
                         <li class="flex items-center gap-2">
                             <svg viewBox="0 0 512.00096 512.00096" height="14" width="14" xmlns="http://www.w3.org/2000/svg">
