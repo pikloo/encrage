@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the WordPress - 6.5.x - Development package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2024-04-20 12:32:00+0000\n"
+"PO-Revision-Date: 2024-05-01 21:45:06+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -750,7 +750,7 @@ msgid "sub item"
 msgstr "sous-élément"
 
 #. translators: 1: theme.json, 2: settings.spacing.spacingScale
-#: wp-includes/class-wp-theme-json.php:3513
+#: wp-includes/class-wp-theme-json.php:3531
 msgid "Some of the %1$s %2$s values are invalid"
 msgstr "Certaines des valeurs %1$s %2$s sont invalides"
 
@@ -2046,18 +2046,18 @@ msgid "Logged in as %1$s. <a href=\"%2$s\">Edit your profile</a>. <a href=\"%3$s
 msgstr "Connexion en tant que %1$s. <a href=\"%2$s\">Modifier votre profil</a>. <a href=\"%3$s\">Se déconnecter ?</a>"
 
 #. translators: %s: Digit to indicate multiple of sizing, eg. 2X-Large.
-#: wp-includes/class-wp-theme-json.php:3589
+#: wp-includes/class-wp-theme-json.php:3607
 msgid "%sX-Large"
 msgstr "%sx plus grand"
 
 #. translators: %s: Digit to indicate multiple of sizing, eg. 2X-Small.
-#: wp-includes/class-wp-theme-json.php:3552
+#: wp-includes/class-wp-theme-json.php:3570
 msgid "%sX-Small"
 msgstr "%sx plus petit"
 
 #. translators: 1: theme.json, 2: Value name, 3: Value path, 4: Another value
 #. name.
-#: wp-includes/class-wp-theme-json.php:2171
+#: wp-includes/class-wp-theme-json.php:2189
 msgid "Your %1$s file uses a dynamic value (%2$s) for the path at %3$s. However, the value at %3$s is also a dynamic value (pointing to %4$s) and pointing to another dynamic value is not supported. Please update %3$s to point directly to %4$s."
 msgstr "Votre fichier %1$s utilise une valeur dynamique (%2$s) pour le chemin vers %3$s. Cependant, la valeur de %3$s est également une valeur dynamique (pointant vers %4$s) et pointant vers une autre valeur dynamique ce qui n’est pas pris en charge. Veuillez mettre à jour %3$s pour pointer directement vers %4$s."
 
@@ -2537,7 +2537,7 @@ msgstr "Zo"
 #: wp-includes/functions.php:466
 msgctxt "unit symbol"
 msgid "YB"
-msgstr "YB"
+msgstr "Yo"
 
 #: wp-includes/customize/class-wp-customize-nav-menu-item-control.php:138
 #: wp-admin/includes/class-walker-nav-menu-edit.php:237
@@ -6707,7 +6707,7 @@ msgid "Slug"
 msgstr "Slug"
 
 #. translators: %s: Digit to indicate multiple of sizing, eg. 2X-Small.
-#: wp-includes/class-wp-theme-json.php:3552
+#: wp-includes/class-wp-theme-json.php:3570
 #: wp-includes/js/dist/block-library.js:53560
 #: wp-includes/js/dist/components.js:59631
 msgid "Small"
@@ -10704,7 +10704,7 @@ msgstr "Route de base REST pour la taxonomie."
 msgid "+ %s"
 msgstr "+ %s"
 
-#: wp-includes/l10n.php:1671
+#: wp-includes/l10n.php:1687
 msgctxt "default site language"
 msgid "Site Default"
 msgstr "Valeur par défaut du site"
@@ -14069,12 +14069,12 @@ msgstr "Articles plus récents"
 msgid "Older posts"
 msgstr "Articles plus anciens"
 
-#: wp-includes/l10n.php:1700
+#: wp-includes/l10n.php:1716
 msgctxt "translations"
 msgid "Available"
 msgstr "Disponible"
 
-#: wp-includes/l10n.php:1663
+#: wp-includes/l10n.php:1679
 msgctxt "translations"
 msgid "Installed"
 msgstr "Installée"
@@ -15807,7 +15807,7 @@ msgid "Attachment Details"
 msgstr "Détails du fichier joint"
 
 #. translators: %s: Digit to indicate multiple of sizing, eg. 2X-Large.
-#: wp-includes/block-editor.php:173 wp-includes/class-wp-theme-json.php:3589
+#: wp-includes/block-editor.php:173 wp-includes/class-wp-theme-json.php:3607
 #: wp-includes/media-template.php:913 wp-includes/media-template.php:993
 #: wp-includes/media-template.php:1184 wp-includes/media.php:4419
 #: wp-includes/js/dist/block-editor.js:8990
@@ -19066,7 +19066,7 @@ msgid "%s is a protected WP option and may not be modified"
 msgstr "%s est une option protégée de WordPress, et ne peut être modifiée"
 
 #. translators: Used between list items, there is a space after the comma.
-#: wp-includes/class-wp-locale.php:241 wp-includes/l10n.php:1903
+#: wp-includes/class-wp-locale.php:241 wp-includes/l10n.php:1919
 #: wp-includes/js/dist/block-editor.js:64471
 msgid ", "
 msgstr ", "
@@ -20090,7 +20090,7 @@ msgstr "Taille"
 msgid "Full Size"
 msgstr "Taille originale"
 
-#: wp-includes/block-editor.php:172 wp-includes/class-wp-theme-json.php:3571
+#: wp-includes/block-editor.php:172 wp-includes/class-wp-theme-json.php:3589
 #: wp-includes/media-template.php:912 wp-includes/media-template.php:992
 #: wp-includes/media-template.php:1183 wp-includes/media.php:4418
 #: wp-includes/js/dist/block-editor.js:8987
