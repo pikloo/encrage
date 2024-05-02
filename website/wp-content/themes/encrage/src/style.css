@@ -1059,10 +1059,6 @@ h3::first-letter {
   position: fixed !important;
 }
 
-.absolute {
-  position: absolute !important;
-}
-
 .relative {
   position: relative !important;
 }
@@ -1127,10 +1123,6 @@ h3::first-letter {
 
 .ml-6 {
   margin-left: 1.5rem !important;
-}
-
-.mr-3 {
-  margin-right: 0.75rem !important;
 }
 
 .mt-2 {
@@ -1476,11 +1468,6 @@ h3::first-letter {
   line-height: 2rem !important;
 }
 
-.text-3xl {
-  font-size: 1.875rem !important;
-  line-height: 2.25rem !important;
-}
-
 .text-sm {
   font-size: 0.875rem !important;
   line-height: 1.25rem !important;
@@ -1558,16 +1545,8 @@ h3::first-letter {
   transition-duration: 150ms !important;
 }
 
-.duration-150 {
-  transition-duration: 150ms !important;
-}
-
 .duration-500 {
   transition-duration: 500ms !important;
-}
-
-.ease-out {
-  transition-timing-function: cubic-bezier(0, 0, 0.2, 1) !important;
 }
 
 .break-inside {
@@ -1771,11 +1750,6 @@ h3::first-letter {
     line-height: 2rem !important;
   }
 
-  .md\:text-3xl {
-    font-size: 1.875rem !important;
-    line-height: 2.25rem !important;
-  }
-
   .md\:masonry-md {
     -moz-column-gap: 1.5em !important;
          column-gap: 1.5em !important;
@@ -1823,6 +1797,11 @@ h3::first-letter {
     row-gap: 0px !important;
   }
 
+  .lg\:text-3xl {
+    font-size: 1.875rem !important;
+    line-height: 2.25rem !important;
+  }
+
   .lg\:text-base {
     font-size: 1rem !important;
     line-height: 1.5rem !important;
@@ -1836,11 +1815,6 @@ h3::first-letter {
   .lg\:text-xl {
     font-size: 1.25rem !important;
     line-height: 1.75rem !important;
-  }
-
-  .lg\:text-3xl {
-    font-size: 1.875rem !important;
-    line-height: 2.25rem !important;
   }
 }
 
