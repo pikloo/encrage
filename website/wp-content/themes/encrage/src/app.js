@@ -22,13 +22,11 @@ const onClickOnMenuToggle = () => {
       menuToogle.setAttribute( 'aria-expanded', 'false' );
       document.getElementById("sideBar").style.left = "-100%";
       document.getElementById("sideNav").style.left = "-100%";
-      // document.getElementById("sideLinks").style.opacity = "0";
     } else {
       menuToogle.className += ' opened';
       menuToogle.setAttribute( 'aria-expanded', 'true' );
       document.getElementById("sideBar").style.left = "0";
       document.getElementById("sideNav").style.left = "0";
-      // document.getElementById("sideLinks").style.opacity = "1";
      }
       
    };
@@ -43,9 +41,6 @@ const callback = function (entries) {
     if (entry.isIntersecting) {
       entry.target.classList.add("inview");
     } 
-    // else {
-    //   entry.target.classList.remove("inview");
-    // }
   });
 };
 
@@ -83,23 +78,22 @@ const portfolioTitle = document.querySelector(".portfolio-title");
 const sliderActive = document.querySelector(".gallery");
 
 if(portfolioTitle) {
-  portfolioTitle.setAttribute('style', `top:${sliderActive.offsetHeight - 150}px; z-index:2; position:absolute;`);
-  const basePosition = sliderActive.offsetHeight - 150;
+  const basePosition = sliderActive.offsetHeight;
+  portfolioTitle.setAttribute('style', `top:${basePosition}px; z-index:11; position:absolute;`);
+  
   
   
   document.addEventListener("scroll", (event) => {
-    console.log(portfolioTitle.getBoundingClientRect().top)
     if (portfolioTitle.getBoundingClientRect().top < header.offsetHeight + 150 ){
-      portfolioTitle.setAttribute('style', `top:${header.offsetHeight + 20}px; z-index:2; position:fixed;`);
+      portfolioTitle.setAttribute('style', `top:${header.offsetHeight + 20}px; z-index:11; position:fixed;`);
     }
-    console.log(window.scrollY);
     
   
     if(window.scrollY  < basePosition - 20 ) {
-      portfolioTitle.setAttribute('style', `top:${basePosition}px;z-index:2; position:absolute;`);
+      portfolioTitle.setAttribute('style', `top:${basePosition}px;z-index:11; position:absolute;`);
     }
   });
-  
+
 }
 
 

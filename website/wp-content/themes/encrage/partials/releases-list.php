@@ -25,7 +25,7 @@ $is_home = get_query_var('is_home');
 
 <section class="container mx-auto py-10 xl:px-10">
     <h2 class="section">publications</h2>
-    <div class="sm:masonry-sm xl:masonry-md 2xl:masonry-xl space-y-4">
+    <div class="sm:masonry-sm xl:masonry-md 2xl:masonry-xl space-y-4 px-2">
         <?php if ($releases->have_posts()) : ?>
             <?php while ($releases->have_posts()) : $releases->the_post(); ?>
                 <?php
@@ -37,7 +37,7 @@ $is_home = get_query_var('is_home');
         <?php wp_reset_postdata(); ?>
     </div>
     <div class="mt-20 flex items-center">
-        <svg class="to-top text-gray-500 cursor-pointer" height="40" viewBox="0 0 22 22" width="40" xmlns="http://www.w3.org/2000/svg" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" id="fi_12363698">
+        <svg class="to-top" height="40" viewBox="0 0 22 22" width="40" xmlns="http://www.w3.org/2000/svg" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" id="fi_12363698">
             <g id="iOS7" fill="currentColor" fill-rule="evenodd">
                 <path id="arrow_move_up" d="m3 2v1h17v-1zm12.5 5.40000153v1.09999847l-3.5015625-2.5-.0000001 14h-.9984374v-14l-3.5 2.5v-1.09999847l4-2.90000153z" fill="currentColor"></path>
             </g>

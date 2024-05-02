@@ -11103,13 +11103,11 @@ var onClickOnMenuToggle = function onClickOnMenuToggle() {
     menuToogle.setAttribute('aria-expanded', 'false');
     document.getElementById("sideBar").style.left = "-100%";
     document.getElementById("sideNav").style.left = "-100%";
-    // document.getElementById("sideLinks").style.opacity = "0";
   } else {
     menuToogle.className += ' opened';
     menuToogle.setAttribute('aria-expanded', 'true');
     document.getElementById("sideBar").style.left = "0";
     document.getElementById("sideNav").style.left = "0";
-    // document.getElementById("sideLinks").style.opacity = "1";
   }
 };
 menuToogle.addEventListener("click", onClickOnMenuToggle);
@@ -11121,9 +11119,6 @@ var callback = function callback(entries) {
     if (entry.isIntersecting) {
       entry.target.classList.add("inview");
     }
-    // else {
-    //   entry.target.classList.remove("inview");
-    // }
   });
 };
 var observer = new IntersectionObserver(callback);
@@ -11154,16 +11149,14 @@ images.forEach(function (image) {
 var portfolioTitle = document.querySelector(".portfolio-title");
 var sliderActive = document.querySelector(".gallery");
 if (portfolioTitle) {
-  portfolioTitle.setAttribute('style', "top:".concat(sliderActive.offsetHeight - 150, "px; z-index:2; position:absolute;"));
-  var basePosition = sliderActive.offsetHeight - 150;
+  var basePosition = sliderActive.offsetHeight;
+  portfolioTitle.setAttribute('style', "top:".concat(basePosition, "px; z-index:11; position:absolute;"));
   document.addEventListener("scroll", function (event) {
-    console.log(portfolioTitle.getBoundingClientRect().top);
     if (portfolioTitle.getBoundingClientRect().top < header.offsetHeight + 150) {
-      portfolioTitle.setAttribute('style', "top:".concat(header.offsetHeight + 20, "px; z-index:2; position:fixed;"));
+      portfolioTitle.setAttribute('style', "top:".concat(header.offsetHeight + 20, "px; z-index:11; position:fixed;"));
     }
-    console.log(window.scrollY);
     if (window.scrollY < basePosition - 20) {
-      portfolioTitle.setAttribute('style', "top:".concat(basePosition, "px;z-index:2; position:absolute;"));
+      portfolioTitle.setAttribute('style', "top:".concat(basePosition, "px;z-index:11; position:absolute;"));
     }
   });
 }

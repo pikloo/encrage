@@ -20,7 +20,7 @@ $menu_main = wp_nav_menu([
 ]);
 
 ?>
-<header class="main-header flex items-center w-fit fixed top-0 left-0 right-0 z-10 bg-white">
+<header class="main-header flex items-center w-full sm:w-fit fixed top-0 left-0 right-0 z-20 bg-white duration-500 delay-2">
   <nav class="relative flex justify-between items-center bg-white">
     <button class="menu-toggle z-20" id="menu-toggle" aria-expanded="false"><span class="screen-reader-text">Menu</span>
       <svg class="icon icon-menu-toggle" aria-hidden="true" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100">
@@ -32,12 +32,9 @@ $menu_main = wp_nav_menu([
       </svg>
     </button>
     <a class="z-20 bg-white" href=<?= home_url(); ?>><img src="<?= get_template_directory_uri(); ?>/assets/images/ancrage_logo.png" alt="<?= esc_html(get_bloginfo('description')) ?> " class="w-[250px] px-10 logo-site" /></a>
-    <div id="sideBar" class="bg-transparent h-full overflow-x-hidden duration-500 z-10">
+    <div id="sideBar" class="bg-transparent overflow-x-hidden duration-500 z-10">
       <!--navigation menu box-->
-      <div id="sideNav" class="text-2xl sm:text-3xl bg-white text-black h-full flex flex-col justify-center items-center overflow-x-hidden duration-500 z-50">
-        <!--exit icon, will close navbar when clicked-->
-        <!-- <a href="javascript:void(0)" class="text-3xl absolute top-0 right-0 mr-3 mt-2">&times;</a> -->
-        <!--menu links-->
+      <div id="sideNav" class="text-xl h-full  md:text-2xl lg:text-3xl bg-white text-black flex flex-col justify-center items-center overflow-x-hidden duration-500 z-50">
         <div id="sideLinks" class="flex flex-col items-center justify-content duration-500 delay-2">
           <?= $menu_main; ?>
           <ul class="relative grid grid-cols-2 justify-items-center py-6 font-bold after:h-[2px] after:bg-black 
@@ -48,7 +45,7 @@ $menu_main = wp_nav_menu([
             wp_reset_postdata(); ?>
 
           </ul>
-          <div class="py-6 space-y-6 text-xl sm:text-2xl text-center">
+          <div class="py-6 space-y-6 text-xl md:text-2xl text-center">
             <div>
               <p>Retrouvez aussi nos photos sur</p>
               <a href="https://www.pixpalace.com/" target="_blank"><img src="<?= get_template_directory_uri() ?>/assets/images/logo_pixpalace.png" alt="Retrouvez aussi nos photos sur PixPalace" class="w-[100px] mx-auto" /></a>
