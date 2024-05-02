@@ -96,7 +96,7 @@ $loop = new WP_Query($queryArgs);
             </div>
         </div>
         <?php if (isset($post_type) && $post_type == 'member')  : ?>
-            <div class="reveal max-w-sm  md:max-w-md mx-auto space-y-2 mt-6 text-justify lg:text-lg first-letter:text-7xl lg:first-letter:text-8xl lg:first-letter:mr-3 first-letter:font-semibold first-letter:mr-2 first-letter:float-left"><?php the_content(); ?></div>
+            <div class="reveal max-w-sm  md:max-w-md mx-auto space-y-2 mt-6 content"><?php the_content(); ?></div>
         </section>
     <?php endif; ?>
 <?php endwhile;

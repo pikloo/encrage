@@ -40,26 +40,38 @@ Version: 1.0
   }
 
   h2 {
-    @apply relative text-4xl uppercase font-medium first-letter:text-5xl;
+    @apply relative text-2xl md:text-3xl lg:text-4xl uppercase font-medium first-letter:text-3xl md:first-letter:text-4xl lg:first-letter:text-5xl;
   }
 
   h2.section {
-    @apply mb-10 w-fit relative text-4xl uppercase font-medium  before:h-[2px] after:h-[2px] after:bg-black 
+    @apply mb-10 w-fit mx-auto sm:mx-0 relative  uppercase font-medium  before:h-[2px] after:h-[2px] after:bg-black 
        after:absolute after:w-[10%]
        before:bg-black before:absolute 
-       before:w-full after:right-0 after:bottom-0 before:-top-2 after:-bottom-2 first-letter:text-5xl;
+       before:w-full after:right-0 after:bottom-0 before:-top-2 after:-bottom-2 ;
   }
 
   h1 {
-    @apply text-5xl bg-black text-white w-fit p-2 mb-10 uppercase;
+    @apply text-3xl first-letter:text-4xl md:text-5xl md:first-letter:text-6xl bg-black text-white w-fit p-2 mb-10 uppercase;
   }
 
   h3 {
     @apply uppercase first-letter:text-2xl;
   }
 
+  .blog-post-title{
+    @apply bg-black text-white p-2 w-fit;
+  }
+
+  .to-top {
+    @apply h-10 w-10 md:h-12 md:w-12 text-gray-500 cursor-pointer;
+  }
+
   .portfolio-title h1{
-    @apply relative text-3xl first-letter:text-4xl font-medium uppercase text-white mb-0;
+    @apply relative text-2xl md:text-3xl first-letter:text-3xl md:first-letter:text-4xl  font-medium uppercase text-white mb-0;
+  }
+
+  .content {
+    @apply text-justify lg:text-lg first-letter:text-7xl lg:first-letter:text-8xl lg:first-letter:mr-3 first-letter:font-semibold first-letter:mr-2 first-letter:float-left
   }
 
   .slider-home {
@@ -82,17 +94,17 @@ Version: 1.0
     z-index: 999;
   }
 
-  .gallery .swiper-slide > img {
+  /* .gallery .swiper-slide > img {
     @apply object-contain;
     height: 100%;
-  }
+  } */
 
   .gallery .swiper-slide {
     height: calc(100vh - 324px);
   }
 
   .thumbnails .swiper-slide > img {
-    @apply h-[300px] object-cover;
+    @apply h-[100px] md:h-[300px] object-cover;
   }
 
   .thumbnails .swiper-slide {
@@ -104,17 +116,17 @@ Version: 1.0
   }
 
   .menu-toggle {
-    @apply border-0 rounded-none bg-black text-white cursor-pointer inline-block p-10 focus:outline focus:-outline-offset-2;
+    @apply border-0 rounded-none bg-black text-white cursor-pointer inline-block p-8 md:p-10 focus:outline focus:-outline-offset-2 transition duration-150 ease-out;
   }
 
   .menu-toggle .icon {
-    @apply inline-block fill-current h-8 w-8 align-middle relative top-[-0.0625em];
+    @apply inline-block fill-current h-6 w-6 md:h-8 md:w-8 align-middle relative top-[-0.0625em] transition duration-150 ease-out;
   }
 
   /* Menu toggle styles. */
 
   .icon-menu-toggle {
-    @apply w-10 h-10 top-0;
+    @apply w-6 h-6 md:w-10 md:h-10  top-0 transition duration-150 ease-out;
   }
 
   /* Animate menu icon (lines). */
@@ -154,11 +166,9 @@ Version: 1.0
 
   #sideBar,
   #sideNav {
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: -100%;
+    @apply top-14 sm:top-0 w-full fixed left-[-100%]
   }
+
 
   /* #sideLinks {
     opacity: 0;

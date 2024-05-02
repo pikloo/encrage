@@ -35,17 +35,17 @@ if (!function_exists('load_assets')) {
     {
         global $wp_query;
 
-        wp_enqueue_style('styleCss', get_theme_file_uri('style.css'), [], time());
+        wp_enqueue_style('styleCss', get_theme_file_uri('/src/style.css'), [], time());
         wp_enqueue_style('swiperCss', get_theme_file_uri('/build/main.css'), [], time());
         wp_enqueue_script('bundle', get_theme_file_uri('/build/main.js'), [], '1.0', time());
         wp_enqueue_style('googleFont', 'https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
-        wp_enqueue_script('jquery_last', '//ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js', 'jquery', null, true);
 
         wp_register_script(
             'load-more',
-            get_stylesheet_directory_uri() . '/assets/js/load-more.js'
+            get_stylesheet_directory_uri() . '/assets/js/load-more.js',
+            ['jquery']
         );
-        wp_enqueue_script('load-more');
+        if ( !is_home())  wp_enqueue_script('load-more');
 
         wp_localize_script('load-more', 'ajax_posts', array(
             'ajaxurl' => admin_url('admin-ajax.php'),
@@ -53,17 +53,7 @@ if (!function_exists('load_assets')) {
             'nonce' => wp_create_nonce('load_more_posts'),
             'current_page' => get_query_var('paged') ? get_query_var('paged') : 1,
             'post_type' => $wp_query->query_vars['post_type'],
-            // 'max_page' => $wp_query->max_num_pages,
-
         ));
-
-        // wp_localize_script('load_more', 'load_more_params', array(
-        //     'ajaxurl' => site_url() . '/wp-admin/admin-ajax.php',
-        //     'posts' => json_encode($wp_query->query_vars),
-        //     'current_page' => get_query_var('paged') ? get_query_var('paged') : 1,
-        //     'max_page' => $wp_query->max_num_pages,
-        //     'nonce' => wp_create_nonce('load_more_nonce')
-        // ));
     }
 }
 
@@ -213,6 +203,22 @@ if (!function_exists('add_categories_to_pages')) {
     add_action('init', 'add_categories_to_pages');
 }
 
+
+if (!function_exists('custom_length_excerpt')) {
+add_filter( 'wp_trim_excerpt', 'custom_length_excerpt', 10, 1 );
+function custom_length_excerpt( $text ) {
+	if( is_admin() ) {
+		return $text;
+	}
+	$text = get_the_content();
+	// Clear out shortcodes
+	$text = strip_shortcodes( $text );
+	$text = substr( $text, 0, 140 );
+	$text .= '…';
+	return $text;
+}
+
+}
 
 require_once WP_CONTENT_DIR . '/themes/encrage/inc/post-types/member.php';
 require_once WP_CONTENT_DIR . '/themes/encrage/inc/post-types/serie.php';

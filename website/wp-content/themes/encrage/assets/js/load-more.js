@@ -1,9 +1,8 @@
 const ajaxurl = ajax_posts.ajaxurl;
-let page = 1;
+jQuery.noConflict();
 jQuery(function ($) {
 
   $('body').on('click', '.load-more', function (e) {
-    console.log(ajax_posts)
     ajax_posts.current_page++;
     const grid = $('.mgrid');
     const button = $('.load-more');
@@ -24,7 +23,11 @@ jQuery(function ($) {
 			},
 			success : function( data ){
 				if( data ) { 
-          grid.append(data);
+          			grid.append(data);
+					console.log(data)
+					//   data.each(function() {
+					// 	$( this ).addClass( "inview" );
+					//   });
 					button.text( originalButtonText )
 					if ( ajax_posts.current_page == ajax_posts.max_page) { 
 						button.remove()
