@@ -11,7 +11,7 @@ $args =  [
 $loop = new WP_Query($args);
 
 ?>
-<main class="overflow-hidden pt-36 pb-6 main">
+<main class="overflow-hidden pt-20 md:pt-36 pb-6 main">
     <?php while ($loop->have_posts()) : $loop->the_post(); ?>
         <?php
         $categories = get_the_category();

@@ -4,15 +4,13 @@ $args =  [
     'posts_per_page' => 3,
     'post_status' => 'publish',
     'order' => 'DESC',
-    // 'meta_key' => 'year',
     'orderby' => 'date',
 ];
 
 $wp_query = new WP_Query($args);
-
 ?>
 
-<section class="container mx-auto p-10 h-fit reveal">
+<section class="container mx-auto p-4 md:p-10 h-fit reveal">
     <h2 class="section">nos actus</h2>
     <div class="swiper blogpost-carousel lg:max-w-screen-lg">
         <div class="swiper-wrapper h-fit">
@@ -20,8 +18,8 @@ $wp_query = new WP_Query($args);
                 <?php while ($wp_query->have_posts()) : $wp_query->the_post(); ?>
                     <div class="swiper-slide py-4">
                         <header class="pl-10 mb-8 text-xl uppercase">
-                            <h3><?= the_title(); ?></h3>
-                            <span class="inline-block text-gray-500"><?php the_date(); ?></span>
+                            <h3 class="blog-post-title"><?= the_title(); ?></h3>
+                            <span class="inline-block text-gray-500"><?php the_date('F Y'); ?></span>
                         </header>
                         <main class="grid grid-cols-1 lg:grid-cols-2 items-center justify-center justify-items-center px-14 gap-y-4 lg:gap-y-0 w-full mx-auto">
                             <aside class="max-w-sm">
@@ -35,8 +33,7 @@ $wp_query = new WP_Query($args);
                                 <div class="text-justify text-md lg:text-xl"><?= the_excerpt(); ?></div>
                             </article>
                         </main>
-                        <div class="mt-20 flex items-center">
-
+                        <div class="mt-4 flex items-center">
                             <a class="button" href="<?= esc_url(get_permalink()); ?>">lire la suite</a>
                         </div>
                     </div>
