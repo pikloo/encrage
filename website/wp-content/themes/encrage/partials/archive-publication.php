@@ -23,7 +23,7 @@ extract($args);
             <?php endwhile; ?>
             <?php wp_reset_postdata(); ?>
         </select>
-        <button class="button inline-block ml-6" type="submit">Filtrer</button>
+        <button class="button mt-6 mx-0 sm:inline-block sm:ml-6" type="submit">Filtrer</button>
     </form>
     <div class="mgrid sm:masonry-sm md:masonry-md <?php if($slug == 'releases') echo 'xl:masonry-xl'; ?> space-y-6 px-4">
         <?php if ($query->have_posts()) : ?>

@@ -56,17 +56,3 @@ const zoom = mediumZoom(document.querySelectorAll('.release'), {
     background: 'rgba(148, 148, 148, 0.97)',
     margin: 24,
 });
-
-// const header = document.querySelector('.main-header');
-
-// zoom.on(
-//   'open',
-//   event => {
-//     window.querySelector('.medium-zoom-overlay').style.setProperty("z-index", "20", "important");
-//   },
-//   { once: true }
-// )
-
-// zoom.on('closed', event => {
-//   header.style.setProperty("z-index", "20", "important");
-// })
