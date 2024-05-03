@@ -1216,6 +1216,10 @@ h3::first-letter {
   display: none !important;
 }
 
+.h-32 {
+  height: 8rem !important;
+}
+
 .h-64 {
   height: 16rem !important;
 }
@@ -1241,8 +1245,8 @@ h3::first-letter {
   height: 100vh !important;
 }
 
-.h-32 {
-  height: 8rem !important;
+.w-32 {
+  width: 8rem !important;
 }
 
 .w-64 {
@@ -1268,10 +1272,6 @@ h3::first-letter {
 
 .w-full {
   width: 100% !important;
-}
-
-.w-32 {
-  width: 8rem !important;
 }
 
 .max-w-sm {
@@ -1764,12 +1764,12 @@ h3::first-letter {
     height: 16rem !important;
   }
 
-  .md\:w-screen {
-    width: 100vw !important;
-  }
-
   .md\:w-64 {
     width: 16rem !important;
+  }
+
+  .md\:w-screen {
+    width: 100vw !important;
   }
 
   .md\:max-w-md {
@@ -1829,14 +1829,6 @@ h3::first-letter {
   .lg\:mx-auto {
     margin-left: auto !important;
     margin-right: auto !important;
-  }
-
-  .lg\:h-64 {
-    height: 16rem !important;
-  }
-
-  .lg\:w-64 {
-    width: 16rem !important;
   }
 
   .lg\:max-w-screen-lg {
