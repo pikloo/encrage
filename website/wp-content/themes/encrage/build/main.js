@@ -11093,8 +11093,6 @@ var toTopButtons = document.querySelectorAll(".to-top");
 toTopButtons.forEach(function (button) {
   button.addEventListener("click", backToTop);
 });
-
-// Gestion du menu toogle
 var menuToogle = document.getElementById('menu-toggle');
 var onClickOnMenuToggle = function onClickOnMenuToggle() {
   // Toggle class "opened". Set also aria-expanded to true or false.
@@ -11113,11 +11111,12 @@ var onClickOnMenuToggle = function onClickOnMenuToggle() {
 menuToogle.addEventListener("click", onClickOnMenuToggle);
 
 //Apparition au scroll
-
 var callback = function callback(entries) {
   entries.forEach(function (entry) {
     if (entry.isIntersecting) {
       entry.target.classList.add("inview");
+    } else if (!entry.isIntersecting && entry.target.classList.contains('to-down')) {
+      entry.target.classList.remove("inview");
     }
   });
 };
@@ -11136,15 +11135,6 @@ var footer = document.querySelector("footer");
 var screenHeight = window.screen.height;
 main.style.minHeight = "".concat(screenHeight - footer.offsetHeight - header.offsetHeight, "px");
 
-//Désactivation du clic droit sur les images
-
-var images = document.querySelectorAll("img:not(.logo-site)");
-images.forEach(function (image) {
-  image.addEventListener("contextmenu", function (e) {
-    e.preventDefault();
-  }, false);
-});
-
 //Titre fixe lorsqu'il arrive sous le logo(Page Single Série)
 var portfolioTitle = document.querySelector(".portfolio-title");
 var sliderActive = document.querySelector(".gallery");
@@ -11158,6 +11148,18 @@ if (portfolioTitle) {
     if (window.scrollY < basePosition - 20) {
       portfolioTitle.setAttribute('style', "top:".concat(basePosition, "px;z-index:11; position:absolute;"));
     }
+  });
+}
+
+//Scroll to photographers (home)
+var toDownButton = document.querySelector('.to-down');
+if (toDownButton) {
+  toDownButton.addEventListener("click", function (event) {
+    event.preventDefault();
+    window.scrollTo({
+      top: document.querySelector('#slider').offsetHeight - document.querySelector('.main-header').offsetHeight,
+      inline: "nearest"
+    });
   });
 }
 })();
@@ -11223,20 +11225,6 @@ var zoom = (0,medium_zoom__WEBPACK_IMPORTED_MODULE_2__["default"])(document.quer
   background: 'rgba(148, 148, 148, 0.97)',
   margin: 24
 });
-
-// const header = document.querySelector('.main-header');
-
-// zoom.on(
-//   'open',
-//   event => {
-//     window.querySelector('.medium-zoom-overlay').style.setProperty("z-index", "20", "important");
-//   },
-//   { once: true }
-// )
-
-// zoom.on('closed', event => {
-//   header.style.setProperty("z-index", "20", "important");
-// })
 })();
 
 /******/ })()

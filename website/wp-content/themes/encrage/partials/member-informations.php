@@ -1,29 +1,31 @@
 <?php
-$is_home_page = is_front_page() && is_home();
-
-$post_type = ['serie', 'release'];
-
-$single_pageID = match (true) {
-    !is_page() && is_single() && !in_array(get_post_type(), $post_type) && is_single() => get_the_ID(),
-    in_array(get_post_type(), $post_type) && is_single() => get_post_meta($post->ID, 'photographer', true),
-    default => null,
-};
+$post_types = ['serie', 'release'];
 
 extract($args);
 
 $queryArgs =  [
     'post_type' => 'member',
     'orderby' => 'title',
-    'posts_per_page' => $is_home_page || is_page() ? -1 : 1,
+    'posts_per_page' => is_home() || is_page() ? -1 : 1,
     'post_status' => 'publish',
     'order' => 'ASC',
-    'p' => $single_pageID,
 
 ];
-$loop = new WP_Query($queryArgs);
+
+match (true) {
+    // Si on est sur une une single post type différent de serie ou release ( = page type member )
+    !in_array(get_post_type(), $post_types) && is_single() => $queryArgs['p'] = get_the_ID(),
+    // Si on est sur une une single post type différent de serie ou release 
+    in_array(get_post_type(), $post_types) && is_single() => $queryArgs['p'] = get_post_meta($post->ID, 'photographer', true),
+    default => false,
+};
+
+$members = new WP_Query($queryArgs);
+
+
 ?>
-<?php while ($loop->have_posts()) : ?>
-    <?php $loop->the_post();
+<?php while ($members->have_posts()) : ?>
+    <?php $members->the_post();
     $thumbnailUrl = null;
     if (get_the_post_thumbnail()) {
         $thumbnailUrl = get_the_post_thumbnail_url(get_the_ID(), 'medium_large');
@@ -32,17 +34,17 @@ $loop = new WP_Query($queryArgs);
     }
     ?>
     <?php if (is_singular() && !is_page() && 'serie' != get_post_type()) : ?>
-        <section class="grid grid-cols-1 lg:grid-cols-2 lg:items-center lg:max-w-screen-lg lg:mx-auto">
+        <section class="px-4 grid grid-cols-1 lg:grid-cols-2 lg:items-center lg:max-w-screen-lg lg:mx-auto">
         <? endif; ?>
-        <div class="<?php if($is_home_page || is_page() ) echo 'reveal'?> profil flex flex-col justify-center items-center gap-4">
+        <div class="<?php if (is_home() || is_page()) echo 'reveal' ?> profil flex flex-col justify-center items-center gap-4">
             <a href="<?= esc_url(get_permalink()); ?>">
-                <img class="<?php if($is_home || is_singular()) echo 'h-32 w-32 md:h-64 md:w-64'; ?> h-64 w-64  rounded-full object-contain <?php if (!get_the_post_thumbnail()) echo "border border-black" ?>" src=<?= esc_url($thumbnailUrl); ?> alt="" />
+                <img class="<?php echo (is_home() || is_page()) ?  'h-32 w-32 md:h-64 md:w-64' : 'h-64 w-64'; ?> rounded-full object-contain <?php if (!get_the_post_thumbnail()) echo "border border-black" ?>" src=<?= esc_url($thumbnailUrl); ?> alt="" />
             </a>
             <div class="socials text-center text-sm lg:text-base">
-                <div class="-translate-y-6 before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-black before:shadow-lg before:shadow-black/50 relative inline-block">
-                    <h3 class="relative text-xl font-medium uppercase text-white"><?php the_title(); ?></h3>
+                <div class=" -translate-y-6 before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-black before:shadow-lg before:shadow-black/50 relative inline-block">
+                    <<?= is_single() ? 'h1' : 'h3' ?> class="<?php echo (is_home() || is_page()) ?  'first-letter:text-xl  md:text-xl md:first-letter:text-2xl' : 'text-xl'; if(is_single()) echo ' member-page-title'?> relative  font-medium uppercase text-white"><?php the_title(); ?></<?= is_single() ? 'h1' : 'h3' ?>>
                 </div>
-                <ul class="<?php if ($is_home_page || is_page()) echo 'hidden' ?> text-center">
+                <ul class="<?php if (is_home() || is_page()) echo 'hidden' ?> text-center space-y-4">
                     <?php if (get_post_meta(get_the_ID(), 'insta', true)) : ?>
                         <li class="flex items-center gap-2">
                             <svg viewBox="0 0 512.00096 512.00096" height="14" width="14" xmlns="http://www.w3.org/2000/svg">
@@ -95,8 +97,8 @@ $loop = new WP_Query($queryArgs);
                 </ul>
             </div>
         </div>
-        <?php if (isset($post_type) && $post_type == 'member')  : ?>
-            <div class="reveal max-w-sm  md:max-w-md mx-auto space-y-2 mt-6 content"><?php the_content(); ?></div>
+        <?php if (isset($post_type) && $post_type == 'member') : ?>
+            <div class="reveal max-w-sm md:max-w-md mx-auto space-y-2 mt-6 content"><?php the_content(); ?></div>
         </section>
     <?php endif; ?>
 <?php endwhile;

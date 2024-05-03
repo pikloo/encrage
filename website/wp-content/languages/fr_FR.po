@@ -378,15 +378,15 @@ msgstr "Ajouter ou retirer des catégories de compositions"
 msgid "Function %s used incorrectly in PHP."
 msgstr "Fonction %s utilisée de manière incorrecte dans PHP."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-templates-controller.php:1068
+#: wp-includes/rest-api/endpoints/class-wp-rest-templates-controller.php:1069
 msgid "Where the template originally comes from e.g. 'theme'"
 msgstr "D’où vient initialement le modèle, par exemple « thème »"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-templates-controller.php:1063
+#: wp-includes/rest-api/endpoints/class-wp-rest-templates-controller.php:1064
 msgid "Human readable text for the author."
 msgstr "Texte lisible par un humain pour l’auteur ou l’autrice."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-templates-controller.php:831
+#: wp-includes/rest-api/endpoints/class-wp-rest-templates-controller.php:832
 msgid "Unknown author"
 msgstr "Auteur/autrice inconnu·e"
 
@@ -1285,7 +1285,7 @@ msgstr "Impossible de localiser le répertoire de contenu de WordPress (%s)."
 msgid "Whether the theme is a block-based theme."
 msgstr "Si le thème est un thème basé sur les blocs."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-templates-controller.php:1055
+#: wp-includes/rest-api/endpoints/class-wp-rest-templates-controller.php:1056
 msgid "The date the template was last modified, in the site's timezone."
 msgstr "La date de la dernière modification du modèle, dans le fuseau horaire du site."
 
@@ -2895,47 +2895,47 @@ msgstr "Le contenu de l’élément %s à partir de l‘URL."
 msgid "The URL to process."
 msgstr "L’URL à traiter."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-templates-controller.php:1093
+#: wp-includes/rest-api/endpoints/class-wp-rest-templates-controller.php:1094
 msgid "Where the template part is intended for use (header, footer, etc.)"
 msgstr "L’emplacement où l’élément de modèle devrait être utilisé (entête, pied de page, etc.)"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-templates-controller.php:1084
+#: wp-includes/rest-api/endpoints/class-wp-rest-templates-controller.php:1085
 msgid "Whether a template is a custom template."
 msgstr "Si un modèle est un modèle personnalisé."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-templates-controller.php:1050
+#: wp-includes/rest-api/endpoints/class-wp-rest-templates-controller.php:1051
 msgid "The ID for the author of the template."
 msgstr "L’ID de l’auteur/autrice du modèle."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-templates-controller.php:1017
+#: wp-includes/rest-api/endpoints/class-wp-rest-templates-controller.php:1018
 msgid "HTML title for the template, transformed for display."
 msgstr "Titre HTML du modèle, mis en forme pour l’affichage."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-templates-controller.php:1012
+#: wp-includes/rest-api/endpoints/class-wp-rest-templates-controller.php:1013
 msgid "Title for the template, as it exists in the database."
 msgstr "Titre pour le modèle, tel qu’il existe dans la base de données."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-templates-controller.php:998
+#: wp-includes/rest-api/endpoints/class-wp-rest-templates-controller.php:999
 msgid "Version of the content block format used by the template."
 msgstr "Version du format de bloc de contenu utilisé par le modèle."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-templates-controller.php:993
+#: wp-includes/rest-api/endpoints/class-wp-rest-templates-controller.php:994
 msgid "Content for the template, as it exists in the database."
 msgstr "Contenu pour le modèle, tel qu’il existe dans la base de données."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-templates-controller.php:981
+#: wp-includes/rest-api/endpoints/class-wp-rest-templates-controller.php:982
 msgid "Source of a customized template"
 msgstr "Source d’un modèle personnalisé"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-templates-controller.php:970
+#: wp-includes/rest-api/endpoints/class-wp-rest-templates-controller.php:971
 msgid "Type of template."
 msgstr "Type de modèle."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-templates-controller.php:926
+#: wp-includes/rest-api/endpoints/class-wp-rest-templates-controller.php:927
 msgid "Post type to get the templates for."
 msgstr "Type de publication pour lequel obtenir les modèles."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-templates-controller.php:922
+#: wp-includes/rest-api/endpoints/class-wp-rest-templates-controller.php:923
 msgid "Limit to the specified template part area."
 msgstr "Limite à la zone de l’élément de modèle spécifié."
 
@@ -4404,66 +4404,66 @@ msgstr "L’ID du type de widget."
 msgid "Sort collection by user attribute."
 msgstr "Trier la collection par attributs de compte."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-templates-controller.php:1044
+#: wp-includes/rest-api/endpoints/class-wp-rest-templates-controller.php:1045
 msgid "Theme file exists."
 msgstr "Le fichier du thème existe."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-templates-controller.php:1038
+#: wp-includes/rest-api/endpoints/class-wp-rest-templates-controller.php:1039
 msgid "Post ID."
 msgstr "ID de publication."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-templates-controller.php:1031
+#: wp-includes/rest-api/endpoints/class-wp-rest-templates-controller.php:1032
 msgid "Status of template."
 msgstr "État du modèle."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-templates-controller.php:1025
+#: wp-includes/rest-api/endpoints/class-wp-rest-templates-controller.php:1026
 msgid "Description of template."
 msgstr "Description du modèle."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-templates-controller.php:1006
+#: wp-includes/rest-api/endpoints/class-wp-rest-templates-controller.php:1007
 msgid "Title of template."
 msgstr "Titre du modèle."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-templates-controller.php:987
+#: wp-includes/rest-api/endpoints/class-wp-rest-templates-controller.php:988
 msgid "Content of template."
 msgstr "Contenu du modèle."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-templates-controller.php:975
+#: wp-includes/rest-api/endpoints/class-wp-rest-templates-controller.php:976
 msgid "Source of template"
 msgstr "Source du modèle"
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-templates-controller.php:965
+#: wp-includes/rest-api/endpoints/class-wp-rest-templates-controller.php:966
 msgid "Theme identifier for the template."
 msgstr "Identifiant de thème pour le modèle."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-templates-controller.php:957
+#: wp-includes/rest-api/endpoints/class-wp-rest-templates-controller.php:958
 msgid "Unique slug identifying the template."
 msgstr "Slug unique identifiant le modèle."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-templates-controller.php:951
+#: wp-includes/rest-api/endpoints/class-wp-rest-templates-controller.php:952
 msgid "ID of template."
 msgstr "ID du modèle."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-templates-controller.php:918
+#: wp-includes/rest-api/endpoints/class-wp-rest-templates-controller.php:919
 msgid "Limit to the specified post id."
 msgstr "Limiter à l’ID de publication spécifié."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-templates-controller.php:504
+#: wp-includes/rest-api/endpoints/class-wp-rest-templates-controller.php:505
 msgid "The template has already been deleted."
 msgstr "Le modèle a déjà été supprimé."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-templates-controller.php:480
+#: wp-includes/rest-api/endpoints/class-wp-rest-templates-controller.php:481
 msgid "Templates based on theme files can't be removed."
 msgstr "Les modèles basés sur des fichiers de thème ne peuvent être supprimés."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-templates-controller.php:303
-#: wp-includes/rest-api/endpoints/class-wp-rest-templates-controller.php:332
-#: wp-includes/rest-api/endpoints/class-wp-rest-templates-controller.php:430
-#: wp-includes/rest-api/endpoints/class-wp-rest-templates-controller.php:477
+#: wp-includes/rest-api/endpoints/class-wp-rest-templates-controller.php:304
+#: wp-includes/rest-api/endpoints/class-wp-rest-templates-controller.php:333
+#: wp-includes/rest-api/endpoints/class-wp-rest-templates-controller.php:431
+#: wp-includes/rest-api/endpoints/class-wp-rest-templates-controller.php:478
 msgid "No templates exist with that id."
 msgstr "Aucun modèle n’existe pour cet ID."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-templates-controller.php:189
+#: wp-includes/rest-api/endpoints/class-wp-rest-templates-controller.php:190
 msgid "Sorry, you are not allowed to access the templates on this site."
 msgstr "Désolé, vous n’avez pas l’autorisation d’accéder aux modèles sur ce site."
 
@@ -8585,7 +8585,7 @@ msgstr "Vous devez avoir des droits supérieurs."
 #: wp-admin/includes/class-custom-image-header.php:1032
 #: wp-admin/includes/file.php:638 wp-admin/media-upload.php:38
 #: wp-admin/themes.php:27 wp-admin/themes.php:70 wp-admin/users.php:158
-#: wp-admin/js/tags.js:62 wp-admin/js/updates.js:2327
+#: wp-admin/js/tags.js:62 wp-admin/js/updates.js:2354
 #: wp-admin/network/site-users.php:158
 msgid "Something went wrong."
 msgstr "Une mauvaise manipulation ?"
@@ -10952,7 +10952,7 @@ msgstr "Nombre de publications publiées pour le terme."
 msgid "Unique identifier for the user."
 msgstr "Identificateur unique pour le compte."
 
-#: wp-includes/rest-api/endpoints/class-wp-rest-templates-controller.php:521
+#: wp-includes/rest-api/endpoints/class-wp-rest-templates-controller.php:522
 msgid "The template cannot be deleted."
 msgstr "Le modèle ne peut pas être supprimé."
 
@@ -12045,7 +12045,7 @@ msgstr "Termes inexistants."
 #: wp-includes/customize/class-wp-customize-theme-control.php:260
 #: wp-admin/includes/theme.php:1071 wp-admin/theme-install.php:408
 #: wp-admin/theme-install.php:488 wp-admin/themes.php:616
-#: wp-admin/themes.php:988 wp-admin/themes.php:1222 wp-admin/js/updates.js:1802
+#: wp-admin/themes.php:988 wp-admin/themes.php:1222 wp-admin/js/updates.js:1829
 msgctxt "theme"
 msgid "Activate %s"
 msgstr "Activation de %s"
@@ -13936,7 +13936,7 @@ msgstr "Texte du lien"
 #: wp-admin/theme-install.php:420 wp-admin/theme-install.php:437
 #: wp-admin/themes.php:625 wp-admin/themes.php:634 wp-admin/themes.php:995
 #: wp-admin/themes.php:1003 wp-admin/themes.php:1225 wp-admin/themes.php:1236
-#: wp-admin/js/updates.js:1817
+#: wp-admin/js/updates.js:1844
 msgid "Live Preview"
 msgstr "Prévisualiser en direct"
 
@@ -15227,7 +15227,7 @@ msgstr "Aligner à droite"
 #: wp-includes/class-wp-customize-widgets.php:805
 #: wp-admin/includes/ajax-actions.php:1107
 #: wp-admin/includes/ajax-actions.php:2379 wp-admin/js/media.js:127
-#: wp-admin/js/media.js:132 wp-admin/js/updates.js:2336
+#: wp-admin/js/media.js:132 wp-admin/js/updates.js:2363
 msgid "An error has occurred. Please reload the page and try again."
 msgstr "Une erreur est survenue. Veuillez recharger la page et réessayer."
 
@@ -15631,7 +15631,7 @@ msgid "No tags found."
 msgstr "Aucune étiquette trouvée."
 
 #. translators: 1: Script name, 2: wp_enqueue_scripts
-#: wp-includes/functions.wp-scripts.php:324
+#: wp-includes/functions.wp-scripts.php:318
 msgid "Do not deregister the %1$s script in the administration area. To target the front-end theme, use the %2$s hook."
 msgstr "Ne désenregistrez pas le script %1$s dans la zone d’administration. Pour cibler le thème public, utilisez le crochet %2$s."
 
@@ -16517,7 +16517,7 @@ msgstr "Désolé, vous n’avez pas l’autorisation de voir cet élément."
 #: wp-includes/class-wp-xmlrpc-server.php:1499
 #: wp-includes/class-wp-xmlrpc-server.php:5469
 #: wp-includes/rest-api/endpoints/class-wp-rest-posts-controller.php:1301
-#: wp-includes/rest-api/endpoints/class-wp-rest-templates-controller.php:613
+#: wp-includes/rest-api/endpoints/class-wp-rest-templates-controller.php:614
 msgid "Invalid author ID."
 msgstr "ID de l’auteur ou de l’autrice non valide."
 

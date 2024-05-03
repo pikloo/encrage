@@ -54,12 +54,12 @@ Version: 1.0
     @apply text-3xl first-letter:text-4xl md:text-5xl md:first-letter:text-6xl bg-black text-white w-fit p-2 mb-10 uppercase;
   }
 
-  .main-title h1{
-    @apply bg-transparent text-black m-0 p-0 inline text-2xl first-letter:text-3xl md:text-3xl md:first-letter:text-4xl;
+  h1.main-title{
+    @apply bg-transparent text-black p-0 text-2xl first-letter:text-3xl md:text-3xl md:first-letter:text-4xl mb-10 leading-10;
   }
 
-  .main-title {
-    @apply text-2xl first-letter:text-3xl md:text-3xl md:first-letter:text-4xl w-fit p-2 mb-10 uppercase;
+  h1.member-page-title {
+    @apply w-full bg-transparent p-0.5 m-0 text-2xl first-letter:text-3xl md:text-3xl md:first-letter:text-4xl;
   }
 
   h3 {
@@ -70,12 +70,16 @@ Version: 1.0
     @apply bg-black text-white p-2 w-fit;
   }
 
+  .to-down {
+    @apply animate-bounce h-16 w-16 text-gray-500 outline outline-gray-500 cursor-pointer absolute bottom-20 z-10 bg-white/60 rounded-full p-2 m-auto left-0 right-0;
+  }
+
   .to-top {
     @apply h-10 w-10 md:h-12 md:w-12 text-gray-500 cursor-pointer;
   }
 
   .portfolio-title h1{
-    @apply relative text-2xl md:text-3xl first-letter:text-3xl md:first-letter:text-4xl  font-medium uppercase text-white mb-0;
+    @apply max-w-48 md:w-fit bg-transparent relative text-xl sm:text-2xl md:text-3xl first-letter:text-3xl md:first-letter:text-4xl  font-medium uppercase text-white mb-0;
   }
 
   .content {
