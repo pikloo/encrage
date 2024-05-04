@@ -11166,6 +11166,15 @@ if (toDownButton) {
     });
   });
 }
+
+//Désactivation du clic droit sur les images
+
+var images = document.querySelectorAll("img:not(.logo-site)");
+images.forEach(function (image) {
+  image.addEventListener("contextmenu", function (e) {
+    e.preventDefault();
+  }, false);
+});
 })();
 
 // This entry need to be wrapped in an IIFE because it need to be in strict mode.

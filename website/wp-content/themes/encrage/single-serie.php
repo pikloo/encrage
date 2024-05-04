@@ -22,7 +22,7 @@ $loop = new WP_Query($args);
             <h1><?php the_title(); ?></h1>
             <p class="text-gray-500 text-xl ml-2 relative"><?= esc_attr(get_post_meta(get_the_ID(), 'year', true)) ?></p>
         </div>
-        <section class="space-y-4">
+        <section class="space-y-4 h-[calc(100vh-40px)]">
             <div class="swiper gallery relative">
                 <div class="swiper-wrapper">
                     <?php foreach ($url_array as $image_url) : ?>

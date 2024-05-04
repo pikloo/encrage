@@ -99,6 +99,14 @@ if(toDownButton){
 
 }
 
+//Désactivation du clic droit sur les images
+
+const images = document.querySelectorAll("img:not(.logo-site)");
+images.forEach(function (image) {
+  image.addEventListener("contextmenu", function(e) {
+    e.preventDefault();
+  }, false);
+});
 
 
 

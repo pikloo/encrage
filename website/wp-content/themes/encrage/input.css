@@ -55,7 +55,7 @@ Version: 1.0
   }
 
   h1.main-title{
-    @apply bg-transparent text-black p-0 text-2xl first-letter:text-3xl md:text-3xl md:first-letter:text-4xl mb-10 leading-10;
+    @apply bg-transparent text-black p-0 text-[22px] first-letter:text-3xl md:text-3xl md:first-letter:text-4xl mb-10 leading-10;
   }
 
   h1.member-page-title {
@@ -188,6 +188,10 @@ Version: 1.0
 
   .main-menu {
     @apply py-6 flex text-center;
+  }
+
+  .socials-links svg {
+    @apply h-8 w-8 md:h-10 md:w-10 lg:h-12 lg:w-12 duration-500;
   }
 
   .main-footer-menu {
