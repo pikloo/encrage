@@ -13,7 +13,7 @@ extract($args);
             <?php if ($year) : ?>
                 <p class="text-gray-500 xl:text-white font-light"><?= esc_attr($year); ?></p>
             <?php endif; ?>
-            <?php if (!isset($is_member_page)) :  ?>
+            <?php if (!isset($is_member_page) || !$is_member_page) :  ?>
                 <a href="<?= esc_url(get_permalink(get_post_meta(get_the_ID(), 'photographer', true))); ?>">
                 <span class="mt-0.5 before:block before:absolute before:-inset-1 before:-skew-y-3 before:shadow-lg before:shadow-black/50 before:bg-black xl:before:bg-white relative inline-block">
                         <p class="relative uppercase text-white xl:text-black"><?= esc_html(get_the_title(get_post_meta(get_the_ID(), 'photographer', true))); ?></p>

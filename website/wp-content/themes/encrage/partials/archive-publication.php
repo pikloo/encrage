@@ -5,10 +5,10 @@ extract($args);
 ?>
 
 <main class="overflow-hidden pt-28 pb-6 main flex flex-col">
-    <div class='relative flex content-center gap-x-6'>
-        <h1><?= $label ?>s</h1>
+    <div class='relative flex flex-wrap content-center gap-x-6'>
+        <h1 class="mb-2"><?= $label ?>s</h1>
         <?php if ($currentPhotographer) : ?>
-            <h2 class="break-inside-auto"><?= esc_html($currentPhotographer) ?></h2>
+            <h2 class="pl-1 sm:pl-0"><?= esc_html($currentPhotographer) ?></h2>
         <?php endif; ?>
     </div>
     <form class="ml-4 mb-10">
