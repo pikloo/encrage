@@ -22,7 +22,9 @@ $memberID = get_the_ID();
     <?php get_template_part('partials/member-informations', 'member-informations', [
         'post_type' => 'member'
     ]); ?>
-    <?php get_template_part('partials/series-list', 'series-list'); ?>
+    <?php get_template_part('partials/series-list', 'series-list', [
+        'post_type' => 'member'
+    ]); ?>
     <?php
     if ($has_releases) {
         set_query_var('member_id', $memberID);
