@@ -48,7 +48,7 @@ const observer = new IntersectionObserver(callback);
 
 const targets = document.querySelectorAll(".reveal");
 targets.forEach(function (target) {
-  target.classList.add("opacity-0");
+  // target.classList.add("opacity-0");
   observer.observe(target);
 });
 
@@ -69,15 +69,18 @@ const sliderActive = document.querySelector(".gallery");
 
 if (portfolioTitle) {
   const basePosition = sliderActive.offsetHeight;
-  portfolioTitle.setAttribute('style', `top:${basePosition}px; z-index:11; position:absolute;`);
+  portfolioTitle.classList.add('absolute')
+  // portfolioTitle.setAttribute('style', `top:${basePosition}px; z-index:11; position:absolute;`);
 
   document.addEventListener("scroll", (event) => {
     if (portfolioTitle.getBoundingClientRect().top < header.offsetHeight + 150) {
-      portfolioTitle.setAttribute('style', `top:${header.offsetHeight + 20}px; z-index:11; position:fixed;`);
+      portfolioTitle.classList.remove('absolute')
+      portfolioTitle.classList.add('fixed', 'md:top-36')
     }
 
     if (window.scrollY < basePosition - 20) {
-      portfolioTitle.setAttribute('style', `top:${basePosition}px;z-index:11; position:absolute;`);
+      portfolioTitle.classList.remove('fixed' , 'md:top-36')
+      portfolioTitle.classList.add('absolute')
     }
   });
 

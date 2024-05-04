@@ -79,7 +79,7 @@ Version: 1.0
   }
 
   .portfolio-title h1{
-    @apply max-w-48 md:w-fit bg-transparent relative text-xl sm:text-2xl md:text-3xl first-letter:text-3xl md:first-letter:text-4xl  font-medium uppercase text-white mb-0;
+    @apply max-w-80 md:w-fit bg-transparent relative text-xl sm:text-2xl md:text-3xl first-letter:text-3xl md:first-letter:text-4xl  font-medium uppercase text-white mb-0;
   }
 
   .content {

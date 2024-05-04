@@ -11123,7 +11123,7 @@ var callback = function callback(entries) {
 var observer = new IntersectionObserver(callback);
 var targets = document.querySelectorAll(".reveal");
 targets.forEach(function (target) {
-  target.classList.add("opacity-0");
+  // target.classList.add("opacity-0");
   observer.observe(target);
 });
 
@@ -11140,13 +11140,17 @@ var portfolioTitle = document.querySelector(".portfolio-title");
 var sliderActive = document.querySelector(".gallery");
 if (portfolioTitle) {
   var basePosition = sliderActive.offsetHeight;
-  portfolioTitle.setAttribute('style', "top:".concat(basePosition, "px; z-index:11; position:absolute;"));
+  portfolioTitle.classList.add('absolute');
+  // portfolioTitle.setAttribute('style', `top:${basePosition}px; z-index:11; position:absolute;`);
+
   document.addEventListener("scroll", function (event) {
     if (portfolioTitle.getBoundingClientRect().top < header.offsetHeight + 150) {
-      portfolioTitle.setAttribute('style', "top:".concat(header.offsetHeight + 20, "px; z-index:11; position:fixed;"));
+      portfolioTitle.classList.remove('absolute');
+      portfolioTitle.classList.add('fixed', 'md:top-36');
     }
     if (window.scrollY < basePosition - 20) {
-      portfolioTitle.setAttribute('style', "top:".concat(basePosition, "px;z-index:11; position:absolute;"));
+      portfolioTitle.classList.remove('fixed', 'md:top-36');
+      portfolioTitle.classList.add('absolute');
     }
   });
 }

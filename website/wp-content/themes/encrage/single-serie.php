@@ -18,9 +18,9 @@ $loop = new WP_Query($args);
 
 <main class="overflow-hidden main relative pt-20 md:pt-0">
     <?php while ($loop->have_posts()) : $loop->the_post(); ?>
-        <div class="portfolio-title text-white before:block before:absolute before:-inset-1 before:skew-y-3 before:bg-black before:shadow-lg before:shadow-black/50 inline-block">
+        <div class="portfolio-title z-[11] md:top-28 text-white before:block before:absolute before:-inset-1 before:skew-y-3 before:bg-black before:shadow-lg before:shadow-black/50 inline-block">
             <h1><?php the_title(); ?></h1>
-            <p class="text-gray-500 text-xl text-center relative"><?= esc_attr(get_post_meta(get_the_ID(), 'year', true)) ?></p>
+            <p class="text-gray-500 text-xl ml-2 relative"><?= esc_attr(get_post_meta(get_the_ID(), 'year', true)) ?></p>
         </div>
         <section class="space-y-4">
             <div class="swiper gallery relative">
