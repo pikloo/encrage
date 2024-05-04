@@ -71,7 +71,7 @@ Version: 1.0
   }
 
   .to-down {
-    @apply animate-bounce h-16 w-16 text-black outline outline-black cursor-pointer absolute bottom-20 z-10 bg-white/60 rounded-full p-2 m-auto left-0 right-0;
+    @apply animate-bounce h-10 w-10 md:h-12 md:w-12 text-black outline outline-black/30 cursor-pointer absolute bottom-20 z-10 bg-white/30 rounded-full p-2 m-auto left-0 right-0;
   }
 
   .to-top {

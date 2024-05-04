@@ -8,7 +8,7 @@ extract($args);
     <div class='relative flex content-center gap-x-6'>
         <h1><?= $label ?>s</h1>
         <?php if ($currentPhotographer) : ?>
-            <h2><?= esc_html($currentPhotographer) ?></h2>
+            <h2 class="break-inside-auto"><?= esc_html($currentPhotographer) ?></h2>
         <?php endif; ?>
     </div>
     <form class="ml-4 mb-10">
@@ -16,7 +16,6 @@ extract($args);
         <select class="py-4 px-2" name="_photographer" id="photographer">
             <option value="">Sélectionner un(e) photographe</option>
             <?php while ($photographers->have_posts()) : $photographers->the_post(); ?>
-            
                 <option  value="<?php the_title() ?>">
                     <?php the_title(); ?>
                 </option>

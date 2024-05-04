@@ -6,6 +6,7 @@ module.exports = {
 		extend: {
 			fontFamily: {
 				ibm: [ 'ArimoIBM Plex Sans', 'Arial', 'sans-serif' ],
+				caption : ['PT Serif Caption', 'Georgia', 'serif']
 			},
 			keyframes: {
 				"slide-in-up": {

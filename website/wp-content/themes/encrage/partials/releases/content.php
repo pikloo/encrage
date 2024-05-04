@@ -13,11 +13,11 @@ $is_home_page = get_query_var('is_home_page');
               after:inline-block after:relative after:w-[20px] after:align-middle after:ml-1' ?>"><?= esc_attr(get_post_meta(get_the_ID(), 'place', true)); ?></span>
                 <?php if (!$is_member_page) :  ?>
                 <span class="ml-2 before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-black before:shadow-lg before:shadow-black/50 relative inline-block">
-                    <span class="relative text-white"><?= get_the_title(get_post_meta(get_the_ID(), 'photographer', true)) ?></span>
+                    <span class="relative text-white"><?= esc_html(get_the_title(get_post_meta(get_the_ID(), 'photographer', true))); ?></span>
                 </span>
                 <?php endif; ?>
             </h3>
-            <blockquote class="text-slate-600 italic mt-2"><?= the_title(); ?></blockquote>
+            <blockquote class='indent-6 mt-4 text-slate-600 italic mt-2 relative before:not-italic before:content-["\275D"] before:font-caption before:text-5xl before:text-gray-400 before:absolute before:-top-2 before:-left-7'><?= the_title(); ?></blockquote>
             <span class="text-slate-500"><?= esc_attr(get_post_meta(get_the_ID(), 'year', true)); ?></span>
         </div>
     </figcaption>
