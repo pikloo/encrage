@@ -1,21 +1,21 @@
 <?php
+extract($args);
 $is_home_page = is_front_page() && is_home();
-$is_member_page = 'member' == get_post_type();
-$memberID = $is_member_page ? get_the_ID() :  null;
+
 $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 $args =  [
     'post_type' => 'serie',
     'posts_per_page' => 6,
     'post_status' => 'publish',
     'order' => 'DESC',
-    // 'meta_key' => 'year',
     'orderby' => 'date',
 ];
 
-if ($memberID) {
+
+if ($post_type == 'member') {
     $args['meta_query'][] = [
         'key' => 'photographer',
-        'value' => $memberID,
+        'value' => get_the_ID(),
         'compare' => '='
     ];
     $args['meta_key'] = 'year';
@@ -30,9 +30,10 @@ $wp_query = new WP_Query($args);
         <?php if ($wp_query->have_posts()) : ?>
             <?php while ($wp_query->have_posts()) : $wp_query->the_post(); ?>
             <?php 
-            set_query_var( 'is_home_page', $is_home_page);
-            set_query_var( 'is_member_page', $is_member_page );
-            get_template_part( 'partials/series/content', 'content' ); ?>
+            get_template_part( 'partials/series/content', 'content', [
+                'is_home' => $is_home_page,
+                'is_member_page' => $post_type == 'member'
+            ] ); ?>
             <?php endwhile; ?>
         <?php endif; ?>
         <?php wp_reset_postdata(); ?>

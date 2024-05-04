@@ -1,9 +1,8 @@
 <?php
-$is_member_page = get_query_var('is_member_page');
-$is_home_page = get_query_var('is_home_page');
+extract($args);
 ?>
 
-<figure class="<?php if($is_home_page || $is_member_page ) echo 'reveal' ?> relative group xl:overflow-hidden break-inside">
+<figure class="<?php if($is_home || $is_member_page ) echo 'reveal' ?> relative group xl:overflow-hidden break-inside">
     <?php if (has_post_thumbnail(get_the_ID())) : ?>
         <a href="<?= esc_url(get_permalink()); ?>"><img class="w-full h-72  object-cover" src="<?= esc_url(get_the_post_thumbnail_url(get_the_ID(), 'medium_large')) ?>" alt="<?= the_title(); ?>" /></a>
     <?php endif; ?>
