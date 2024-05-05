@@ -25,7 +25,7 @@ $is_home = get_query_var('is_home');
 
 <section class="container mx-auto py-10 xl:px-10">
     <h2 class="section">publications</h2>
-    <div class="sm:masonry-sm xl:masonry-md 2xl:masonry-xl space-y-4 px-2">
+    <div class="sm:masonry-sm xl:masonry-md 2xl:masonry-xl space-y-4 px-2 duration-500">
         <?php if ($releases->have_posts()) : ?>
             <?php while ($releases->have_posts()) : $releases->the_post(); ?>
                 <?php

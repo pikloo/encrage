@@ -1679,6 +1679,10 @@ h3::first-letter {
   text-indent: 1.5rem !important;
 }
 
+.indent-4 {
+  text-indent: 1rem !important;
+}
+
 .font-ibm {
   font-family: ArimoIBM Plex Sans, Arial, sans-serif !important;
 }
@@ -1837,6 +1841,11 @@ h3::first-letter {
   top: -0.5rem !important;
 }
 
+.before\:-left-5::before {
+  content: var(--tw-content) !important;
+  left: -1.25rem !important;
+}
+
 .before\:block::before {
   content: var(--tw-content) !important;
   display: block !important;
@@ -1875,6 +1884,12 @@ h3::first-letter {
   content: var(--tw-content) !important;
   font-size: 3rem !important;
   line-height: 1 !important;
+}
+
+.before\:text-3xl::before {
+  content: var(--tw-content) !important;
+  font-size: 1.875rem !important;
+  line-height: 2.25rem !important;
 }
 
 .before\:not-italic::before {
@@ -2092,6 +2107,10 @@ h3::first-letter {
     padding-top: 9rem !important;
   }
 
+  .md\:indent-6 {
+    text-indent: 1.5rem !important;
+  }
+
   .md\:text-2xl {
     font-size: 1.5rem !important;
     line-height: 2rem !important;
@@ -2100,6 +2119,11 @@ h3::first-letter {
   .md\:text-xl {
     font-size: 1.25rem !important;
     line-height: 1.75rem !important;
+  }
+
+  .md\:text-5xl {
+    font-size: 3rem !important;
+    line-height: 1 !important;
   }
 
   .md\:text-white {
@@ -2128,6 +2152,17 @@ h3::first-letter {
   .md\:first-letter\:text-2xl::first-letter {
     font-size: 1.5rem !important;
     line-height: 2rem !important;
+  }
+
+  .md\:before\:-left-7::before {
+    content: var(--tw-content) !important;
+    left: -1.75rem !important;
+  }
+
+  .md\:before\:text-5xl::before {
+    content: var(--tw-content) !important;
+    font-size: 3rem !important;
+    line-height: 1 !important;
   }
 
   @media (min-width: 1024px) {
