@@ -4,55 +4,65 @@ import mediumZoom from 'medium-zoom'
 
 //Swiper
 const sliderHome = new Swiper(".slider-home", {
-    autoplay: {
-        delay: 5000,
-      },
-      effect: "fade",
-      keyboard: {
-        enabled: true,
-      },
+  lazy: true,
+  loop: true,
+  grabCursor: true,
+  autoplay: {
+    delay: 5000,
+  },
+  effect: "fade",
+  keyboard: {
+    enabled: true,
+  },
 });
 
 
 const postsCarousel = new Swiper(".blogpost-carousel", {
-    centeredSlides: true,
-    navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-      keyboard: {
-        enabled: true,
-      },
+  lazy: true,
+  centeredSlides: true,
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+  keyboard: {
+    enabled: true,
+  },
+  injectStyles: [`.swiper-wrapper { align-items: center }`],
 });
 
 const serieGalleryThumbnails = new Swiper(".thumbnails", {
-    spaceBetween: 10,
-    slidesPerView: 4,
-    freeMode: true,
-    watchSlidesProgress: true,
-    
-  });
+  lazy: true,
+  spaceBetween: 10,
+  slidesPerView: 4,
+  grabCursor: true,
+  freeMode: true,
+  watchSlidesProgress: true,
+  
+
+});
 
 
 const serieGallery = new Swiper(".gallery", {
-    spaceBetween: 10,
-    navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
-     thumbs: {
-        swiper: serieGalleryThumbnails,
-      },
-      keyboard: {
-        enabled: true,
-      },
+  lazy: true,
+  spaceBetween: 10,
+  grabCursor: true,
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+  thumbs: {
+    swiper: serieGalleryThumbnails,
+  },
+  keyboard: {
+    enabled: true,
+  },
 });
 
 
 //Zoom Image
 
 const zoom = mediumZoom(document.querySelectorAll('.release'), {
-    scrollOffset: 0,
-    background: 'rgba(148, 148, 148, 0.97)',
-    margin: 24,
+  scrollOffset: 0,
+  background: 'rgba(148, 148, 148, 0.97)',
+  margin: 24,
 });

@@ -55,7 +55,7 @@ Version: 1.0
   }
 
   h1.main-title{
-    @apply bg-transparent text-black p-0 text-2xl first-letter:text-3xl md:text-3xl md:first-letter:text-4xl mb-10 leading-10;
+    @apply bg-transparent text-black p-0 text-[22px] first-letter:text-3xl md:text-3xl md:first-letter:text-4xl mb-10 leading-10;
   }
 
   h1.member-page-title {
@@ -71,7 +71,7 @@ Version: 1.0
   }
 
   .to-down {
-    @apply animate-bounce h-16 w-16 text-black outline outline-black cursor-pointer absolute bottom-20 z-10 bg-white/60 rounded-full p-2 m-auto left-0 right-0;
+    @apply animate-bounce h-10 w-10 md:h-12 md:w-12 text-black outline outline-black/30 cursor-pointer absolute bottom-20 z-10 bg-white/30 rounded-full p-2 m-auto left-0 right-0;
   }
 
   .to-top {
@@ -79,7 +79,7 @@ Version: 1.0
   }
 
   .portfolio-title h1{
-    @apply max-w-48 md:w-fit bg-transparent relative text-xl sm:text-2xl md:text-3xl first-letter:text-3xl md:first-letter:text-4xl  font-medium uppercase text-white mb-0;
+    @apply max-w-80 md:w-fit bg-transparent relative text-xl sm:text-2xl md:text-3xl first-letter:text-3xl md:first-letter:text-4xl  font-medium uppercase text-white mb-0;
   }
 
   .content {
@@ -112,11 +112,15 @@ Version: 1.0
   } */
 
   .gallery .swiper-slide {
-    height: calc(100vh - 324px);
+    @apply md:h-[calc(100vh-324px)];
+  }
+
+  .thumbnails.swiper {
+    @apply hidden md:block;
   }
 
   .thumbnails .swiper-slide > img {
-    @apply h-[100px] md:h-[300px] object-cover;
+    @apply h-[100px] md:h-[200px] object-cover;
   }
 
   .thumbnails .swiper-slide {
@@ -190,6 +194,10 @@ Version: 1.0
     @apply py-6 flex text-center;
   }
 
+  .socials-links svg {
+    @apply h-8 w-8 md:h-10 md:w-10 lg:h-12 lg:w-12 duration-500;
+  }
+
   .main-footer-menu {
     @apply flex flex-col;
   }
@@ -222,4 +230,5 @@ Version: 1.0
     transform: none;
     transition-delay: 0.3s;
   }
+
 }

@@ -5,9 +5,12 @@ const backToTop = () => {
 };
 
 const toTopButtons = document.querySelectorAll(".to-top");
-toTopButtons.forEach(function(button) { 
+const imagesGallery = document.querySelectorAll(".gallery-img");
+[...toTopButtons, ...imagesGallery].forEach(function(button) { 
   button.addEventListener("click", backToTop);
 });
+
+
 
 const menuToogle = document.getElementById( 'menu-toggle' );
 
@@ -48,7 +51,7 @@ const observer = new IntersectionObserver(callback);
 
 const targets = document.querySelectorAll(".reveal");
 targets.forEach(function (target) {
-  target.classList.add("opacity-0");
+  // target.classList.add("opacity-0");
   observer.observe(target);
 });
 
@@ -69,15 +72,18 @@ const sliderActive = document.querySelector(".gallery");
 
 if (portfolioTitle) {
   const basePosition = sliderActive.offsetHeight;
-  portfolioTitle.setAttribute('style', `top:${basePosition}px; z-index:11; position:absolute;`);
+  portfolioTitle.classList.add('md:absolute', 'md:top-36')
+  // portfolioTitle.setAttribute('style', `top:${basePosition}px; z-index:11; position:absolute;`);
 
   document.addEventListener("scroll", (event) => {
     if (portfolioTitle.getBoundingClientRect().top < header.offsetHeight + 150) {
-      portfolioTitle.setAttribute('style', `top:${header.offsetHeight + 20}px; z-index:11; position:fixed;`);
+      portfolioTitle.classList.remove('md:absolute')
+      portfolioTitle.classList.add('md:fixed')
     }
 
     if (window.scrollY < basePosition - 20) {
-      portfolioTitle.setAttribute('style', `top:${basePosition}px;z-index:11; position:absolute;`);
+      portfolioTitle.classList.remove('md:fixed')
+      portfolioTitle.classList.add('md:absolute')
     }
   });
 
@@ -96,6 +102,14 @@ if(toDownButton){
 
 }
 
+//Désactivation du clic droit sur les images
+
+const images = document.querySelectorAll("img:not(.logo-site)");
+images.forEach(function (image) {
+  image.addEventListener("contextmenu", function(e) {
+    e.preventDefault();
+  }, false);
+});
 
 
 

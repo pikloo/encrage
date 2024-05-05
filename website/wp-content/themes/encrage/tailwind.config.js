@@ -1,11 +1,12 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
 	important: true,
-	content: [ './**/*.php' ],
+	content: [ './**/*.php', './src/**/*.{html,js}' ],
 	theme: {
 		extend: {
 			fontFamily: {
 				ibm: [ 'ArimoIBM Plex Sans', 'Arial', 'sans-serif' ],
+				caption : ['PT Serif Caption', 'Georgia', 'serif']
 			},
 			keyframes: {
 				"slide-in-up": {

@@ -9,4 +9,4 @@
   ?>
 </head>
 
-<body class="text-ibm relative">
+<body class="font-ibm relative">

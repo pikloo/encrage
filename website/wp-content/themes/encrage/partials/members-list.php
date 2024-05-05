@@ -2,7 +2,7 @@
     <?php if (!is_home()) : ?>
         <h2 class="section">Les photographes</h2>
     <?php else : ?>
-        <h1 class="main-title reveal">Une
+        <h1 class="main-title reveal">Une  
             <span class="before:block before:absolute before:-inset-1 before:skew-y-1 before:bg-black relative inline-block">
                 <span class="relative text-white">Agence de photographes</span>
             </span>
