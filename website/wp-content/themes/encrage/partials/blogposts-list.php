@@ -9,12 +9,12 @@ $args =  [
 
 $wp_query = new WP_Query($args);
 ?>
+<?php if ($wp_query->have_posts()) : ?>
+    <section class="container mx-auto p-4 md:p-10 h-fit reveal">
+        <h2 class="section">nos actus</h2>
+        <div class="swiper blogpost-carousel lg:max-w-screen-lg">
+            <div class="swiper-wrapper h-fit">
 
-<section class="container mx-auto p-4 md:p-10 h-fit reveal">
-    <h2 class="section">nos actus</h2>
-    <div class="swiper blogpost-carousel lg:max-w-screen-lg">
-        <div class="swiper-wrapper h-fit">
-            <?php if ($wp_query->have_posts()) : ?>
                 <?php while ($wp_query->have_posts()) : $wp_query->the_post(); ?>
                     <div class="swiper-slide py-4">
                         <div loading="lazy">
@@ -41,14 +41,15 @@ $wp_query = new WP_Query($args);
                         <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
                     </div>
                 <?php endwhile; ?>
-            <?php endif; ?>
+
+            </div>
+            <div class="swiper-button-next text-gray-500"></div>
+            <div class="swiper-button-prev text-gray-500"></div>
         </div>
-        <div class="swiper-button-next text-gray-500"></div>
-        <div class="swiper-button-prev text-gray-500"></div>
-    </div>
-    <svg class="to-top reveal" height="40" viewBox="0 0 22 22" width="40" xmlns="http://www.w3.org/2000/svg" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" id="fi_12363698">
-        <g id="iOS7" fill="currentColor" fill-rule="evenodd">
-            <path id="arrow_move_up" d="m3 2v1h17v-1zm12.5 5.40000153v1.09999847l-3.5015625-2.5-.0000001 14h-.9984374v-14l-3.5 2.5v-1.09999847l4-2.90000153z" fill="currentColor"></path>
-        </g>
-    </svg>
-</section>
+        <svg class="to-top reveal" height="40" viewBox="0 0 22 22" width="40" xmlns="http://www.w3.org/2000/svg" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" id="fi_12363698">
+            <g id="iOS7" fill="currentColor" fill-rule="evenodd">
+                <path id="arrow_move_up" d="m3 2v1h17v-1zm12.5 5.40000153v1.09999847l-3.5015625-2.5-.0000001 14h-.9984374v-14l-3.5 2.5v-1.09999847l4-2.90000153z" fill="currentColor"></path>
+            </g>
+        </svg>
+    </section>
+<?php endif; ?>
