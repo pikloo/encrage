@@ -1,5 +1,26 @@
-version: '3'
+version: '3.9'
 
 services:
   wordpress: 
-    user: "root:root"
+    build:
+      context: .
+      dockerfile: prod.wp.Dockerfile
+    ports:
+      - 80:80
+      - 433:433
+    volumes:
+      - ./ssl/cert.pem:/etc/apache2/ssl-certs/server.crt
+      - ./ssl/cert-key.pem:/etc/apache2/ssl-certs/server.key
+    links:
+      - "maildev:maildev"
+    
+  maildev:
+    image: maildev/maildev
+    container_name: wp_maildev
+    command: bin/maildev --web 80 --smtp 25 #--hide-extensions STARTTLS
+    ports:
+      - "1080:80" # Interface web
+      - "1025:25" # SMTP
+    restart: always
+    networks:
+      - wp

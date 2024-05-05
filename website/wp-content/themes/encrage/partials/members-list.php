@@ -6,7 +6,7 @@
             <span class="before:block before:absolute before:-inset-1 before:skew-y-1 before:bg-black relative inline-block">
                 <span class="relative text-white">Agence de photographes</span>
             </span>
-            indépendants composée de
+            indépendant(e)s composée de
         </h1>
     <?php endif; ?>
     <div class="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-y-10">
