@@ -9,8 +9,7 @@ services:
       - 80:80
       - 433:433
     volumes:
-      - ./ssl/cert.pem:/etc/apache2/ssl-certs/server.crt
-      - ./ssl/cert-key.pem:/etc/apache2/ssl-certs/server.key
+      - ./ssl:/etc/apache2/sites-available/ssl
     links:
       - "maildev:maildev"
     
