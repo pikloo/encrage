@@ -9,7 +9,7 @@ $is_home_page = get_query_var('is_home_page');
     <figcaption>
         <div class="xl:text-xl">
             <h3 class="mt-4">
-                <span class="<?php if (!$is_member_page) echo 'after:h-[1px] after:bg-black
+                <span class="<?php if (!$is_member_page && get_post_meta(get_the_ID(), 'place', true)) echo 'after:h-[1px] after:bg-black
               after:inline-block after:relative after:w-[20px] after:align-middle after:ml-1' ?>"><?= esc_attr(get_post_meta(get_the_ID(), 'place', true)); ?></span>
                 <?php if (!$is_member_page) :  ?>
                     <a href="<?= esc_url(get_permalink(get_post_meta(get_the_ID(), 'photographer', true))); ?>">
@@ -19,7 +19,7 @@ $is_home_page = get_query_var('is_home_page');
                     </a>
                 <?php endif; ?>
             </h3>
-            <blockquote class='indent-6 mt-4 text-slate-600 italic mt-2 relative before:not-italic before:content-["\275D"] before:font-caption before:text-5xl before:text-gray-400 before:absolute before:-top-2 before:-left-7'><?= the_title(); ?></blockquote>
+            <blockquote class='indent-4 md:indent-6 mt-4 text-slate-600 italic mt-2 relative before:not-italic before:content-["\275D"] before:font-caption before:text-3xl md:before:text-5xl before:text-gray-400 before:absolute before:-top-2 before:-left-5 md:before:-left-7'><?= the_title(); ?></blockquote>
             <span class="text-slate-500"><?= esc_attr(get_post_meta(get_the_ID(), 'year', true)); ?></span>
         </div>
     </figcaption>
