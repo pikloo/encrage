@@ -18,8 +18,6 @@ RUN getcap /usr/sbin/apache2
 RUN mkdir /etc/apache2/sites-available/ssl
 
 ADD ./apache/000-default.prod.conf /etc/apache2/sites-available/000-default.conf
-# RUN a2ensite default-ssl.conf
-RUN a2ensite 000-default.conf
 # enable apache module rewrite
 RUN a2enmod rewrite && a2enmod headers && a2enmod expires && a2enmod ssl
 
