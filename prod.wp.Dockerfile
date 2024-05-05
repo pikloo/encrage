@@ -16,6 +16,12 @@ RUN getcap /usr/sbin/apache2
 # copy all of our development code
 # COPY ./website/wp-content /var/www/html/wp-content
 
+ADD ./apache/000-default.prod.conf /etc/apache2/sites-available/000-default.conf
+# RUN a2ensite default-ssl.conf
+RUN a2ensite 000-default.conf
+# enable apache module rewrite
+RUN a2enmod rewrite && a2enmod headers && a2enmod expires && a2enmod ssl
+
 # switch to www-data
 USER www-data
 
@@ -30,8 +36,3 @@ USER www-data
 # #change uid and gid of apache to docker user uid/gid
 # RUN usermod -u 1000 www-data && groupmod -g 1000 www-data
 # ADD ./ssl/default-ssl.conf /etc/apache2/sites-available/default-ssl.conf
-ADD ./apache/000-default.prod.conf /etc/apache2/sites-available/000-default.conf
-# RUN a2ensite default-ssl.conf
-RUN a2ensite 000-default.conf
-# enable apache module rewrite
-RUN a2enmod rewrite && a2enmod headers && a2enmod expires && a2enmod ssl
