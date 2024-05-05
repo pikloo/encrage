@@ -15,6 +15,7 @@ RUN getcap /usr/sbin/apache2
 
 # copy all of our development code
 # COPY ./website/wp-content /var/www/html/wp-content
+RUN mkdir /etc/apache2/sites-available/ssl
 
 ADD ./apache/000-default.prod.conf /etc/apache2/sites-available/000-default.conf
 # RUN a2ensite default-ssl.conf
