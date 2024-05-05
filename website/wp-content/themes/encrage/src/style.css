@@ -1229,6 +1229,14 @@ h3::first-letter {
   z-index: 11 !important;
 }
 
+.z-0 {
+  z-index: 0 !important;
+}
+
+.z-\[21\] {
+  z-index: 21 !important;
+}
+
 .mx-0 {
   margin-left: 0px !important;
   margin-right: 0px !important;
@@ -1659,10 +1667,6 @@ h3::first-letter {
   padding-top: 9rem !important;
 }
 
-.pt-8 {
-  padding-top: 2rem !important;
-}
-
 .text-center {
   text-align: center !important;
 }
@@ -1776,6 +1780,14 @@ h3::first-letter {
 
 .duration-500 {
   transition-duration: 500ms !important;
+}
+
+.duration-150 {
+  transition-duration: 150ms !important;
+}
+
+.duration-100 {
+  transition-duration: 100ms !important;
 }
 
 .break-inside {

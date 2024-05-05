@@ -1,35 +1,37 @@
 // Scroll to top
 const backToTop = () => {
   window.scrollTo({ top: 0, behavior: "smooth" });
- 
+
 };
 
 const toTopButtons = document.querySelectorAll(".to-top");
 const imagesGallery = document.querySelectorAll(".gallery-img");
-[...toTopButtons, ...imagesGallery].forEach(function(button) { 
+[...toTopButtons, ...imagesGallery].forEach(function (button) {
   button.addEventListener("click", backToTop);
 });
 
 
 
-const menuToogle = document.getElementById( 'menu-toggle' );
+const menuToogle = document.getElementById('menu-toggle');
 
 const onClickOnMenuToggle = () => {
-	
-    // Toggle class "opened". Set also aria-expanded to true or false.
-    if ( -1 !== menuToogle.className.indexOf( 'opened' ) ) {
-      menuToogle.className = menuToogle.className.replace( ' opened', '' );
-      menuToogle.setAttribute( 'aria-expanded', 'false' );
-      document.getElementById("sideBar").style.left = "-100%";
-      document.getElementById("sideNav").style.left = "-100%";
-    } else {
-      menuToogle.className += ' opened';
-      menuToogle.setAttribute( 'aria-expanded', 'true' );
-      document.getElementById("sideBar").style.left = "0";
-      document.getElementById("sideNav").style.left = "0";
-     }
-      
-   };
+
+  // Toggle class "opened". Set also aria-expanded to true or false.
+  if (-1 !== menuToogle.className.indexOf('opened')) {
+    menuToogle.className = menuToogle.className.replace(' opened', '');
+    menuToogle.setAttribute('aria-expanded', 'false');
+    document.getElementById("sideBar").style.left = "-100%";
+    document.getElementById("sideNav").style.left = "-100%";
+  } else {
+    document.querySelector(".main-header").classList.remove("z-0");
+    document.querySelector(".main-header").classList.add("z-20");
+    menuToogle.className += ' opened';
+    menuToogle.setAttribute('aria-expanded', 'true');
+    document.getElementById("sideBar").style.left = "0";
+    document.getElementById("sideNav").style.left = "0";
+  }
+
+};
 
 menuToogle.addEventListener("click", onClickOnMenuToggle);
 
@@ -51,7 +53,6 @@ const observer = new IntersectionObserver(callback);
 
 const targets = document.querySelectorAll(".reveal");
 targets.forEach(function (target) {
-  // target.classList.add("opacity-0");
   observer.observe(target);
 });
 
@@ -91,7 +92,7 @@ if (portfolioTitle) {
 
 //Scroll to photographers (home)
 const toDownButton = document.querySelector('.to-down');
-if(toDownButton){
+if (toDownButton) {
   toDownButton.addEventListener("click", (event) => {
     event.preventDefault();
     window.scrollTo({
@@ -106,12 +107,19 @@ if(toDownButton){
 
 const images = document.querySelectorAll("img:not(.logo-site)");
 images.forEach(function (image) {
-  image.addEventListener("contextmenu", function(e) {
+  image.addEventListener("contextmenu", function (e) {
     e.preventDefault();
   }, false);
 });
 
+const releases = document.querySelectorAll(".release");
 
+releases.forEach(function (release) {
+  release.addEventListener("click", function () {
+    // document.querySelector(".main-header").classList.remove("z-20");
+    // document.querySelector(".main-header").classList.add("z-0", "duration-100");
+  })
+});
 
 
 

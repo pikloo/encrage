@@ -66,3 +66,20 @@ const zoom = mediumZoom(document.querySelectorAll('.release'), {
   background: 'rgba(148, 148, 148, 0.97)',
   margin: 24,
 });
+
+
+zoom.on(
+  'open',
+  event => {
+    document.querySelector(".main-header").classList.remove("z-20");
+    document.querySelector(".main-header").classList.add("z-0", "duration-100");
+  }
+)
+
+zoom.on(
+  'close',
+  event => {
+    document.querySelector(".main-header").classList.remove("z-0");
+    document.querySelector(".main-header").classList.add("z-20");
+  }
+)
