@@ -10,16 +10,17 @@ services:
       - 433:433
     volumes:
       - ./ssl:/etc/apache2/sites-available/ssl
-    links:
-      - "maildev:maildev"
+    hostname: pikloo-dev.online
+    # links:
+    #   - "maildev:maildev"
     
-  maildev:
-    image: maildev/maildev
-    container_name: wp_maildev
-    command: bin/maildev --web 80 --smtp 25 #--hide-extensions STARTTLS
-    ports:
-      - "1080:80" # Interface web
-      - "1025:25" # SMTP
-    restart: always
-    networks:
-      - wp
+  # maildev:
+  #   image: maildev/maildev
+  #   container_name: wp_maildev
+  #   command: bin/maildev --web 80 --smtp 25 #--hide-extensions STARTTLS
+  #   ports:
+  #     - "1080:80" # Interface web
+  #     - "1025:25" # SMTP
+  #   restart: always
+  #   networks:
+  #     - wp
