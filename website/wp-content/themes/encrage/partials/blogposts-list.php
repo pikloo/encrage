@@ -17,25 +17,28 @@ $wp_query = new WP_Query($args);
             <?php if ($wp_query->have_posts()) : ?>
                 <?php while ($wp_query->have_posts()) : $wp_query->the_post(); ?>
                     <div class="swiper-slide py-4">
-                        <header class="pl-10 mb-8 text-xl uppercase">
-                            <h3 class="blog-post-title"><?= the_title(); ?></h3>
-                            <span class="inline-block text-gray-500"><?php the_date('F Y'); ?></span>
-                        </header>
-                        <main class="grid grid-cols-1 lg:grid-cols-2 items-center justify-center justify-items-center px-14 gap-y-4 lg:gap-y-0 w-full mx-auto">
-                            <aside class="max-w-sm">
-                                <?php if (has_post_thumbnail(get_the_ID())) : ?>
-                                    <img src="<?= esc_url(get_the_post_thumbnail_url(get_the_ID(), 'medium_large')) ?>" alt="<?= the_title(); ?>" class="cover-contain" />
-                                <?php else : ?>
-                                    <img src="<?= get_template_directory_uri() . '/assets/images/default_member.png' ?>" alt="<?= the_title(); ?>" class="cover-contain" />
-                                <?php endif; ?>
-                            </aside>
-                            <article class="max-w-sm">
-                                <div class="text-justify text-md lg:text-xl"><?= the_excerpt(); ?></div>
-                            </article>
-                        </main>
-                        <div class="mt-4 flex items-center">
-                            <a class="button" href="<?= esc_url(get_permalink()); ?>">lire la suite</a>
+                        <div loading="lazy">
+                            <header class="pl-10 mb-8 text-xl uppercase">
+                                <h3 class="blog-post-title"><?= the_title(); ?></h3>
+                                <span class="inline-block text-gray-500"><?php the_date('F Y'); ?></span>
+                            </header>
+                            <main class="grid grid-cols-1 lg:grid-cols-2 items-center justify-center justify-items-center px-14 gap-y-4 lg:gap-y-0 w-full mx-auto">
+                                <aside class="max-w-sm">
+                                    <?php if (has_post_thumbnail(get_the_ID())) : ?>
+                                        <img src="<?= esc_url(get_the_post_thumbnail_url(get_the_ID(), 'medium_large')) ?>" alt="<?= the_title(); ?>" class="cover-contain" />
+                                    <?php else : ?>
+                                        <img src="<?= get_template_directory_uri() . '/assets/images/default_member.png' ?>" alt="<?= the_title(); ?>" class="cover-contain" />
+                                    <?php endif; ?>
+                                </aside>
+                                <article class="max-w-sm">
+                                    <div class="text-justify text-md lg:text-xl"><?= the_excerpt(); ?></div>
+                                </article>
+                            </main>
+                            <div class="mt-4 flex items-center">
+                                <a class="button" href="<?= esc_url(get_permalink()); ?>">lire la suite</a>
+                            </div>
                         </div>
+                        <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
                     </div>
                 <?php endwhile; ?>
             <?php endif; ?>

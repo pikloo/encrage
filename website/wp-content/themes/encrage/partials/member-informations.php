@@ -34,7 +34,7 @@ $members = new WP_Query($queryArgs);
     }
     ?>
     <?php if (is_singular() && !is_page() && 'serie' != get_post_type()) : ?>
-        <section class="px-4 grid grid-cols-1 lg:grid-cols-2 lg:items-center lg:max-w-screen-lg lg:mx-auto">
+        <section class="px-4 grid grid-cols-1 <?php if (isset($post_type) && $post_type == 'member') echo 'lg:grid-cols-2 lg:items-center lg:max-w-screen-lg lg:mx-auto' ?> ">
         <? endif; ?>
         <div class="<?php if (is_home() || is_page()) echo 'reveal' ?> profil flex flex-col justify-center items-center gap-4">
             <a href="<?= esc_url(get_permalink()); ?>">

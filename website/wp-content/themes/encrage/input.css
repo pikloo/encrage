@@ -112,11 +112,15 @@ Version: 1.0
   } */
 
   .gallery .swiper-slide {
-    height: calc(100vh - 324px);
+    @apply md:h-[calc(100vh-324px)];
+  }
+
+  .thumbnails.swiper {
+    @apply hidden md:block;
   }
 
   .thumbnails .swiper-slide > img {
-    @apply h-[100px] md:h-[300px] object-cover;
+    @apply h-[100px] md:h-[200px] object-cover;
   }
 
   .thumbnails .swiper-slide {
@@ -226,4 +230,5 @@ Version: 1.0
     transform: none;
     transition-delay: 0.3s;
   }
+
 }

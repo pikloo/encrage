@@ -11082,6 +11082,12 @@ var __webpack_exports__ = {};
 /*!********************!*\
   !*** ./src/app.js ***!
   \********************/
+function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread(); }
+function _nonIterableSpread() { throw new TypeError("Invalid attempt to spread non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+function _iterableToArray(iter) { if (typeof Symbol !== "undefined" && iter[Symbol.iterator] != null || iter["@@iterator"] != null) return Array.from(iter); }
+function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToArray(arr); }
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
 // Scroll to top
 var backToTop = function backToTop() {
   window.scrollTo({
@@ -11090,7 +11096,8 @@ var backToTop = function backToTop() {
   });
 };
 var toTopButtons = document.querySelectorAll(".to-top");
-toTopButtons.forEach(function (button) {
+var imagesGallery = document.querySelectorAll(".gallery-img");
+[].concat(_toConsumableArray(toTopButtons), _toConsumableArray(imagesGallery)).forEach(function (button) {
   button.addEventListener("click", backToTop);
 });
 var menuToogle = document.getElementById('menu-toggle');
@@ -11140,17 +11147,17 @@ var portfolioTitle = document.querySelector(".portfolio-title");
 var sliderActive = document.querySelector(".gallery");
 if (portfolioTitle) {
   var basePosition = sliderActive.offsetHeight;
-  portfolioTitle.classList.add('absolute');
+  portfolioTitle.classList.add('md:absolute', 'md:top-36');
   // portfolioTitle.setAttribute('style', `top:${basePosition}px; z-index:11; position:absolute;`);
 
   document.addEventListener("scroll", function (event) {
     if (portfolioTitle.getBoundingClientRect().top < header.offsetHeight + 150) {
-      portfolioTitle.classList.remove('absolute');
-      portfolioTitle.classList.add('fixed', 'md:top-36');
+      portfolioTitle.classList.remove('md:absolute');
+      portfolioTitle.classList.add('md:fixed');
     }
     if (window.scrollY < basePosition - 20) {
-      portfolioTitle.classList.remove('fixed', 'md:top-36');
-      portfolioTitle.classList.add('absolute');
+      portfolioTitle.classList.remove('md:fixed');
+      portfolioTitle.classList.add('md:absolute');
     }
   });
 }
@@ -11193,6 +11200,9 @@ __webpack_require__.r(__webpack_exports__);
 
 //Swiper
 var sliderHome = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"](".slider-home", {
+  lazy: true,
+  loop: true,
+  grabCursor: true,
   autoplay: {
     delay: 5000
   },
@@ -11202,6 +11212,7 @@ var sliderHome = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"](".sli
   }
 });
 var postsCarousel = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"](".blogpost-carousel", {
+  lazy: true,
   centeredSlides: true,
   navigation: {
     nextEl: ".swiper-button-next",
@@ -11209,16 +11220,21 @@ var postsCarousel = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"](".
   },
   keyboard: {
     enabled: true
-  }
+  },
+  injectStyles: [".swiper-wrapper { align-items: center }"]
 });
 var serieGalleryThumbnails = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"](".thumbnails", {
+  lazy: true,
   spaceBetween: 10,
   slidesPerView: 4,
+  grabCursor: true,
   freeMode: true,
   watchSlidesProgress: true
 });
 var serieGallery = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"](".gallery", {
+  lazy: true,
   spaceBetween: 10,
+  grabCursor: true,
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev"

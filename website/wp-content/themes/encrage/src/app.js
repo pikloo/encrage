@@ -5,9 +5,12 @@ const backToTop = () => {
 };
 
 const toTopButtons = document.querySelectorAll(".to-top");
-toTopButtons.forEach(function(button) { 
+const imagesGallery = document.querySelectorAll(".gallery-img");
+[...toTopButtons, ...imagesGallery].forEach(function(button) { 
   button.addEventListener("click", backToTop);
 });
+
+
 
 const menuToogle = document.getElementById( 'menu-toggle' );
 
@@ -69,18 +72,18 @@ const sliderActive = document.querySelector(".gallery");
 
 if (portfolioTitle) {
   const basePosition = sliderActive.offsetHeight;
-  portfolioTitle.classList.add('absolute')
+  portfolioTitle.classList.add('md:absolute', 'md:top-36')
   // portfolioTitle.setAttribute('style', `top:${basePosition}px; z-index:11; position:absolute;`);
 
   document.addEventListener("scroll", (event) => {
     if (portfolioTitle.getBoundingClientRect().top < header.offsetHeight + 150) {
-      portfolioTitle.classList.remove('absolute')
-      portfolioTitle.classList.add('fixed', 'md:top-36')
+      portfolioTitle.classList.remove('md:absolute')
+      portfolioTitle.classList.add('md:fixed')
     }
 
     if (window.scrollY < basePosition - 20) {
-      portfolioTitle.classList.remove('fixed' , 'md:top-36')
-      portfolioTitle.classList.add('absolute')
+      portfolioTitle.classList.remove('md:fixed')
+      portfolioTitle.classList.add('md:absolute')
     }
   });
 
