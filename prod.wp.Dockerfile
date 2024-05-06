@@ -7,7 +7,7 @@ RUN apt-get install -y libcap2-bin
 RUN setcap 'cap_net_bind_service=+ep' /usr/sbin/apache2
 RUN getcap /usr/sbin/apache2
 
-ADD ./apache/000-default.prod.conf /etc/apache2/sites-available/000-default.conf
+ADD ./apache/default.ssl.conf /etc/apache2/sites-available/default-ssl.conf
 
 # COPY ./website/wp-content /var/www/html/wp-content
 RUN mkdir /etc/apache2/sites-available/ssl
@@ -16,9 +16,11 @@ COPY ./ssl/cert.pem /etc/apache2/sites-available/ssl/cert.pem
 COPY ./ssl/key.pem /etc/apache2/sites-available/ssl/key.pem
 
 
-RUN a2enmod rewrite && a2enmod ssl && a2enmod proxy && a2enmod proxy_balancer &&  a2enmod proxy_http
+RUN a2ensite default-ssl && a2enmod rewrite && a2enmod ssl
 
 RUN service apache2 restart
+
+RUN service apache2 stop
 
 # enable apache module rewrite
 # RUN a2enmod rewrite && a2enmod headers && a2enmod expires

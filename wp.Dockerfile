@@ -13,12 +13,6 @@ RUN apt-get install -y libcap2-bin
 RUN setcap 'cap_net_bind_service=+ep' /usr/sbin/apache2
 RUN getcap /usr/sbin/apache2
 
-ADD ./apache/000-default.conf /etc/apache2/sites-available/000-default.conf
-# RUN a2ensite default-ssl.conf
-RUN a2ensite 000-default.conf
-# enable apache module rewrite
-RUN a2enmod rewrite && a2enmod headers && a2enmod expires
-
 # copy all of our development code
 COPY ./website/wp-content /var/www/html/wp-content
 
