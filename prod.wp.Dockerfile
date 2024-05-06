@@ -7,7 +7,7 @@ RUN apt-get install -y libcap2-bin
 RUN setcap 'cap_net_bind_service=+ep' /usr/sbin/apache2
 RUN getcap /usr/sbin/apache2
 
-ADD ./apache/default.ssl.conf /etc/apache2/sites-available/default-ssl.conf
+ADD ./apache/default-ssl.conf /etc/apache2/sites-available/default-ssl.conf
 
 # COPY ./website/wp-content /var/www/html/wp-content
 RUN mkdir /etc/apache2/sites-available/ssl
