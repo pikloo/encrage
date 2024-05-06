@@ -16,7 +16,7 @@ COPY ./ssl/cert.pem /etc/apache2/sites-available/ssl/cert.pem
 COPY ./ssl/key.pem /etc/apache2/sites-available/ssl/key.pem
 
 
-RUN a2enmod rewrite && a2enmod ssl && a2enmod proxy
+RUN a2enmod rewrite && a2enmod ssl && a2enmod proxy && a2enmod proxy_balancer &&  a2enmod proxy_http
 
 RUN service apache2 restart
 
