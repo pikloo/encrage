@@ -14,12 +14,23 @@ RUN setcap 'cap_net_bind_service=+ep' /usr/sbin/apache2
 RUN getcap /usr/sbin/apache2
 
 # copy all of our development code
+# COPY ./ssl/cert.pem /etc/apache2/sites-available/ssl/cert.pem
+# COPY ./ssl/key.pem /etc/apache2/sites-available/ssl/key.pem
+# RUN mkdir -p /var/run/apache2/
+
+
+RUN set -eux; \
+    apt-get update; \
+    apt-get install ssl-cert; \
+    a2enmod ssl; \
+    a2ensite default-ssl
+
 # COPY ./website/wp-content /var/www/html/wp-content
 RUN mkdir /etc/apache2/sites-available/ssl
 
 ADD ./apache/000-default.prod.conf /etc/apache2/sites-available/000-default.conf
 # enable apache module rewrite
-RUN a2enmod rewrite && a2enmod headers && a2enmod expires && a2enmod ssl
+RUN a2enmod rewrite && a2enmod headers && a2enmod expires
 
 # switch to www-data
 USER www-data
