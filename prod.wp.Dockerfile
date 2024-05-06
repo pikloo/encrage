@@ -19,21 +19,22 @@ RUN getcap /usr/sbin/apache2
 # RUN mkdir -p /var/run/apache2/
 
 
-RUN set -eux; \
-    apt-get update; \
-    apt-get install ssl-cert; \
-    a2enmod ssl; \
-    a2ensite default-ssl
+# RUN set -eux; \
+#     apt-get update; \
+#     apt-get install ssl-cert; \
+#     a2enmod ssl; \
+#     a2ensite default-ssl
 
 # COPY ./website/wp-content /var/www/html/wp-content
 RUN mkdir /etc/apache2/sites-available/ssl
 
 ADD ./apache/000-default.prod.conf /etc/apache2/sites-available/000-default.conf
 # enable apache module rewrite
-RUN a2enmod rewrite && a2enmod headers && a2enmod expires
+# RUN a2enmod rewrite && a2enmod headers && a2enmod expires
 
 # switch to www-data
-USER www-data
+# USER www-data
+RUN chown -R www-data:www-data  && a2enmod rewrite ssl
 
 # EXPOSE 80
 # EXPOSE 443
