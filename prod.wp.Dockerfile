@@ -36,11 +36,25 @@
 
 FROM wordpress:latest
 
-#change uid and gid of apache to docker user uid/gid
-RUN usermod -u 1000 www-data && groupmod -g 1000 www-data
-ADD ./apache/default-ssl.conf /etc/apache2/sites-available/default-ssl.conf
-ADD ./apache/000-default.conf /etc/apache2/sites-available/000-default.conf
-RUN a2ensite default-ssl.conf
-RUN a2ensite 000-default.conf
-# enable apache module rewrite
-RUN a2enmod rewrite && a2enmod headers && a2enmod expires && a2enmod ssl
+# #change uid and gid of apache to docker user uid/gid
+# RUN usermod -u 1000 www-data && groupmod -g 1000 www-data
+# ADD ./apache/default-ssl.conf /etc/apache2/sites-available/default-ssl.conf
+# ADD ./apache/default-ssl.conf /etc/apache2/sites-available/default-ssl.conf
+# ADD ./apache/000-default.conf /etc/apache2/sites-available/000-default.conf
+# RUN a2ensite default-ssl.conf
+# RUN a2ensite 000-default.conf
+# # enable apache module rewrite
+# RUN a2enmod rewrite && a2enmod headers && a2enmod expires && a2enmod ssl
+
+# EXPOSE 80
+# EXPOSE 443
+
+
+RUN apt-get update && \
+	apt-get install -y  --no-install-recommends ssl-cert && \
+	rm -r /var/lib/apt/lists/* && \
+	a2enmod ssl && \
+	a2ensite default-ssl
+
+EXPOSE 80
+EXPOSE 443
