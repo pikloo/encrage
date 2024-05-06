@@ -18,7 +18,7 @@ COPY ./ssl/key.pem /etc/apache2/sites-available/ssl/key.pem
 
 RUN a2enmod rewrite && a2enmod ssl
 
-RUN service apache2 restart
+# RUN service apache2 restart
 
 # enable apache module rewrite
 # RUN a2enmod rewrite && a2enmod headers && a2enmod expires
