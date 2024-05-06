@@ -34,7 +34,7 @@ ADD ./apache/000-default.prod.conf /etc/apache2/sites-available/000-default.conf
 
 # switch to www-data
 # USER www-data
-RUN chown -R www-data:www-data  && a2enmod rewrite ssl
+RUN chown -R www-data:www-data . && a2enmod rewrite ssl
 
 # EXPOSE 80
 # EXPOSE 443
