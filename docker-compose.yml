@@ -39,6 +39,7 @@ services:
       WORDPRESS_DB_PASSWORD: "${MYSQL_PASSWORD}"
       WORDPRESS_DB_NAME: "${MYSQL_DATABASE}"
       WORDPRESS_TABLE_PREFIX: "${WORDPRESS_TABLE_PREFIX}"
+    command: ["apache2-foreground"]
     ports:
       - 80:80
       # - 433:433
@@ -57,6 +58,7 @@ services:
     environment:
       PMA_HOST: db
       MYSQL_ROOT_PASSWORD: "${MYSQL_ROOT_PASSWORD}"
+    command: ["apache2-foreground"]
     ports:
       - "8080:80"
     networks:
