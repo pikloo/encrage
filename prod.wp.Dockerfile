@@ -16,9 +16,9 @@ COPY ./ssl/cert.pem /etc/apache2/sites-available/ssl/cert.pem
 COPY ./ssl/key.pem /etc/apache2/sites-available/ssl/key.pem
 
 
-RUN a2enmod rewrite && a2enmod ssl
+RUN a2enmod rewrite && a2enmod ssl && a2enmod proxy
 
-# RUN service apache2 restart
+RUN service apache2 restart
 
 # enable apache module rewrite
 # RUN a2enmod rewrite && a2enmod headers && a2enmod expires
@@ -27,6 +27,6 @@ RUN a2enmod rewrite && a2enmod ssl
 # USER www-data
 RUN chown -R www-data:www-data . 
 
-EXPOSE 80
+# EXPOSE 80
 
 WORKDIR /var/www/html
