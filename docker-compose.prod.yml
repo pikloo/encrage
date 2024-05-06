@@ -10,7 +10,7 @@ services:
       - 433:433
     volumes:
       - ./ssl:/etc/apache2/sites-available/ssl
-    # hostname: pikloo-dev.online
+    hostname: pikloo-dev.online
     # links:
     #   - "maildev:maildev"
     
