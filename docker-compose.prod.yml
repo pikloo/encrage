@@ -5,8 +5,8 @@ services:
     build:
       context: .
       dockerfile: prod.wp.Dockerfile
-    ports:
-      - "${HOST_HTTPS_PORT}:443"
+    # ports:
+      # - "${HOST_HTTPS_PORT}:443"
     # volumes:
     #   - ./ssl:/etc/etc/apache2/ssl-certs:ro
     hostname: pikloo-dev.online
@@ -19,7 +19,7 @@ services:
     restart: unless-stopped
     ports:
       - 80:80
-      # - 443:443
+      - 443:443
     environment:
       - ADMIN_EMAIL=${ADMIN_EMAIL}
       - DOMAIN=${DOMAIN}
@@ -43,7 +43,7 @@ services:
       - ./website:/var/www/html
     networks:
       - wp
-      
+
   # maildev:
   #   image: maildev/maildev
   #   container_name: wp_maildev
