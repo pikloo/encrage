@@ -41,7 +41,9 @@ services:
     volumes:
       - certbot-etc:/etc/letsencrypt
       - ./website:/var/www/html
-
+    networks:
+      - wp
+      
   # maildev:
   #   image: maildev/maildev
   #   container_name: wp_maildev
