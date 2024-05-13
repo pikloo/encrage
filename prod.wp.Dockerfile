@@ -6,3 +6,5 @@ RUN apt-get install -y libcap2-bin
 RUN a2enmod headers
 
 RUN chown -R www-data:www-data . 
+
+EXPOSE 9000

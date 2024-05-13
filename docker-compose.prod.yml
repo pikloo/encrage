@@ -5,6 +5,8 @@ services:
     build:
       context: .
       dockerfile: prod.wp.Dockerfile
+    ports:
+      - 9000
     # ports:
       # - "${HOST_HTTPS_PORT}:443"
     # volumes:
