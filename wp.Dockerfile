@@ -12,5 +12,3 @@ COPY ./website/wp-content /var/www/html/wp-content
 
 # switch to www-data
 USER www-data
-
-EXPOSE 80
