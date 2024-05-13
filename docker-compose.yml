@@ -63,7 +63,7 @@ services:
 
 networks:
   wp:
-    driver: bridge
+    external: true
 
 volumes:
   db_data:

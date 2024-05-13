@@ -9,7 +9,7 @@ services:
       # - "${HOST_HTTPS_PORT}:443"
     # volumes:
     #   - ./ssl:/etc/etc/apache2/ssl-certs:ro
-    hostname: pikloo-dev.online
+    # hostname: ${DOMAIN}
     # links:
     #   - "maildev:maildev
 
@@ -23,6 +23,7 @@ services:
     environment:
       - ADMIN_EMAIL=${ADMIN_EMAIL}
       - DOMAIN=${DOMAIN}
+    # hostname: ${DOMAIN}
     volumes:
       - ./website:/var/www/html
       - ./nginx/conf:/etc/nginx/conf.d
