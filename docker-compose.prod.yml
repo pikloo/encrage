@@ -1,19 +1,52 @@
-version: '3.9'
+version: "3.9"
 
 services:
-  wordpress: 
+  wordpress:
     build:
       context: .
       dockerfile: prod.wp.Dockerfile
     ports:
-      - 80:80
-      - 433:433
-    volumes:
-      - ./ssl:/etc/apache2/sites-available/ssl
-    hostname: pikloo-dev.online
+      - 9000
+    # ports:
+      # - "${HOST_HTTPS_PORT}:443"
+    # volumes:
+    #   - ./ssl:/etc/etc/apache2/ssl-certs:ro
+    # hostname: ${DOMAIN}
     # links:
-    #   - "maildev:maildev"
-    
+    #   - "maildev:maildev
+
+  nginx:
+    container_name: nginx
+    image: nginx:latest
+    restart: unless-stopped
+    ports:
+      - 80:80
+      - 443:443
+    environment:
+      - ADMIN_EMAIL=${ADMIN_EMAIL}
+      - DOMAIN=${DOMAIN}
+    # hostname: ${DOMAIN}
+    volumes:
+      - ./website:/var/www/html
+      - ./nginx/conf:/etc/nginx/conf.d
+      - ./letsencrypt:/etc/letsencrypt:ro
+    networks:
+      - wp
+    depends_on:
+      - wordpress
+
+  certbot:
+    depends_on:
+      - nginx
+    container_name: certbot
+    image: certbot/certbot:latest
+    command: certonly --webroot --webroot-path=/var/www/html --email ${ADMIN_EMAIL} --agree-tos --no-eff-email --force-renewal -d ${DOMAIN} -d www.${DOMAIN}
+    volumes:
+      - ./letsencrypt:/etc/letsencrypt:ro
+      - ./website:/var/www/html
+    networks:
+      - wp
+
   # maildev:
   #   image: maildev/maildev
   #   container_name: wp_maildev
@@ -24,3 +57,6 @@ services:
   #   restart: always
   #   networks:
   #     - wp
+
+volumes:
+  certbot-etc:
