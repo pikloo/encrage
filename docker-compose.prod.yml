@@ -29,7 +29,7 @@ services:
     volumes:
       - ./website:/var/www/html
       - ./nginx/conf:/etc/nginx/conf.d
-      - /etc/letsencrypt:/etc/letsencrypt
+      - /etc/letsencrypt:/etc/letsencrypt:ro
     networks:
       - wp
     depends_on:
@@ -42,7 +42,7 @@ services:
     image: certbot/certbot:latest
     command: certonly --webroot --webroot-path=/var/www/html --email ${ADMIN_EMAIL} --agree-tos --no-eff-email --force-renewal -d ${DOMAIN} -d www.${DOMAIN}
     volumes:
-      - /etc/letsencrypt:/etc/letsencrypt
+      - /etc/letsencrypt:/etc/letsencrypt:ro
       - ./website:/var/www/html
     networks:
       - wp
