@@ -1282,11 +1282,6 @@ h3::first-letter {
   margin-right: 0px !important;
 }
 
-.mx-2 {
-  margin-left: 0.5rem !important;
-  margin-right: 0.5rem !important;
-}
-
 .mx-auto {
   margin-left: auto !important;
   margin-right: auto !important;
@@ -1422,6 +1417,10 @@ h3::first-letter {
   height: 100vh !important;
 }
 
+.h-\[calc\(100vh-3rem\)\] {
+  height: calc(100vh - 3rem) !important;
+}
+
 .w-32 {
   width: 8rem !important;
 }
@@ -1484,10 +1483,6 @@ h3::first-letter {
 
 .grid-cols-2 {
   grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-}
-
-.grid-cols-6 {
-  grid-template-columns: repeat(6, minmax(0, 1fr)) !important;
 }
 
 .grid-cols-4 {
@@ -1602,18 +1597,9 @@ h3::first-letter {
   border-width: 0px !important;
 }
 
-.border-b {
-  border-bottom-width: 1px !important;
-}
-
 .border-black {
   --tw-border-opacity: 1 !important;
   border-color: rgb(0 0 0 / var(--tw-border-opacity)) !important;
-}
-
-.border-gray-600 {
-  --tw-border-opacity: 1 !important;
-  border-color: rgb(75 85 99 / var(--tw-border-opacity)) !important;
 }
 
 .bg-black {
@@ -1659,10 +1645,6 @@ h3::first-letter {
 
 .p-2 {
   padding: 0.5rem !important;
-}
-
-.p-3 {
-  padding: 0.75rem !important;
 }
 
 .p-4 {
@@ -1742,16 +1724,12 @@ h3::first-letter {
   padding-top: 7rem !important;
 }
 
-.pt-3 {
-  padding-top: 0.75rem !important;
-}
-
 .pt-36 {
   padding-top: 9rem !important;
 }
 
-.pt-6 {
-  padding-top: 1.5rem !important;
+.pt-32 {
+  padding-top: 8rem !important;
 }
 
 .text-center {
@@ -1821,11 +1799,6 @@ h3::first-letter {
 .text-black {
   --tw-text-opacity: 1 !important;
   color: rgb(0 0 0 / var(--tw-text-opacity)) !important;
-}
-
-.text-gray-300 {
-  --tw-text-opacity: 1 !important;
-  color: rgb(209 213 219 / var(--tw-text-opacity)) !important;
 }
 
 .text-gray-500 {
@@ -2057,16 +2030,6 @@ h3::first-letter {
   background-color: rgb(229 231 235 / 0.5) !important;
 }
 
-.hover\:bg-teal-900:hover {
-  --tw-bg-opacity: 1 !important;
-  background-color: rgb(19 78 74 / var(--tw-bg-opacity)) !important;
-}
-
-.hover\:text-white:hover {
-  --tw-text-opacity: 1 !important;
-  color: rgb(255 255 255 / var(--tw-text-opacity)) !important;
-}
-
 @media (min-width: 640px) {
   .sm\:ml-6 {
     margin-left: 1.5rem !important;
@@ -2074,22 +2037,6 @@ h3::first-letter {
 
   .sm\:inline-block {
     display: inline-block !important;
-  }
-
-  .sm\:w-1\/2 {
-    width: 50% !important;
-  }
-
-  .sm\:border-b-0 {
-    border-bottom-width: 0px !important;
-  }
-
-  .sm\:border-r {
-    border-right-width: 1px !important;
-  }
-
-  .sm\:border-r-0 {
-    border-right-width: 0px !important;
   }
 
   .sm\:pl-0 {
@@ -2141,6 +2088,10 @@ h3::first-letter {
     height: 11rem !important;
   }
 
+  .md\:h-\[calc\(100vh-5rem\)\] {
+    height: calc(100vh - 5rem) !important;
+  }
+
   .md\:w-44 {
     width: 11rem !important;
   }
@@ -2178,10 +2129,6 @@ h3::first-letter {
     row-gap: 0px !important;
   }
 
-  .md\:border-b-0 {
-    border-bottom-width: 0px !important;
-  }
-
   .md\:bg-black {
     --tw-bg-opacity: 1 !important;
     background-color: rgb(0 0 0 / var(--tw-bg-opacity)) !important;
@@ -2205,6 +2152,10 @@ h3::first-letter {
 
   .md\:pt-36 {
     padding-top: 9rem !important;
+  }
+
+  .md\:pt-28 {
+    padding-top: 7rem !important;
   }
 
   .md\:indent-6 {
@@ -2285,10 +2236,6 @@ h3::first-letter {
     height: 16rem !important;
   }
 
-  .lg\:w-1\/4 {
-    width: 25% !important;
-  }
-
   .lg\:w-64 {
     width: 16rem !important;
   }
@@ -2334,14 +2281,6 @@ h3::first-letter {
     row-gap: 0px !important;
   }
 
-  .lg\:border-b-0 {
-    border-bottom-width: 0px !important;
-  }
-
-  .lg\:border-r {
-    border-right-width: 1px !important;
-  }
-
   .lg\:py-6 {
     padding-top: 1.5rem !important;
     padding-bottom: 1.5rem !important;
@@ -2349,10 +2288,6 @@ h3::first-letter {
 
   .lg\:pr-10 {
     padding-right: 2.5rem !important;
-  }
-
-  .lg\:pt-3 {
-    padding-top: 0.75rem !important;
   }
 
   .lg\:text-2xl {
@@ -2397,6 +2332,10 @@ h3::first-letter {
   .xl\:w-fit {
     width: -moz-fit-content !important;
     width: fit-content !important;
+  }
+
+  .xl\:w-full {
+    width: 100% !important;
   }
 
   .xl\:grid-cols-4 {

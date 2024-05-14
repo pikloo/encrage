@@ -3,7 +3,7 @@ get_header();
 get_template_part('partials/header', 'header');
 $is_home = is_home();
 ?>
-<main class="overflow-hidden main">
+<main class="overflow-hidden main md:pt-28">
     <?php get_template_part('partials/home/slider', 'slider-home'); ?>
     <?php get_template_part('partials/members-list', 'members-list', ['is_home' => is_home()]); ?>
     <?php 
