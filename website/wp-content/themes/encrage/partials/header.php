@@ -1,6 +1,7 @@
 <?php
 $is_home_page = is_front_page() && is_home();
 $bg = $is_home_page || 'serie' == get_post_type() ? 'bg-white/70' : 'bg-white';
+$isSinglePortfolio = 'serie' == get_post_type() && is_single();
 
 $membersArgs =  [
   'post_type' => 'member',
@@ -20,9 +21,9 @@ $menu_main = wp_nav_menu([
 ]);
 
 ?>
-<header class="main-header flex items-center w-fit <?php if ('serie' != get_post_type()) echo 'lg:w-full' ?> fixed top-0 left-0 right-0 z-20 bg-white duration-500 delay-2">
-  <nav class="relative <?php if ('serie' != get_post_type()) echo 'lg:w-full' ?> flex justify-between items-center bg-white">
-    <button class="menu-toggle z-20 <?php if ('serie' != get_post_type()) echo 'lg:hidden' ?>" id="menu-toggle" aria-expanded="false"><span class="screen-reader-text">Menu</span>
+<header class="main-header flex items-center w-fit <?php if (!$isSinglePortfolio) echo 'lg:w-full' ?> fixed top-0 left-0 right-0 z-20 bg-white duration-500 delay-2">
+  <nav class="relative <?php if (!$isSinglePortfolio) echo 'lg:w-full lg:pr-10' ?> flex justify-between items-center bg-white">
+    <button class="menu-toggle z-20 <?php if (!$isSinglePortfolio) echo 'lg:hidden' ?>" id="menu-toggle" aria-expanded="false"><span class="screen-reader-text">Menu</span>
       <svg class="icon icon-menu-toggle" aria-hidden="true" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100">
         <g class="svg-menu-toggle">
           <path class="line line-1" d="M5 13h90v14H5z" />
@@ -32,10 +33,27 @@ $menu_main = wp_nav_menu([
       </svg>
     </button>
     <a class="z-20 bg-white lg:py-6" href=<?= home_url(); ?>><img src="<?= get_template_directory_uri(); ?>/assets/images/ancrage_logo.png" alt="<?= esc_html(get_bloginfo('description')) ?> " class="w-[250px] px-10 logo-site" /></a>
-    <?php if('serie' != get_post_type()): ?>
-    <div class="hidden lg:block w-max">
-      <?= $menu_main; ?>
-    </div>
+    <?php if (!$isSinglePortfolio) : ?>
+      <div class="hidden lg:flex w-max items-center lg:text-2xl">
+        <?= $menu_main; ?>
+        <!-- photographes -->
+        <div class="ml-2">
+        <input type="checkbox" value="selected" id="toggle-one" class="toggle-input">
+        <label for="toggle-one" class="block cursor-pointer uppercase">Les photographes</label>
+        <div role="toggle" class="p-6 mega-menu mb-16 shadow-xl bg-white">
+          <div class="container mx-auto w-full">
+            <ul class="grid grid-cols-4">
+            <?php while ($membersMenu->have_posts()) : $membersMenu->the_post(); ?>
+              <li class="menu-item"><a href=<?= the_permalink() ?>><?= the_title(); ?></a></li>
+            <?php endwhile;
+            wp_reset_postdata(); ?>
+            </ul>
+          </div>
+        </div>
+        </div>
+        
+        <!-- end photographes -->
+      </div>
     <?php endif; ?>
     <div id="sideBar" class="bg-transparent overflow-x-hidden duration-500 z-10">
       <!--navigation menu box-->

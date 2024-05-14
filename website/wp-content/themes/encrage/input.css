@@ -231,4 +231,56 @@ Version: 1.0
     transition-delay: 0.3s;
   }
 
+  .mega-menu {
+    opacity:0;
+    visibility:hidden;
+    z-index: -900;
+    left: 0;
+    position: absolute;
+    text-align: left;
+    width: 100%;
+    transition: all 0.15s linear 0s;
+    @apply top-28
+  }
+
+
+  /* #toggle Class Styles */
+
+  .toggleable > label:after {
+    content: "\25BC";
+    font-size: 10px;
+    padding-left: 6px;
+    position: relative;
+    top: -1px;
+  }
+
+  .toggle-input {
+    display: none;
+  }
+  .toggle-input:not(checked) ~ .mega-menu {
+    opacity:0;
+    visibility:hidden;
+    z-index: -900;
+  }
+
+  .toggle-input:checked ~ .mega-menu {
+    opacity:1;
+    visibility:visible;
+    z-index: 900;
+  }
+
+  /* .toggle-input:checked + label {
+    color: white;
+    background: rgb(3, 102, 114); 
+  }
+   */
+
+  .toggle-input:checked ~ label:after {
+    content: "\25B2";
+    font-size: 10px;
+    padding-left: 6px;
+    position: relative;
+    top: -1px;
+  }
+
 }
