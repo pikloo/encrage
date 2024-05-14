@@ -1365,6 +1365,14 @@ h3::first-letter {
   height: 100vh !important;
 }
 
+.h-6 {
+  height: 1.5rem !important;
+}
+
+.h-20 {
+  height: 5rem !important;
+}
+
 .w-32 {
   width: 8rem !important;
 }
@@ -1392,6 +1400,15 @@ h3::first-letter {
 
 .w-full {
   width: 100% !important;
+}
+
+.w-screen {
+  width: 100vw !important;
+}
+
+.w-max {
+  width: -moz-max-content !important;
+  width: max-content !important;
 }
 
 .max-w-sm {
@@ -2026,6 +2043,10 @@ h3::first-letter {
     height: 11rem !important;
   }
 
+  .md\:h-10 {
+    height: 2.5rem !important;
+  }
+
   .md\:w-64 {
     width: 16rem !important;
   }
@@ -2158,6 +2179,14 @@ h3::first-letter {
     margin-right: auto !important;
   }
 
+  .lg\:block {
+    display: block !important;
+  }
+
+  .lg\:hidden {
+    display: none !important;
+  }
+
   .lg\:h-64 {
     height: 16rem !important;
   }
@@ -2168,6 +2197,10 @@ h3::first-letter {
 
   .lg\:w-64 {
     width: 16rem !important;
+  }
+
+  .lg\:w-full {
+    width: 100% !important;
   }
 
   .lg\:max-w-screen-lg {
@@ -2194,6 +2227,10 @@ h3::first-letter {
     align-items: center !important;
   }
 
+  .lg\:justify-around {
+    justify-content: space-around !important;
+  }
+
   .lg\:gap-x-10 {
     -moz-column-gap: 2.5rem !important;
          column-gap: 2.5rem !important;
@@ -2201,6 +2238,15 @@ h3::first-letter {
 
   .lg\:gap-y-0 {
     row-gap: 0px !important;
+  }
+
+  .lg\:p-6 {
+    padding: 1.5rem !important;
+  }
+
+  .lg\:py-6 {
+    padding-top: 1.5rem !important;
+    padding-bottom: 1.5rem !important;
   }
 
   .lg\:text-2xl {
@@ -2236,6 +2282,10 @@ h3::first-letter {
 
   .xl\:bottom-0 {
     bottom: 0px !important;
+  }
+
+  .xl\:block {
+    display: block !important;
   }
 
   .xl\:hidden {
