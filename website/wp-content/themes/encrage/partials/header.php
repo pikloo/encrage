@@ -37,7 +37,7 @@ $menu_main = wp_nav_menu([
       <div class="hidden lg:flex w-max items-center lg:text-2xl menu-full bg-white">
         <?= $menu_main; ?>
         <!-- photographes -->
-        <div class="ml-2">
+        <div class="ml-4">
           <input type="checkbox" value="selected" id="toggle-one" class="toggle-input">
           <label for="toggle-one" class="block cursor-pointer uppercase menu-item relative after:content-['\25BC'] after:text-xs after:absolute after:bottom-1 after:ml-1 after:duration-150">Les photographes</label>
           <div role="toggle" class="p-6 mega-menu mb-16 shadow-sm bg-white">
