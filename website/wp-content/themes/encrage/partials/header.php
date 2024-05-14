@@ -21,7 +21,7 @@ $menu_main = wp_nav_menu([
 ]);
 
 ?>
-<header class="main-header flex items-center w-max-w-sm <?= !$isSinglePortfolio ? 'lg:w-full' : 'w-fit'  ?> fixed top-0 left-0 right-0 z-20 bg-white duration-500 delay-2">
+<header class="main-header flex items-center shadow-sm w-max-w-sm <?= !$isSinglePortfolio ? 'lg:w-full' : 'w-fit'  ?> fixed top-0 left-0 right-0 z-20 bg-white duration-500 delay-2">
   <nav class="relative <?php if (!$isSinglePortfolio) echo 'lg:w-full lg:pr-10' ?> flex justify-between items-center bg-white">
     <button class="menu-toggle z-20 <?php if (!$isSinglePortfolio) echo 'lg:hidden' ?>" id="menu-toggle" aria-expanded="false"><span class="screen-reader-text">Menu</span>
       <svg class="icon icon-menu-toggle" aria-hidden="true" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100">
@@ -34,24 +34,34 @@ $menu_main = wp_nav_menu([
     </button>
     <a class="z-20 bg-white lg:py-6" href=<?= home_url(); ?>><img src="<?= get_template_directory_uri(); ?>/assets/images/ancrage_logo.png" alt="<?= esc_html(get_bloginfo('description')) ?> " class="w-[250px] px-10 logo-site" /></a>
     <?php if (!$isSinglePortfolio) : ?>
-      <div class="hidden lg:flex w-max items-center lg:text-2xl menu-full">
+      <div class="hidden lg:flex w-max items-center lg:text-2xl menu-full bg-white">
         <?= $menu_main; ?>
         <!-- photographes -->
         <div class="ml-2">
-        <input type="checkbox" value="selected" id="toggle-one" class="toggle-input">
-        <label for="toggle-one" class="block cursor-pointer uppercase menu-item">Les photographes</label>
-        <div role="toggle" class="p-6 mega-menu mb-16 shadow-xl bg-white">
-          <div class="container mx-auto w-full">
-            <ul class="grid grid-cols-4">
-            <?php while ($membersMenu->have_posts()) : $membersMenu->the_post(); ?>
-              <li class="menu-item"><a href=<?= the_permalink() ?>><?= the_title(); ?></a></li>
-            <?php endwhile;
-            wp_reset_postdata(); ?>
-            </ul>
+          <input type="checkbox" value="selected" id="toggle-one" class="toggle-input">
+          <label for="toggle-one" class="block cursor-pointer uppercase menu-item relative after:content-['\25BC'] after:text-xs after:absolute after:bottom-1 after:ml-1 after:duration-150">Les photographes</label>
+          <div role="toggle" class="p-6 mega-menu mb-16 shadow-sm bg-white">
+            <div class="container mx-auto w-full">
+              <ul class="grid grid-cols-4 gap-y-3">
+                <?php while ($membersMenu->have_posts()) : $membersMenu->the_post();
+                  $thumbnailUrl = null;
+                  if (get_the_post_thumbnail()) {
+                    $thumbnailUrl = get_the_post_thumbnail_url(get_the_ID(), 'medium_large');
+                  } else {
+                    $thumbnailUrl = get_template_directory_uri() . '/assets/images/default_member.png';
+                  }
+                ?>
+                  <li class="menu-item"><a class="flex items-center space-x-2 cursor-pointer" <?= the_permalink() ?>>
+                  <img class="h-12 w-12 rounded-full object-contain <?php if (!get_the_post_thumbnail()) echo "border border-black" ?>" src=<?= esc_url($thumbnailUrl); ?> alt="" />
+                  <span class="text-lg"><?= the_title(); ?></span>
+                </a></li>
+                <?php endwhile;
+                wp_reset_postdata(); ?>
+              </ul>
+            </div>
           </div>
         </div>
-        </div>
-        
+
         <!-- end photographes -->
       </div>
     <?php endif; ?>
@@ -60,10 +70,10 @@ $menu_main = wp_nav_menu([
       <div id="sideNav" class="text-xl h-full  md:text-2xl lg:text-3xl bg-white text-black flex flex-col justify-center items-center overflow-x-hidden duration-500 z-50">
         <div id="sideLinks" class="flex flex-col items-center justify-content duration-500 delay-2">
           <?= $menu_main; ?>
-          <ul class="relative grid grid-cols-2 justify-items-center py-6 font-bold after:h-[2px] after:bg-black 
+          <ul class="relative grid grid-cols-2 md:space-x-10 justify-items-center py-6 font-bold after:h-[2px] after:bg-black 
        after:absolute after:w-[100px]">
             <?php while ($membersMenu->have_posts()) : $membersMenu->the_post(); ?>
-              <li class="menu-item"><a href=<?= the_permalink() ?>><?= the_title(); ?></a></li>
+              <li class="menu-item text-base md:text-xl lg:text-2xl"><a href=<?= the_permalink() ?>><?= the_title(); ?></a></li>
             <?php endwhile;
             wp_reset_postdata(); ?>
 
