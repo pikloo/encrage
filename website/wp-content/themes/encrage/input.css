@@ -182,7 +182,7 @@ Version: 1.0
 
   #sideBar,
   #sideNav {
-    @apply top-14 sm:top-0 w-full fixed left-[-100%]
+    @apply top-0 w-full fixed left-[-100%]
   }
 
 
@@ -191,7 +191,7 @@ Version: 1.0
   } */
 
   .main-menu {
-    @apply py-6 flex text-center;
+    @apply py-6 flex text-center md:space-x-6;
   }
 
   .socials-links svg {
@@ -203,7 +203,7 @@ Version: 1.0
   }
 
   .main-menu li {
-    @apply p-2 font-medium uppercase;
+    @apply p-1 md:p-2  font-medium uppercase;
   }
 
   .main-menu li, .menu-item {
@@ -232,41 +232,32 @@ Version: 1.0
   }
 
   .mega-menu {
-    opacity:0;
+    /* opacity:0;
     visibility:hidden;
-    z-index: -900;
+    
     left: 0;
     position: absolute;
     text-align: left;
     width: 100%;
     transition: all 0.15s linear 0s;
-    @apply top-28
+    @apply top-28 */
+    /* left-[-100%] */
+    z-index: -900;
+    @apply top-[-400%] absolute w-full left-0 duration-1000
   }
 
 
   /* #toggle Class Styles */
 
-  .toggleable > label:after {
-    content: "\25BC";
-    font-size: 10px;
-    padding-left: 6px;
-    position: relative;
-    top: -1px;
-  }
-
   .toggle-input {
     display: none;
   }
   .toggle-input:not(checked) ~ .mega-menu {
-    opacity:0;
-    visibility:hidden;
-    z-index: -900;
+    @apply top-[-400%]
   }
 
   .toggle-input:checked ~ .mega-menu {
-    opacity:1;
-    visibility:visible;
-    z-index: 900;
+    @apply top-28
   }
 
   /* .toggle-input:checked + label {
@@ -275,12 +266,18 @@ Version: 1.0
   }
    */
 
-  .toggle-input:checked ~ label:after {
-    content: "\25B2";
+   /* label:after {
+    content: "\25BC";
     font-size: 10px;
-    padding-left: 6px;
-    position: relative;
+    position: absolute;
     top: -1px;
+    transform: rotate(180deg);
+    margin-left: 2rem;
+    @apply 
+  } */
+
+  .toggle-input:checked ~ label:after {
+    @apply rotate-180 duration-150;
   }
 
   .menu-full li{
