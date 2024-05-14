@@ -1,22 +1,22 @@
 <section class="relative" id="slider">
     <div class="swiper slider-home">
         <div class="swiper-wrapper h-screen md:h-[calc(100vh-5rem)]">
-            <div class="swiper-slide"><img class="h-screen object-cover md:w-screen" src="<?= get_template_directory_uri(); ?>/assets/images/slider1.jpg" loading="lazy" />
+            <div class="swiper-slide"><img class="h-screen object-cover md:w-screen" src="<?= get_template_directory_uri(); ?>/assets/images/slider-1.jpg" loading="lazy" />
                 <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
             </div>
-            <div class="swiper-slide"><img class="h-screen object-cover md:w-screen" src="<?= get_template_directory_uri(); ?>/assets/images/slider2.jpg" loading="lazy" />
+            <div class="swiper-slide"><img class="h-screen object-cover md:w-screen" src="<?= get_template_directory_uri(); ?>/assets/images/slider-2.jpg" loading="lazy" />
                 <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
             </div>
-            <div class="swiper-slide"><img class="h-screen object-cover md:w-screen" src="<?= get_template_directory_uri(); ?>/assets/images/slider3.jpg" loading="lazy" />
+            <div class="swiper-slide"><img class="h-screen object-cover md:w-screen" src="<?= get_template_directory_uri(); ?>/assets/images/slider-3.jpg" loading="lazy" />
                 <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
             </div>
-            <div class="swiper-slide"><img class="h-screen object-cover md:w-screen" src="<?= get_template_directory_uri(); ?>/assets/images/slider4.jpg" loading="lazy" />
+            <div class="swiper-slide"><img class="h-screen object-cover md:w-screen" src="<?= get_template_directory_uri(); ?>/assets/images/slider-4.jpg" loading="lazy" />
                 <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
             </div>
-            <div class="swiper-slide"><img class="h-screen object-cover md:w-screen" src="<?= get_template_directory_uri(); ?>/assets/images/slider5.jpg" loading="lazy" />
+            <div class="swiper-slide"><img class="h-screen object-cover md:w-screen" src="<?= get_template_directory_uri(); ?>/assets/images/slider-5.jpg" loading="lazy" />
                 <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
             </div>
-            <div class="swiper-slide"><img class="h-screen object-cover md:w-screen" src="<?= get_template_directory_uri(); ?>/assets/images/slider6.jpg" loading="lazy" />
+            <div class="swiper-slide"><img class="h-screen object-cover md:w-screen" src="<?= get_template_directory_uri(); ?>/assets/images/slider-6.jpg" loading="lazy" />
                 <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
             </div>
         </div>
