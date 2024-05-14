@@ -18,8 +18,8 @@ if ($post_type == 'member') {
         'value' => get_the_ID(),
         'compare' => '='
     ];
-    $args['meta_key'] = 'year';
-    $args['orderby'] = 'meta_value_num';
+    // $args['meta_key'] = 'year';
+    // $args['orderby'] = 'meta_value_num';
 }
 $wp_query = new WP_Query($args);
 ?>
