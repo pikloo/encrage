@@ -39,7 +39,7 @@ $menu_main = wp_nav_menu([
         <!-- photographes -->
         <div class="ml-2">
         <input type="checkbox" value="selected" id="toggle-one" class="toggle-input">
-        <label for="toggle-one" class="block cursor-pointer uppercase">Les photographes</label>
+        <label for="toggle-one" class="block cursor-pointer uppercase menu-item">Les photographes</label>
         <div role="toggle" class="p-6 mega-menu mb-16 shadow-xl bg-white">
           <div class="container mx-auto w-full">
             <ul class="grid grid-cols-4">
