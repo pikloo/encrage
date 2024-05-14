@@ -13,6 +13,12 @@
             <div class="swiper-slide"><img class="h-screen object-cover md:w-screen" src="<?= get_template_directory_uri(); ?>/assets/images/slider4.jpg" loading="lazy" />
                 <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
             </div>
+            <div class="swiper-slide"><img class="h-screen object-cover md:w-screen" src="<?= get_template_directory_uri(); ?>/assets/images/slider5.jpg" loading="lazy" />
+                <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+            </div>
+            <div class="swiper-slide"><img class="h-screen object-cover md:w-screen" src="<?= get_template_directory_uri(); ?>/assets/images/slider6.jpg" loading="lazy" />
+                <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+            </div>
         </div>
     </div>
     <svg class="to-down reveal" data-to-down fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" id="fi_15795818">
