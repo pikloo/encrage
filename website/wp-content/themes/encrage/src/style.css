@@ -1463,6 +1463,14 @@ h3::first-letter {
   max-width: 24rem !important;
 }
 
+.max-w-md {
+  max-width: 28rem !important;
+}
+
+.max-w-xs {
+  max-width: 20rem !important;
+}
+
 .-translate-y-6 {
   --tw-translate-y: -1.5rem !important;
   transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) !important;
@@ -1876,6 +1884,15 @@ h3::first-letter {
   line-height: 1.75rem !important;
 }
 
+.first-letter\:text-8xl::first-letter {
+  font-size: 6rem !important;
+  line-height: 1 !important;
+}
+
+.first-letter\:text-\[10rem\]::first-letter {
+  font-size: 10rem !important;
+}
+
 .first-letter\:font-semibold::first-letter {
   font-weight: 600 !important;
 }
@@ -2219,9 +2236,21 @@ h3::first-letter {
 }
 
 @media (min-width: 1024px) {
+  .lg\:m-0 {
+    margin: 0px !important;
+  }
+
   .lg\:mx-auto {
     margin-left: auto !important;
     margin-right: auto !important;
+  }
+
+  .lg\:mt-10 {
+    margin-top: 2.5rem !important;
+  }
+
+  .lg\:mt-20 {
+    margin-top: 5rem !important;
   }
 
   .lg\:flex {
@@ -2272,6 +2301,10 @@ h3::first-letter {
     align-items: center !important;
   }
 
+  .lg\:justify-evenly {
+    justify-content: space-evenly !important;
+  }
+
   .lg\:gap-x-10 {
     -moz-column-gap: 2.5rem !important;
          column-gap: 2.5rem !important;
@@ -2313,6 +2346,19 @@ h3::first-letter {
   .lg\:text-xl {
     font-size: 1.25rem !important;
     line-height: 1.75rem !important;
+  }
+
+  .lg\:first-letter\:mr-3::first-letter {
+    margin-right: 0.75rem !important;
+  }
+
+  .lg\:first-letter\:text-9xl::first-letter {
+    font-size: 8rem !important;
+    line-height: 1 !important;
+  }
+
+  .lg\:first-letter\:text-\[12rem\]::first-letter {
+    font-size: 12rem !important;
   }
 }
 
