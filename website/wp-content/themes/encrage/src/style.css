@@ -1233,6 +1233,10 @@ h3::first-letter {
   top: -1px;
 }
 
+.menu-full li {
+  margin-right: 1rem;
+}
+
 .static {
   position: static !important;
 }
@@ -1356,6 +1360,10 @@ h3::first-letter {
   margin-top: 1.5rem !important;
 }
 
+.mt-10 {
+  margin-top: 2.5rem !important;
+}
+
 .block {
   display: block !important;
 }
@@ -1415,10 +1423,6 @@ h3::first-letter {
 
 .h-screen {
   height: 100vh !important;
-}
-
-.h-\[calc\(100vh-3rem\)\] {
-  height: calc(100vh - 3rem) !important;
 }
 
 .w-32 {
@@ -1726,10 +1730,6 @@ h3::first-letter {
 
 .pt-36 {
   padding-top: 9rem !important;
-}
-
-.pt-32 {
-  padding-top: 8rem !important;
 }
 
 .text-center {
@@ -2150,12 +2150,12 @@ h3::first-letter {
     padding-top: 5rem !important;
   }
 
-  .md\:pt-36 {
-    padding-top: 9rem !important;
-  }
-
   .md\:pt-28 {
     padding-top: 7rem !important;
+  }
+
+  .md\:pt-36 {
+    padding-top: 9rem !important;
   }
 
   .md\:indent-6 {
@@ -2332,10 +2332,6 @@ h3::first-letter {
   .xl\:w-fit {
     width: -moz-fit-content !important;
     width: fit-content !important;
-  }
-
-  .xl\:w-full {
-    width: 100% !important;
   }
 
   .xl\:grid-cols-4 {

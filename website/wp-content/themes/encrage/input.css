@@ -283,4 +283,8 @@ Version: 1.0
     top: -1px;
   }
 
+  .menu-full li{
+    @apply mr-4
+  }
+
 }
