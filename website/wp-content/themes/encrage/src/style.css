@@ -1344,6 +1344,10 @@ h3::first-letter {
   margin-top: 0.125rem !important;
 }
 
+.mt-10 {
+  margin-top: 2.5rem !important;
+}
+
 .mt-2 {
   margin-top: 0.5rem !important;
 }
@@ -1358,10 +1362,6 @@ h3::first-letter {
 
 .mt-6 {
   margin-top: 1.5rem !important;
-}
-
-.mt-10 {
-  margin-top: 2.5rem !important;
 }
 
 .block {
@@ -1425,6 +1425,10 @@ h3::first-letter {
   height: 100vh !important;
 }
 
+.h-56 {
+  height: 14rem !important;
+}
+
 .w-32 {
   width: 8rem !important;
 }
@@ -1457,6 +1461,10 @@ h3::first-letter {
 .w-max {
   width: -moz-max-content !important;
   width: max-content !important;
+}
+
+.w-56 {
+  width: 14rem !important;
 }
 
 .max-w-sm {
@@ -2232,16 +2240,12 @@ h3::first-letter {
     display: none !important;
   }
 
-  .lg\:h-64 {
-    height: 16rem !important;
-  }
-
   .lg\:h-56 {
     height: 14rem !important;
   }
 
-  .lg\:w-64 {
-    width: 16rem !important;
+  .lg\:w-56 {
+    width: 14rem !important;
   }
 
   .lg\:w-\[175px\] {
@@ -2250,10 +2254,6 @@ h3::first-letter {
 
   .lg\:w-full {
     width: 100% !important;
-  }
-
-  .lg\:w-56 {
-    width: 14rem !important;
   }
 
   .lg\:max-w-screen-lg {
