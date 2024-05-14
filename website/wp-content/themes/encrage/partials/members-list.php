@@ -2,11 +2,11 @@
     <?php if (!is_home()) : ?>
         <h2 class="section">Les photographes</h2>
     <?php else : ?>
-        <h1 class="main-title reveal">Une  
+        <h1 class="main-title reveal">  
             <span class="before:block before:absolute before:-inset-1 before:skew-y-1 before:bg-black relative inline-block">
                 <span class="relative text-white">Agence de photographes</span>
             </span>
-            indépendant(e)s composée de
+            représentant
         </h1>
     <?php endif; ?>
     <div class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-y-10">

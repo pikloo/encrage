@@ -34,7 +34,7 @@ $menu_main = wp_nav_menu([
     </button>
     <a class="z-20 bg-white lg:py-6" href=<?= home_url(); ?>><img src="<?= get_template_directory_uri(); ?>/assets/images/ancrage_logo.png" alt="<?= esc_html(get_bloginfo('description')) ?> " class="w-[250px] px-10 logo-site" /></a>
     <?php if (!$isSinglePortfolio) : ?>
-      <div class="hidden lg:flex w-max items-center lg:text-2xl">
+      <div class="hidden lg:flex w-max items-center lg:text-2xl menu-full">
         <?= $menu_main; ?>
         <!-- photographes -->
         <div class="ml-2">
@@ -70,7 +70,7 @@ $menu_main = wp_nav_menu([
           </ul>
           <div class="py-6 space-y-6 text-lg md:text-xl lg:text-2xl text-center duration-500">
             <div>
-              <p>Retrouvez aussi nos photos sur</p>
+              <p>Retrouvez nous sur</p>
               <a href="https://www.pixpalace.com/" target="_blank"><img src="<?= get_template_directory_uri() ?>/assets/images/logo_pixpalace.png" alt="Retrouvez aussi nos photos sur PixPalace" class="w-[100px] md:lg:w-[150px] lg:w-[175px] mx-auto duration-500" /></a>
             </div>
             <div>

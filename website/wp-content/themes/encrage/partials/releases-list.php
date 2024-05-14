@@ -7,9 +7,9 @@ $args =  [
     'post_type' => 'release',
     'posts_per_page' => 8,
     'post_status' => 'publish',
-    'order' => 'DESC',
-    'meta_key' => 'year',
-    'orderby' => 'meta_value_num',
+    // 'order' => 'DESC',
+    // 'meta_key' => 'year',
+    // 'orderby' => 'meta_value_num',
 ];
 
 if ($memberID) {
@@ -18,6 +18,8 @@ if ($memberID) {
         'value' => $memberID,
         'compare' => '='
     ];
+    $args['meta_key'] = 'year';
+    $args['orderby'] = 'meta_value_num';
 }
 $releases = new WP_Query($args);
 $is_home = get_query_var('is_home');

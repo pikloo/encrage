@@ -98,7 +98,7 @@ $menu_legal = wp_nav_menu([
                             <g></g>
                         </svg></a></li>
             </ul>
-            <p class="mt-6">Retrouvez aussi nos photos sur</p>
+            <p class="mt-6">Retrouvez nous sur</p>
             <a href="https://www.pixpalace.com/" target="_blank"><img src="<?= get_template_directory_uri() ?>/assets/images/logo_pixpalace.png" alt="Retrouvez aussi nos photos sur PixPalace" class="w-[100px] invert grayscale mx-auto" /></a>
         </div>
     </div>

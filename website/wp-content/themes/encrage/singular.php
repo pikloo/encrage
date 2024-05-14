@@ -17,7 +17,7 @@ $loop = new WP_Query($args);
         $categories = get_the_category();
         ?>
         <h1 class="<?php if ($post->post_name === 'lagence') echo 'translate-y-6 mb-0' ?>"><?= the_title(); ?></h1>
-        <div class="px-6 text-justify flex flex-col gap-y-10 lg:flex-row lg:gap-x-10">
+        <div class="px-6 text-justify flex flex-col gap-y-10 lg:flex-row lg:gap-x-10 mt-10">
             <?php if (has_post_thumbnail()) : ?>
                 <aside class="max-w-sm md:max-w-md">
                     <?php the_post_thumbnail(); ?>
@@ -31,6 +31,11 @@ $loop = new WP_Query($args);
             } ?>
             ">
                 <?= the_content(); ?></article>
+                <?php if ($post->post_name === 'lagence') : ?>
+                    <aside>
+                    
+                    </aside>
+                <?php endif;?>
         </div>
     <?php endwhile; ?>
 </main>
