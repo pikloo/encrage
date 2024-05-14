@@ -54,7 +54,7 @@ if (!function_exists('serie_informations_meta_box_html')) {
     function serie_informations_meta_box_html($post)
     {
 
-        $start_year = 2015;
+        $start_year = 2000;
         $year = get_post_meta($post->ID, 'year', true);
         $photographer = get_post_meta($post->ID, 'photographer', true);
         wp_nonce_field('serie_informations' . $post->ID, '_wp_nonce_informations');
