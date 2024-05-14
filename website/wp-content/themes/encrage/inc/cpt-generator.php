@@ -29,6 +29,7 @@ if (!function_exists('create_post_type')) {
             'hierarchical'      => false,
             'has_archive'       => true,
             'supports'          => $support,
+            'taxonomies' => [ 'category' ],
             'menu_position'         => 5,
             'rewrite'           => [
                 'slug' => strtolower($plural),

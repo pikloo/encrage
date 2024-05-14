@@ -21,7 +21,7 @@ $menu_main = wp_nav_menu([
 ]);
 
 ?>
-<header class="main-header flex items-center w-fit <?php if (!$isSinglePortfolio) echo 'lg:w-full' ?> fixed top-0 left-0 right-0 z-20 bg-white duration-500 delay-2">
+<header class="main-header flex items-center w-max-w-sm <?php if (!$isSinglePortfolio) echo 'lg:w-full' ?> fixed top-0 left-0 right-0 z-20 bg-white duration-500 delay-2">
   <nav class="relative <?php if (!$isSinglePortfolio) echo 'lg:w-full lg:pr-10' ?> flex justify-between items-center bg-white">
     <button class="menu-toggle z-20 <?php if (!$isSinglePortfolio) echo 'lg:hidden' ?>" id="menu-toggle" aria-expanded="false"><span class="screen-reader-text">Menu</span>
       <svg class="icon icon-menu-toggle" aria-hidden="true" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100">
