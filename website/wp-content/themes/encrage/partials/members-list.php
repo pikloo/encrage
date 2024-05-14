@@ -9,7 +9,7 @@
             indépendant(e)s composée de
         </h1>
     <?php endif; ?>
-    <div class="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-y-10">
+    <div class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-y-10">
         <?php get_template_part('partials/member-informations', 'member-informations'); ?>
     </div>
     <svg class="to-top reveal" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" id="fi_12363698">

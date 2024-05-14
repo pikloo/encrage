@@ -1213,6 +1213,10 @@ h3::first-letter {
   top: 0px !important;
 }
 
+.z-0 {
+  z-index: 0 !important;
+}
+
 .z-10 {
   z-index: 10 !important;
 }
@@ -1227,14 +1231,6 @@ h3::first-letter {
 
 .z-\[11\] {
   z-index: 11 !important;
-}
-
-.z-0 {
-  z-index: 0 !important;
-}
-
-.z-\[21\] {
-  z-index: 21 !important;
 }
 
 .mx-0 {
@@ -1426,6 +1422,10 @@ h3::first-letter {
 
 .grid-cols-2 {
   grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+}
+
+.grid-cols-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
 }
 
 .flex-col {
@@ -1675,10 +1675,6 @@ h3::first-letter {
   text-align: justify !important;
 }
 
-.indent-6 {
-  text-indent: 1.5rem !important;
-}
-
 .indent-4 {
   text-indent: 1rem !important;
 }
@@ -1760,10 +1756,6 @@ h3::first-letter {
   color: rgb(255 255 255 / var(--tw-text-opacity)) !important;
 }
 
-.opacity-0 {
-  opacity: 0 !important;
-}
-
 .grayscale {
   --tw-grayscale: grayscale(100%) !important;
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow) !important;
@@ -1782,16 +1774,12 @@ h3::first-letter {
   transition-duration: 150ms !important;
 }
 
-.duration-500 {
-  transition-duration: 500ms !important;
-}
-
-.duration-150 {
-  transition-duration: 150ms !important;
-}
-
 .duration-100 {
   transition-duration: 100ms !important;
+}
+
+.duration-500 {
+  transition-duration: 500ms !important;
 }
 
 .break-inside {
@@ -1831,19 +1819,14 @@ h3::first-letter {
   inset: -0.25rem !important;
 }
 
-.before\:-left-7::before {
+.before\:-left-5::before {
   content: var(--tw-content) !important;
-  left: -1.75rem !important;
+  left: -1.25rem !important;
 }
 
 .before\:-top-2::before {
   content: var(--tw-content) !important;
   top: -0.5rem !important;
-}
-
-.before\:-left-5::before {
-  content: var(--tw-content) !important;
-  left: -1.25rem !important;
 }
 
 .before\:block::before {
@@ -1878,12 +1861,6 @@ h3::first-letter {
 .before\:font-caption::before {
   content: var(--tw-content) !important;
   font-family: PT Serif Caption, Georgia, serif !important;
-}
-
-.before\:text-5xl::before {
-  content: var(--tw-content) !important;
-  font-size: 3rem !important;
-  line-height: 1 !important;
 }
 
 .before\:text-3xl::before {
@@ -2045,12 +2022,20 @@ h3::first-letter {
     height: 16rem !important;
   }
 
+  .md\:h-44 {
+    height: 11rem !important;
+  }
+
   .md\:w-64 {
     width: 16rem !important;
   }
 
   .md\:w-screen {
     width: 100vw !important;
+  }
+
+  .md\:w-44 {
+    width: 11rem !important;
   }
 
   .md\:max-w-md {
@@ -2121,11 +2106,6 @@ h3::first-letter {
     line-height: 1.75rem !important;
   }
 
-  .md\:text-5xl {
-    font-size: 3rem !important;
-    line-height: 1 !important;
-  }
-
   .md\:text-white {
     --tw-text-opacity: 1 !important;
     color: rgb(255 255 255 / var(--tw-text-opacity)) !important;
@@ -2178,8 +2158,16 @@ h3::first-letter {
     margin-right: auto !important;
   }
 
+  .lg\:h-64 {
+    height: 16rem !important;
+  }
+
   .lg\:w-\[175px\] {
     width: 175px !important;
+  }
+
+  .lg\:w-64 {
+    width: 16rem !important;
   }
 
   .lg\:max-w-screen-lg {
