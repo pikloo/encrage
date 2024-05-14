@@ -7,9 +7,6 @@
             <div class="swiper-slide"><img class="h-screen object-cover md:w-screen" src="<?= get_template_directory_uri(); ?>/assets/images/slider-2.jpg" loading="lazy" />
                 <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
             </div>
-            <div class="swiper-slide"><img class="h-screen object-cover md:w-screen" src="<?= get_template_directory_uri(); ?>/assets/images/slider-3.jpg" loading="lazy" />
-                <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-            </div>
             <div class="swiper-slide"><img class="h-screen object-cover md:w-screen" src="<?= get_template_directory_uri(); ?>/assets/images/slider-4.jpg" loading="lazy" />
                 <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
             </div>
