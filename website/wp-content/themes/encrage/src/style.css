@@ -1396,8 +1396,8 @@ h3::first-letter {
   height: 8rem !important;
 }
 
-.h-64 {
-  height: 16rem !important;
+.h-56 {
+  height: 14rem !important;
 }
 
 .h-72 {
@@ -1425,16 +1425,12 @@ h3::first-letter {
   height: 100vh !important;
 }
 
-.h-56 {
-  height: 14rem !important;
-}
-
 .w-32 {
   width: 8rem !important;
 }
 
-.w-64 {
-  width: 16rem !important;
+.w-56 {
+  width: 14rem !important;
 }
 
 .w-\[100px\] {
@@ -1461,10 +1457,6 @@ h3::first-letter {
 .w-max {
   width: -moz-max-content !important;
   width: max-content !important;
-}
-
-.w-56 {
-  width: 14rem !important;
 }
 
 .max-w-sm {
