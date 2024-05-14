@@ -2236,6 +2236,10 @@ h3::first-letter {
     height: 16rem !important;
   }
 
+  .lg\:h-56 {
+    height: 14rem !important;
+  }
+
   .lg\:w-64 {
     width: 16rem !important;
   }
@@ -2246,6 +2250,10 @@ h3::first-letter {
 
   .lg\:w-full {
     width: 100% !important;
+  }
+
+  .lg\:w-56 {
+    width: 14rem !important;
   }
 
   .lg\:max-w-screen-lg {
