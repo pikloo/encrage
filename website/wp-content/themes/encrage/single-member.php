@@ -13,6 +13,7 @@ $args['meta_query'][] = [
     'value' => get_the_ID(),
     'compare' => '='
 ];
+$member_id = get_the_ID();
 $releases = new WP_Query($args);
 $has_releases = $releases->found_posts ?? false;
 
@@ -27,7 +28,10 @@ $has_releases = $releases->found_posts ?? false;
         'post_type' => 'member'
     ]);
     if ($has_releases) {
-        get_template_part('partials/releases-list', 'releases-list', ['post_type' => 'member']);
+        get_template_part('partials/releases-list', 'releases-list', [
+            'post_type' => 'member',
+            'member_id' => $member_id
+        ]);
     } ?>
 </main>
 <?php

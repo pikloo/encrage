@@ -12,10 +12,11 @@ $args =  [
     // 'orderby' => 'meta_value_num',
 ];
 
+
 if ($post_type == 'member') {
     $args['meta_query'][] = [
         'key' => 'photographer',
-        'value' => get_the_ID(),
+        'value' => $member_id,
         'compare' => '='
     ];
     // $args['meta_key'] = 'year';

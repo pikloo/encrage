@@ -11,7 +11,6 @@ $args =  [
     'orderby' => 'date',
 ];
 
-
 if ($post_type == 'member') {
     $args['meta_query'][] = [
         'key' => 'photographer',
