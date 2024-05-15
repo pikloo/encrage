@@ -20,7 +20,7 @@ extract($args);
                     </a>
                 <?php endif; ?>
             </h3>
-            <blockquote class='indent-4 md:indent-6 mt-4 text-slate-600 italic mt-2 relative before:not-italic before:content-["\275D"] before:font-caption before:text-3xl md:before:text-5xl before:text-gray-400 before:absolute before:-top-2 before:-left-5 md:before:-left-7'><?= the_title(); ?></blockquote>
+            <blockquote class='indent-4 md:indent-6 mt-4 text-slate-600 italic mt-2 relative before:not-italic before:content-["\275D"] before:font-caption before:text-3xl md:before:text-5xl before:text-gray-400 before:absolute before:-top-2 before:-left-5 md:before:-left-9'><?= the_title(); ?></blockquote>
             <span class="text-slate-500"><?= esc_attr(get_post_meta(get_the_ID(), 'year', true)); ?></span>
         </div>
     </figcaption>

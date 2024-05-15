@@ -17,17 +17,17 @@ $loop = new WP_Query($args);
         $categories = get_the_category();
         ?>
         <h1 class="<?php if ($post->post_name === 'lagence') echo 'translate-y-6 mb-0' ?>"><?= the_title(); ?></h1>
-        <div class="px-6 text-justify flex flex-col gap-y-10 lg:flex-row lg:gap-x-10 mt-10 lg:justify-evenly lg:items-center lg:mt-20">
+        <div class="px-6 <?= $post->post_name === 'lagence' ? 'text-center' : 'text-justify'  ?>  flex flex-col gap-y-10 lg:flex-row lg:gap-x-10 mt-10 lg:justify-evenly lg:items-center lg:mt-20">
             <?php if (has_post_thumbnail()) : ?>
                 <aside class="max-w-sm md:max-w-md">
                     <?php the_post_thumbnail(); ?>
                 </aside>
             <?php endif; ?>
-            <article class="reveal content 
+            <article class="reveal  
             <?php if (!empty($categories) && $categories[0]->name == 'Légales') {
-                echo 'mx-auto lg:max-w-screen-lg';
+                echo 'mx-auto lg:max-w-screen-lg content';
             } else {
-                echo 'mx-auto max-w-sm lg:max-w-xl lg:m-0 text-lg md:text-xl lg:text-2xl first-letter:text-8xl lg:first-letter:text-9xl lg:first-letter:mr-3 first-letter:mr-2 duration-500';
+                echo 'mx-auto max-w-sm lg:max-w-xl lg:m-0 text-lg md:text-xl lg:text-2xl first-letter:text-xl lg:first-letter:text-2xl lg:first-letter:text-3xl duration-500';
             } ?>
             ">
                 <?= the_content(); ?></article>
