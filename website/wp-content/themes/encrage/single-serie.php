@@ -61,7 +61,9 @@ $loop = new WP_Query($args);
             <div class="grid grid-cols-1 md:grid-cols-2 gap-y-10 items-center reveal">
                 <article class="px-6 content"><?php the_content(); ?></article>
                 <aside class="px-6 md:order-first">
-                    <?php get_template_part('partials/member-informations', 'member-informations'); ?>
+                    <?php get_template_part('partials/member-informations', 'member-informations', [
+                        'is_serie_single_page' => true,
+                    ]); ?>
                 </aside>
             </div>
             <svg class="to-top reveal" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" id="fi_12363698">

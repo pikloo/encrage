@@ -2095,6 +2095,11 @@ h3::first-letter {
     display: inline-block !important;
   }
 
+  .sm\:w-fit {
+    width: -moz-fit-content !important;
+    width: fit-content !important;
+  }
+
   .sm\:pl-0 {
     padding-left: 0px !important;
   }
@@ -2183,6 +2188,11 @@ h3::first-letter {
 
   .md\:gap-y-0 {
     row-gap: 0px !important;
+  }
+
+  .md\:gap-x-10 {
+    -moz-column-gap: 2.5rem !important;
+         column-gap: 2.5rem !important;
   }
 
   .md\:space-x-10 > :not([hidden]) ~ :not([hidden]) {
@@ -2316,6 +2326,11 @@ h3::first-letter {
 
   .lg\:w-full {
     width: 100% !important;
+  }
+
+  .lg\:w-fit {
+    width: -moz-fit-content !important;
+    width: fit-content !important;
   }
 
   .lg\:max-w-screen-lg {

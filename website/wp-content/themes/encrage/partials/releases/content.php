@@ -1,17 +1,18 @@
 <?php
-$is_member_page = get_query_var('is_member_page');
-$is_home_page = get_query_var('is_home_page');
+extract($args);
+
+
 ?>
-<figure class="<?php if ($is_home_page || $is_member_page) echo 'reveal' ?> relative group mx-auto max-w-sm break-inside p-4 bg-gray-200/30 hover:bg-gray-200/50 hover:scale-105 transition duration-500">
+<figure class="<?php if (isset($is_home)  || isset($is_member_page)) echo 'reveal' ?> relative group mx-auto max-w-sm break-inside p-4 bg-gray-200/30 hover:bg-gray-200/50 hover:scale-105 transition duration-500">
     <?php if (has_post_thumbnail(get_the_ID())) : ?>
         <img src="<?= esc_url(get_the_post_thumbnail_url(get_the_ID(), 'medium_large')) ?>" alt="<?= the_title(); ?>" class="release cover-contain" />
     <?php endif; ?>
     <figcaption>
         <div class="xl:text-xl">
             <h3 class="mt-4">
-                <span class="<?php if (!$is_member_page && get_post_meta(get_the_ID(), 'place', true)) echo 'after:h-[1px] after:bg-black
+                <span class="<?php if ((!isset($is_member_page) || !$is_member_page) && get_post_meta(get_the_ID(), 'place', true)) echo 'after:h-[1px] after:bg-black
               after:inline-block after:relative after:w-[20px] after:align-middle after:ml-1' ?>"><?= esc_attr(get_post_meta(get_the_ID(), 'place', true)); ?></span>
-                <?php if (!$is_member_page) :  ?>
+                <?php if (!isset($is_member_page) || !$is_member_page) :  ?>
                     <a href="<?= esc_url(get_permalink(get_post_meta(get_the_ID(), 'photographer', true))); ?>">
                         <span class="ml-2 before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-black before:shadow-lg before:shadow-black/50 relative inline-block">
                             <span class="relative text-white"><?= esc_html(get_the_title(get_post_meta(get_the_ID(), 'photographer', true))); ?></span>

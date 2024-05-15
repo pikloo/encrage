@@ -33,12 +33,12 @@ $members = new WP_Query($queryArgs);
         $thumbnailUrl = get_template_directory_uri() . '/assets/images/default_member.png';
     }
     ?>
-    <?php if (is_singular() && !is_page() && 'serie' != get_post_type()) : ?>
+    <?php if (is_singular() && !is_page() && !isset($is_serie_single_page)) : ?>
         <section class="px-4 grid grid-cols-1 <?php if (isset($post_type) && $post_type == 'member') echo 'lg:grid-cols-2 lg:items-center lg:max-w-screen-lg lg:mx-auto' ?> ">
         <? endif; ?>
         <div class="<?php if (is_home() || is_page()) echo 'reveal' ?> profil flex flex-col justify-center items-center gap-4">
             <a href="<?= esc_url(get_permalink()); ?>">
-                <img class="<?php echo (is_home() || is_page()) ?  'h-32 w-32 md:h-44 md:w-44 lg:h-56 lg:w-56 duration-500' : 'h-56 w-56'; ?> rounded-full object-contain <?php if (!get_the_post_thumbnail()) echo "border border-black" ?>" src=<?= esc_url($thumbnailUrl); ?> alt="" />
+                <img class="<?php echo (is_home() || is_page() || isset($is_serie_single_page)) ?  'h-32 w-32 md:h-44 md:w-44 lg:h-56 lg:w-56 duration-500' : 'h-56 w-56'; ?> rounded-full object-contain <?php if (!get_the_post_thumbnail()) echo "border border-black" ?>" src=<?= esc_url($thumbnailUrl); ?> alt="" />
             </a>
             <div class="socials text-center text-sm lg:text-base">
                 <div class=" -translate-y-6 before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-black before:shadow-lg before:shadow-black/50 relative inline-block">
