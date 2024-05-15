@@ -203,7 +203,7 @@ Version: 1.0
   }
 
   .main-menu li {
-    @apply p-1 md:p-2  font-medium uppercase;
+    @apply font-medium uppercase;
   }
 
   .main-menu li, .menu-item {
@@ -280,8 +280,5 @@ Version: 1.0
     @apply rotate-180 duration-150;
   }
 
-  .menu-full li{
-    @apply mr-4
-  }
 
 }
