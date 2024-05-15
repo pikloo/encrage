@@ -14,7 +14,7 @@ function load_posts_by_ajax_callback()
     'post_type' => $post_type,
     'post_status' => 'publish',
     'order' => 'DESC',
-    'posts_per_page' => $post_type == 'release' ? 3 : 6,
+    'posts_per_page' => $post_type == 'release' ? 8 : 6,
     'paged' => $paged,
     'meta_key' => 'year',
     'orderby' => 'meta_value_num',
