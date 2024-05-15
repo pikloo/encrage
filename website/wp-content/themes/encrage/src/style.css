@@ -1123,16 +1123,17 @@ h3::first-letter {
 
 .main-menu {
   display: flex;
+  -moz-column-gap: 0.5rem;
+       column-gap: 0.5rem;
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
   text-align: center;
 }
 
 @media (min-width: 768px) {
-  .main-menu > :not([hidden]) ~ :not([hidden]) {
-    --tw-space-x-reverse: 0;
-    margin-right: calc(1.5rem * var(--tw-space-x-reverse));
-    margin-left: calc(1.5rem * calc(1 - var(--tw-space-x-reverse)));
+  .main-menu {
+    -moz-column-gap: 1.5rem;
+         column-gap: 1.5rem;
   }
 }
 
@@ -2186,19 +2187,13 @@ h3::first-letter {
     justify-items: center !important;
   }
 
-  .md\:gap-y-0 {
-    row-gap: 0px !important;
-  }
-
   .md\:gap-x-10 {
     -moz-column-gap: 2.5rem !important;
          column-gap: 2.5rem !important;
   }
 
-  .md\:space-x-10 > :not([hidden]) ~ :not([hidden]) {
-    --tw-space-x-reverse: 0 !important;
-    margin-right: calc(2.5rem * var(--tw-space-x-reverse)) !important;
-    margin-left: calc(2.5rem * calc(1 - var(--tw-space-x-reverse))) !important;
+  .md\:gap-y-0 {
+    row-gap: 0px !important;
   }
 
   .md\:bg-black {
@@ -2326,11 +2321,6 @@ h3::first-letter {
 
   .lg\:w-full {
     width: 100% !important;
-  }
-
-  .lg\:w-fit {
-    width: -moz-fit-content !important;
-    width: fit-content !important;
   }
 
   .lg\:max-w-screen-lg {

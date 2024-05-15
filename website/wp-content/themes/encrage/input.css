@@ -191,7 +191,7 @@ Version: 1.0
   } */
 
   .main-menu {
-    @apply py-6 flex text-center md:space-x-6;
+    @apply py-6 flex text-center gap-x-2 md:gap-x-6;
   }
 
   .socials-links svg {
