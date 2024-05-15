@@ -11,25 +11,25 @@ jQuery(function ($) {
       'action': 'load_posts_by_ajax',
       'page': ajax_posts.current_page,
       'post_type': ajax_posts.post_type,
-      // 'security': '<?php echo wp_create_nonce("load_more_posts"); ?>'
+    //   'security': '<?php echo wp_create_nonce("load_more_posts"); ?>'
     };
 
     $.ajax({ 
 			url :ajaxurl,
 			data : data,
 			type : 'POST',
+			dataType: 'json',
 			beforeSend : function ( xhr ) {
 				button.text( 'Chargement...' )
 			},
 			success : function( data ){
 				if( data ) { 
-          			grid.append(data);
-					console.log(data)
+          			grid.append(data.html);
 					//   data.each(function() {
 					// 	$( this ).addClass( "inview" );
 					//   });
 					button.text( originalButtonText )
-					if ( ajax_posts.current_page == ajax_posts.max_page) { 
+					if ( ajax_posts.current_page == data.max) { 
 						button.remove()
 					}
 				} else {

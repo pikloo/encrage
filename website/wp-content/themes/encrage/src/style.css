@@ -1902,11 +1902,6 @@ h3::first-letter {
   line-height: 1 !important;
 }
 
-.first-letter\:text-8xl::first-letter {
-  font-size: 6rem !important;
-  line-height: 1 !important;
-}
-
 .first-letter\:text-xl::first-letter {
   font-size: 1.25rem !important;
   line-height: 1.75rem !important;
@@ -2267,11 +2262,6 @@ h3::first-letter {
     line-height: 2rem !important;
   }
 
-  .md\:before\:-left-7::before {
-    content: var(--tw-content) !important;
-    left: -1.75rem !important;
-  }
-
   .md\:before\:-left-9::before {
     content: var(--tw-content) !important;
     left: -2.25rem !important;
@@ -2397,15 +2387,6 @@ h3::first-letter {
   .lg\:text-xl {
     font-size: 1.25rem !important;
     line-height: 1.75rem !important;
-  }
-
-  .lg\:first-letter\:mr-3::first-letter {
-    margin-right: 0.75rem !important;
-  }
-
-  .lg\:first-letter\:text-9xl::first-letter {
-    font-size: 8rem !important;
-    line-height: 1 !important;
   }
 
   .lg\:first-letter\:text-2xl::first-letter {
