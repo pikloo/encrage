@@ -2402,6 +2402,16 @@ h3::first-letter {
     font-size: 8rem !important;
     line-height: 1 !important;
   }
+
+  .lg\:first-letter\:text-2xl::first-letter {
+    font-size: 1.5rem !important;
+    line-height: 2rem !important;
+  }
+
+  .lg\:first-letter\:text-3xl::first-letter {
+    font-size: 1.875rem !important;
+    line-height: 2.25rem !important;
+  }
 }
 
 @media (min-width: 1280px) {
