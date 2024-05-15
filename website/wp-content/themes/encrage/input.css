@@ -132,17 +132,17 @@ Version: 1.0
   }
 
   .menu-toggle {
-    @apply border-0 rounded-none bg-black text-white cursor-pointer inline-block p-8 md:p-10 focus:outline focus:-outline-offset-2 transition duration-150 ease-out;
+    @apply border-0 rounded-none bg-black text-white cursor-pointer inline-block p-6 md:p-10 focus:outline focus:-outline-offset-2 transition duration-150 ease-out;
   }
 
   .menu-toggle .icon {
-    @apply inline-block fill-current h-6 w-6 md:h-8 md:w-8 align-middle relative top-[-0.0625em] transition duration-150 ease-out;
+    @apply inline-block fill-current h-4 w-4 md:h-8 md:w-8 align-middle relative top-[-0.0625em] transition duration-150 ease-out;
   }
 
   /* Menu toggle styles. */
 
   .icon-menu-toggle {
-    @apply w-6 h-6 md:w-10 md:h-10  top-0 transition duration-150 ease-out;
+    @apply w-4 h-4 md:w-10 md:h-10  top-0 transition duration-150 ease-out;
   }
 
   /* Animate menu icon (lines). */
