@@ -177,7 +177,6 @@ if (!function_exists('encrage_render_logo_field')) {
     {
         $options = get_option('encrage_logo');
         $logo = isset($options['encrage_logo']) ? $options['encrage_logo'] : '';
-        var_dump($options);
     ?>
         <div id="logo_wrapper">
             <div id="img_box_container">

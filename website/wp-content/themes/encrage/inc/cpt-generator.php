@@ -69,6 +69,7 @@ if (!function_exists('create_post_type')) {
                 'hierarchical' => true,
                 'show_admin_column' => true,
                 'show_in_rest' => true,
+                'capabilities' => ['manage_options' , 'edit_options'],
                 'labels' => [
                     'singular_name' => __('Catégorie', 'txtdomain'),
                     'all_items' => __('Toutes les catégories', 'txtdomain'),
