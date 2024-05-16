@@ -7,8 +7,7 @@ $args =  [
     'posts_per_page' => 6,
     'post_status' => 'publish',
     'order' => 'DESC',
-    'meta_key' => 'year',
-    'orderby' => 'meta_value_num',
+    'orderby' => 'date',
 ];
 
 
