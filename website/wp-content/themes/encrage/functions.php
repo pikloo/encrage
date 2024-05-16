@@ -45,7 +45,7 @@ if (!function_exists('load_assets')) {
             get_stylesheet_directory_uri() . '/assets/js/load-more.js',
             ['jquery']
         );
-        if ( !is_home())  wp_enqueue_script('load-more');
+        if (!is_home())  wp_enqueue_script('load-more');
 
         wp_localize_script('load-more', 'ajax_posts', array(
             'ajaxurl' => admin_url('admin-ajax.php'),
@@ -68,7 +68,11 @@ if (!function_exists('load_admin_assets')) {
      */
     function load_admin_assets()
     {
-        if ('serie' === get_current_screen()->id) {
+        $pages = [ 'toplevel_page_theme-options', 'serie'];
+        
+        if (in_array(get_current_screen()->id, $pages)) {
+            wp_enqueue_media();
+            wp_enqueue_style('fontAwesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css');
             wp_enqueue_style('gallery', get_theme_file_uri('/src/admin-gallery.css'), [], time());
             wp_enqueue_style('JQueryCss', 'https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.3/themes/ui-lightness/jquery-ui.min.css');
             wp_enqueue_script('JQuery', 'https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.3/jquery-ui.min.js', [], null, true);
@@ -205,23 +209,38 @@ if (!function_exists('add_categories_to_pages')) {
 
 
 if (!function_exists('custom_length_excerpt')) {
-add_filter( 'wp_trim_excerpt', 'custom_length_excerpt', 10, 1 );
-function custom_length_excerpt( $text ) {
-	if( is_admin() ) {
-		return $text;
-	}
-	$text = get_the_content();
-	// Clear out shortcodes
-	$text = strip_shortcodes( $text );
-	$text = substr( $text, 0, 140 );
-	$text .= '…';
-	return $text;
+    add_filter('wp_trim_excerpt', 'custom_length_excerpt', 10, 1);
+    function custom_length_excerpt($text)
+    {
+        if (is_admin()) {
+            return $text;
+        }
+        $text = get_the_content();
+        // Clear out shortcodes
+        $text = strip_shortcodes($text);
+        $text = substr($text, 0, 140);
+        $text .= '…';
+        return $text;
+    }
 }
 
+if (!function_exists('edit_login_logo')) {
+    function edit_login_logo()
+    {
+?>
+        <style type="text/css">
+            .login #login h1 a {
+                background-image: url('<?php echo get_stylesheet_directory_uri(); ?>/assets/images/ancrage_logo.png');
+            }
+        </style>
+<?php }
+    add_action('login_enqueue_scripts', 'edit_login_logo');
 }
 
 require_once WP_CONTENT_DIR . '/themes/encrage/inc/post-types/member.php';
 require_once WP_CONTENT_DIR . '/themes/encrage/inc/post-types/serie.php';
 require_once WP_CONTENT_DIR . '/themes/encrage/inc/post-types/release.php';
 require_once WP_CONTENT_DIR . '/themes/encrage/inc/admin/gallery.php';
+require_once WP_CONTENT_DIR . '/themes/encrage/inc/admin/options-page.php';
+
 require_once WP_CONTENT_DIR . '/themes/encrage/inc/load-more.php';
