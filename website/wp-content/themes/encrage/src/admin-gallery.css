@@ -42,6 +42,11 @@
 #gallery_wrapper label {
     padding:0 6px;
 }
+
+#image-single-wrapper {
+    width: fit-content;
+}
+
 .button.remove {
     background: none;
     color: #f1f1f1;
@@ -53,6 +58,13 @@
     padding: 0px;
     box-shadow: none;
 }
+
+.button.remove-single{
+    position: absolute;
+    right: 0;
+    color: black;
+}
+
 .button.remove:hover {
     background: none;
     color: #fff;

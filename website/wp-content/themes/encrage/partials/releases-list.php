@@ -13,6 +13,15 @@ $args =  [
 ];
 
 
+if($is_home_page){
+    $args['tax_query'][] = [
+    'taxonomy' => 'release_category',
+    'field' => 'slug',
+    'terms' => 'home'
+    ];
+}
+
+
 if ($post_type == 'member') {
     $args['meta_query'][] = [
         'key' => 'photographer',

@@ -1,21 +1,17 @@
+<?php
+$sliderImages = get_option('encrage_theme_options')['encrage_home_slider'];
+?>
+
 <section class="relative" id="slider">
     <div class="swiper slider-home">
         <div class="swiper-wrapper h-screen md:h-[calc(100vh-5rem)]">
-            <div class="swiper-slide"><img class="h-screen object-cover md:w-screen" src="<?= get_template_directory_uri(); ?>/assets/images/slider-2.jpg" loading="lazy" />
-                <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-            </div>
-            <div class="swiper-slide"><img class="h-screen object-cover md:w-screen" src="<?= get_template_directory_uri(); ?>/assets/images/slider-1.jpg" loading="lazy" />
-                <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-            </div>
-            <div class="swiper-slide"><img class="h-screen object-cover md:w-screen" src="<?= get_template_directory_uri(); ?>/assets/images/slider-4.jpg" loading="lazy" />
-                <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-            </div>
-            <div class="swiper-slide"><img class="h-screen object-cover md:w-screen" src="<?= get_template_directory_uri(); ?>/assets/images/slider-7.jpg" loading="lazy" />
-                <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-            </div>
-            <div class="swiper-slide"><img class="h-screen object-cover md:w-screen" src="<?= get_template_directory_uri(); ?>/assets/images/slider-6.jpg" loading="lazy" />
-                <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-            </div>
+            <?php foreach ($sliderImages as $key => $value) : ?>
+                <?php if ($value != '') : ?>
+                    <div class="swiper-slide"><img class="h-screen object-cover md:w-screen" src="<?= $value ?>" alt="Slider<?= $key ?>" loading="lazy" />
+                        <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
+                    </div>
+                <?php endif; ?>
+            <?php endforeach; ?>
         </div>
     </div>
     <svg class="to-down reveal" data-to-down fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" id="fi_15795818">
