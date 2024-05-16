@@ -68,8 +68,8 @@ if (!function_exists('load_admin_assets')) {
      */
     function load_admin_assets()
     {
-        $pages = [ 'toplevel_page_theme-options', 'serie'];
-        
+        $pages = ['toplevel_page_theme-options', 'serie'];
+
         if (in_array(get_current_screen()->id, $pages)) {
             wp_enqueue_media();
             wp_enqueue_style('fontAwesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css');
@@ -109,66 +109,35 @@ if (!function_exists('custom_cpts')) {
     function custom_cpts()
     {
         create_post_type('member', 'Membre', 'Membres', 'dashicons-id');
-        create_post_type('serie', 'Portfolio', 'Portolios', 'dashicons-portfolio');
-        create_post_type('release', 'Publication', 'Publications', 'dashicons-format-quote');
+        create_post_type('serie', 'Portfolio', 'Portolios', 'dashicons-portfolio', true);
+        create_post_type('release', 'Publication', 'Publications', 'dashicons-format-quote', true);
     }
 }
 
 
-if (!function_exists('publication_join_member')) {
+if (!function_exists('publication_clause_member')) {
+    add_filter('posts_clauses', 'publication_clause_member', 10, 2);
 
-    add_filter('posts_join', 'publication_join_member', 10, 2);
-
-    function publication_join_member($join, $wp_query)
+    function publication_clause_member($clauses, $wp_query)
     {
         global $wpdb;
-        $post_types = ['serie', 'release'];
-
-        // var_dump(isset($wp_query->query['post_type']));exit();
-
-        if (is_home() || is_page() ||  !isset($wp_query->query['post_type']))
-            return;
-
-        if (isset($wp_query) && in_array($wp_query->query['post_type'], $post_types)) {
-            $restriction1 = 'photographer';
-            return $join .= "
-            INNER JOIN $wpdb->postmeta AS $restriction1 ON(
-            $wpdb->posts.ID = $restriction1.post_id
-            AND $restriction1.meta_key = '$restriction1'
-            )
-            INNER JOIN $wpdb->posts AS cpt_member ON cpt_member.ID = $restriction1.meta_value
-            ";
-        } else {
-            return $join;
-        }
-    }
-}
-
-
-if (!function_exists('publication_where_member')) {
-
-    add_filter('posts_where', 'publication_where_member', 10, 2);
-
-    function publication_where_member($where, $wp_query)
-    {
 
         $photographer = $_GET['_photographer'] ?? false;
+
         $post_types = ['serie', 'release'];
 
-        //we'll get 404 error on single post
-        //we want only list items to affect, disable this feature for single posts:
-        if (is_single() || is_home() || !$photographer)
-            return $where;
+        if ($photographer && isset( $wp_query->query['post_type'] ) &&  in_array($wp_query->query['post_type'], $post_types)) {
+            $clauses['join'] .= <<<SQL
+            INNER JOIN {$wpdb->postmeta} AS photographer ON ({$wpdb->posts}.ID=photographer.post_id AND photographer.meta_key = 'photographer')
+            INNER JOIN {$wpdb->posts} AS cpt_member ON cpt_member.ID = photographer.meta_value
+            SQL;
 
-        //always start with AND because we have a default WHERE 1=1 in the query
-        //try only fetching posts with comments on them:
-        if (isset($wp_query) && in_array($wp_query->query['post_type'], $post_types)) {
-            return $where .= " AND cpt_member.post_title = '$photographer'";
-        } else {
-            return $where;
+            $clauses['where'] .= " AND cpt_member.post_title = '$photographer'";
         }
+        return $clauses;
     }
 }
+
 
 if (!function_exists('custom_login_url')) {
     add_filter('login_url', 'custom_login_url', PHP_INT_MAX);

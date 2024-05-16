@@ -13,7 +13,6 @@ $args =  [
 
 ];
 
-
 $query = new WP_Query($args);
 
 $membersArgs =  [

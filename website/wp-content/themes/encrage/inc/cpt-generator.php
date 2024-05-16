@@ -18,6 +18,7 @@ if (!function_exists('create_post_type')) {
         string $singular,
         string $plural,
         string $menu_icon,
+        bool $is_category_enabled = false,
         array $support = ['title', 'editor', 'author', 'thumbnail'],
         string $description = '',
     ) {
@@ -29,7 +30,6 @@ if (!function_exists('create_post_type')) {
             'hierarchical'      => false,
             'has_archive'       => true,
             'supports'          => $support,
-            'taxonomies' => [ 'category' ],
             'menu_position'         => 5,
             'rewrite'           => [
                 'slug' => strtolower($plural),
@@ -61,7 +61,31 @@ if (!function_exists('create_post_type')) {
                 'menu_name'             => __($plural, 'encrage'),
             ],
         ]);
+
+        if ($is_category_enabled){
+            register_taxonomy($name.'_category', $name, array(
+                'rewrite'      => ['slug' => $name . 's/category'],
+                'label' => __('Catégories', 'encrage'),
+                'hierarchical' => true,
+                'show_admin_column' => true,
+                'show_in_rest' => true,
+                'labels' => [
+                    'singular_name' => __('Catégorie', 'txtdomain'),
+                    'all_items' => __('Toutes les catégories', 'txtdomain'),
+                    'edit_item' => __('Modifier les catégories', 'txtdomain'),
+                    'view_item' => __('View Catégorie', 'txtdomain'),
+                    'update_item' => __('Update Catégorie', 'txtdomain'),
+                    'add_new_item' => __('Add New Catégorie', 'txtdomain'),
+                    'new_item_name' => __('New Catégorie Name', 'txtdomain'),
+                    'search_items' => __('Search Catégories', 'txtdomain'),
+                    'parent_item' => __('Parent Catégorie', 'txtdomain'),
+                    'parent_item_colon' => __('Parent Catégorie:', 'txtdomain'),
+                    'not_found' => __('No Catégories found', 'txtdomain'),
+                ]
+            ));
+
+            register_taxonomy_for_object_type($name.'_category', $name);
+        }
+            
     }
 }
-
-
