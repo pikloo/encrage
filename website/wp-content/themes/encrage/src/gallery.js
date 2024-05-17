@@ -51,7 +51,6 @@ const serieGallery = new Swiper(".gallery", {
       slidesPerView: "auto",
       centeredSlides: true,
       spaceBetween: 30,
-      // spaceBetween: 30,
     },
   },
 });

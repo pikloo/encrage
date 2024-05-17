@@ -11295,7 +11295,6 @@ var serieGallery = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"](".g
       slidesPerView: "auto",
       centeredSlides: true,
       spaceBetween: 30
-      // spaceBetween: 30,
     }
   }
 });
