@@ -16,8 +16,7 @@ function load_posts_by_ajax_callback()
     'order' => 'DESC',
     'posts_per_page' => $post_type == 'release' ? 8 : 6,
     'paged' => $paged,
-    'meta_key' => 'year',
-    'orderby' => 'meta_value_num',
+    'orderby' => 'date',
   );
 
   $query = new WP_Query($args);
