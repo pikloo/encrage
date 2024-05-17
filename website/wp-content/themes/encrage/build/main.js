@@ -11247,6 +11247,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var swiper_bundle__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! swiper/bundle */ "./node_modules/swiper/swiper-bundle.mjs");
 /* harmony import */ var swiper_css_bundle__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! swiper/css/bundle */ "./node_modules/swiper/swiper-bundle.css");
 /* harmony import */ var medium_zoom__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! medium-zoom */ "./node_modules/medium-zoom/dist/medium-zoom.esm.js");
+function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
+function _defineProperty(obj, key, value) { key = _toPropertyKey(key); if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : i + ""; }
+function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
 
 
 
@@ -11276,27 +11280,19 @@ var postsCarousel = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"](".
   },
   injectStyles: [".swiper-wrapper { align-items: center }"]
 });
-var serieGallery = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"](".gallery", {
-  lazy: true,
-  spaceBetween: 40,
-  grabCursor: true,
-  slidesPerView: 1,
-  autoHeight: true,
-  centeredSlides: true,
-  navigation: {
-    nextEl: ".swiper-button-next",
-    prevEl: ".swiper-button-prev"
-  },
-  keyboard: {
-    enabled: true
-  },
-  breakpoints: {
-    640: {
-      slidesPerView: 1.5,
-      spaceBetween: 30
-    }
+var serieGallery = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"](".gallery", _defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty(_defineProperty({
+  lazy: true
+}, "lazy", true), "spaceBetween", 40), "grabCursor", true), "slidesPerView", 1), "autoHeight", true), "centeredSlides", true), "navigation", {
+  nextEl: ".swiper-button-next",
+  prevEl: ".swiper-button-prev"
+}), "keyboard", {
+  enabled: true
+}), "breakpoints", {
+  640: {
+    slidesPerView: 1.5,
+    spaceBetween: 30
   }
-});
+}));
 
 //Zoom Image
 

@@ -32,7 +32,9 @@ const postsCarousel = new Swiper(".blogpost-carousel", {
 
 
 
+
 const serieGallery = new Swiper(".gallery", {
+  lazy: true,
   lazy: true,
   spaceBetween: 40,
   grabCursor: true,
