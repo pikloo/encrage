@@ -11139,7 +11139,7 @@ if (aboutAnchorLink) {
     link.setAttribute('aria-current', 'location');
     serieAnchorLink.setAttribute('aria-current', 'false');
     window.scrollTo({
-      top: aboutSerieSection.offsetTop - (header.offsetHeight + 150),
+      top: aboutSerieSection.offsetTop - (header.offsetHeight + 100),
       behavior: "smooth"
     });
   });

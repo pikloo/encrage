@@ -60,7 +60,7 @@ Version: 1.0
   }
 
   .serie-nav a[aria-current='false'] > h2{
-    @apply text-inherit
+    @apply text-black
   }
 
   h2.section {
