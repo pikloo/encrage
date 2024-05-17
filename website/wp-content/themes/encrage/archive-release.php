@@ -4,13 +4,10 @@ get_template_part('partials/header', 'header');
 
 $args =  [
     'post_type' => 'release',
-    // 'orderby' => 'year',
     'posts_per_page' => 8,
     'post_status' => 'publish',
     'order' => 'DESC',
-    'meta_key' => 'year',
-    'orderby' => 'meta_value_num',
-
+    'orderby' => 'date',
 ];
 
 $query = new WP_Query($args);
