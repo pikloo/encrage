@@ -1627,8 +1627,8 @@ h3::first-letter {
   height: 18rem !important;
 }
 
-.h-\[70vh\] {
-  height: 70vh !important;
+.h-\[68vh\] {
+  height: 68vh !important;
 }
 
 .h-\[calc\(100dvh-4rem\)\] {
@@ -1942,6 +1942,11 @@ h3::first-letter {
 .py-8 {
   padding-top: 2rem !important;
   padding-bottom: 2rem !important;
+}
+
+.py-3 {
+  padding-top: 0.75rem !important;
+  padding-bottom: 0.75rem !important;
 }
 
 .pl-1 {

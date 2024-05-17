@@ -11127,6 +11127,9 @@ if (aboutSerieSection) {
   window.addEventListener("scroll", function () {
     aboutSerieSectionObserver.observe(aboutSerieSection);
   });
+  window.addEventListener("touchmove", function () {
+    aboutSerieSectionObserver.observe(aboutSerieSection);
+  });
 }
 if (serieAnchorLink) {
   serieAnchorLink.addEventListener("click", function (e) {

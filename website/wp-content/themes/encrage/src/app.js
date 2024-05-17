@@ -46,6 +46,9 @@ if (aboutSerieSection) {
   window.addEventListener("scroll", () => {
     aboutSerieSectionObserver.observe(aboutSerieSection);
   })
+  window.addEventListener("touchmove", () => {
+    aboutSerieSectionObserver.observe(aboutSerieSection);
+  })
 
 }
 
