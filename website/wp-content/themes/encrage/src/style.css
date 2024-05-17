@@ -1667,12 +1667,16 @@ h3::first-letter {
   width: 100px !important;
 }
 
+.w-\[150px\] {
+  width: 150px !important;
+}
+
 .w-\[200px\] {
   width: 200px !important;
 }
 
-.w-\[250px\] {
-  width: 250px !important;
+.w-\[80\%\] {
+  width: 80% !important;
 }
 
 .w-fit {
@@ -1682,11 +1686,6 @@ h3::first-letter {
 
 .w-full {
   width: 100% !important;
-}
-
-.w-max {
-  width: -moz-max-content !important;
-  width: max-content !important;
 }
 
 .max-w-sm {
@@ -1906,11 +1905,6 @@ h3::first-letter {
 
 .p-6 {
   padding: 1.5rem !important;
-}
-
-.px-10 {
-  padding-left: 2.5rem !important;
-  padding-right: 2.5rem !important;
 }
 
 .px-14 {
@@ -2357,6 +2351,10 @@ h3::first-letter {
     width: 11rem !important;
   }
 
+  .md\:w-\[200px\] {
+    width: 200px !important;
+  }
+
   .md\:w-screen {
     width: 100vw !important;
   }
@@ -2483,6 +2481,10 @@ h3::first-letter {
     width: 175px !important;
   }
 
+  .lg\:w-\[250px\] {
+    width: 250px !important;
+  }
+
   .lg\:w-fit {
     width: -moz-fit-content !important;
     width: fit-content !important;
@@ -2516,6 +2518,10 @@ h3::first-letter {
     align-items: center !important;
   }
 
+  .lg\:justify-between {
+    justify-content: space-between !important;
+  }
+
   .lg\:justify-evenly {
     justify-content: space-evenly !important;
   }
@@ -2527,6 +2533,11 @@ h3::first-letter {
 
   .lg\:gap-y-0 {
     row-gap: 0px !important;
+  }
+
+  .lg\:px-10 {
+    padding-left: 2.5rem !important;
+    padding-right: 2.5rem !important;
   }
 
   .lg\:py-6 {
@@ -2706,6 +2717,14 @@ h3::first-letter {
 
   .custom-landscape\:w-32 {
     width: 8rem !important;
+  }
+
+  .custom-landscape\:w-\[150px\] {
+    width: 150px !important;
+  }
+
+  .custom-landscape\:w-full {
+    width: 100% !important;
   }
 
   .custom-landscape\:max-w-sm {

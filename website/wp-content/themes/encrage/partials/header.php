@@ -22,7 +22,7 @@ $menu_main = wp_nav_menu([
 
 ?>
 <header class="main-header flex items-center shadow-sm w-max-w-sm lg:w-full fixed top-0 left-0 right-0 z-20 bg-white duration-500 delay-2">
-  <nav class="relative lg:w-full lg:pr-10 flex justify-between items-center bg-white">
+  <nav class="relative w-full lg:pr-10 flex lg:justify-between items-center bg-white">
     <button class="menu-toggle z-20 lg:hidden" id="menu-toggle" aria-expanded="false"><span class="screen-reader-text">Menu</span>
       <svg class="icon icon-menu-toggle" aria-hidden="true" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100">
         <g class="svg-menu-toggle">
@@ -32,8 +32,8 @@ $menu_main = wp_nav_menu([
         </g>
       </svg>
     </button>
-    <a class="z-20 bg-white custom-landscape:p-0 lg:py-6" href=<?= home_url(); ?>><img src="<?= get_template_directory_uri(); ?>/assets/images/ancrage_logo.png" alt="<?= esc_html(get_bloginfo('description')) ?> " class="w-[250px] px-10 logo-site" /></a>
-      <div class="hidden lg:flex w-max items-center lg:text-2xl menu-full bg-white">
+    <a class="z-20 bg-white w-full custom-landscape:w-full lg:w-fit custom-landscape:p-0 lg:py-6" href=<?= home_url(); ?>><img src="<?= get_template_directory_uri(); ?>/assets/images/ancrage_logo.png" alt="<?= esc_html(get_bloginfo('description')) ?> " class="w-[150px] custom-landscape:w-[150px] md:w-[200px] lg:w-[250px] logo-site mx-auto lg:px-10 lg:m-0" /></a>
+      <div class="hidden lg:flex items-center lg:text-2xl menu-full bg-white">
         <?= $menu_main; ?>
         <!-- photographes -->
         <div class="ml-4">
