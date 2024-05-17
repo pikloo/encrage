@@ -41,12 +41,12 @@ $loop = new WP_Query($args);
                 </div>
                 <ul class="flex justify-center gap-x-4 serie-nav">
                     <li>
-                        <a href="serie" aria-current="location" data-serie-anchor-link class="menu-item inline-block w-fit">
+                        <a href="#serie" aria-current="location" data-serie-anchor-link class="menu-item inline-block w-fit">
                             <h2 class="w-fit font-bold">Série</h2>
                         </a>
                     </li>
                     <li>
-                        <a href="about" aria-current="false" data-about-anchor-link class="menu-item inline-block w-fit">
+                        <a href="#about" aria-current="false" data-about-anchor-link class="menu-item inline-block w-fit">
                             <h2 class="w-fit font-bold">À propos</h2>
                         </a>
                     </li>
