@@ -223,7 +223,7 @@ Version: 1.0
   }
 
   .main-menu li, .menu-item {
-    @apply hover:text-gray-500 transition-colors;
+    @apply hover:text-gray-500  cursor-pointer transition-colors;
   }
 
   .medium-zoom-overlay {
