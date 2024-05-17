@@ -601,6 +601,22 @@ html {
   scroll-behavior: cubic-bezier(0.42, 0, 0.58, 1);
 }
 
+.main {
+  padding-top: 5rem;
+}
+
+@media (min-width: 768px) {
+  .main {
+    padding-top: 7rem;
+  }
+}
+
+@media (orientation: landscape) {
+  .main {
+    padding-top: 5rem;
+  }
+}
+
 h2 {
   position: relative;
   font-size: 1.5rem;
@@ -635,6 +651,18 @@ h2::first-letter {
   h2::first-letter {
     font-size: 3rem;
     line-height: 1;
+  }
+}
+
+@media (orientation: landscape) {
+  h2 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
+  h2::first-letter {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
   }
 }
 
@@ -678,6 +706,18 @@ h2::first-letter {
   .serie-nav h2::first-letter {
     font-size: 1.875rem;
     line-height: 2.25rem;
+  }
+}
+
+@media (orientation: landscape) {
+  .serie-nav h2 {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+
+  .serie-nav h2::first-letter {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
   }
 }
 
@@ -742,6 +782,13 @@ h2.section::after {
   }
 }
 
+@media (orientation: landscape) {
+  h2.section {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
 h1 {
   margin-bottom: 2.5rem;
   width: -moz-fit-content;
@@ -773,6 +820,18 @@ h1::first-letter {
   }
 }
 
+@media (orientation: landscape) {
+  h1 {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+
+  h1::first-letter {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+}
+
 h1.main-title {
   margin-bottom: 2.5rem;
   background-color: transparent;
@@ -800,6 +859,17 @@ h1.main-title::first-letter {
   }
 }
 
+@media (orientation: landscape) {
+  h1.main-title {
+    font-size: 22px;
+  }
+
+  h1.main-title::first-letter {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+}
+
 h1.member-page-title {
   margin: 0px;
   width: 100%;
@@ -823,6 +893,18 @@ h1.member-page-title::first-letter {
   h1.member-page-title::first-letter {
     font-size: 2.25rem;
     line-height: 2.5rem;
+  }
+}
+
+@media (orientation: landscape) {
+  h1.member-page-title {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
+  h1.member-page-title::first-letter {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
   }
 }
 
@@ -902,24 +984,36 @@ h3::first-letter {
   }
 }
 
+@media (orientation: landscape) {
+  .to-down, .to-top {
+    height: 2.5rem;
+    width: 2.5rem;
+  }
+}
+
 .portfolio-title h1 {
   position: relative;
   margin-bottom: 0px;
   background-color: transparent;
-  font-size: 1.25rem;
-  line-height: 1.75rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
   font-weight: 500;
   text-transform: uppercase;
   color: inherit;
 }
 
 .portfolio-title h1::first-letter {
-  font-size: 1.875rem;
-  line-height: 2.25rem;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
 }
 
 @media (min-width: 640px) {
   .portfolio-title h1 {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+
+  .portfolio-title h1::first-letter {
     font-size: 1.5rem;
     line-height: 2rem;
   }
@@ -934,6 +1028,18 @@ h3::first-letter {
   .portfolio-title h1::first-letter {
     font-size: 2.25rem;
     line-height: 2.5rem;
+  }
+}
+
+@media (orientation: landscape) {
+  .portfolio-title h1 {
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+  }
+
+  .portfolio-title h1::first-letter {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
   }
 }
 
@@ -958,6 +1064,19 @@ h3::first-letter {
   .content::first-letter {
     margin-right: 0.75rem;
     font-size: 6rem;
+    line-height: 1;
+  }
+}
+
+@media (orientation: landscape) {
+  .content {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+
+  .content::first-letter {
+    margin-right: 0.5rem;
+    font-size: 4.5rem;
     line-height: 1;
   }
 }
@@ -1014,13 +1133,11 @@ h3::first-letter {
   }
 }
 
-/* .gallery .swiper-slide > img {
-    @apply object-contain;
-    height: 100%;
-  } */
-
-.gallery .swiper-slide {
-  /* @apply md:h-[calc(100vh-100px)]; */
+@media (orientation: landscape) {
+  .button {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
 }
 
 .thumbnails.swiper {
@@ -1082,6 +1199,12 @@ h3::first-letter {
   }
 }
 
+@media (orientation: landscape) {
+  .menu-toggle {
+    padding: 1.5rem;
+  }
+}
+
 .menu-toggle .icon {
   position: relative;
   top: -0.0625em;
@@ -1105,6 +1228,13 @@ h3::first-letter {
   }
 }
 
+@media (orientation: landscape) {
+  .menu-toggle .icon {
+    height: 1rem;
+    width: 1rem;
+  }
+}
+
 /* Menu toggle styles. */
 
 .icon-menu-toggle {
@@ -1123,6 +1253,13 @@ h3::first-letter {
   .icon-menu-toggle {
     height: 2.5rem;
     width: 2.5rem;
+  }
+}
+
+@media (orientation: landscape) {
+  .icon-menu-toggle {
+    height: 1rem;
+    width: 1rem;
   }
 }
 
@@ -1195,6 +1332,14 @@ h3::first-letter {
   }
 }
 
+@media (orientation: landscape) {
+  .main-menu {
+    flex-direction: column;
+    -moz-column-gap: 0px;
+         column-gap: 0px;
+  }
+}
+
 .socials-links svg {
   height: 2rem;
   width: 2rem;
@@ -1212,6 +1357,13 @@ h3::first-letter {
   .socials-links svg {
     height: 3rem;
     width: 3rem;
+  }
+}
+
+@media (orientation: landscape) {
+  .socials-links svg {
+    height: 2rem;
+    width: 2rem;
   }
 }
 
@@ -2158,6 +2310,11 @@ h3::first-letter {
     padding-left: 0px !important;
   }
 
+  .sm\:text-lg {
+    font-size: 1.125rem !important;
+    line-height: 1.75rem !important;
+  }
+
   .sm\:masonry-sm {
     -moz-column-gap: 1.5em !important;
          column-gap: 1.5em !important;
@@ -2248,16 +2405,17 @@ h3::first-letter {
     padding: 2.5rem !important;
   }
 
+  .md\:px-0 {
+    padding-left: 0px !important;
+    padding-right: 0px !important;
+  }
+
   .md\:pt-10 {
     padding-top: 2.5rem !important;
   }
 
   .md\:pt-20 {
     padding-top: 5rem !important;
-  }
-
-  .md\:pt-28 {
-    padding-top: 7rem !important;
   }
 
   .md\:pt-36 {
@@ -2530,5 +2688,85 @@ h3::first-letter {
          column-gap: 1.5em !important;
     -moz-column-count: 4 !important;
          column-count: 4 !important;
+  }
+}
+
+@media (orientation: landscape) {
+  .landscape\:h-\[calc\(100vh-5rem\)\] {
+    height: calc(100vh - 5rem) !important;
+  }
+
+  .landscape\:h-32 {
+    height: 8rem !important;
+  }
+
+  .landscape\:w-32 {
+    width: 8rem !important;
+  }
+
+  .landscape\:max-w-sm {
+    max-width: 24rem !important;
+  }
+
+  .landscape\:flex-row {
+    flex-direction: row !important;
+  }
+
+  .landscape\:gap-x-10 {
+    -moz-column-gap: 2.5rem !important;
+         column-gap: 2.5rem !important;
+  }
+
+  .landscape\:p-0 {
+    padding: 0px !important;
+  }
+
+  .landscape\:p-4 {
+    padding: 1rem !important;
+  }
+
+  .landscape\:indent-4 {
+    text-indent: 1rem !important;
+  }
+
+  .landscape\:text-base {
+    font-size: 1rem !important;
+    line-height: 1.5rem !important;
+  }
+
+  .landscape\:text-lg {
+    font-size: 1.125rem !important;
+    line-height: 1.75rem !important;
+  }
+
+  .landscape\:text-sm {
+    font-size: 0.875rem !important;
+    line-height: 1.25rem !important;
+  }
+
+  .landscape\:text-xl {
+    font-size: 1.25rem !important;
+    line-height: 1.75rem !important;
+  }
+
+  .landscape\:first-letter\:text-xl::first-letter {
+    font-size: 1.25rem !important;
+    line-height: 1.75rem !important;
+  }
+
+  .landscape\:before\:-left-5::before {
+    content: var(--tw-content) !important;
+    left: -1.25rem !important;
+  }
+
+  .landscape\:before\:text-3xl::before {
+    content: var(--tw-content) !important;
+    font-size: 1.875rem !important;
+    line-height: 2.25rem !important;
+  }
+
+  .landscape\:after\:hidden::after {
+    content: var(--tw-content) !important;
+    display: none !important;
   }
 }

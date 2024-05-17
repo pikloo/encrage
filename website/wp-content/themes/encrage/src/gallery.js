@@ -44,14 +44,28 @@ const serieGalleryThumbnails = new Swiper(".thumbnails", {
 
 const serieGallery = new Swiper(".gallery", {
   lazy: true,
-  spaceBetween: 30,
+  spaceBetween: 40,
   grabCursor: true,
-  slidesPerView: 1.5,
+  slidesPerView: 1,
   autoHeight: true,
   centeredSlides: true,
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
+  },
+  breakpoints: {
+    640: {
+      slidesPerView: 1.5,
+      spaceBetween: 30,
+    },
+    // 768: {
+    //   slidesPerView: 4,
+    //   spaceBetween: 40,
+    // },
+    // 1024: {
+    //   slidesPerView: 5,
+    //   spaceBetween: 50,
+    // },
   },
   // thumbs: {
   //   swiper: serieGalleryThumbnails,

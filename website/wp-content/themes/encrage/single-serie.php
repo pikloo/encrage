@@ -16,22 +16,22 @@ $args =  [
 $loop = new WP_Query($args);
 ?>
 
-<main class="overflow-hidden main relative pt-20 md:pt-28">
+<main class="overflow-hidden main relative">
     <?php while ($loop->have_posts()) : $loop->the_post(); ?>
         <!-- portfolio-title z-[11] md:top-28 text-white before:block before:absolute before:-inset-1 before:skew-y-3 before:bg-black before:shadow-lg before:shadow-black/50 inline-block -->
-        <div class="flex flex-col justify-between ">
-            <section class="relative h-[calc(100vh-5rem)] md:h-[calc(100vh-7rem)] flex flex-col justify-evenly">
-                <div class="portfolio-title w-full justify-center items-center bg-white flex md:z-[11] gap-x-4">
+        <div class="flex flex-col justify-between">
+            <section class="relative h-[calc(100vh-5rem)] landscape:h-[calc(100vh-5rem)] md:h-[calc(100vh-7rem)] flex flex-col justify-evenly">
+                <div class="portfolio-title px-2 md:px-0 w-full justify-center items-center bg-white flex md:z-[11] gap-x-4">
                     <h1 class="p-0"><?php the_title(); ?></h1>
                     <div class="before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-black before:shadow-lg before:shadow-black/50 relative inline-block">
-                    <span class="text-xl uppercase relative text-white"><?= esc_attr(get_the_title($photographer)) ?></span></div>
-                    <p class="text-gray-500 text-xl relative"><?= esc_attr(get_post_meta(get_the_ID(), 'year', true)) ?></p>
+                    <span class="text-sm landscape:text-sm sm:text-lg md:text-xl uppercase relative text-white"><?= esc_attr(get_the_title($photographer)) ?></span></div>
+                    <p class="text-gray-500 text-sm landscape:text-sm sm:text-lg md:text-xl relative"><?= esc_attr(get_post_meta(get_the_ID(), 'year', true)) ?></p>
                 </div>
                 <div class="swiper gallery h-[70vh] w-full relative">
                     <div class="swiper-wrapper items-center h-full lg:max-w-screen-lg">
                         <?php foreach ($url_array as $image_url) : ?>
                             <div class="swiper-slide ">
-                                <img class="gallery-img h-full lg:max-w-screen-lg object-contain mx-auto" src="<?= $image_url; ?>" alt="" loading="lazy" />
+                                <img class="gallery-img h-full object-contain mx-auto" src="<?= $image_url; ?>" alt="" loading="lazy" />
                                 <div class="swiper-lazy-preloader h-auto swiper-lazy-preloader-white"></div>
                             </div>
                         <?php endforeach; ?>
