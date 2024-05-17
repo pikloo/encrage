@@ -9,6 +9,11 @@ const toTopButtons = document.querySelectorAll(".to-top");
 const imagesGallery = document.querySelectorAll(".gallery-img");
 const serieAnchorLink = document.querySelector(".menu-item[data-serie-anchor-link]");
 const aboutAnchorLink = document.querySelector(".menu-item[data-about-anchor-link]");
+let main = document.querySelector(".main");
+const header = document.querySelector(".main-header");
+const footer = document.querySelector("footer");
+const screenHeight = window.screen.height;
+
 
 const aboutCallback = function (entries) {
   entries.forEach((entry) => {
@@ -52,11 +57,13 @@ if (serieAnchorLink) {
 
 if (aboutAnchorLink) {
   aboutAnchorLink.addEventListener('click', (e) => {
+    e.preventDefault();
     let link = e.currentTarget
     link.querySelector('h2').classList.add("text-gray-500");
     link.setAttribute('aria-current', 'location');
     serieAnchorLink.setAttribute('aria-current', 'false');
     serieAnchorLink.querySelector('h2').classList.remove("text-gray-500")
+    window.scrollTo({ top: aboutSerieSection.offsetTop - header.offsetHeight, behavior: "smooth" });
   })
 }
 
@@ -114,10 +121,7 @@ targets.forEach(function (target) {
 
 //Main min height
 
-let main = document.querySelector(".main");
-const header = document.querySelector(".main-header");
-const footer = document.querySelector("footer");
-const screenHeight = window.screen.height;
+
 
 main.style.minHeight = `${screenHeight - footer.offsetHeight - header.offsetHeight}px`;
 

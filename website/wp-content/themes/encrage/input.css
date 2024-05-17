@@ -40,7 +40,7 @@ Version: 1.0
   }
 
   .main {
-    @apply custom-landscape:pt-16 pt-16 md:pt-20 lg:pt-28 bg-white;
+    @apply custom-landscape:pt-16 pt-16 md:pt-28 bg-white;
   }
 
   h2 {
@@ -71,7 +71,7 @@ Version: 1.0
   }
 
   h1 {
-    @apply text-3xl custom-landscape:text-3xl custom-landscape:first-letter:text-4xl first-letter:text-4xl md:text-5xl md:first-letter:text-6xl bg-black text-white w-fit p-2 mb-10 uppercase;
+    @apply text-3xl custom-landscape:text-3xl custom-landscape:first-letter:text-4xl first-letter:text-4xl md:text-5xl md:first-letter:text-6xl bg-black text-white w-fit p-2 mb-10 uppercase mt-6;
   }
 
   h1.main-title{

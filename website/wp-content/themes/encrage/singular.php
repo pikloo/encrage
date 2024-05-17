@@ -11,12 +11,12 @@ $args =  [
 $loop = new WP_Query($args);
 
 ?>
-<main class="overflow-hidden pb-6 main">
+<main class="overflow-hidden main">
     <?php while ($loop->have_posts()) : $loop->the_post(); ?>
         <?php
         $categories = get_the_category();
         ?>
-        <h1 class="<?php if ($post->post_name === 'lagence') echo 'translate-y-6 mb-0' ?>"><?= the_title(); ?></h1>
+        <h1 class="mb-2"><?= the_title(); ?></h1>
         <div class="px-6 <?= $post->post_name === 'lagence' ? 'text-center' : 'text-justify'  ?>  flex flex-col gap-y-10 lg:flex-row lg:gap-x-10 mt-10 lg:justify-evenly lg:items-center lg:mt-20">
             <?php if (has_post_thumbnail()) : ?>
                 <aside class="max-w-sm md:max-w-md">

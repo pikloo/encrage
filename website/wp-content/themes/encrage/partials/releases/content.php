@@ -27,7 +27,7 @@ $default_post = match (true) {
                 <?php if (!isset($is_member_page) || !$is_member_page) :  ?>
                     <a href="<?= esc_url(get_permalink(get_post_meta(get_the_ID(), 'photographer', true))); ?>">
                         <span class="<?php if($default_post) echo 'ml-2'?> before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-black before:shadow-lg before:shadow-black/50 relative inline-block">
-                            <span class="relative text-white"><?= esc_html(get_the_title(get_post_meta(get_the_ID(), 'photographer', true))); ?></span>
+                            <span class="relative text-white uppercase"><?= esc_html(get_the_title(get_post_meta(get_the_ID(), 'photographer', true))); ?></span>
                         </span>
                     </a>
                 <?php endif; ?>

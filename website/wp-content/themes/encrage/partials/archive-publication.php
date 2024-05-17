@@ -4,7 +4,7 @@ $currentPhotographer = $_GET['_photographer'] ?? null;
 extract($args);
 ?>
 
-<main class="overflow-hidden pt-28 pb-6 main flex flex-col">
+<main class="overflow-hidden main flex flex-col">
     <div class='relative flex flex-wrap content-center gap-x-6'>
         <h1 class="mb-2"><?= $label ?>s</h1>
         <?php if ($currentPhotographer) : ?>

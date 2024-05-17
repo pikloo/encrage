@@ -4,10 +4,10 @@ $sliderImages = get_option('encrage_theme_options')['encrage_home_slider'];
 
 <section class="relative" id="slider">
     <div class="swiper slider-home">
-        <div class="swiper-wrapper h-screen md:h-[calc(100vh-5rem)]">
+        <div class="swiper-wrapper">
             <?php foreach ($sliderImages as $key => $value) : ?>
                 <?php if ($value != '') : ?>
-                    <div class="swiper-slide"><img class="h-screen object-cover md:w-screen" src="<?= $value ?>" alt="Slider<?= $key ?>" loading="lazy" />
+                    <div class="swiper-slide"><img class="h-[calc(100dvh-4rem)] custom-landscape:h-[calc(100dvh-4rem)] md:h-[calc(100dvh-7rem)] object-cover md:w-screen" src="<?= $value ?>" alt="Slider<?= $key ?>" loading="lazy" />
                         <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
                     </div>
                 <?php endif; ?>
