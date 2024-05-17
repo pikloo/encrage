@@ -24,7 +24,8 @@ $loop = new WP_Query($args);
                 <div class="portfolio-title px-2 md:px-0 w-full justify-center items-center bg-white flex md:z-[11] gap-x-4">
                     <h1 class="p-0"><?php the_title(); ?></h1>
                     <div class="before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-black before:shadow-lg before:shadow-black/50 relative inline-block">
-                    <span class="text-sm custom-landscape:text-sm sm:text-lg md:text-xl uppercase relative text-white"><?= esc_attr(get_the_title($photographer)) ?></span></div>
+                        <span class="text-sm custom-landscape:text-sm sm:text-lg md:text-xl uppercase relative text-white"><?= esc_attr(get_the_title($photographer)) ?></span>
+                    </div>
                     <p class="text-gray-500 text-sm custom-landscape:text-sm sm:text-lg md:text-xl relative"><?= esc_attr(get_post_meta(get_the_ID(), 'year', true)) ?></p>
                 </div>
                 <div class="swiper gallery h-[70vh] w-full relative">
@@ -39,17 +40,7 @@ $loop = new WP_Query($args);
                     <div class="swiper-button-next text-gray-500"></div>
                     <div class="swiper-button-prev text-gray-500"></div>
                 </div>
-                <!-- <div thumbsSlider="" class="swiper thumbnails">
-                <div class="swiper-wrapper flex">
-                    <?php foreach ($url_array as $image_url) : ?>
-                        <div class="swiper-slide">
-                            <img class="gallery-img" src="<?= $image_url; ?>" alt="" loading="lazy" />
-                            <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-                        </div>
-                    <?php endforeach; ?>
-                </div>
-            </div> -->
-            <ul class="flex justify-center gap-x-4 serie-nav">
+                <ul class="flex justify-center gap-x-4 serie-nav">
                     <li>
                         <a href="#serie" aria-current="location" data-serie-anchor-link class="menu-item inline-block w-fit">
                             <h2 class="w-fit font-bold">Série</h2>
