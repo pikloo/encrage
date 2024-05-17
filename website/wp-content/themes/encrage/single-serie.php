@@ -39,7 +39,7 @@ $loop = new WP_Query($args);
                     <div class="swiper-button-next text-gray-500"></div>
                     <div class="swiper-button-prev text-gray-500"></div>
                 </div>
-                <!-- <div thumbsSlider="" class="swiper thumbnails">
+                <div thumbsSlider="" class="swiper thumbnails">
                 <div class="swiper-wrapper flex">
                     <?php foreach ($url_array as $image_url) : ?>
                         <div class="swiper-slide">
@@ -48,7 +48,7 @@ $loop = new WP_Query($args);
                         </div>
                     <?php endforeach; ?>
                 </div>
-            </div> -->
+            </div>
             <ul class="flex justify-center gap-x-4 serie-nav">
                     <li>
                         <a href="#serie" aria-current="location" data-serie-anchor-link class="menu-item inline-block w-fit">
