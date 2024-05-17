@@ -11282,7 +11282,6 @@ var postsCarousel = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"](".
   injectStyles: [".swiper-wrapper { align-items: center }"]
 });
 var serieGallery = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"](".gallery", {
-  lazy: true,
   spaceBetween: 40,
   grabCursor: true,
   slidesPerView: 1,
