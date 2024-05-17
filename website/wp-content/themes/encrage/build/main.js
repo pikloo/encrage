@@ -11292,8 +11292,10 @@ var serieGallery = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"](".g
   },
   breakpoints: {
     640: {
-      slidesPerView: 1.5,
+      slidesPerView: "auto",
+      centeredSlides: true,
       spaceBetween: 30
+      // spaceBetween: 30,
     }
   }
 });

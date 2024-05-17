@@ -2374,8 +2374,31 @@ h3::first-letter {
     width: 100vw !important;
   }
 
+  .md\:w-fit {
+    width: -moz-fit-content !important;
+    width: fit-content !important;
+  }
+
   .md\:max-w-md {
     max-width: 28rem !important;
+  }
+
+  .md\:max-w-screen-xl {
+    max-width: 1280px !important;
+  }
+
+  .md\:max-w-screen-md {
+    max-width: 768px !important;
+  }
+
+  .md\:max-w-min {
+    max-width: -moz-min-content !important;
+    max-width: min-content !important;
+  }
+
+  .md\:max-w-fit {
+    max-width: -moz-fit-content !important;
+    max-width: fit-content !important;
   }
 
   .md\:grid-cols-2 {
@@ -2494,6 +2517,11 @@ h3::first-letter {
 
   .lg\:w-full {
     width: 100% !important;
+  }
+
+  .lg\:w-fit {
+    width: -moz-fit-content !important;
+    width: fit-content !important;
   }
 
   .lg\:max-w-screen-lg {

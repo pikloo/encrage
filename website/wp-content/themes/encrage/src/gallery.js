@@ -48,8 +48,10 @@ const serieGallery = new Swiper(".gallery", {
   },
   breakpoints: {
     640: {
-      slidesPerView: 1.5,
+      slidesPerView: "auto",
+      centeredSlides: true,
       spaceBetween: 30,
+      // spaceBetween: 30,
     },
   },
 });
