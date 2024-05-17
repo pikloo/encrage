@@ -13,7 +13,7 @@ $default_post = match (true) {
 ?>
 <figure class="<?php if (isset($is_home)  || isset($is_member_page)) echo 'reveal' ?> relative group mx-auto max-w-sm break-inside p-4 bg-gray-200/30 hover:bg-gray-200/50 hover:scale-105 transition duration-500">
     <?php if (has_post_thumbnail(get_the_ID())) : ?>
-        <img src="<?= esc_url(get_the_post_thumbnail_url(get_the_ID(), 'medium_large')) ?>" alt="<?= the_title(); ?>" class="release cover-contain" />
+        <img src="<?= esc_url(get_the_post_thumbnail_url(get_the_ID(), 'medium_large')) ?>" alt="<?= the_title(); ?>" class="release cover-contain medium-zoom-image" />
     <?php endif; ?>
     <figcaption>
         <div class="xl:text-xl">
