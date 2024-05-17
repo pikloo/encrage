@@ -20,7 +20,7 @@ $loop = new WP_Query($args);
     <?php while ($loop->have_posts()) : $loop->the_post(); ?>
         <!-- portfolio-title z-[11] md:top-28 text-white before:block before:absolute before:-inset-1 before:skew-y-3 before:bg-black before:shadow-lg before:shadow-black/50 inline-block -->
         <div class="flex flex-col justify-between">
-            <section class="relative h-[calc(100dvh-5rem)] custom-landscape:h-[calc(100dvh-5rem)] md:h-[calc(100dvh-7rem)] flex flex-col justify-evenly">
+            <section id="serie" class="relative h-[calc(100dvh-5rem)] custom-landscape:h-[calc(100dvh-5rem)] md:h-[calc(100dvh-7rem)] flex flex-col justify-evenly">
                 <div class="portfolio-title fixed bg-white/60 py-2 top-16 custom-landscape:top-16 md:top-28 px-2 md:px-0 w-full justify-center items-center flex z-[11] gap-x-4">
                     <h1 class="p-0 mt-0"><?php the_title(); ?></h1>
                     <div class="before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-black before:shadow-lg before:shadow-black/50 relative inline-block">

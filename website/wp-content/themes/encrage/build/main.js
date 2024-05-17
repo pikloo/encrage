@@ -11103,6 +11103,11 @@ var main = document.querySelector(".main");
 var header = document.querySelector(".main-header");
 var footer = document.querySelector("footer");
 var screenHeight = window.screen.height;
+var portfolioTitle = document.querySelector(".portfolio-title");
+var mainSiteTitle = document.querySelector(".main-title");
+var aboutSerieSection = document.querySelector("#about");
+var gallerySerieSection = document.querySelector("#serie");
+var serieNavigation = document.querySelector(".serie-nav");
 var aboutCallback = function aboutCallback(entries) {
   entries.forEach(function (entry) {
     if (entry.isIntersecting) {
@@ -11114,7 +11119,6 @@ var aboutCallback = function aboutCallback(entries) {
     }
   });
 };
-var aboutSerieSection = document.querySelector("#about");
 var aboutSerieSectionObserver = new IntersectionObserver(aboutCallback, {
   rootMargin: '50px',
   threshold: 1
@@ -11126,6 +11130,7 @@ if (aboutSerieSection) {
 }
 if (serieAnchorLink) {
   serieAnchorLink.addEventListener("click", function (e) {
+    e.preventDefault();
     backToTop();
     var link = e.currentTarget;
     link.setAttribute('aria-current', 'location');
@@ -11139,7 +11144,7 @@ if (aboutAnchorLink) {
     link.setAttribute('aria-current', 'location');
     serieAnchorLink.setAttribute('aria-current', 'false');
     window.scrollTo({
-      top: aboutSerieSection.offsetTop - (header.offsetHeight + 100),
+      top: serieNavigation.offsetHeight + serieNavigation.offsetTop - header.offsetHeight - portfolioTitle.offsetHeight,
       behavior: "smooth"
     });
   });
@@ -11211,11 +11216,12 @@ main.style.minHeight = "".concat(screenHeight - footer.offsetHeight - header.off
 
 //Scroll to photographers (home)
 var toDownButton = document.querySelector('.to-down');
+var sliderHome = document.querySelector('#slider');
 if (toDownButton) {
   toDownButton.addEventListener("click", function (event) {
     event.preventDefault();
     window.scrollTo({
-      top: document.querySelector('#slider').offsetHeight - document.querySelector('.main-header').offsetHeight,
+      top: slider.offsetHeight + slider.offsetTop - header.offsetHeight,
       inline: "nearest"
     });
   });

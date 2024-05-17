@@ -13,6 +13,11 @@ let main = document.querySelector(".main");
 const header = document.querySelector(".main-header");
 const footer = document.querySelector("footer");
 const screenHeight = window.screen.height;
+const portfolioTitle = document.querySelector(".portfolio-title");
+const mainSiteTitle = document.querySelector(".main-title");
+const aboutSerieSection = document.querySelector("#about");
+const gallerySerieSection = document.querySelector("#serie");
+const serieNavigation = document.querySelector(".serie-nav");
 
 
 const aboutCallback = function (entries) {
@@ -29,7 +34,7 @@ const aboutCallback = function (entries) {
   });
 };
 
-const aboutSerieSection = document.querySelector("#about");
+
 
 const aboutSerieSectionObserver = new IntersectionObserver(aboutCallback, {
   rootMargin: '50px',
@@ -47,6 +52,7 @@ if (aboutSerieSection) {
 
 if (serieAnchorLink) {
   serieAnchorLink.addEventListener("click", (e) => {
+    e.preventDefault();
     backToTop();
     let link = e.currentTarget
     link.setAttribute('aria-current', 'location');
@@ -60,7 +66,7 @@ if (aboutAnchorLink) {
     let link = e.currentTarget
     link.setAttribute('aria-current', 'location');
     serieAnchorLink.setAttribute('aria-current', 'false');
-    window.scrollTo({ top: aboutSerieSection.offsetTop - (header.offsetHeight + 100 ), behavior: "smooth" });
+    window.scrollTo({ top: serieNavigation.offsetHeight + serieNavigation.offsetTop - header.offsetHeight - portfolioTitle.offsetHeight  , behavior: "smooth" });
   })
 }
 
@@ -147,11 +153,12 @@ main.style.minHeight = `${screenHeight - footer.offsetHeight - header.offsetHeig
 
 //Scroll to photographers (home)
 const toDownButton = document.querySelector('.to-down');
+const sliderHome = document.querySelector('#slider');
 if (toDownButton) {
   toDownButton.addEventListener("click", (event) => {
     event.preventDefault();
     window.scrollTo({
-      top: document.querySelector('#slider').offsetHeight - document.querySelector('.main-header').offsetHeight,
+      top: slider.offsetHeight + slider.offsetTop - header.offsetHeight,
       inline: "nearest"
     });
   })
