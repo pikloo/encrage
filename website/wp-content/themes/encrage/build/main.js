@@ -11097,6 +11097,48 @@ var backToTop = function backToTop() {
 };
 var toTopButtons = document.querySelectorAll(".to-top");
 var imagesGallery = document.querySelectorAll(".gallery-img");
+var serieAnchorLink = document.querySelector(".menu-item[data-serie-anchor-link]");
+var aboutAnchorLink = document.querySelector(".menu-item[data-about-anchor-link]");
+var aboutCallback = function aboutCallback(entries) {
+  entries.forEach(function (entry) {
+    if (entry.isIntersecting) {
+      aboutAnchorLink.setAttribute('aria-current', 'location');
+      serieAnchorLink.setAttribute('aria-current', 'false');
+    } else {
+      serieAnchorLink.setAttribute('aria-current', 'location');
+      aboutAnchorLink.setAttribute('aria-current', 'false');
+    }
+  });
+};
+var aboutSerieSection = document.querySelector("#about");
+var aboutSerieSectionObserver = new IntersectionObserver(aboutCallback, {
+  rootMargin: '50px',
+  threshold: 1
+});
+if (aboutSerieSection) {
+  window.addEventListener("scroll", function () {
+    aboutSerieSectionObserver.observe(aboutSerieSection);
+  });
+}
+if (serieAnchorLink) {
+  serieAnchorLink.addEventListener("click", function (e) {
+    backToTop();
+    var link = e.currentTarget;
+    link.querySelector('h2').classList.add("text-gray-500");
+    link.setAttribute('aria-current', 'location');
+    aboutAnchorLink.setAttribute('aria-current', 'false');
+    aboutAnchorLink.querySelector('h2').classList.remove("text-gray-500");
+  });
+}
+if (aboutAnchorLink) {
+  aboutAnchorLink.addEventListener('click', function (e) {
+    var link = e.currentTarget;
+    link.querySelector('h2').classList.add("text-gray-500");
+    link.setAttribute('aria-current', 'location');
+    serieAnchorLink.setAttribute('aria-current', 'false');
+    serieAnchorLink.querySelector('h2').classList.remove("text-gray-500");
+  });
+}
 [].concat(_toConsumableArray(toTopButtons), _toConsumableArray(imagesGallery)).forEach(function (button) {
   button.addEventListener("click", backToTop);
 });
@@ -11143,25 +11185,28 @@ var footer = document.querySelector("footer");
 var screenHeight = window.screen.height;
 main.style.minHeight = "".concat(screenHeight - footer.offsetHeight - header.offsetHeight, "px");
 
-//Titre fixe lorsqu'il arrive sous le logo(Page Single Série)
-var portfolioTitle = document.querySelector(".portfolio-title");
-var sliderActive = document.querySelector(".gallery");
-if (portfolioTitle) {
-  var basePosition = sliderActive.offsetHeight;
-  portfolioTitle.classList.add('md:absolute', 'md:top-36');
-  // portfolioTitle.setAttribute('style', `top:${basePosition}px; z-index:11; position:absolute;`);
+// //Titre fixe lorsqu'il arrive sous le logo(Page Single Série)
+// const portfolioTitle = document.querySelector(".portfolio-title");
+// const sliderActive = document.querySelector(".gallery");
 
-  document.addEventListener("scroll", function (event) {
-    if (portfolioTitle.getBoundingClientRect().top < header.offsetHeight + 150) {
-      portfolioTitle.classList.remove('md:absolute');
-      portfolioTitle.classList.add('md:fixed');
-    }
-    if (window.scrollY < basePosition - 20) {
-      portfolioTitle.classList.remove('md:fixed');
-      portfolioTitle.classList.add('md:absolute');
-    }
-  });
-}
+// if (portfolioTitle) {
+//   const basePosition = sliderActive.offsetHeight;
+//   portfolioTitle.classList.add('md:absolute', 'md:top-36')
+//   // portfolioTitle.setAttribute('style', `top:${basePosition}px; z-index:11; position:absolute;`);
+
+//   document.addEventListener("scroll", (event) => {
+//     if (portfolioTitle.getBoundingClientRect().top < header.offsetHeight + 150) {
+//       portfolioTitle.classList.remove('md:absolute')
+//       portfolioTitle.classList.add('md:fixed')
+//     }
+
+//     if (window.scrollY < basePosition - 20) {
+//       portfolioTitle.classList.remove('md:fixed')
+//       portfolioTitle.classList.add('md:absolute')
+//     }
+//   });
+
+// }
 
 //Scroll to photographers (home)
 var toDownButton = document.querySelector('.to-down');
@@ -11241,15 +11286,18 @@ var serieGalleryThumbnails = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["def
 });
 var serieGallery = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"](".gallery", {
   lazy: true,
-  spaceBetween: 10,
+  spaceBetween: 30,
   grabCursor: true,
+  slidesPerView: 1.5,
+  autoHeight: true,
+  centeredSlides: true,
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev"
   },
-  thumbs: {
-    swiper: serieGalleryThumbnails
-  },
+  // thumbs: {
+  //   swiper: serieGalleryThumbnails,
+  // },
   keyboard: {
     enabled: true
   }

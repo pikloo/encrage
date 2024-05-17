@@ -21,9 +21,9 @@ $menu_main = wp_nav_menu([
 ]);
 
 ?>
-<header class="main-header flex items-center shadow-sm w-max-w-sm <?= !$isSinglePortfolio ? 'lg:w-full' : 'w-full sm:w-fit'  ?> fixed top-0 left-0 right-0 z-20 bg-white duration-500 delay-2">
-  <nav class="relative <?php if (!$isSinglePortfolio) echo 'lg:w-full lg:pr-10' ?> flex justify-between items-center bg-white">
-    <button class="menu-toggle z-20 <?php if (!$isSinglePortfolio) echo 'lg:hidden' ?>" id="menu-toggle" aria-expanded="false"><span class="screen-reader-text">Menu</span>
+<header class="main-header flex items-center shadow-sm w-max-w-sm lg:w-full fixed top-0 left-0 right-0 z-20 bg-white duration-500 delay-2">
+  <nav class="relative lg:w-full lg:pr-10 flex justify-between items-center bg-white">
+    <button class="menu-toggle z-20 lg:hidden" id="menu-toggle" aria-expanded="false"><span class="screen-reader-text">Menu</span>
       <svg class="icon icon-menu-toggle" aria-hidden="true" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100">
         <g class="svg-menu-toggle">
           <path class="line line-1" d="M5 13h90v14H5z" />
@@ -33,7 +33,6 @@ $menu_main = wp_nav_menu([
       </svg>
     </button>
     <a class="z-20 bg-white lg:py-6" href=<?= home_url(); ?>><img src="<?= get_template_directory_uri(); ?>/assets/images/ancrage_logo.png" alt="<?= esc_html(get_bloginfo('description')) ?> " class="w-[250px] px-10 logo-site" /></a>
-    <?php if (!$isSinglePortfolio) : ?>
       <div class="hidden lg:flex w-max items-center lg:text-2xl menu-full bg-white">
         <?= $menu_main; ?>
         <!-- photographes -->
@@ -64,7 +63,6 @@ $menu_main = wp_nav_menu([
 
         <!-- end photographes -->
       </div>
-    <?php endif; ?>
     <div id="sideBar" class="bg-transparent overflow-x-hidden duration-500 z-10">
       <!--navigation menu box-->
       <div id="sideNav" class="text-xl h-full  md:text-2xl lg:text-3xl bg-white text-black flex flex-col justify-center items-center overflow-x-hidden duration-500 z-50">
