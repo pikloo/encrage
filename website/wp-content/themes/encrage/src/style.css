@@ -1166,10 +1166,6 @@ h3::first-letter {
   opacity: 0.4;
 }
 
-.thumbnails .swiper-slide-thumb-active {
-  opacity: 1;
-}
-
 .menu-toggle {
   display: inline-block;
   cursor: pointer;

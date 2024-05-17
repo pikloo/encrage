@@ -39,15 +39,7 @@ $loop = new WP_Query($args);
                     <div class="swiper-button-next text-gray-500"></div>
                     <div class="swiper-button-prev text-gray-500"></div>
                 </div>
-                <div thumbsSlider="" class="swiper thumbnails">
-                <div class="swiper-wrapper flex">
-                    <?php foreach ($url_array as $image_url) : ?>
-                        <div class="swiper-slide">
-                            <img class="gallery-img" src="<?= $image_url; ?>" alt="" loading="lazy" />
-                            <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
-                        </div>
-                    <?php endforeach; ?>
-                </div>
+                
             </div>
             <ul class="flex justify-center gap-x-4 serie-nav">
                     <li>
