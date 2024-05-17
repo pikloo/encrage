@@ -11276,14 +11276,6 @@ var postsCarousel = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"](".
   },
   injectStyles: [".swiper-wrapper { align-items: center }"]
 });
-var serieGalleryThumbnails = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"](".thumbnails", {
-  lazy: true,
-  spaceBetween: 10,
-  slidesPerView: 4,
-  grabCursor: true,
-  freeMode: true,
-  watchSlidesProgress: true
-});
 var serieGallery = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"](".gallery", {
   lazy: true,
   spaceBetween: 40,
@@ -11300,18 +11292,7 @@ var serieGallery = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"](".g
       slidesPerView: 1.5,
       spaceBetween: 30
     }
-    // 768: {
-    //   slidesPerView: 4,
-    //   spaceBetween: 40,
-    // },
-    // 1024: {
-    //   slidesPerView: 5,
-    //   spaceBetween: 50,
-    // },
   },
-  // thumbs: {
-  //   swiper: serieGalleryThumbnails,
-  // },
   keyboard: {
     enabled: true
   }

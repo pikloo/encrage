@@ -30,17 +30,6 @@ const postsCarousel = new Swiper(".blogpost-carousel", {
   injectStyles: [`.swiper-wrapper { align-items: center }`],
 });
 
-const serieGalleryThumbnails = new Swiper(".thumbnails", {
-  lazy: true,
-  spaceBetween: 10,
-  slidesPerView: 4,
-  grabCursor: true,
-  freeMode: true,
-  watchSlidesProgress: true,
-  
-
-});
-
 
 const serieGallery = new Swiper(".gallery", {
   lazy: true,
@@ -58,18 +47,8 @@ const serieGallery = new Swiper(".gallery", {
       slidesPerView: 1.5,
       spaceBetween: 30,
     },
-    // 768: {
-    //   slidesPerView: 4,
-    //   spaceBetween: 40,
-    // },
-    // 1024: {
-    //   slidesPerView: 5,
-    //   spaceBetween: 50,
-    // },
   },
-  // thumbs: {
-  //   swiper: serieGalleryThumbnails,
-  // },
+
   keyboard: {
     enabled: true,
   },
