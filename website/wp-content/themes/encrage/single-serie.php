@@ -33,7 +33,7 @@ $loop = new WP_Query($args);
                         <?php foreach ($url_array as $image_url) : ?>
                             <div class="swiper-slide lg:w-fit">
                                 <img class="gallery-img h-[70vh] object-contain mx-auto" src="<?= $image_url; ?>" alt="" />
-                                <div class="swiper-lazy-preloader swiper-lazy-preloader-white w-fit"></div>
+                                <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
                             </div>
                         <?php endforeach; ?>
                     </div>

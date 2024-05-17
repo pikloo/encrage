@@ -602,10 +602,18 @@ html {
 }
 
 .main {
-  padding-top: 5rem;
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
+  padding-top: 4rem;
 }
 
 @media (min-width: 768px) {
+  .main {
+    padding-top: 5rem;
+  }
+}
+
+@media (min-width: 1024px) {
   .main {
     padding-top: 7rem;
   }
@@ -613,7 +621,7 @@ html {
 
 @media only screen and (max-width: 960px) and (orientation: landscape) {
   .main {
-    padding-top: 5rem;
+    padding-top: 4rem;
   }
 }
 
@@ -1166,10 +1174,6 @@ h3::first-letter {
   opacity: 0.4;
 }
 
-.thumbnails .swiper-slide-thumb-active {
-  opacity: 1;
-}
-
 .menu-toggle {
   display: inline-block;
   cursor: pointer;
@@ -1630,10 +1634,6 @@ h3::first-letter {
   height: calc(100vh - 5rem) !important;
 }
 
-.h-auto {
-  height: auto !important;
-}
-
 .h-fit {
   height: -moz-fit-content !important;
   height: fit-content !important;
@@ -1890,16 +1890,6 @@ h3::first-letter {
 .object-cover {
   -o-object-fit: cover !important;
      object-fit: cover !important;
-}
-
-.object-none {
-  -o-object-fit: none !important;
-     object-fit: none !important;
-}
-
-.object-scale-down {
-  -o-object-fit: scale-down !important;
-     object-fit: scale-down !important;
 }
 
 .p-0 {
@@ -2374,31 +2364,8 @@ h3::first-letter {
     width: 100vw !important;
   }
 
-  .md\:w-fit {
-    width: -moz-fit-content !important;
-    width: fit-content !important;
-  }
-
   .md\:max-w-md {
     max-width: 28rem !important;
-  }
-
-  .md\:max-w-screen-xl {
-    max-width: 1280px !important;
-  }
-
-  .md\:max-w-screen-md {
-    max-width: 768px !important;
-  }
-
-  .md\:max-w-min {
-    max-width: -moz-min-content !important;
-    max-width: min-content !important;
-  }
-
-  .md\:max-w-fit {
-    max-width: -moz-fit-content !important;
-    max-width: fit-content !important;
   }
 
   .md\:grid-cols-2 {
@@ -2515,13 +2482,13 @@ h3::first-letter {
     width: 175px !important;
   }
 
-  .lg\:w-full {
-    width: 100% !important;
-  }
-
   .lg\:w-fit {
     width: -moz-fit-content !important;
     width: fit-content !important;
+  }
+
+  .lg\:w-full {
+    width: 100% !important;
   }
 
   .lg\:max-w-screen-lg {

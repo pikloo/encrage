@@ -40,7 +40,7 @@ Version: 1.0
   }
 
   .main {
-    @apply custom-landscape:pt-20 pt-20 md:pt-28;
+    @apply custom-landscape:pt-16 pt-16 md:pt-20 lg:pt-28 bg-white;
   }
 
   h2 {
