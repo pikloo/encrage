@@ -43,12 +43,9 @@ const serieGallery = new Swiper(".gallery", {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
   },
-<<<<<<< HEAD
   // thumbs: {
   //   swiper: serieGalleryThumbnails,
   // },
-=======
->>>>>>> 0c058aab ('.')
   keyboard: {
     enabled: true,
   },
