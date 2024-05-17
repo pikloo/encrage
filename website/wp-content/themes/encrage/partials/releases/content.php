@@ -13,12 +13,12 @@ $default_post = match (true) {
 ?>
 <figure class="<?php if (isset($is_home)  || isset($is_member_page)) echo 'reveal' ?> relative group mx-auto max-w-sm break-inside p-4 bg-gray-200/30 hover:bg-gray-200/50 hover:scale-105 transition duration-500">
     <?php if (has_post_thumbnail(get_the_ID())) : ?>
-        <img src="<?= esc_url(get_the_post_thumbnail_url(get_the_ID(), 'medium_large')) ?>" alt="<?= the_title(); ?>" class="release cover-contain" />
+        <img src="<?= esc_url(get_the_post_thumbnail_url(get_the_ID(), 'medium_large')) ?>" alt="<?= the_title(); ?>" class="release cover-contain medium-zoom-image" />
     <?php endif; ?>
     <figcaption>
         <div class="xl:text-xl">
             <h3 class="mt-4">
-            <blockquote class='<?php if($default_post) echo 'indent-4 md:indent-6  italic relative before:not-italic before:content-["\275D"] before:font-caption before:text-3xl md:before:text-5xl before:text-gray-400 before:absolute before:-top-2 before:-left-5 md:before:-left-9' ?> mt-4 text-slate-600'><?= the_title(); ?></blockquote>
+            <blockquote class='<?php if($default_post) echo 'indent-4 custom-landscape:indent-4 md:indent-6  italic relative before:not-italic before:content-["\275D"] before:font-caption before:text-3xl custom-landscape:before:text-3xl md:before:text-5xl before:text-gray-400 before:absolute before:-top-2 before:-left-5 custom-landscape:before:-left-5 md:before:-left-9' ?> mt-4 text-slate-600'><?= the_title(); ?></blockquote>
             </h3>
             <span class="text-slate-500"><?= esc_attr(get_post_meta(get_the_ID(), 'year', true)); ?></span>
             <div class="mt-2">

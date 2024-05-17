@@ -38,11 +38,11 @@ $members = new WP_Query($queryArgs);
         <? endif; ?>
         <div class="<?php if (is_home() || is_page()) echo 'reveal' ?> profil flex flex-col justify-center items-center gap-4">
             <a href="<?= esc_url(get_permalink()); ?>">
-                <img class="<?php echo (is_home() || is_page() || isset($is_serie_single_page)) ?  'h-32 w-32 md:h-44 md:w-44 lg:h-56 lg:w-56 duration-500' : 'h-56 w-56'; ?> rounded-full object-contain <?php if (!get_the_post_thumbnail()) echo "border border-black" ?>" src=<?= esc_url($thumbnailUrl); ?> alt="" />
+                <img class="<?php echo (is_home() || is_page() || isset($is_serie_single_page)) ?  'h-32 w-32 custom-landscape:h-32 custom-landscape:w-32 md:h-44 md:w-44 lg:h-56 lg:w-56 duration-500' : 'h-56 w-56'; ?> rounded-full object-contain <?php if (!get_the_post_thumbnail()) echo "border border-black" ?>" src=<?= esc_url($thumbnailUrl); ?> alt="" />
             </a>
-            <div class="socials text-center text-sm lg:text-base">
+            <div class="socials text-center text-sm custom-landscape:text-sm lg:text-base">
                 <div class=" -translate-y-6 before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-black before:shadow-lg before:shadow-black/50 relative inline-block">
-                    <<?= is_single() ? 'h1' : 'h3' ?> class="<?php echo (is_home() || is_page()) ?  'first-letter:text-xl  md:text-xl md:first-letter:text-2xl' : 'text-xl'; if(is_single()) echo ' member-page-title'?> relative  font-medium uppercase text-white"><?php the_title(); ?></<?= is_single() ? 'h1' : 'h3' ?>>
+                    <<?= is_single() ? 'h1' : 'h3' ?> class="<?php echo (is_home() || is_page()) ?  'first-letter:text-xl custom-landscape:first-letter:text-xl md:text-xl md:first-letter:text-2xl' : 'text-xl custom-landscape:text-xl'; if(is_single()) echo ' member-page-title'?> relative  font-medium uppercase text-white"><?php the_title(); ?></<?= is_single() ? 'h1' : 'h3' ?>>
                 </div>
                 <ul class="<?php if (is_home() || is_page()) echo 'hidden' ?> text-center space-y-4">
                     <?php if (get_post_meta(get_the_ID(), 'insta', true)) : ?>
@@ -98,7 +98,7 @@ $members = new WP_Query($queryArgs);
             </div>
         </div>
         <?php if (isset($post_type) && $post_type == 'member') : ?>
-            <div class="reveal max-w-sm md:max-w-md mx-auto space-y-2 mt-6 content"><?php the_content(); ?></div>
+            <div class="reveal max-w-sm custom-landscape:max-w-sm md:max-w-md mx-auto space-y-2 mt-6 content"><?php the_content(); ?></div>
         </section>
     <?php endif; ?>
 <?php endwhile;

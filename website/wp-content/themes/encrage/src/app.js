@@ -4,8 +4,62 @@ const backToTop = () => {
 
 };
 
+
 const toTopButtons = document.querySelectorAll(".to-top");
 const imagesGallery = document.querySelectorAll(".gallery-img");
+const serieAnchorLink = document.querySelector(".menu-item[data-serie-anchor-link]");
+const aboutAnchorLink = document.querySelector(".menu-item[data-about-anchor-link]");
+
+const aboutCallback = function (entries) {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      aboutAnchorLink.setAttribute('aria-current', 'location');
+      serieAnchorLink.setAttribute('aria-current', 'false');
+    }
+    else {
+      serieAnchorLink.setAttribute('aria-current', 'location');
+      aboutAnchorLink.setAttribute('aria-current', 'false');
+    }
+  });
+};
+
+const aboutSerieSection = document.querySelector("#about");
+
+const aboutSerieSectionObserver = new IntersectionObserver(aboutCallback, {
+  rootMargin: '50px',
+  threshold: 1
+});
+
+
+if (aboutSerieSection) {
+  window.addEventListener("scroll", () => {
+    aboutSerieSectionObserver.observe(aboutSerieSection);
+  })
+
+}
+
+
+if (serieAnchorLink) {
+  serieAnchorLink.addEventListener("click", (e) => {
+    backToTop();
+    let link = e.currentTarget
+    link.querySelector('h2').classList.add("text-gray-500");
+    link.setAttribute('aria-current', 'location');
+    aboutAnchorLink.setAttribute('aria-current', 'false');
+    aboutAnchorLink.querySelector('h2').classList.remove("text-gray-500")
+  });
+}
+
+if (aboutAnchorLink) {
+  aboutAnchorLink.addEventListener('click', (e) => {
+    let link = e.currentTarget
+    link.querySelector('h2').classList.add("text-gray-500");
+    link.setAttribute('aria-current', 'location');
+    serieAnchorLink.setAttribute('aria-current', 'false');
+    serieAnchorLink.querySelector('h2').classList.remove("text-gray-500")
+  })
+}
+
 [...toTopButtons, ...imagesGallery].forEach(function (button) {
   button.addEventListener("click", backToTop);
 });
@@ -67,28 +121,28 @@ const screenHeight = window.screen.height;
 
 main.style.minHeight = `${screenHeight - footer.offsetHeight - header.offsetHeight}px`;
 
-//Titre fixe lorsqu'il arrive sous le logo(Page Single Série)
-const portfolioTitle = document.querySelector(".portfolio-title");
-const sliderActive = document.querySelector(".gallery");
+// //Titre fixe lorsqu'il arrive sous le logo(Page Single Série)
+// const portfolioTitle = document.querySelector(".portfolio-title");
+// const sliderActive = document.querySelector(".gallery");
 
-if (portfolioTitle) {
-  const basePosition = sliderActive.offsetHeight;
-  portfolioTitle.classList.add('md:absolute', 'md:top-36')
-  // portfolioTitle.setAttribute('style', `top:${basePosition}px; z-index:11; position:absolute;`);
+// if (portfolioTitle) {
+//   const basePosition = sliderActive.offsetHeight;
+//   portfolioTitle.classList.add('md:absolute', 'md:top-36')
+//   // portfolioTitle.setAttribute('style', `top:${basePosition}px; z-index:11; position:absolute;`);
 
-  document.addEventListener("scroll", (event) => {
-    if (portfolioTitle.getBoundingClientRect().top < header.offsetHeight + 150) {
-      portfolioTitle.classList.remove('md:absolute')
-      portfolioTitle.classList.add('md:fixed')
-    }
+//   document.addEventListener("scroll", (event) => {
+//     if (portfolioTitle.getBoundingClientRect().top < header.offsetHeight + 150) {
+//       portfolioTitle.classList.remove('md:absolute')
+//       portfolioTitle.classList.add('md:fixed')
+//     }
 
-    if (window.scrollY < basePosition - 20) {
-      portfolioTitle.classList.remove('md:fixed')
-      portfolioTitle.classList.add('md:absolute')
-    }
-  });
+//     if (window.scrollY < basePosition - 20) {
+//       portfolioTitle.classList.remove('md:fixed')
+//       portfolioTitle.classList.add('md:absolute')
+//     }
+//   });
 
-}
+// }
 
 //Scroll to photographers (home)
 const toDownButton = document.querySelector('.to-down');

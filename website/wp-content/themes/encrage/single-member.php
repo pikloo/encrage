@@ -18,7 +18,7 @@ $releases = new WP_Query($args);
 $has_releases = $releases->found_posts ?? false;
 
 ?>
-<main class="overflow-hidden pt-36 main">
+<main class="overflow-hidden main">
     <?php get_template_part('partials/member-informations', 'member-informations', [
         'post_type' => 'member'
     ]); ?>

@@ -22,7 +22,7 @@ $menu_legal = wp_nav_menu([
     <div class="grid grid-cols-1 md:grid-cols-3 justify-around gap-y-6 md:gap-y-0 mb-4 md:mb-10 md:items-center md:justify-items-center">
         <div>
             <img src="<?= get_template_directory_uri() ?>/assets/images/ancrage_logo.png" alt="<?= esc_html(get_bloginfo('description')) ?>" class="w-[200px] invert logo-site" />
-            <a mailto="bureau@encrage.photo">contact@encrage.photo</a>
+            <a href="mailto:contact@encrage.photo">contact@encrage.photo</a>
         </div>
         <?= $menu_main; ?>
         <div class="flex flex-col w-fit mx-auto">
