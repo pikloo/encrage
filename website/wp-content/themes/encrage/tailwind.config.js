@@ -1,12 +1,12 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
 	important: true,
-	content: [ './**/*.php', './src/**/*.{html,js}' ],
+	content: ['./**/*.php', './src/**/*.{html,js}'],
 	theme: {
 		extend: {
 			fontFamily: {
-				ibm: [ 'ArimoIBM Plex Sans', 'Arial', 'sans-serif' ],
-				caption : ['PT Serif Caption', 'Georgia', 'serif']
+				ibm: ['ArimoIBM Plex Sans', 'Arial', 'sans-serif'],
+				caption: ['PT Serif Caption', 'Georgia', 'serif']
 			},
 			keyframes: {
 				"slide-in-up": {
@@ -28,9 +28,14 @@ module.exports = {
 				}
 			},
 			animation: {
-                slideInUp: "slide-in-up 0.5s ease-in-out",
+				slideInUp: "slide-in-up 0.5s ease-in-out",
 				fadeIn: "fade-in 2s ease-in forwards",
-            },
+			},
+			screens: {
+				'custom-landscape': {
+					'raw': 'only screen and (max-width: 960px) and (orientation: landscape)'
+				},
+			}
 		},
 	},
 	plugins: [],
