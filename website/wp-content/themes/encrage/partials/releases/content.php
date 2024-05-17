@@ -18,7 +18,7 @@ $default_post = match (true) {
     <figcaption>
         <div class="xl:text-xl">
             <h3 class="mt-4">
-            <blockquote class='<?php if($default_post) echo 'indent-4 landscape:indent-4 md:indent-6  italic relative before:not-italic before:content-["\275D"] before:font-caption before:text-3xl landscape:before:text-3xl md:before:text-5xl before:text-gray-400 before:absolute before:-top-2 before:-left-5 landscape:before:-left-5 md:before:-left-9' ?> mt-4 text-slate-600'><?= the_title(); ?></blockquote>
+            <blockquote class='<?php if($default_post) echo 'indent-4 custom-landscape:indent-4 md:indent-6  italic relative before:not-italic before:content-["\275D"] before:font-caption before:text-3xl custom-landscape:before:text-3xl md:before:text-5xl before:text-gray-400 before:absolute before:-top-2 before:-left-5 custom-landscape:before:-left-5 md:before:-left-9' ?> mt-4 text-slate-600'><?= the_title(); ?></blockquote>
             </h3>
             <span class="text-slate-500"><?= esc_attr(get_post_meta(get_the_ID(), 'year', true)); ?></span>
             <div class="mt-2">

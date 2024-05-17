@@ -10,7 +10,7 @@ $args =  [
 $wp_query = new WP_Query($args);
 ?>
 <?php if ($wp_query->have_posts()) : ?>
-    <section class="container mx-auto p-4 landscape:p-4 md:p-10 h-fit reveal">
+    <section class="container mx-auto p-4 custom-landscape:p-4 md:p-10 h-fit reveal">
         <h2 class="section">nos actus</h2>
         <div class="swiper blogpost-carousel lg:max-w-screen-lg">
             <div class="swiper-wrapper h-fit">
@@ -31,7 +31,7 @@ $wp_query = new WP_Query($args);
                                     <?php endif; ?>
                                 </aside>
                                 <article class="max-w-sm">
-                                    <div class="text-justify text-md landscape:text-md lg:text-xl"><?= the_excerpt(); ?></div>
+                                    <div class="text-justify text-md custom-landscape:text-md lg:text-xl"><?= the_excerpt(); ?></div>
                                 </article>
                             </main>
                             <div class="mt-4 flex items-center">

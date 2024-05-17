@@ -611,7 +611,7 @@ html {
   }
 }
 
-@media (orientation: landscape) {
+@media only screen and (max-width: 960px) and (orientation: landscape) {
   .main {
     padding-top: 5rem;
   }
@@ -654,7 +654,7 @@ h2::first-letter {
   }
 }
 
-@media (orientation: landscape) {
+@media only screen and (max-width: 960px) and (orientation: landscape) {
   h2 {
     font-size: 1.5rem;
     line-height: 2rem;
@@ -709,7 +709,7 @@ h2::first-letter {
   }
 }
 
-@media (orientation: landscape) {
+@media only screen and (max-width: 960px) and (orientation: landscape) {
   .serie-nav h2 {
     font-size: 1.125rem;
     line-height: 1.75rem;
@@ -782,7 +782,7 @@ h2.section::after {
   }
 }
 
-@media (orientation: landscape) {
+@media only screen and (max-width: 960px) and (orientation: landscape) {
   h2.section {
     margin-left: auto;
     margin-right: auto;
@@ -820,7 +820,7 @@ h1::first-letter {
   }
 }
 
-@media (orientation: landscape) {
+@media only screen and (max-width: 960px) and (orientation: landscape) {
   h1 {
     font-size: 1.875rem;
     line-height: 2.25rem;
@@ -859,7 +859,7 @@ h1.main-title::first-letter {
   }
 }
 
-@media (orientation: landscape) {
+@media only screen and (max-width: 960px) and (orientation: landscape) {
   h1.main-title {
     font-size: 22px;
   }
@@ -896,7 +896,7 @@ h1.member-page-title::first-letter {
   }
 }
 
-@media (orientation: landscape) {
+@media only screen and (max-width: 960px) and (orientation: landscape) {
   h1.member-page-title {
     font-size: 1.5rem;
     line-height: 2rem;
@@ -984,7 +984,7 @@ h3::first-letter {
   }
 }
 
-@media (orientation: landscape) {
+@media only screen and (max-width: 960px) and (orientation: landscape) {
   .to-down, .to-top {
     height: 2.5rem;
     width: 2.5rem;
@@ -1031,7 +1031,7 @@ h3::first-letter {
   }
 }
 
-@media (orientation: landscape) {
+@media only screen and (max-width: 960px) and (orientation: landscape) {
   .portfolio-title h1 {
     font-size: 0.875rem;
     line-height: 1.25rem;
@@ -1068,7 +1068,7 @@ h3::first-letter {
   }
 }
 
-@media (orientation: landscape) {
+@media only screen and (max-width: 960px) and (orientation: landscape) {
   .content {
     font-size: 1rem;
     line-height: 1.5rem;
@@ -1133,7 +1133,7 @@ h3::first-letter {
   }
 }
 
-@media (orientation: landscape) {
+@media only screen and (max-width: 960px) and (orientation: landscape) {
   .button {
     font-size: 1rem;
     line-height: 1.5rem;
@@ -1199,7 +1199,7 @@ h3::first-letter {
   }
 }
 
-@media (orientation: landscape) {
+@media only screen and (max-width: 960px) and (orientation: landscape) {
   .menu-toggle {
     padding: 1.5rem;
   }
@@ -1228,7 +1228,7 @@ h3::first-letter {
   }
 }
 
-@media (orientation: landscape) {
+@media only screen and (max-width: 960px) and (orientation: landscape) {
   .menu-toggle .icon {
     height: 1rem;
     width: 1rem;
@@ -1256,7 +1256,7 @@ h3::first-letter {
   }
 }
 
-@media (orientation: landscape) {
+@media only screen and (max-width: 960px) and (orientation: landscape) {
   .icon-menu-toggle {
     height: 1rem;
     width: 1rem;
@@ -1332,7 +1332,7 @@ h3::first-letter {
   }
 }
 
-@media (orientation: landscape) {
+@media only screen and (max-width: 960px) and (orientation: landscape) {
   .main-menu {
     flex-direction: column;
     -moz-column-gap: 0px;
@@ -1360,7 +1360,7 @@ h3::first-letter {
   }
 }
 
-@media (orientation: landscape) {
+@media only screen and (max-width: 960px) and (orientation: landscape) {
   .socials-links svg {
     height: 2rem;
     width: 2rem;
@@ -1965,16 +1965,8 @@ h3::first-letter {
   padding-left: 1rem !important;
 }
 
-.pt-20 {
-  padding-top: 5rem !important;
-}
-
 .pt-28 {
   padding-top: 7rem !important;
-}
-
-.pt-36 {
-  padding-top: 9rem !important;
 }
 
 .text-center {
@@ -2418,10 +2410,6 @@ h3::first-letter {
     padding-top: 5rem !important;
   }
 
-  .md\:pt-36 {
-    padding-top: 9rem !important;
-  }
-
   .md\:indent-6 {
     text-indent: 1.5rem !important;
   }
@@ -2457,12 +2445,6 @@ h3::first-letter {
     content: var(--tw-content) !important;
     font-size: 3rem !important;
     line-height: 1 !important;
-  }
-
-  @media (min-width: 1024px) {
-    .md\:lg\:w-\[150px\] {
-      width: 150px !important;
-    }
   }
 }
 
@@ -2586,6 +2568,14 @@ h3::first-letter {
   }
 }
 
+@media (min-width: 768px) {
+  @media (min-width: 1024px) {
+    .md\:lg\:w-\[150px\] {
+      width: 150px !important;
+    }
+  }
+}
+
 @media (min-width: 1280px) {
   .xl\:absolute {
     position: absolute !important;
@@ -2691,81 +2681,81 @@ h3::first-letter {
   }
 }
 
-@media (orientation: landscape) {
-  .landscape\:h-\[calc\(100vh-5rem\)\] {
-    height: calc(100vh - 5rem) !important;
-  }
-
-  .landscape\:h-32 {
+@media only screen and (max-width: 960px) and (orientation: landscape) {
+  .custom-landscape\:h-32 {
     height: 8rem !important;
   }
 
-  .landscape\:w-32 {
+  .custom-landscape\:h-\[calc\(100vh-5rem\)\] {
+    height: calc(100vh - 5rem) !important;
+  }
+
+  .custom-landscape\:w-32 {
     width: 8rem !important;
   }
 
-  .landscape\:max-w-sm {
+  .custom-landscape\:max-w-sm {
     max-width: 24rem !important;
   }
 
-  .landscape\:flex-row {
+  .custom-landscape\:flex-row {
     flex-direction: row !important;
   }
 
-  .landscape\:gap-x-10 {
+  .custom-landscape\:gap-x-10 {
     -moz-column-gap: 2.5rem !important;
          column-gap: 2.5rem !important;
   }
 
-  .landscape\:p-0 {
+  .custom-landscape\:p-0 {
     padding: 0px !important;
   }
 
-  .landscape\:p-4 {
+  .custom-landscape\:p-4 {
     padding: 1rem !important;
   }
 
-  .landscape\:indent-4 {
+  .custom-landscape\:indent-4 {
     text-indent: 1rem !important;
   }
 
-  .landscape\:text-base {
+  .custom-landscape\:text-base {
     font-size: 1rem !important;
     line-height: 1.5rem !important;
   }
 
-  .landscape\:text-lg {
+  .custom-landscape\:text-lg {
     font-size: 1.125rem !important;
     line-height: 1.75rem !important;
   }
 
-  .landscape\:text-sm {
+  .custom-landscape\:text-sm {
     font-size: 0.875rem !important;
     line-height: 1.25rem !important;
   }
 
-  .landscape\:text-xl {
+  .custom-landscape\:text-xl {
     font-size: 1.25rem !important;
     line-height: 1.75rem !important;
   }
 
-  .landscape\:first-letter\:text-xl::first-letter {
+  .custom-landscape\:first-letter\:text-xl::first-letter {
     font-size: 1.25rem !important;
     line-height: 1.75rem !important;
   }
 
-  .landscape\:before\:-left-5::before {
+  .custom-landscape\:before\:-left-5::before {
     content: var(--tw-content) !important;
     left: -1.25rem !important;
   }
 
-  .landscape\:before\:text-3xl::before {
+  .custom-landscape\:before\:text-3xl::before {
     content: var(--tw-content) !important;
     font-size: 1.875rem !important;
     line-height: 2.25rem !important;
   }
 
-  .landscape\:after\:hidden::after {
+  .custom-landscape\:after\:hidden::after {
     content: var(--tw-content) !important;
     display: none !important;
   }
