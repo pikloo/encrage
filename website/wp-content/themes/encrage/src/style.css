@@ -1892,6 +1892,16 @@ h3::first-letter {
      object-fit: cover !important;
 }
 
+.object-none {
+  -o-object-fit: none !important;
+     object-fit: none !important;
+}
+
+.object-scale-down {
+  -o-object-fit: scale-down !important;
+     object-fit: scale-down !important;
+}
+
 .p-0 {
   padding: 0px !important;
 }
