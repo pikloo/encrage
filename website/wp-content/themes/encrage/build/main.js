@@ -11128,22 +11128,18 @@ if (serieAnchorLink) {
   serieAnchorLink.addEventListener("click", function (e) {
     backToTop();
     var link = e.currentTarget;
-    link.querySelector('h2').classList.add("text-gray-500");
     link.setAttribute('aria-current', 'location');
     aboutAnchorLink.setAttribute('aria-current', 'false');
-    aboutAnchorLink.querySelector('h2').classList.remove("text-gray-500");
   });
 }
 if (aboutAnchorLink) {
   aboutAnchorLink.addEventListener('click', function (e) {
     e.preventDefault();
     var link = e.currentTarget;
-    link.querySelector('h2').classList.add("text-gray-500");
     link.setAttribute('aria-current', 'location');
     serieAnchorLink.setAttribute('aria-current', 'false');
-    serieAnchorLink.querySelector('h2').classList.remove("text-gray-500");
     window.scrollTo({
-      top: aboutSerieSection.offsetTop - header.offsetHeight,
+      top: aboutSerieSection.offsetTop - (header.offsetHeight + 150),
       behavior: "smooth"
     });
   });

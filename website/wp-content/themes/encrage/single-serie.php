@@ -21,14 +21,14 @@ $loop = new WP_Query($args);
         <!-- portfolio-title z-[11] md:top-28 text-white before:block before:absolute before:-inset-1 before:skew-y-3 before:bg-black before:shadow-lg before:shadow-black/50 inline-block -->
         <div class="flex flex-col justify-between">
             <section class="relative h-[calc(100dvh-5rem)] custom-landscape:h-[calc(100dvh-5rem)] md:h-[calc(100dvh-7rem)] flex flex-col justify-evenly">
-                <div class="portfolio-title px-2 md:px-0 w-full justify-center items-center bg-white flex md:z-[11] gap-x-4">
+                <div class="portfolio-title fixed bg-white/60 py-2 top-16 custom-landscape:top-16 md:top-28 px-2 md:px-0 w-full justify-center items-center flex z-[11] gap-x-4">
                     <h1 class="p-0 mt-0"><?php the_title(); ?></h1>
                     <div class="before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-black before:shadow-lg before:shadow-black/50 relative inline-block">
                         <span class="text-sm custom-landscape:text-sm sm:text-lg md:text-xl uppercase relative text-white"><?= esc_attr(get_the_title($photographer)) ?></span>
                     </div>
                     <p class="text-gray-500 text-sm custom-landscape:text-sm sm:text-lg md:text-xl relative"><?= esc_attr(get_post_meta(get_the_ID(), 'year', true)) ?></p>
                 </div>
-                <div class="swiper gallery h-[70vh] relative w-full">
+                <div class="swiper gallery lg:mt-4 h-[70vh] relative w-full">
                     <div class="swiper-wrapper items-center h-full">
                         <?php foreach ($url_array as $image_url) : ?>
                             <div class="swiper-slide lg:w-fit">
@@ -46,7 +46,7 @@ $loop = new WP_Query($args);
                         </a>
                     </li>
                     <li>
-                        <a aria-current="false" data-about-anchor-link class="menu-item inline-block w-fit">
+                        <a href="#about" aria-current="false" data-about-anchor-link class="menu-item inline-block w-fit">
                             <h2 class="w-fit font-bold">À propos</h2>
                         </a>
                     </li>
