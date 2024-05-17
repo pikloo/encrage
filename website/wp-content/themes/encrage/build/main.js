@@ -11287,9 +11287,6 @@ var serieGallery = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"](".g
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev"
   },
-  // thumbs: {
-  //   swiper: serieGalleryThumbnails,
-  // },
   keyboard: {
     enabled: true
   },

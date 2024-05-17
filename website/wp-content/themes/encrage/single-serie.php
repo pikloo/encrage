@@ -28,11 +28,11 @@ $loop = new WP_Query($args);
                     </div>
                     <p class="text-gray-500 text-sm custom-landscape:text-sm sm:text-lg md:text-xl relative"><?= esc_attr(get_post_meta(get_the_ID(), 'year', true)) ?></p>
                 </div>
-                <div class="swiper gallery h-[70vh] w-full relative">
-                    <div class="swiper-wrapper items-center h-full lg:max-w-screen-lg">
+                <div class="swiper gallery h-[70vh] relative w-full">
+                    <div class="swiper-wrapper items-center h-full">
                         <?php foreach ($url_array as $image_url) : ?>
-                            <div class="swiper-slide ">
-                                <img class="gallery-img h-full object-contain mx-auto" src="<?= $image_url; ?>" alt="" />
+                            <div class="swiper-slide">
+                                <img class="gallery-img h-[70vh] object-contain mx-auto" src="<?= $image_url; ?>" alt="" />
                                 <div class="swiper-lazy-preloader h-auto swiper-lazy-preloader-white"></div>
                             </div>
                         <?php endforeach; ?>
