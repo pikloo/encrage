@@ -172,9 +172,6 @@ if(!function_exists('pippin_get_image_id')){
     }
 }
 
-
-
-
 require_once WP_CONTENT_DIR . '/themes/encrage/inc/post-types/member.php';
 require_once WP_CONTENT_DIR . '/themes/encrage/inc/post-types/serie.php';
 require_once WP_CONTENT_DIR . '/themes/encrage/inc/post-types/release.php';

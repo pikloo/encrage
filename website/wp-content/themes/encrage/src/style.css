@@ -1458,6 +1458,18 @@ h3::first-letter {
   transition-duration: 150ms;
 }
 
+.sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border-width: 0 !important;
+}
+
 .static {
   position: static !important;
 }
@@ -1822,6 +1834,12 @@ h3::first-letter {
   --tw-space-y-reverse: 0 !important;
   margin-top: calc(1.5rem * calc(1 - var(--tw-space-y-reverse))) !important;
   margin-bottom: calc(1.5rem * var(--tw-space-y-reverse)) !important;
+}
+
+.space-y-10 > :not([hidden]) ~ :not([hidden]) {
+  --tw-space-y-reverse: 0 !important;
+  margin-top: calc(2.5rem * calc(1 - var(--tw-space-y-reverse))) !important;
+  margin-bottom: calc(2.5rem * var(--tw-space-y-reverse)) !important;
 }
 
 .overflow-hidden {

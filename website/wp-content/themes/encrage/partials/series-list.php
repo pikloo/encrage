@@ -52,9 +52,9 @@ $wp_query = new WP_Query($args);
             </g>
         </svg>
         <?php if ($is_home_page) : ?>
-            <a class="button" href="<?= esc_url(get_post_type_archive_link('serie'))?>" >Toutes les séries</a> 
+            <a aria-label="Voir plus de publications" class="button" href="<?= esc_url(get_post_type_archive_link('serie'))?>" >Toutes les séries</a> 
             <?php elseif (!$is_home_page && $wp_query->max_num_pages > 1) : ?>
-            <button class="button load-more" type="button">plus de séries</button> 
+            <button aria-label="Charger plus de publications" class="button load-more" type="button">plus de séries</button> 
         <?php endif; ?>
     </div>
 </section>

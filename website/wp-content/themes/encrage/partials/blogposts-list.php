@@ -35,7 +35,7 @@ $wp_query = new WP_Query($args);
                                 </article>
                             </main>
                             <div class="mt-4 flex items-center">
-                                <a class="button" href="<?= esc_url(get_permalink()); ?>">lire la suite</a>
+                                <a class="button" href="<?= esc_url(get_permalink()); ?>" aria-label="Lire la suite de <?= the_title(); ?> ">lire la suite</a>
                             </div>
                         </div>
                         <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>

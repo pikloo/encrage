@@ -18,23 +18,23 @@ $default_post = match (true) {
     <figcaption>
         <div class="xl:text-xl">
             <h3 class="mt-4">
-            <blockquote class='<?php if($default_post) echo 'indent-4 custom-landscape:indent-4 md:indent-6  italic relative before:not-italic before:content-["\275D"] before:font-caption before:text-3xl custom-landscape:before:text-3xl md:before:text-5xl before:text-gray-400 before:absolute before:-top-2 before:-left-5 custom-landscape:before:-left-5 md:before:-left-9' ?> mt-4 text-slate-600'><?= the_title(); ?></blockquote>
+                <blockquote class='<?php if ($default_post) echo 'indent-4 custom-landscape:indent-4 md:indent-6  italic relative before:not-italic before:content-["\275D"] before:font-caption before:text-3xl custom-landscape:before:text-3xl md:before:text-5xl before:text-gray-400 before:absolute before:-top-2 before:-left-5 custom-landscape:before:-left-5 md:before:-left-9' ?> mt-4 text-slate-600'><?= the_title(); ?></blockquote>
             </h3>
             <span class="text-slate-500"><?= esc_attr(get_post_meta(get_the_ID(), 'year', true)); ?></span>
             <div class="mt-2">
-            <span class="<?php if ((!isset($is_member_page) || !$is_member_page) && get_post_meta(get_the_ID(), 'place', true)) echo 'after:h-[1px] after:bg-black
+                <span class="<?php if ((!isset($is_member_page) || !$is_member_page) && get_post_meta(get_the_ID(), 'place', true)) echo 'after:h-[1px] after:bg-black
               after:inline-block after:relative after:w-[20px] after:align-middle after:ml-1' ?>"><?= esc_attr(get_post_meta(get_the_ID(), 'place', true)); ?></span>
                 <?php if (!isset($is_member_page) || !$is_member_page) :  ?>
-                    <a href="<?= esc_url(get_permalink(get_post_meta(get_the_ID(), 'photographer', true))); ?>">
-                        <span class="<?php if($default_post) echo 'ml-2'?> before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-black before:shadow-lg before:shadow-black/50 relative inline-block">
+                    <a aria-label="Se rendre sur la page de <?= esc_html(get_the_title(get_post_meta(get_the_ID(), 'photographer', true))); ?>" href="<?= esc_url(get_permalink(get_post_meta(get_the_ID(), 'photographer', true))); ?>">
+                        <span class="<?php if ($default_post) echo 'ml-2' ?> before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-black before:shadow-lg before:shadow-black/50 relative inline-block">
                             <span class="relative text-white uppercase"><?= esc_html(get_the_title(get_post_meta(get_the_ID(), 'photographer', true))); ?></span>
                         </span>
                     </a>
                 <?php endif; ?>
             </div>
-            
-            
-            
+
+
+
         </div>
     </figcaption>
 </figure>

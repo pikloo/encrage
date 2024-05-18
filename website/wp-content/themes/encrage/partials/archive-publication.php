@@ -24,7 +24,7 @@ extract($args);
         </select>
         <button class="button mt-6 mx-0 sm:inline-block sm:ml-6" type="submit">Filtrer</button>
     </form>
-    <div class="mgrid sm:masonry-sm md:masonry-md <?php if($slug == 'releases') echo 'xl:masonry-xl'; ?> space-y-6 px-4">
+    <div class="mgrid sm:masonry-sm md:masonry-md <?php if($slug == 'releases') echo 'xl:masonry-xl'; ?> space-y-6 px-4" aria-live="polite" aria-atomic="true" class="sr-only">
         <?php if ($query->have_posts()) : ?>
             <?php while ($query->have_posts()) : $query->the_post(); ?>
                 <?php

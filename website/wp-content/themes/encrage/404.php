@@ -13,7 +13,7 @@ get_template_part('partials/header', 'header', [
         <p>Vous vous êtes perdu(e) ?</p>
         <p>Pas de panique !</p>
     </div>
-    <a href="<?= esc_url(get_home_url()) ?>" class="button ">Revenez à notre page d'accueil</a>
+    <a href="<?= esc_url(get_home_url()) ?>" aria-label="Revenez à notre page d'accueil" class="button ">Revenez à notre page d'accueil</a>
 </main>
 
 <?php

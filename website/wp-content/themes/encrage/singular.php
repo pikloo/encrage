@@ -41,17 +41,17 @@ $loop = new WP_Query($args);
                     <div class="py-6 space-y-6 text-lg md:text-xl lg:text-2xl text-center duration-500">
                         <div>
                             <p>Retrouvez nous sur</p>
-                            <a href="https://www.pixpalace.com/" target="_blank"><img src="<?= get_template_directory_uri() ?>/assets/images/logo_pixpalace.png" alt="Retrouvez aussi nos photos sur PixPalace" class="w-[100px] md:lg:w-[150px] lg:w-[175px] mx-auto duration-500" /></a>
+                            <a href="https://www.pixpalace.com/" aria-label="Retrouvez nous sur PixPalace" target="_blank"><img src="<?= get_template_directory_uri() ?>/assets/images/logo_pixpalace.png" alt="Retrouvez nous sur PixPalace" class="w-[100px] md:lg:w-[150px] lg:w-[175px] mx-auto duration-500" /></a>
                         </div>
                         <div>
                             <p>Ou sur nos réseaux sociaux</p>
                             <ul class="flex gap-x-2 mx-auto w-fit socials-links">
-                                <li><a href="https://www.instagram.com/encrage_photo" target="_blank"><svg viewBox="0 0 512.00096 512.00096" width="24" height="24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" id="fi_1077042">
+                                <li><a aria-label="Retrouvez nous sur Instagram" href="https://www.instagram.com/encrage_photo" target="_blank"><svg viewBox="0 0 512.00096 512.00096" width="24" height="24" fill="currentColor" xmlns="http://www.w3.org/2000/svg" id="fi_1077042">
                                             <path d="m373.40625 0h-234.8125c-76.421875 0-138.59375 62.171875-138.59375 138.59375v234.816406c0 76.417969 62.171875 138.589844 138.59375 138.589844h234.816406c76.417969 0 138.589844-62.171875 138.589844-138.589844v-234.816406c0-76.421875-62.171875-138.59375-138.59375-138.59375zm108.578125 373.410156c0 59.867188-48.707031 108.574219-108.578125 108.574219h-234.8125c-59.871094 0-108.578125-48.707031-108.578125-108.574219v-234.816406c0-59.871094 48.707031-108.578125 108.578125-108.578125h234.816406c59.867188 0 108.574219 48.707031 108.574219 108.578125zm0 0"></path>
                                             <path d="m256 116.003906c-77.195312 0-139.996094 62.800782-139.996094 139.996094s62.800782 139.996094 139.996094 139.996094 139.996094-62.800782 139.996094-139.996094-62.800782-139.996094-139.996094-139.996094zm0 249.976563c-60.640625 0-109.980469-49.335938-109.980469-109.980469 0-60.640625 49.339844-109.980469 109.980469-109.980469 60.644531 0 109.980469 49.339844 109.980469 109.980469 0 60.644531-49.335938 109.980469-109.980469 109.980469zm0 0"></path>
                                             <path d="m399.34375 66.285156c-22.8125 0-41.367188 18.558594-41.367188 41.367188 0 22.8125 18.554688 41.371094 41.367188 41.371094s41.371094-18.558594 41.371094-41.371094-18.558594-41.367188-41.371094-41.367188zm0 52.71875c-6.257812 0-11.351562-5.09375-11.351562-11.351562 0-6.261719 5.09375-11.351563 11.351562-11.351563 6.261719 0 11.355469 5.089844 11.355469 11.351563 0 6.257812-5.09375 11.351562-11.355469 11.351562zm0 0"></path>
                                         </svg></a></li>
-                                <li><a href="https://www.facebook.com/encrage.photo" target="_blank">
+                                <li><a aria-label="Retrouvez nous sur Facebook" href="https://www.facebook.com/encrage.photo" target="_blank">
                                         <svg version="1.1" id="fi_739237" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
                                             <g>
                                                 <g>
@@ -100,7 +100,7 @@ $loop = new WP_Query($args);
                                             </g>
                                         </svg>
                                     </a></li>
-                                <li><a href="https://twitter.com/encrage_photo" target="_blank"><svg id="fi_5968958" width="24" height="24" fill="currentColor" enable-background="new 0 0 1226.37 1226.37" viewBox="0 0 1226.37 1226.37" xmlns="http://www.w3.org/2000/svg">
+                                <li><a aria-label="Retrouvez nous sur X" href="https://twitter.com/encrage_photo" target="_blank"><svg id="fi_5968958" width="24" height="24" fill="currentColor" enable-background="new 0 0 1226.37 1226.37" viewBox="0 0 1226.37 1226.37" xmlns="http://www.w3.org/2000/svg">
                                             <path d="m727.348 519.284 446.727-519.284h-105.86l-387.893 450.887-309.809-450.887h-357.328l468.492 681.821-468.492 544.549h105.866l409.625-476.152 327.181 476.152h357.328l-485.863-707.086zm-144.998 168.544-47.468-67.894-377.686-540.24h162.604l304.797 435.991 47.468 67.894 396.2 566.721h-162.604l-323.311-462.446z"></path>
                                             <g></g>
                                             <g></g>
