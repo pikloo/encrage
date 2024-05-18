@@ -1,6 +1,11 @@
 <?php
 get_header();
-get_template_part('partials/header', 'header');
+$logo_site = get_option('encrage_theme_options')['encrage_logo'];
+$logo_site_attachment_id = $logo_site ? pippin_get_image_id($logo_site) : null; 
+
+get_template_part('partials/header', 'header', [
+    'logo_site_attachment_id' => $logo_site_attachment_id
+]);
 $args = array(
     'post_type' => 'release',
     'orderby' => 'year',
@@ -35,6 +40,8 @@ $has_releases = $releases->found_posts ?? false;
     } ?>
 </main>
 <?php
-get_template_part('partials/footer', 'footer');
+get_template_part('partials/footer', 'footer', [
+    'logo_site_attachment_id' => $logo_site_attachment_id
+]);
 get_footer();
 ?>
