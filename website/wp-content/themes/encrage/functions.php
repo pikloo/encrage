@@ -164,6 +164,15 @@ if (!function_exists('custom_length_excerpt')) {
     }
 }
 
+if(!function_exists('pippin_get_image_id')){
+    function pippin_get_image_id($image_url) {
+        global $wpdb;
+        $attachment = $wpdb->get_col($wpdb->prepare("SELECT ID FROM $wpdb->posts WHERE guid='%s';", $image_url )); 
+            return $attachment[0]; 
+    }
+}
+
+
 
 
 require_once WP_CONTENT_DIR . '/themes/encrage/inc/post-types/member.php';

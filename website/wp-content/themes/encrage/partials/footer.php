@@ -15,13 +15,16 @@ $menu_legal = wp_nav_menu([
     'container_aria_label' => 'Pages légales',
 ]);
 
+$logo_site = get_option('encrage_theme_options')['encrage_logo'];
+
+$logo_site_attachment_id = $logo_site ? pippin_get_image_id($logo_site) : null; 
 
 ?>
 
 <footer class="bg-black text-white p-6 md:pt-10">
     <div class="grid grid-cols-1 md:grid-cols-3 justify-around gap-y-6 md:gap-y-0 mb-4 md:mb-10 md:items-center md:justify-items-center">
         <div>
-            <img src="<?= get_template_directory_uri() ?>/assets/images/ancrage_logo.png" alt="<?= esc_html(get_bloginfo('description')) ?>" class="w-[200px] invert logo-site" />
+            <a href=<?= home_url(); ?>><img src="<?= wp_get_attachment_image_url($logo_site_attachment_id, 'medium'); ?>" alt="<?= esc_html(get_bloginfo('description')) ?>" class="w-[200px] invert logo-site" /></a>
             <a href="mailto:contact@encrage.photo">contact@encrage.photo</a>
         </div>
         <?= $menu_main; ?>

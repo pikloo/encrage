@@ -47,6 +47,14 @@
     width: fit-content;
 }
 
+#image-single-wrapper .image_container {
+    margin-right: 10px;
+}
+
+#image-single-preview-wrapper{
+    display: inline-block;
+}
+
 .button.remove {
     background: none;
     color: #f1f1f1;

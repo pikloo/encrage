@@ -79,21 +79,19 @@ if (!function_exists('encrage_register_settings_logo')) {
         );
 
 
-        // add_settings_field(
-        //     'encrage_logo',
-        //     'Logo',
-        //     'encrage_render_logo_field',
-        //     'encrage_theme_options',
-        //     'encrage_general_section'
-        // );
-        
-        // register_setting(
-        //     'encrage_theme_options',
-        //     'encrage_logo',
-        //     'encrage_sanitize_theme_options'
-        // );
+        add_settings_field(
+            'encrage_logo',
+            'Logo',
+            'encrage_render_logo_field',
+            'encrage_theme_options',
+            'encrage_general_section'
+        );
 
-        
+        register_setting(
+            'encrage_theme_options',
+            'encrage_logo',
+            // 'encrage_handle_file_upload'
+        );
     }
 }
 
@@ -125,15 +123,13 @@ if (!function_exists('encrage_register_settings_slider')) {
             'encrage_home_section'
         );
 
-        
-       
+
+
         register_setting(
             'encrage_theme_options',
             'encrage_theme_options',
             // 'encrage_sanitize_theme_options'
         );
-
-        
     }
 }
 
@@ -158,6 +154,7 @@ if (!function_exists('encrage_sanitize_theme_options')) {
     }
 }
 
+
 if (!function_exists('encrage_render_general_section')) {
     function encrage_render_general_section()
     {
@@ -175,52 +172,20 @@ if (!function_exists('encrage_render_home_section')) {
 if (!function_exists('encrage_render_logo_field')) {
     function encrage_render_logo_field()
     {
-        $options = get_option('encrage_logo');
+        $options = get_option('encrage_theme_options');
         $logo = isset($options['encrage_logo']) ? $options['encrage_logo'] : '';
     ?>
-        <div id="logo_wrapper">
-            <div id="img_box_container">
-                <?php
-                if (!empty($logo)) {
-                    // for ($i = 0; $i < count($slider); $i++) {
-                    //     if ($slider[$i] !== '') {
-                ?>
-                            <div id="image-single-wrapper">
-                                <img style="width:300px" src=<?= $logo ?>/><div style="position:relative"><span class="button remove-single" onclick="remove_img(this, true)" title="Supprimer"><i class="fas fa-trash-alt"></i> Supprimer</span></div></div>
-                            
-                            <!-- <div class="gallery_single_row dolu">
-                                <div class="gallery_area image_container ">
-                                    <img class="gallery_img_img" src="<?php esc_html_e($logo); ?>" height="55" width="55" onclick="open_media_uploader_image_this(this)" />
-                                    <input type="hidden" class="meta_image_url" name="encrage_theme_options[encrage_logo]" value="<?php esc_html_e($logo) ?>" />
-                                </div>
-                                <div class="gallery_area">
-                                    <span class="button remove" onclick="remove_img(this)" title="Supprimer"><i class="fas fa-trash-alt"></i></span>
-                                </div>
-                                <div class="clear" />
-                            </div> -->
-            </div>
-<?php
-                        }
-                //     }
-                // }
-?>
-        </div>
-        <div style="display:none" id="master_box">
-            <div class="gallery_single_row">
-                <div class="gallery_area image_container" onclick="open_media_uploader_image(this)">
-                    <input class="meta_image_url" value="" type="hidden" name="encrage_theme_options[encrage_logo]" />
-                </div>
-                <div class="gallery_area">
-                    <span class="button remove" onclick="remove_img(this)" title="Supprimer"><i class="fas fa-trash-alt"></i></span>
-                </div>
-                <div class="clear"></div>
-            </div>
-        </div>
-        <?php if (empty($logo)) : ?>
-        <div id="add_gallery_single_row">
+        <div id="image-single-wrapper">
+            <input type="hidden" name="encrage_theme_options[encrage_logo]" value="<?php echo esc_attr($logo); ?>">
             <input class="button add" type="button" value="+" onclick="open_media_uploader_image_alone();" title="Add image" />
-        </div>
-        <?php endif;?>
+            <!-- <input type="button" id="upload_image_button" onclick="open_media_uploader_image_alone()" class="button add" value="Upload Image"> -->
+            <div id="image-single-preview-wrapper">
+            <img src="<?php echo esc_attr($logo); ?>" style="max-width: 200px;" id="custom_image_preview">
+            <?php if($logo) : ?>
+                <div style="position:relative"><span class="button remove-single" onclick="remove_img(this, true)" title="Supprimer"><i class="fas fa-trash-alt"></i> Supprimer</span></div>
+            <?php endif; ?>
+            </div>
+            
         </div>
     <?php
 

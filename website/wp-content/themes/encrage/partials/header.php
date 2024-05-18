@@ -2,6 +2,9 @@
 $is_home_page = is_front_page() && is_home();
 $bg = $is_home_page || 'serie' == get_post_type() ? 'bg-white/70' : 'bg-white';
 $isSinglePortfolio = 'serie' == get_post_type() && is_single();
+$logo_site = get_option('encrage_theme_options')['encrage_logo'];
+
+$logo_site_attachment_id = $logo_site ? pippin_get_image_id($logo_site) : null; 
 
 $membersArgs =  [
   'post_type' => 'member',
@@ -32,7 +35,7 @@ $menu_main = wp_nav_menu([
         </g>
       </svg>
     </button>
-    <a class="z-20 bg-white w-full custom-landscape:w-full lg:w-fit custom-landscape:p-0 lg:py-6" href=<?= home_url(); ?>><img src="<?= get_template_directory_uri(); ?>/assets/images/ancrage_logo.png" alt="<?= esc_html(get_bloginfo('description')) ?> " class="w-[150px] custom-landscape:w-[150px] md:w-[200px] lg:w-[250px] logo-site mx-auto lg:px-10 lg:m-0" /></a>
+    <a class="z-20 bg-white w-full custom-landscape:w-full lg:w-fit custom-landscape:p-0 lg:py-6" href=<?= home_url(); ?>><img src="<?= wp_get_attachment_image_url($logo_site_attachment_id, 'medium'); ?>" alt="<?= esc_html(get_bloginfo('description')) ?> " class="w-[150px] custom-landscape:w-[150px] md:w-[200px] lg:w-[250px] logo-site mx-auto lg:px-10 lg:m-0" /></a>
       <div class="hidden lg:flex items-center lg:text-2xl menu-full bg-white">
         <?= $menu_main; ?>
         <!-- photographes -->
