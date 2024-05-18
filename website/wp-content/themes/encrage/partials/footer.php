@@ -1,4 +1,5 @@
 <?php
+extract($args);
 $menu_main = wp_nav_menu([
     'menu' => 'Main',
     'container' => 'ul',
@@ -14,10 +15,6 @@ $menu_legal = wp_nav_menu([
     'echo' => false,
     'container_aria_label' => 'Pages légales',
 ]);
-
-$logo_site = get_option('encrage_theme_options')['encrage_logo'];
-
-$logo_site_attachment_id = $logo_site ? pippin_get_image_id($logo_site) : null; 
 
 ?>
 

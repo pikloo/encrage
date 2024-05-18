@@ -1,10 +1,8 @@
 <?php
+extract($args);
 $is_home_page = is_front_page() && is_home();
 $bg = $is_home_page || 'serie' == get_post_type() ? 'bg-white/70' : 'bg-white';
 $isSinglePortfolio = 'serie' == get_post_type() && is_single();
-$logo_site = get_option('encrage_theme_options')['encrage_logo'];
-
-$logo_site_attachment_id = $logo_site ? pippin_get_image_id($logo_site) : null; 
 
 $membersArgs =  [
   'post_type' => 'member',
