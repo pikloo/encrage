@@ -139,35 +139,6 @@ if (!function_exists('publication_clause_member')) {
 }
 
 
-if (!function_exists('custom_login_url')) {
-    add_filter('login_url', 'custom_login_url', PHP_INT_MAX);
-    function custom_login_url($login_url)
-    {
-        return str_replace('wp-login', 'encrage-login', $login_url);
-    }
-}
-
-if (!function_exists('custom_login_url')) {
-    add_filter('logout_url', 'custom_logout_url', PHP_INT_MAX);
-    function custom_logout_url($logout_url, $redirect)
-    {
-        $logout_url = home_url('/encrage-login.php?action=logout');
-        $logout_url = wp_nonce_url($logout_url, 'log-out');
-    }
-}
-
-if (!function_exists('custom_redirect_after_logout')) {
-    add_action('wp_logout', 'custom_redirect_after_logout');
-    function custom_redirect_after_logout()
-    {
-        if (!is_admin()) {
-            wp_safe_redirect(home_url());
-            exit();
-        }
-    }
-}
-
-
 if (!function_exists('add_categories_to_pages')) {
     function add_categories_to_pages()
     {
@@ -193,23 +164,12 @@ if (!function_exists('custom_length_excerpt')) {
     }
 }
 
-if (!function_exists('edit_login_logo')) {
-    function edit_login_logo()
-    {
-?>
-        <style type="text/css">
-            .login #login h1 a {
-                background-image: url('<?php echo get_stylesheet_directory_uri(); ?>/assets/images/ancrage_logo.png');
-            }
-        </style>
-<?php }
-    add_action('login_enqueue_scripts', 'edit_login_logo');
-}
+
 
 require_once WP_CONTENT_DIR . '/themes/encrage/inc/post-types/member.php';
 require_once WP_CONTENT_DIR . '/themes/encrage/inc/post-types/serie.php';
 require_once WP_CONTENT_DIR . '/themes/encrage/inc/post-types/release.php';
 require_once WP_CONTENT_DIR . '/themes/encrage/inc/admin/gallery.php';
 require_once WP_CONTENT_DIR . '/themes/encrage/inc/admin/options-page.php';
-
 require_once WP_CONTENT_DIR . '/themes/encrage/inc/load-more.php';
+require_once WP_CONTENT_DIR . '/themes/encrage/inc/admin/custom-admin.php';
