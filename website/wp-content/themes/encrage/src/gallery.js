@@ -37,7 +37,6 @@ const serieGallery = new Swiper(".gallery", {
   spaceBetween: 40,
   grabCursor: true,
   slidesPerView: 1,
-  autoHeight:true,
   centeredSlides: true,
   navigation: {
     nextEl: ".swiper-button-next",

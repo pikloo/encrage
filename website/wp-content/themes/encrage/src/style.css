@@ -1192,8 +1192,7 @@ h3::first-letter {
   margin-left: auto;
   margin-right: auto;
   display: block;
-  width: -moz-fit-content;
-  width: fit-content;
+  max-width: 14rem;
   text-transform: uppercase;
 }
 
@@ -1220,6 +1219,13 @@ h3::first-letter {
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
 }
 
+@media (min-width: 640px) {
+  .button {
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+}
+
 @media (min-width: 1280px) {
   .button {
     font-size: 1.25rem;
@@ -1229,6 +1235,7 @@ h3::first-letter {
 
 @media only screen and (max-width: 960px) and (orientation: landscape) {
   .button {
+    max-width: 14rem;
     font-size: 1rem;
     line-height: 1.5rem;
   }
@@ -1705,6 +1712,10 @@ h3::first-letter {
   height: 18rem !important;
 }
 
+.h-\[68vh\] {
+  height: 68vh !important;
+}
+
 .h-\[calc\(100dvh-4rem\)\] {
   height: calc(100dvh - 4rem) !important;
 }
@@ -1724,14 +1735,6 @@ h3::first-letter {
 
 .h-px {
   height: 1px !important;
-}
-
-.h-\[68vh\] {
-  height: 68vh !important;
-}
-
-.h-\[60vh\] {
-  height: 60vh !important;
 }
 
 .w-12 {
@@ -1972,11 +1975,6 @@ h3::first-letter {
 .object-cover {
   -o-object-fit: cover !important;
      object-fit: cover !important;
-}
-
-.object-scale-down {
-  -o-object-fit: scale-down !important;
-     object-fit: scale-down !important;
 }
 
 .p-0 {
@@ -2421,30 +2419,6 @@ h3::first-letter {
 
   .md\:h-\[calc\(100dvh-7rem\)\] {
     height: calc(100dvh - 7rem) !important;
-  }
-
-  .md\:h-\[73vh\] {
-    height: 73vh !important;
-  }
-
-  .md\:h-\[75vh\] {
-    height: 75vh !important;
-  }
-
-  .md\:h-\[80vh\] {
-    height: 80vh !important;
-  }
-
-  .md\:h-\[100vh\] {
-    height: 100vh !important;
-  }
-
-  .md\:h-\[60vh\] {
-    height: 60vh !important;
-  }
-
-  .md\:h-\[70vh\] {
-    height: 70vh !important;
   }
 
   .md\:w-44 {

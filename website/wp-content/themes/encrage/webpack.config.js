@@ -37,7 +37,7 @@ const plugins = (argv) => [
 const rules = [
 	{
 		test: /\.js$/,
-		include: [JS_DIR],
+		include: [JS_DIR, BUILD_DIR],
 		exclude: /node_modules/,
 		use: 'babel-loader'
 	},

@@ -9,7 +9,7 @@ const toTopButtons = document.querySelectorAll(".to-top");
 const imagesGallery = document.querySelectorAll(".gallery-img");
 const serieAnchorLink = document.querySelector(".menu-item[data-serie-anchor-link]");
 const aboutAnchorLink = document.querySelector(".menu-item[data-about-anchor-link]");
-let main = document.querySelector(".main");
+const main = document.querySelector(".main");
 const header = document.querySelector(".main-header");
 const footer = document.querySelector("footer");
 const screenHeight = window.screen.height;
@@ -19,8 +19,8 @@ const aboutSerieSection = document.querySelector("#about");
 const gallerySerieSection = document.querySelector("#serie");
 const serieNavigation = document.querySelector(".serie-nav");
 
-
 const aboutCallback = function (entries) {
+
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
       aboutAnchorLink.setAttribute('aria-current', 'location');
