@@ -56,7 +56,7 @@ Version: 1.0
   }
 
   .back-button{
-    @apply text-gray-500 hover:text-black hover:before:text-black indent-4 custom-landscape:indent-4 md:indent-6 relative before:content-["⏴"] before:text-2xl custom-landscape:before:text-2xl md:before:text-4xl before:text-gray-500 before:absolute before:top-0 before:-left-4 custom-landscape:before:-left-4 md:before:-left-7
+    @apply text-gray-500 hover:text-black
   }
 
   
