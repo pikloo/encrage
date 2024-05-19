@@ -1726,6 +1726,14 @@ h3::first-letter {
   height: 1px !important;
 }
 
+.h-\[68vh\] {
+  height: 68vh !important;
+}
+
+.h-\[60vh\] {
+  height: 60vh !important;
+}
+
 .w-12 {
   width: 3rem !important;
 }
@@ -1964,6 +1972,11 @@ h3::first-letter {
 .object-cover {
   -o-object-fit: cover !important;
      object-fit: cover !important;
+}
+
+.object-scale-down {
+  -o-object-fit: scale-down !important;
+     object-fit: scale-down !important;
 }
 
 .p-0 {
@@ -2408,6 +2421,30 @@ h3::first-letter {
 
   .md\:h-\[calc\(100dvh-7rem\)\] {
     height: calc(100dvh - 7rem) !important;
+  }
+
+  .md\:h-\[73vh\] {
+    height: 73vh !important;
+  }
+
+  .md\:h-\[75vh\] {
+    height: 75vh !important;
+  }
+
+  .md\:h-\[80vh\] {
+    height: 80vh !important;
+  }
+
+  .md\:h-\[100vh\] {
+    height: 100vh !important;
+  }
+
+  .md\:h-\[60vh\] {
+    height: 60vh !important;
+  }
+
+  .md\:h-\[70vh\] {
+    height: 70vh !important;
   }
 
   .md\:w-44 {
