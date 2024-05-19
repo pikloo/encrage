@@ -672,11 +672,16 @@ h2::first-letter {
 
 .serie-nav {
   position: relative;
-  margin-left: auto;
-  margin-right: auto;
   width: -moz-fit-content;
   width: fit-content;
   padding-bottom: 0.5rem;
+}
+
+@media (min-width: 768px) {
+  .serie-nav {
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 .serie-nav h2, .back-button {
@@ -726,59 +731,13 @@ h2::first-letter {
 }
 
 .back-button {
-  position: relative;
-  text-indent: 1rem;
   --tw-text-opacity: 1;
   color: rgb(107 114 128 / var(--tw-text-opacity));
-}
-
-.back-button::before {
-  position: absolute;
-  top: 0px;
-  left: -1rem;
-  font-size: 1.5rem;
-  line-height: 2rem;
-  --tw-text-opacity: 1;
-  color: rgb(107 114 128 / var(--tw-text-opacity));
-  --tw-content: "⏴";
-  content: var(--tw-content);
 }
 
 .back-button:hover {
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity));
-}
-
-.back-button:hover::before {
-  content: var(--tw-content);
-  --tw-text-opacity: 1;
-  color: rgb(0 0 0 / var(--tw-text-opacity));
-}
-
-@media (min-width: 768px) {
-  .back-button {
-    text-indent: 1.5rem;
-  }
-
-  .back-button::before {
-    left: -1.75rem;
-    content: var(--tw-content);
-    font-size: 2.25rem;
-    line-height: 2.5rem;
-  }
-}
-
-@media only screen and (max-width: 960px) and (orientation: landscape) {
-  .back-button {
-    text-indent: 1rem;
-  }
-
-  .back-button::before {
-    left: -1rem;
-    content: var(--tw-content);
-    font-size: 1.5rem;
-    line-height: 2rem;
-  }
 }
 
 .serie-nav a[aria-current='location'] > h2::after {
@@ -1680,6 +1639,10 @@ h3::first-letter {
   height: 3rem !important;
 }
 
+.h-3 {
+  height: 0.75rem !important;
+}
+
 .h-32 {
   height: 8rem !important;
 }
@@ -1717,8 +1680,28 @@ h3::first-letter {
   height: 1px !important;
 }
 
+.h-\[calc\(90dvh-5rem\)\] {
+  height: calc(90dvh - 5rem) !important;
+}
+
+.h-\[68vh\] {
+  height: 68vh !important;
+}
+
+.h-\[60vh\] {
+  height: 60vh !important;
+}
+
+.h-\[65vh\] {
+  height: 65vh !important;
+}
+
 .w-12 {
   width: 3rem !important;
+}
+
+.w-3 {
+  width: 0.75rem !important;
 }
 
 .w-32 {
@@ -1794,6 +1777,10 @@ h3::first-letter {
 
 .content-center {
   align-content: center !important;
+}
+
+.items-start {
+  align-items: flex-start !important;
 }
 
 .items-center {
@@ -2410,12 +2397,24 @@ h3::first-letter {
     height: 11rem !important;
   }
 
+  .md\:h-6 {
+    height: 1.5rem !important;
+  }
+
   .md\:h-\[calc\(100dvh-7rem\)\] {
     height: calc(100dvh - 7rem) !important;
   }
 
+  .md\:h-\[73vh\] {
+    height: 73vh !important;
+  }
+
   .md\:w-44 {
     width: 11rem !important;
+  }
+
+  .md\:w-6 {
+    width: 1.5rem !important;
   }
 
   .md\:w-\[200px\] {
@@ -2459,6 +2458,10 @@ h3::first-letter {
     row-gap: 0px !important;
   }
 
+  .md\:gap-y-6 {
+    row-gap: 1.5rem !important;
+  }
+
   .md\:p-10 {
     padding: 2.5rem !important;
   }
@@ -2466,6 +2469,11 @@ h3::first-letter {
   .md\:px-0 {
     padding-left: 0px !important;
     padding-right: 0px !important;
+  }
+
+  .md\:py-2 {
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
   }
 
   .md\:pt-10 {
@@ -2774,6 +2782,10 @@ h3::first-letter {
     top: 4rem !important;
   }
 
+  .custom-landscape\:h-3 {
+    height: 0.75rem !important;
+  }
+
   .custom-landscape\:h-32 {
     height: 8rem !important;
   }
@@ -2784,6 +2796,10 @@ h3::first-letter {
 
   .custom-landscape\:h-\[calc\(100dvh-5rem\)\] {
     height: calc(100dvh - 5rem) !important;
+  }
+
+  .custom-landscape\:w-3 {
+    width: 0.75rem !important;
   }
 
   .custom-landscape\:w-32 {
