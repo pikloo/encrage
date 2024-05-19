@@ -1,7 +1,7 @@
 <?php
 get_header();
 $logo_site = get_option('encrage_theme_options')['encrage_logo'];
-$logo_site_attachment_id = $logo_site ? pippin_get_image_id($logo_site) : null; 
+$logo_site_attachment_id = $logo_site ? pippin_get_image_id($logo_site) : null;
 
 get_template_part('partials/header', 'header', [
     'logo_site_attachment_id' => $logo_site_attachment_id
@@ -25,37 +25,44 @@ $loop = new WP_Query($args);
     <?php while ($loop->have_posts()) : $loop->the_post(); ?>
         <!-- portfolio-title z-[11] md:top-28 text-white before:block before:absolute before:-inset-1 before:skew-y-3 before:bg-black before:shadow-lg before:shadow-black/50 inline-block -->
         <div class="flex flex-col justify-between">
-            <section id="serie" class="relative h-[calc(100dvh-5rem)] custom-landscape:h-[calc(100dvh-5rem)] md:h-[calc(100dvh-7rem)] flex flex-col justify-evenly">
-                <div class="portfolio-title fixed bg-white/60 py-3 top-16 custom-landscape:top-16 md:top-28 px-2 md:px-0 w-full justify-center items-center flex z-[11] gap-x-4">
-                    <h1 class="p-0 mt-0"><?php the_title(); ?></h1>
-                    <div class="before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-black before:shadow-lg before:shadow-black/50 relative inline-block">
-                        <span class="text-sm custom-landscape:text-sm sm:text-lg md:text-xl uppercase relative text-white"><?= esc_attr(get_the_title($photographer)) ?></span>
+            <section id="serie" class="relative h-[calc(100dvh-5rem)] custom-landscape:h-[calc(100dvh-5rem)] md:h-[calc(100dvh-7rem)] flex flex-col justify-end py-2">
+                <div class="flex flex-col justify-between gap-y-6">
+                    <div class="portfolio-title fixed bg-white/60 py-3 top-16 custom-landscape:top-16 md:top-28 px-2 md:px-0 w-full justify-center items-center flex z-[11] gap-x-4">
+                        <h1 class="p-0 mt-0"><?php the_title(); ?></h1>
+                        <div class="before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-black before:shadow-lg before:shadow-black/50 relative inline-block">
+                            <span class="text-sm custom-landscape:text-sm sm:text-lg md:text-xl uppercase relative text-white"><?= esc_attr(get_the_title($photographer)) ?></span>
+                        </div>
+                        <p class="text-gray-500 text-sm custom-landscape:text-sm sm:text-lg md:text-xl relative"><?= esc_attr(get_post_meta(get_the_ID(), 'year', true)) ?></p>
                     </div>
-                    <p class="text-gray-500 text-sm custom-landscape:text-sm sm:text-lg md:text-xl relative"><?= esc_attr(get_post_meta(get_the_ID(), 'year', true)) ?></p>
-                </div>
-                <div class="swiper gallery lg:mt-4 h-[68vh] relative w-full">
-                    <div class="swiper-wrapper items-center h-full">
-                        <?php foreach ($url_array as $image_url) : ?>
-                            <div class="swiper-slide lg:w-fit">
-                                <img class="gallery-img h-[68vh] object-contain mx-auto" src="<?= $image_url; ?>" alt="<?= esc_attr(get_the_title()) ?>" />
-                            </div>
-                        <?php endforeach; ?>
+                    <div class="swiper gallery lg:mt-4  relative w-full">
+                        <div class="swiper-wrapper items-center h-full">
+                            <?php foreach ($url_array as $image_url) : ?>
+                                <div class="swiper-slide lg:w-fit">
+                                    <img class="gallery-img h-[73vh] object-contain mx-auto" src="<?= $image_url; ?>" alt="<?= esc_attr(get_the_title()) ?>" />
+                                </div>
+                            <?php endforeach; ?>
+                        </div>
+                        <div class="swiper-button-next text-gray-500"></div>
+                        <div class="swiper-button-prev text-gray-500"></div>
                     </div>
-                    <div class="swiper-button-next text-gray-500"></div>
-                    <div class="swiper-button-prev text-gray-500"></div>
+                    <div class="flex justify-between custom-landscape:justify-between md:justify-center px-4 items-center">
+                        <button onclick="history.go(-1);" class="back-button uppercase font-bold">Retour</button>
+                        <ul class="flex justify-center gap-x-4 serie-nav">
+                            <li>
+                                <a aria-label="Aller à la série photos" href="#serie" aria-current="location" data-serie-anchor-link class="menu-item inline-block w-fit">
+                                    <h2 class="w-fit font-bold">Série</h2>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#about" aria-label="Aller à la section à propos" aria-current="false" data-about-anchor-link class="menu-item inline-block w-fit">
+                                    <h2 class="w-fit font-bold">À propos</h2>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+
                 </div>
-                <ul class="flex justify-center gap-x-4 serie-nav">
-                    <li>
-                        <a aria-label="Aller à la série photos" href="#serie" aria-current="location" data-serie-anchor-link class="menu-item inline-block w-fit">
-                            <h2 class="w-fit font-bold">Série</h2>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#about" aria-label="Aller à la section à propos" aria-current="false" data-about-anchor-link class="menu-item inline-block w-fit">
-                            <h2 class="w-fit font-bold">À propos</h2>
-                        </a>
-                    </li>
-                </ul>
+
             </section>
 
 

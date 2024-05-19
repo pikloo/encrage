@@ -51,16 +51,22 @@ Version: 1.0
     @apply relative pb-2 w-fit mx-auto 
   }
 
-  .serie-nav h2{
+  .serie-nav h2, .back-button{
     @apply text-lg custom-landscape:text-lg md:text-xl lg:text-2xl first-letter:text-xl custom-landscape:first-letter:text-xl md:first-letter:text-2xl lg:first-letter:text-3xl
   }
 
+  .back-button{
+    @apply text-gray-500 hover:text-black hover:before:text-black indent-4 custom-landscape:indent-4 md:indent-6 relative before:content-["⏴"] before:text-2xl custom-landscape:before:text-2xl md:before:text-4xl before:text-gray-500 before:absolute before:top-0 before:-left-4 custom-landscape:before:-left-4 md:before:-left-7
+  }
+
+  
+  
   .serie-nav a[aria-current='location'] > h2{
-    @apply text-gray-500 after:h-[2px] after:bg-gray-500 after:absolute after:w-full after:right-0 after:-bottom-2 after:duration-300
+    @apply  after:h-[2px] after:bg-black after:absolute after:w-full after:right-0 after:-bottom-2 after:duration-300
   }
 
   .serie-nav a[aria-current='false'] > h2{
-    @apply text-black
+    @apply text-gray-500
   }
 
   h2.section {
