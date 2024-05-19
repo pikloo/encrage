@@ -164,7 +164,17 @@ releases.forEach(function (release) {
 });
 
 
+// Calcul de la taille des galeries
 
+// const imagesGallery = document.querySelectorAll(".gallery-img");
+// const header = document.querySelector(".main-header");
+// const portfolioTitle = document.querySelector(".portfolio-title");
+const barNav = document.querySelector(".bar-nav");
+
+imagesGallery.forEach(image => {
+  const otherElementsYSpace = header.offsetHeight + barNav.offsetHeight + portfolioTitle.offsetHeight;
+   image.setAttribute('style', `height: ${window.innerHeight - otherElementsYSpace - 50 }px`);
+})
 
 
 

@@ -11225,6 +11225,17 @@ releases.forEach(function (release) {
     // document.querySelector(".main-header").classList.add("z-0", "duration-100");
   });
 });
+
+// Calcul de la taille des galeries
+
+// const imagesGallery = document.querySelectorAll(".gallery-img");
+// const header = document.querySelector(".main-header");
+// const portfolioTitle = document.querySelector(".portfolio-title");
+var barNav = document.querySelector(".bar-nav");
+imagesGallery.forEach(function (image) {
+  var otherElementsYSpace = header.offsetHeight + barNav.offsetHeight + portfolioTitle.offsetHeight;
+  image.setAttribute('style', "height: ".concat(window.innerHeight - otherElementsYSpace - 50, "px"));
+});
 })();
 
 // This entry need to be wrapped in an IIFE because it need to be in strict mode.
@@ -11294,17 +11305,6 @@ var serieGallery = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"](".g
       }
     }
   }
-});
-
-// Calcul de la taille des galeries
-
-var imagesGallery = document.querySelectorAll(".gallery-img");
-var header = document.querySelector(".main-header");
-var portfolioTitle = document.querySelector(".portfolio-title");
-var barNav = document.querySelector(".bar-nav");
-imagesGallery.forEach(function (image) {
-  var otherElementsYSpace = header.offsetHeight + barNav.offsetHeight + portfolioTitle.offsetHeight;
-  image.setAttribute('style', "height: ".concat(window.innerHeight - otherElementsYSpace - 50, "px"));
 });
 
 //Zoom Image
