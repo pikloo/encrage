@@ -11287,10 +11287,10 @@ var postsCarousel = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"](".
   injectStyles: [".swiper-wrapper { align-items: center }"]
 });
 var serieGallery = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"](".gallery", {
+  lazy: true,
   spaceBetween: 40,
   grabCursor: true,
   slidesPerView: 1,
-  autoHeight: true,
   centeredSlides: true,
   navigation: {
     nextEl: ".swiper-button-next",
@@ -11305,9 +11305,15 @@ var serieGallery = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"](".g
       centeredSlides: true,
       spaceBetween: 30
     }
+  },
+  on: {
+    snapGridLengthChange: function snapGridLengthChange() {
+      if (this.snapGrid.length != this.slidesGrid.length) {
+        this.snapGrid = this.slidesGrid.slice(0);
+      }
+    }
   }
 });
-serieGallery.slideToLoop(0, 0);
 
 //Zoom Image
 

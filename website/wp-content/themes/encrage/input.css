@@ -112,8 +112,16 @@ Version: 1.0
     @apply text-inherit bg-transparent relative text-sm sm:text-lg md:text-3xl  custom-landscape:text-sm custom-landscape:first-letter:text-xl first-letter:text-xl sm:first-letter:text-2xl md:first-letter:text-4xl  font-medium uppercase mb-0;
   }
 
-  .content {
+  .content p:first-of-type{
     @apply text-justify lg:text-lg first-letter:text-7xl custom-landscape:text-base custom-landscape:first-letter:text-7xl custom-landscape:first-letter:mr-2 lg:first-letter:text-8xl lg:first-letter:mr-3 first-letter:font-semibold first-letter:mr-2 first-letter:float-left
+  }
+
+  .content h2{
+    @apply text-xl custom-landscape:text-xl md:text-2xl uppercase font-medium custom-landscape:first-letter:text-2xl first-letter:text-2xl md:first-letter:text-3xl mb-6;
+  }
+
+  .content a{
+    @apply font-semibold
   }
 
   .slider-home {
@@ -134,22 +142,6 @@ Version: 1.0
   .medium-zoom-overlay,
   .medium-zoom-image--opened {
     z-index: 999;
-  }
-
-  .thumbnails.swiper {
-    @apply hidden md:block;
-  }
-
-  .thumbnails .swiper-slide > img {
-    @apply h-[100px] md:h-[200px] object-cover;
-  }
-
-  .thumbnails .swiper-slide {
-    opacity: 0.4;
-  }
-
-  .thumbnails .swiper-slide-thumb-active {
-    opacity: 1;
   }
 
   .menu-toggle {

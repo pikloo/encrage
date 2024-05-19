@@ -33,10 +33,10 @@ const postsCarousel = new Swiper(".blogpost-carousel", {
 
 
 const serieGallery = new Swiper(".gallery", {
+  lazy: true,
   spaceBetween: 40,
   grabCursor: true,
   slidesPerView: 1,
-  autoHeight: true,
   centeredSlides: true,
   navigation: {
     nextEl: ".swiper-button-next",
@@ -52,10 +52,17 @@ const serieGallery = new Swiper(".gallery", {
       spaceBetween: 30,
     },
   },
+  on: {
+    snapGridLengthChange:function(){
+      if( this.snapGrid.length != this.slidesGrid.length ){
+        this.snapGrid = this.slidesGrid.slice(0);
+      }
+    }
+  }
 });
 
 
-serieGallery.slideToLoop(0, 0)
+
 
 
 //Zoom Image

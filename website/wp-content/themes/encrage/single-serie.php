@@ -38,7 +38,8 @@ $loop = new WP_Query($args);
                         <div class="swiper-wrapper items-center h-full">
                             <?php foreach ($url_array as $image_url) : ?>
                                 <div class="swiper-slide lg:w-fit">
-                                    <img class="gallery-img h-[65vh] md:h-[73vh] object-contain mx-auto" src="<?= $image_url; ?>" alt="<?= esc_attr(get_the_title()) ?>" />
+                                    <img class="gallery-img h-[65vh] md:h-[73vh] object-contain mx-auto" src="<?= $image_url; ?>" alt="<?= esc_attr(get_the_title()) ?>" loading="lazy"/>
+                                    <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
                                 </div>
                             <?php endforeach; ?>
                         </div>
