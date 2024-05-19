@@ -55,6 +55,9 @@ const serieGallery = new Swiper(".gallery", {
 });
 
 
+serieGallery.slideToLoop(0, 0)
+
+
 //Zoom Image
 
 const zoom = mediumZoom(document.querySelectorAll('.release'), {
