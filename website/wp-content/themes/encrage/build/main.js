@@ -11113,9 +11113,11 @@ var aboutCallback = function aboutCallback(entries) {
     if (entry.isIntersecting) {
       aboutAnchorLink.setAttribute('aria-current', 'location');
       serieAnchorLink.setAttribute('aria-current', 'false');
+      portfolioTitle.classList.add('fixed-porfolio-title');
     } else {
       serieAnchorLink.setAttribute('aria-current', 'location');
       aboutAnchorLink.setAttribute('aria-current', 'false');
+      portfolioTitle.classList.remove('fixed-porfolio-title');
     }
   });
 };
@@ -11138,6 +11140,7 @@ if (serieAnchorLink) {
     var link = e.currentTarget;
     link.setAttribute('aria-current', 'location');
     aboutAnchorLink.setAttribute('aria-current', 'false');
+    portfolioTitle.classList.remove('fixed-porfolio-title');
   });
 }
 if (aboutAnchorLink) {
@@ -11150,6 +11153,7 @@ if (aboutAnchorLink) {
       top: serieNavigation.offsetHeight + serieNavigation.offsetTop - header.offsetHeight - portfolioTitle.offsetHeight,
       behavior: "smooth"
     });
+    portfolioTitle.classList.add('fixed-porfolio-title');
   });
 }
 [].concat(_toConsumableArray(toTopButtons), _toConsumableArray(imagesGallery)).forEach(function (button) {
@@ -11191,31 +11195,7 @@ targets.forEach(function (target) {
 });
 
 //Main min height
-
 main.style.minHeight = "".concat(screenHeight - footer.offsetHeight - header.offsetHeight, "px");
-
-// //Titre fixe lorsqu'il arrive sous le logo(Page Single Série)
-// const portfolioTitle = document.querySelector(".portfolio-title");
-// const sliderActive = document.querySelector(".gallery");
-
-// if (portfolioTitle) {
-//   const basePosition = sliderActive.offsetHeight;
-//   portfolioTitle.classList.add('md:absolute', 'md:top-36')
-//   // portfolioTitle.setAttribute('style', `top:${basePosition}px; z-index:11; position:absolute;`);
-
-//   document.addEventListener("scroll", (event) => {
-//     if (portfolioTitle.getBoundingClientRect().top < header.offsetHeight + 150) {
-//       portfolioTitle.classList.remove('md:absolute')
-//       portfolioTitle.classList.add('md:fixed')
-//     }
-
-//     if (window.scrollY < basePosition - 20) {
-//       portfolioTitle.classList.remove('md:fixed')
-//       portfolioTitle.classList.add('md:absolute')
-//     }
-//   });
-
-// }
 
 //Scroll to photographers (home)
 var toDownButton = document.querySelector('.to-down');
@@ -11291,6 +11271,7 @@ var serieGallery = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"](".g
   spaceBetween: 40,
   grabCursor: true,
   slidesPerView: 1,
+  autoHeight: true,
   centeredSlides: true,
   navigation: {
     nextEl: ".swiper-button-next",
@@ -11313,6 +11294,17 @@ var serieGallery = new swiper_bundle__WEBPACK_IMPORTED_MODULE_0__["default"](".g
       }
     }
   }
+});
+
+// Calcul de la taille des galeries
+
+var imagesGallery = document.querySelectorAll(".gallery-img");
+var header = document.querySelector(".main-header");
+var portfolioTitle = document.querySelector(".portfolio-title");
+var barNav = document.querySelector(".bar-nav");
+imagesGallery.forEach(function (image) {
+  var otherElementsYSpace = header.offsetHeight + barNav.offsetHeight + portfolioTitle.offsetHeight;
+  image.setAttribute('style', "height: ".concat(window.innerHeight - otherElementsYSpace - 50, "px"));
 });
 
 //Zoom Image

@@ -25,9 +25,8 @@ $loop = new WP_Query($args);
     <?php while ($loop->have_posts()) : $loop->the_post(); ?>
         <!-- portfolio-title z-[11] md:top-28 text-white before:block before:absolute before:-inset-1 before:skew-y-3 before:bg-black before:shadow-lg before:shadow-black/50 inline-block -->
         <div class="flex flex-col justify-between">
-            <section id="serie" class="relative h-[calc(100dvh-5rem)] custom-landscape:h-[calc(100dvh-5rem)] md:h-[calc(100dvh-7rem)] flex flex-col justify-end md:py-2">
-                <div class="flex flex-col justify-between gap-y-3 md:gap-y-6">
-                    <div class="portfolio-title fixed bg-white/60 py-4 top-16 custom-landscape:top-16 md:top-28 px-2 md:px-0 w-full justify-center items-center flex z-[11] gap-x-4">
+            <section id="serie" class="relative h-[calc(100dvh-5rem)] custom-landscape:h-[calc(100dvh-5rem)] md:h-[calc(100dvh-7rem)] flex flex-col justify-between gap-y-3 md:gap-y-6 py-2">
+                    <div class="portfolio-title pt-2 bg-white/60 px-2 md:px-0 w-full justify-center items-center flex z-[11] gap-x-4">
                         <h1 class="p-0 mt-0"><?php the_title(); ?></h1>
                         <div class="before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-black before:shadow-lg before:shadow-black/50 relative inline-block">
                             <span class="text-sm custom-landscape:text-sm sm:text-lg md:text-xl uppercase relative text-white"><?= esc_attr(get_the_title($photographer)) ?></span>
@@ -38,7 +37,7 @@ $loop = new WP_Query($args);
                         <div class="swiper-wrapper items-center h-full">
                             <?php foreach ($url_array as $image_url) : ?>
                                 <div class="swiper-slide lg:w-fit">
-                                    <img class="gallery-img h-[65vh] md:h-[73vh] object-contain mx-auto" src="<?= $image_url; ?>" alt="<?= esc_attr(get_the_title()) ?>" loading="lazy"/>
+                                    <img class="gallery-img object-contain mx-auto" src="<?= $image_url; ?>" alt="<?= esc_attr(get_the_title()) ?>" loading="lazy"/>
                                     <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
                                 </div>
                             <?php endforeach; ?>
@@ -46,7 +45,7 @@ $loop = new WP_Query($args);
                         <div class="swiper-button-next text-gray-500"></div>
                         <div class="swiper-button-prev text-gray-500"></div>
                     </div>
-                    <div class="flex justify-between custom-landscape:justify-between md:justify-center px-4 items-start">
+                    <div class="bar-nav flex justify-between custom-landscape:justify-between md:justify-center px-4 items-start">
                         <button onclick="history.go(-1);" class="back-button uppercase font-bold flex items-center">
                             <svg version="1.1" id="fi_54321" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"  width="791.966px" height="791.967px" viewBox="0 0 791.966 791.967" style="enable-background:new 0 0 791.966 791.967;" fill="currentColor" class="w-3 h-3 custom-landscape:w-3 custom-landscape:h-3 md:h-6 md:w-6" xml:space="preserve">
                                 <g>
@@ -104,7 +103,6 @@ $loop = new WP_Query($args);
                         </ul>
                     </div>
 
-                </div>
 
             </section>
 

@@ -28,7 +28,7 @@ Version: 1.0
     column-gap: 1.5em;
     column-count: 4;
   }
-  
+
   .break-inside {
     break-inside: avoid;
   }
@@ -48,39 +48,38 @@ Version: 1.0
   }
 
   .serie-nav {
-    @apply relative pb-2 w-fit md:mx-auto 
+    @apply relative pb-2 w-fit md:mx-auto;
   }
 
-  .serie-nav h2, .back-button{
-    @apply text-lg custom-landscape:text-lg md:text-xl lg:text-2xl first-letter:text-xl custom-landscape:first-letter:text-xl md:first-letter:text-2xl lg:first-letter:text-3xl
+  .serie-nav h2,
+  .back-button {
+    @apply text-lg custom-landscape:text-lg md:text-xl lg:text-2xl first-letter:text-xl custom-landscape:first-letter:text-xl md:first-letter:text-2xl lg:first-letter:text-3xl;
   }
 
-  .back-button{
-    @apply text-gray-500 hover:text-black
+  .back-button {
+    @apply text-gray-500 hover:text-black;
   }
 
-  
-  
-  .serie-nav a[aria-current='location'] > h2{
-    @apply  after:h-[2px] after:bg-black after:absolute after:w-full after:right-0 after:-bottom-2 after:duration-300
+  .serie-nav a[aria-current="location"] > h2 {
+    @apply after:h-[2px] text-black after:bg-black after:absolute after:w-full after:right-0 after:-bottom-2 after:duration-300;
   }
 
-  .serie-nav a[aria-current='false'] > h2{
-    @apply text-gray-500
+  .serie-nav a[aria-current="false"] > h2 {
+    @apply text-gray-500;
   }
 
   h2.section {
     @apply mb-10 w-fit mx-auto custom-landscape:mx-auto sm:mx-0 relative  uppercase font-medium  before:h-[2px] after:h-[2px] after:bg-black 
        after:absolute after:w-[10%]
        before:bg-black before:absolute 
-       before:w-full after:right-0 after:bottom-0 before:-top-2 after:-bottom-2 ;
+       before:w-full after:right-0 after:bottom-0 before:-top-2 after:-bottom-2;
   }
 
   h1 {
     @apply text-3xl custom-landscape:text-3xl custom-landscape:first-letter:text-4xl first-letter:text-4xl md:text-5xl md:first-letter:text-6xl bg-black text-white w-fit p-2 mb-10 uppercase mt-6;
   }
 
-  h1.main-title{
+  h1.main-title {
     @apply bg-transparent text-black p-0 text-[22px] custom-landscape:text-[22px] custom-landscape:first-letter:text-3xl first-letter:text-3xl md:text-3xl md:first-letter:text-4xl mb-10 leading-10;
   }
 
@@ -92,7 +91,7 @@ Version: 1.0
     @apply uppercase first-letter:text-2xl;
   }
 
-  .blog-post-title{
+  .blog-post-title {
     @apply bg-black text-white p-2 w-fit;
   }
 
@@ -104,28 +103,33 @@ Version: 1.0
     @apply h-10 w-10 md:h-12 md:w-12 text-gray-500 cursor-pointer;
   }
 
-  .to-down, .to-top {
-    @apply custom-landscape:h-10 custom-landscape:w-10
+  .to-down,
+  .to-top {
+    @apply custom-landscape:h-10 custom-landscape:w-10;
   }
 
-  .portfolio-title h1{
+  .fixed-porfolio-title {
+    @apply fixed top-16 custom-landscape:top-16 md:top-28 py-4;
+  }
+
+  .portfolio-title h1 {
     @apply text-inherit bg-transparent relative text-sm sm:text-lg md:text-3xl  custom-landscape:text-sm custom-landscape:first-letter:text-xl first-letter:text-xl sm:first-letter:text-2xl md:first-letter:text-4xl  font-medium uppercase mb-0;
   }
 
-  .content p{
-    @apply text-justify lg:text-lg custom-landscape:text-base
+  .content p {
+    @apply text-justify lg:text-lg custom-landscape:text-base;
   }
 
-  .content p:first-of-type{
-    @apply first-letter:text-7xl custom-landscape:first-letter:text-7xl custom-landscape:first-letter:mr-2 lg:first-letter:text-8xl lg:first-letter:mr-3 first-letter:font-semibold first-letter:mr-2 first-letter:float-left
+  .content p:first-of-type {
+    @apply first-letter:text-7xl custom-landscape:first-letter:text-7xl custom-landscape:first-letter:mr-2 lg:first-letter:text-8xl lg:first-letter:mr-3 first-letter:font-semibold first-letter:mr-2 first-letter:float-left;
   }
 
-  .content h2{
+  .content h2 {
     @apply text-xl custom-landscape:text-xl md:text-2xl uppercase font-medium custom-landscape:first-letter:text-2xl first-letter:text-2xl md:first-letter:text-3xl mb-6;
   }
 
-  .content a{
-    @apply font-semibold
+  .content a {
+    @apply font-semibold;
   }
 
   .slider-home {
@@ -154,7 +158,6 @@ Version: 1.0
 
   .menu-toggle .icon {
     @apply inline-block fill-current h-4 w-4 custom-landscape:h-4 custom-landscape:w-4 md:h-8 md:w-8 align-middle relative top-[-0.0625em] transition duration-150 ease-out;
-
   }
 
   /* Menu toggle styles. */
@@ -200,16 +203,15 @@ Version: 1.0
 
   #sideBar,
   #sideNav {
-    @apply top-0 w-full fixed left-[-100%]
+    @apply top-0 w-full fixed left-[-100%];
   }
-
 
   /* #sideLinks {
     opacity: 0;
   } */
 
   .main-menu {
-    @apply py-6 flex text-center gap-x-2 custom-landscape:gap-x-0 custom-landscape:flex-col md:gap-x-6 ;
+    @apply py-6 flex text-center gap-x-2 custom-landscape:gap-x-0 custom-landscape:flex-col md:gap-x-6;
   }
 
   .socials-links svg {
@@ -224,7 +226,8 @@ Version: 1.0
     @apply font-medium uppercase;
   }
 
-  .main-menu li, .menu-item {
+  .main-menu li,
+  .menu-item {
     @apply hover:text-gray-500  cursor-pointer transition-colors;
   }
 
@@ -236,13 +239,12 @@ Version: 1.0
     z-index: 30 !important;
   }
 
-
   .reveal {
     transition: all 0.8s;
     opacity: 0;
     transform: translateY(40px);
   }
-  
+
   .reveal.inview {
     opacity: 1;
     transform: none;
@@ -261,9 +263,8 @@ Version: 1.0
     @apply top-28 */
     /* left-[-100%] */
     z-index: -900;
-    @apply top-[-400%] absolute w-full left-0 duration-1000
+    @apply top-[-400%] absolute w-full left-0 duration-1000;
   }
-
 
   /* #toggle Class Styles */
 
@@ -271,11 +272,11 @@ Version: 1.0
     display: none;
   }
   .toggle-input:not(checked) ~ .mega-menu {
-    @apply top-[-400%]
+    @apply top-[-400%];
   }
 
   .toggle-input:checked ~ .mega-menu {
-    @apply top-28
+    @apply top-28;
   }
 
   /* .toggle-input:checked + label {
@@ -284,7 +285,7 @@ Version: 1.0
   }
    */
 
-   /* label:after {
+  /* label:after {
     content: "\25BC";
     font-size: 10px;
     position: absolute;
@@ -297,6 +298,4 @@ Version: 1.0
   .toggle-input:checked ~ label:after {
     @apply rotate-180 duration-150;
   }
-
-
 }

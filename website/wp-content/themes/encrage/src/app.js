@@ -25,11 +25,12 @@ const aboutCallback = function (entries) {
     if (entry.isIntersecting) {
       aboutAnchorLink.setAttribute('aria-current', 'location');
       serieAnchorLink.setAttribute('aria-current', 'false');
+      portfolioTitle.classList.add('fixed-porfolio-title')
     }
     else {
       serieAnchorLink.setAttribute('aria-current', 'location');
       aboutAnchorLink.setAttribute('aria-current', 'false');
-      
+      portfolioTitle.classList.remove('fixed-porfolio-title')
     }
   });
 };
@@ -60,6 +61,7 @@ if (serieAnchorLink) {
     let link = e.currentTarget
     link.setAttribute('aria-current', 'location');
     aboutAnchorLink.setAttribute('aria-current', 'false');
+    portfolioTitle.classList.remove('fixed-porfolio-title')
   });
 }
 
@@ -70,6 +72,7 @@ if (aboutAnchorLink) {
     link.setAttribute('aria-current', 'location');
     serieAnchorLink.setAttribute('aria-current', 'false');
     window.scrollTo({ top: serieNavigation.offsetHeight + serieNavigation.offsetTop - header.offsetHeight - portfolioTitle.offsetHeight  , behavior: "smooth" });
+    portfolioTitle.classList.add('fixed-porfolio-title')
   })
 }
 
@@ -126,33 +129,7 @@ targets.forEach(function (target) {
 
 
 //Main min height
-
-
-
 main.style.minHeight = `${screenHeight - footer.offsetHeight - header.offsetHeight}px`;
-
-// //Titre fixe lorsqu'il arrive sous le logo(Page Single Série)
-// const portfolioTitle = document.querySelector(".portfolio-title");
-// const sliderActive = document.querySelector(".gallery");
-
-// if (portfolioTitle) {
-//   const basePosition = sliderActive.offsetHeight;
-//   portfolioTitle.classList.add('md:absolute', 'md:top-36')
-//   // portfolioTitle.setAttribute('style', `top:${basePosition}px; z-index:11; position:absolute;`);
-
-//   document.addEventListener("scroll", (event) => {
-//     if (portfolioTitle.getBoundingClientRect().top < header.offsetHeight + 150) {
-//       portfolioTitle.classList.remove('md:absolute')
-//       portfolioTitle.classList.add('md:fixed')
-//     }
-
-//     if (window.scrollY < basePosition - 20) {
-//       portfolioTitle.classList.remove('md:fixed')
-//       portfolioTitle.classList.add('md:absolute')
-//     }
-//   });
-
-// }
 
 //Scroll to photographers (home)
 const toDownButton = document.querySelector('.to-down');
@@ -185,6 +162,8 @@ releases.forEach(function (release) {
     // document.querySelector(".main-header").classList.add("z-0", "duration-100");
   })
 });
+
+
 
 
 
