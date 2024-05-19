@@ -112,8 +112,12 @@ Version: 1.0
     @apply text-inherit bg-transparent relative text-sm sm:text-lg md:text-3xl  custom-landscape:text-sm custom-landscape:first-letter:text-xl first-letter:text-xl sm:first-letter:text-2xl md:first-letter:text-4xl  font-medium uppercase mb-0;
   }
 
+  .content p{
+    @apply text-justify lg:text-lg custom-landscape:text-base
+  }
+
   .content p:first-of-type{
-    @apply text-justify lg:text-lg first-letter:text-7xl custom-landscape:text-base custom-landscape:first-letter:text-7xl custom-landscape:first-letter:mr-2 lg:first-letter:text-8xl lg:first-letter:mr-3 first-letter:font-semibold first-letter:mr-2 first-letter:float-left
+    @apply first-letter:text-7xl custom-landscape:first-letter:text-7xl custom-landscape:first-letter:mr-2 lg:first-letter:text-8xl lg:first-letter:mr-3 first-letter:font-semibold first-letter:mr-2 first-letter:float-left
   }
 
   .content h2{

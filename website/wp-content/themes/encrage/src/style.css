@@ -1059,8 +1059,22 @@ h3::first-letter {
   }
 }
 
-.content p:first-of-type {
+.content p {
   text-align: justify;
+}
+
+@media (min-width: 1024px) {
+  .content p {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+}
+
+@media only screen and (max-width: 960px) and (orientation: landscape) {
+  .content p {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
 }
 
 .content p:first-of-type::first-letter {
@@ -1072,11 +1086,6 @@ h3::first-letter {
 }
 
 @media (min-width: 1024px) {
-  .content p:first-of-type {
-    font-size: 1.125rem;
-    line-height: 1.75rem;
-  }
-
   .content p:first-of-type::first-letter {
     margin-right: 0.75rem;
     font-size: 6rem;
@@ -1085,11 +1094,6 @@ h3::first-letter {
 }
 
 @media only screen and (max-width: 960px) and (orientation: landscape) {
-  .content p:first-of-type {
-    font-size: 1rem;
-    line-height: 1.5rem;
-  }
-
   .content p:first-of-type::first-letter {
     margin-right: 0.5rem;
     font-size: 4.5rem;
@@ -1770,10 +1774,6 @@ h3::first-letter {
   flex-direction: column !important;
 }
 
-.flex-wrap {
-  flex-wrap: wrap !important;
-}
-
 .content-center {
   align-content: center !important;
 }
@@ -1995,12 +1995,12 @@ h3::first-letter {
   padding-bottom: 2rem !important;
 }
 
-.pl-1 {
-  padding-left: 0.25rem !important;
-}
-
 .pl-10 {
   padding-left: 2.5rem !important;
+}
+
+.pl-2 {
+  padding-left: 0.5rem !important;
 }
 
 .pl-4 {
@@ -2009,10 +2009,6 @@ h3::first-letter {
 
 .pt-28 {
   padding-top: 7rem !important;
-}
-
-.pl-2 {
-  padding-left: 0.5rem !important;
 }
 
 .text-center {
@@ -2342,10 +2338,6 @@ h3::first-letter {
 
   .sm\:inline-block {
     display: inline-block !important;
-  }
-
-  .sm\:pl-0 {
-    padding-left: 0px !important;
   }
 
   .sm\:text-lg {

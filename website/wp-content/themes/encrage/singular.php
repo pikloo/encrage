@@ -22,7 +22,7 @@ $loop = new WP_Query($args);
         $categories = get_the_category();
         ?>
         <h1 class="mb-2"><?= the_title(); ?></h1>
-        <div class="px-6 <?= $post->post_name === 'lagence' ? 'text-center' : 'text-justify'  ?>  flex flex-col gap-y-10 lg:flex-row lg:gap-x-10 mt-10 lg:justify-evenly lg:items-center lg:mt-20">
+        <div class="px-6 <?= $post->post_name === 'agence' ? 'text-center' : 'text-justify'  ?>  flex flex-col gap-y-10 lg:flex-row lg:gap-x-10 mt-10 lg:justify-evenly lg:items-center lg:mt-20">
             <?php if (has_post_thumbnail()) : ?>
                 <aside class="max-w-sm md:max-w-md">
                     <?php the_post_thumbnail(); ?>
@@ -30,13 +30,13 @@ $loop = new WP_Query($args);
             <?php endif; ?>
             <article class="reveal  
             <?php if (!empty($categories) && $categories[0]->name == 'Légales') {
-                echo 'mx-auto lg:max-w-screen-lg content';
+                echo 'mx-auto lg:max-w-screen-lg';
             } else {
                 echo 'mx-auto max-w-sm lg:max-w-xl lg:m-0 text-lg md:text-xl lg:text-2xl first-letter:text-xl lg:first-letter:text-2xl lg:first-letter:text-3xl duration-500';
             } ?>
             ">
                 <?= the_content(); ?></article>
-            <?php if ($post->post_name === 'lagence') : ?>
+            <?php if ($post->post_name === 'agence') : ?>
                 <aside class="reveal">
                     <div class="py-6 space-y-6 text-lg md:text-xl lg:text-2xl text-center duration-500">
                         <div>
@@ -128,8 +128,8 @@ $loop = new WP_Query($args);
     <?php endwhile; ?>
 </main>
 <aside>
-    <?php $post->post_name === 'lagence' && get_template_part('partials/members-list', 'members-list'); ?>
-    <?php $post->post_name === 'lagence' && get_template_part('partials/blogposts-list', 'blogposts-list'); ?>
+    <?php $post->post_name === 'agence' && get_template_part('partials/members-list', 'members-list'); ?>
+    <?php $post->post_name === 'agence' && get_template_part('partials/blogposts-list', 'blogposts-list'); ?>
 </aside>
 <?php
 get_template_part('partials/footer', 'footer', [
