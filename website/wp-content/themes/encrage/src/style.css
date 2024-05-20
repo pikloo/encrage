@@ -1737,6 +1737,10 @@ h3::first-letter {
   height: 1px !important;
 }
 
+.h-\[68\%\] {
+  height: 68% !important;
+}
+
 .w-12 {
   width: 3rem !important;
 }

@@ -33,11 +33,11 @@ $loop = new WP_Query($args);
                         </div>
                         <p class="text-gray-500 text-sm custom-landscape:text-sm sm:text-lg md:text-xl relative"><?= esc_attr(get_post_meta(get_the_ID(), 'year', true)) ?></p>
                     </div>
-                    <div class="swiper gallery lg:mt-4  relative w-full">
+                    <div class="swiper gallery lg:mt-4  relative h-full w-full">
                         <div class="swiper-wrapper items-center h-full">
                             <?php foreach ($url_array as $image_url) : ?>
                                 <div class="swiper-slide lg:w-fit">
-                                    <img class="gallery-img object-contain h-[68vh] mx-auto" src="<?= $image_url; ?>" alt="<?= esc_attr(get_the_title()) ?>" loading="lazy"/>
+                                    <img class="gallery-img object-contain h-full mx-auto" src="<?= $image_url; ?>" alt="<?= esc_attr(get_the_title()) ?>" loading="lazy"/>
                                     <div class="swiper-lazy-preloader swiper-lazy-preloader-white"></div>
                                 </div>
                             <?php endforeach; ?>

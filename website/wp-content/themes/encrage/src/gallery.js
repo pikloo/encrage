@@ -34,10 +34,8 @@ const postsCarousel = new Swiper(".blogpost-carousel", {
 
 const serieGallery = new Swiper(".gallery", {
   lazy: true,
-  spaceBetween: 40,
   grabCursor: true,
   slidesPerView: 1,
-  centeredSlides: true,
   navigation: {
     nextEl: ".swiper-button-next",
     prevEl: ".swiper-button-prev",
@@ -49,7 +47,7 @@ const serieGallery = new Swiper(".gallery", {
     640: {
       slidesPerView: "auto",
       centeredSlides: true,
-      spaceBetween: 30,
+      spaceBetween: 100,
     },
   },
   on: {
@@ -61,6 +59,11 @@ const serieGallery = new Swiper(".gallery", {
   }
 });
 
+
+if(document.querySelector(".gallery")){
+  console.log("aaa");
+  serieGallery.slideTo(0,0)
+}
 
 
 
