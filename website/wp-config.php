@@ -129,6 +129,7 @@ if ($configExtra = getenv_docker('WORDPRESS_CONFIG_EXTRA', '')) {
 }
 
 define('FS_METHOD', 'direct');
+define('WP_CACHE', true);
 
 /* That's all, stop editing! Happy publishing. */
 
