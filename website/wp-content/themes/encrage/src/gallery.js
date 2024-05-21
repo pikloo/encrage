@@ -47,7 +47,7 @@ const serieGallery = new Swiper(".gallery", {
     640: {
       slidesPerView: "auto",
       // centeredSlides: true,
-      spaceBetween: 100,
+      spaceBetween: 70,
       normalizeSlideIndex: false,
       initialSlide: 0,
     },

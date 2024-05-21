@@ -626,7 +626,6 @@ h2 {
   font-size: 1.5rem;
   line-height: 2rem;
   font-weight: 500;
-  text-transform: uppercase;
 }
 
 h2::first-letter {
@@ -817,17 +816,22 @@ h2.section::after {
   }
 }
 
+h1,
+  h2,
+  h3 {
+  width: -moz-fit-content;
+  width: fit-content;
+  text-transform: uppercase;
+}
+
 h1 {
   margin-bottom: 2.5rem;
   margin-top: 1.5rem;
-  width: -moz-fit-content;
-  width: fit-content;
   --tw-bg-opacity: 1;
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
   padding: 0.5rem;
   font-size: 1.875rem;
   line-height: 2.25rem;
-  text-transform: uppercase;
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
@@ -1024,6 +1028,8 @@ h3::first-letter {
 .fixed-porfolio-title {
   position: fixed;
   top: 4rem;
+  width: -moz-fit-content;
+  width: fit-content;
   padding-top: 1rem;
   padding-bottom: 1rem;
 }
@@ -1193,6 +1199,7 @@ h3::first-letter {
   margin-right: auto;
   display: block;
   max-width: 14rem;
+  text-align: center;
   text-transform: uppercase;
 }
 
@@ -1219,15 +1226,9 @@ h3::first-letter {
   background-color: rgb(0 0 0 / var(--tw-bg-opacity));
 }
 
-@media (min-width: 640px) {
-  .button {
-    width: -moz-fit-content;
-    width: fit-content;
-  }
-}
-
 @media (min-width: 1280px) {
   .button {
+    max-width: 16rem;
     font-size: 1.25rem;
     line-height: 1.75rem;
   }
@@ -1529,6 +1530,19 @@ h3::first-letter {
   transition-duration: 150ms;
 }
 
+/* .gallery .swiper-wrapper {
+    align-items: center;
+    height: 100%;
+  }
+
+  .gallery .swiper-slide {
+    height: 100%;
+  }
+
+  .gallery-img {
+    height: 100%;
+  } */
+
 .sr-only {
   position: absolute !important;
   width: 1px !important;
@@ -1712,16 +1726,12 @@ h3::first-letter {
   height: 18rem !important;
 }
 
-.h-\[68vh\] {
-  height: 68vh !important;
+.h-\[calc\(100dvh-10rem\)\] {
+  height: calc(100dvh - 10rem) !important;
 }
 
 .h-\[calc\(100dvh-4rem\)\] {
   height: calc(100dvh - 4rem) !important;
-}
-
-.h-\[calc\(100dvh-5rem\)\] {
-  height: calc(100dvh - 5rem) !important;
 }
 
 .h-fit {
@@ -1737,12 +1747,8 @@ h3::first-letter {
   height: 1px !important;
 }
 
-.h-\[68\%\] {
-  height: 68% !important;
-}
-
-.h-\[100\%\] {
-  height: 100% !important;
+.h-\[calc\(100dvh-8rem\)\] {
+  height: calc(100dvh - 8rem) !important;
 }
 
 .w-12 {
@@ -2425,8 +2431,24 @@ h3::first-letter {
     height: 1.5rem !important;
   }
 
+  .md\:h-\[calc\(100dvh-13rem\)\] {
+    height: calc(100dvh - 13rem) !important;
+  }
+
   .md\:h-\[calc\(100dvh-7rem\)\] {
     height: calc(100dvh - 7rem) !important;
+  }
+
+  .md\:h-\[calc\(100dvh-10rem\)\] {
+    height: calc(100dvh - 10rem) !important;
+  }
+
+  .md\:h-\[calc\(100dvh-12rem\)\] {
+    height: calc(100dvh - 12rem) !important;
+  }
+
+  .md\:h-\[calc\(100dvh-11rem\)\] {
+    height: calc(100dvh - 11rem) !important;
   }
 
   .md\:w-44 {
@@ -2801,12 +2823,16 @@ h3::first-letter {
     height: 8rem !important;
   }
 
+  .custom-landscape\:h-\[calc\(100dvh-10rem\)\] {
+    height: calc(100dvh - 10rem) !important;
+  }
+
   .custom-landscape\:h-\[calc\(100dvh-4rem\)\] {
     height: calc(100dvh - 4rem) !important;
   }
 
-  .custom-landscape\:h-\[calc\(100dvh-5rem\)\] {
-    height: calc(100dvh - 5rem) !important;
+  .custom-landscape\:h-\[calc\(100dvh-8rem\)\] {
+    height: calc(100dvh - 8rem) !important;
   }
 
   .custom-landscape\:w-3 {

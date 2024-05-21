@@ -12,12 +12,14 @@ const aboutAnchorLink = document.querySelector(".menu-item[data-about-anchor-lin
 const main = document.querySelector(".main");
 const header = document.querySelector(".main-header");
 const footer = document.querySelector("footer");
-const screenHeight = window.screen.height;
+const screenHeight = window.innerHeight;
 const portfolioTitle = document.querySelector(".portfolio-title");
 const mainSiteTitle = document.querySelector(".main-title");
 const aboutSerieSection = document.querySelector("#about");
 const gallerySerieSection = document.querySelector("#serie");
 const serieNavigation = document.querySelector(".serie-nav");
+
+
 
 const aboutCallback = function (entries) {
 
@@ -25,7 +27,7 @@ const aboutCallback = function (entries) {
     if (entry.isIntersecting) {
       aboutAnchorLink.setAttribute('aria-current', 'location');
       serieAnchorLink.setAttribute('aria-current', 'false');
-      portfolioTitle.classList.add('fixed-porfolio-title')
+      portfolioTitle.classList.add('fixed-porfolio-title');
     }
     else {
       serieAnchorLink.setAttribute('aria-current', 'location');
@@ -75,6 +77,11 @@ if (aboutAnchorLink) {
     portfolioTitle.classList.add('fixed-porfolio-title')
   })
 }
+
+// //Taille de la section égale à la hauteur de l'écran - la haiteur du header et du titre du porfolio
+// if (gallerySerieSection){
+//   gallerySerieSection.style.height = `${screenHeight - header.offsetHeight - portfolioTitle.offsetHeight}px`;
+// }
 
 [...toTopButtons, ...imagesGallery].forEach(function (button) {
   button.addEventListener("click", backToTop);

@@ -52,7 +52,7 @@ $menu_main = wp_nav_menu([
                   }
                 ?>
                   <li class="menu-item"><a class="flex items-center space-x-2 cursor-pointer" href=<?= the_permalink() ?>>
-                  <img class="h-12 w-12 rounded-full object-contain <?php if (!get_the_post_thumbnail()) echo "border border-black" ?>" src=<?= esc_url($thumbnailUrl); ?> alt="" />
+                  <img class="h-12 w-12 rounded-full object-cover <?php if (!get_the_post_thumbnail()) echo "border border-black" ?>" src=<?= esc_url($thumbnailUrl); ?> alt="" />
                   <span class="text-lg"><?= the_title(); ?></span>
                 </a></li>
                 <?php endwhile;

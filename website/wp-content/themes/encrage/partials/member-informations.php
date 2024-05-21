@@ -22,6 +22,12 @@ match (true) {
 
 $members = new WP_Query($queryArgs);
 
+$title_member_html_element = match (true) {
+    is_single() && isset($is_serie_single_page) => 'h2',
+    $post->post_name === 'agence' || is_home() => 'h3',
+    default => 'h1',
+}
+
 
 ?>
 <?php while ($members->have_posts()) : ?>
@@ -42,7 +48,8 @@ $members = new WP_Query($queryArgs);
             </a>
             <div class="socials text-center text-sm custom-landscape:text-sm lg:text-base">
                 <div class=" -translate-y-6 before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-black before:shadow-lg before:shadow-black/50 relative inline-block">
-                    <<?= is_single() ? 'h1' : 'h3' ?> class="<?php echo (is_home() || is_page()) ?  'first-letter:text-xl custom-landscape:first-letter:text-xl md:text-xl md:first-letter:text-2xl' : 'text-xl custom-landscape:text-xl'; if(is_single()) echo ' member-page-title'?> relative  font-medium uppercase text-white"><?php the_title(); ?></<?= is_single() ? 'h1' : 'h3' ?>>
+                    <<?= $title_member_html_element ?> class="<?php echo (is_home() || is_page()) ?  'first-letter:text-xl custom-landscape:first-letter:text-xl md:text-xl md:first-letter:text-2xl' : 'text-xl custom-landscape:text-xl';
+                                                                if (is_single()) echo ' member-page-title' ?> relative  font-medium uppercase text-white"><?php the_title(); ?></<?= is_single() ? 'h1' : 'h3' ?>>
                 </div>
                 <ul class="<?php if (is_home() || is_page()) echo 'hidden' ?> text-center space-y-4">
                     <?php if (get_post_meta(get_the_ID(), 'insta', true)) : ?>

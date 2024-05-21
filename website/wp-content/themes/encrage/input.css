@@ -44,7 +44,7 @@ Version: 1.0
   }
 
   h2 {
-    @apply relative text-2xl custom-landscape:text-2xl md:text-3xl lg:text-4xl uppercase font-medium custom-landscape:first-letter:text-3xl first-letter:text-3xl md:first-letter:text-4xl lg:first-letter:text-5xl;
+    @apply relative text-2xl custom-landscape:text-2xl md:text-3xl lg:text-4xl font-medium custom-landscape:first-letter:text-3xl first-letter:text-3xl md:first-letter:text-4xl lg:first-letter:text-5xl;
   }
 
   .serie-nav {
@@ -75,8 +75,14 @@ Version: 1.0
        before:w-full after:right-0 after:bottom-0 before:-top-2 after:-bottom-2;
   }
 
+  h1,
+  h2,
+  h3 {
+    @apply uppercase w-fit;
+  }
+
   h1 {
-    @apply text-3xl custom-landscape:text-3xl custom-landscape:first-letter:text-4xl first-letter:text-4xl md:text-5xl md:first-letter:text-6xl bg-black text-white w-fit p-2 mb-10 uppercase mt-6;
+    @apply text-3xl custom-landscape:text-3xl custom-landscape:first-letter:text-4xl first-letter:text-4xl md:text-5xl md:first-letter:text-6xl bg-black text-white p-2 mb-10 mt-6;
   }
 
   h1.main-title {
@@ -109,7 +115,7 @@ Version: 1.0
   }
 
   .fixed-porfolio-title {
-    @apply fixed top-16 custom-landscape:top-16 md:top-28 py-4;
+    @apply fixed top-16 custom-landscape:top-16 md:top-28 py-4 w-fit;
   }
 
   .portfolio-title h1 {
@@ -141,7 +147,7 @@ Version: 1.0
   }
 
   .button {
-    @apply uppercase block max-w-56  custom-landscape:max-w-56 sm:w-fit mx-auto custom-landscape:text-base xl:text-xl relative before:h-[2px] after:h-[2px] after:bg-black 
+    @apply uppercase block max-w-56 custom-landscape:max-w-56 xl:max-w-64 text-center mx-auto custom-landscape:text-base xl:text-xl relative before:h-[2px] after:h-[2px] after:bg-black 
     after:absolute after:w-[120%] after:-left-[10%] before:-right-[10%]
     before:bg-black before:absolute 
     before:w-[120%] after:bottom-0 before:-top-2 after:-bottom-2;
@@ -298,4 +304,17 @@ Version: 1.0
   .toggle-input:checked ~ label:after {
     @apply rotate-180 duration-150;
   }
+
+  /* .gallery .swiper-wrapper {
+    align-items: center;
+    height: 100%;
+  }
+
+  .gallery .swiper-slide {
+    height: 100%;
+  }
+
+  .gallery-img {
+    height: 100%;
+  } */
 }
