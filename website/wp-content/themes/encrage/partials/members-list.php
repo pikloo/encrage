@@ -19,7 +19,7 @@
         </g>
     </svg>
     <?php if (is_home()) : ?>
-        <a aria-label="En savoir plus sur ENCRAGE" class="button" href="<?= esc_url(get_permalink(get_page_by_path('agence'))) ?>">En savoir plus sur ENCRAGE</a>
+        <a aria-label="En savoir plus sur ENCRAGE" class="button text-center" href="<?= esc_url(get_permalink(get_page_by_path('agence'))) ?>">En savoir plus sur ENCRAGE</a>
     <?php endif; ?>
     </div>
 </section>

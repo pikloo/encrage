@@ -56,9 +56,9 @@ $releases = new WP_Query($args);
             </g>
         </svg>
         <?php if ($is_home_page) : ?>
-            <a aria-label="Voir plus de publications" class="button" href="<?= esc_url(get_post_type_archive_link('release'))?>">Toutes les publications</a> 
+            <a aria-label="Voir plus de publications" class="button text-center" href="<?= esc_url(get_post_type_archive_link('release'))?>">Toutes les publications</a> 
             <?php elseif (!$is_home_page && $wp_query->max_num_pages > 1) : ?>
-            <button aria-label="Charger plus de publications" class="button load-more" type="button">plus de publications</button> 
+            <button aria-label="Charger plus de publications" class="button load-more text-center" type="button">plus de publications</button> 
         <?php endif; ?>
     </div>
 
