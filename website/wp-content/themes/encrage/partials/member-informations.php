@@ -44,7 +44,7 @@ $title_member_html_element = match (true) {
         <? endif; ?>
         <div class="<?php if (is_home() || is_page()) echo 'reveal' ?> profil flex flex-col justify-center items-center gap-4">
             <a aria-label="En savoir plus sur <?= the_title(); ?>" href="<?= esc_url(get_permalink()); ?>">
-                <img class="<?php echo (is_home() || is_page() || isset($is_serie_single_page)) ?  'h-32 w-32 custom-landscape:h-32 custom-landscape:w-32 md:h-44 md:w-44 lg:h-56 lg:w-56 duration-500' : 'h-56 w-56'; ?> rounded-full object-cover <?php if (!get_the_post_thumbnail()) echo "border border-black" ?>" src=<?= esc_url($thumbnailUrl); ?> alt="" />
+                <img class="<?php echo (is_home() || is_page() || isset($is_serie_single_page)) ?  'h-32 w-32 custom-landscape:h-32 custom-landscape:w-32 md:h-44 md:w-44 lg:h-56 lg:w-56 duration-500' : 'h-56 w-56 custom-landscape:h-32 custom-landscape:w-32'; ?> rounded-full object-cover <?php if (!get_the_post_thumbnail()) echo "border border-black" ?>" src=<?= esc_url($thumbnailUrl); ?> alt="" />
             </a>
             <div class="socials text-center text-sm custom-landscape:text-sm lg:text-base">
                 <div class=" -translate-y-6 before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-black before:shadow-lg before:shadow-black/50 relative inline-block">

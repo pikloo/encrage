@@ -99,9 +99,9 @@ const onClickOnMenuToggle = () => {
     menuToogle.setAttribute('aria-expanded', 'false');
     document.getElementById("sideBar").style.left = "-100%";
     document.getElementById("sideNav").style.left = "-100%";
+    header.classList.remove("menu-open");
   } else {
-    document.querySelector(".main-header").classList.remove("z-0");
-    document.querySelector(".main-header").classList.add("z-20");
+    header.classList.add("menu-open");
     menuToogle.className += ' opened';
     menuToogle.setAttribute('aria-expanded', 'true');
     document.getElementById("sideBar").style.left = "0";

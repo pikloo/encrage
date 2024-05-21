@@ -9,7 +9,7 @@
             représentant :
         </h1>
     <?php endif; ?>
-    <div class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-y-10">
+    <div class="grid grid-cols-2 custom-landscape:grid-cols-3 md:grid-cols-3 xl:grid-cols-4 gap-y-10">
         <?php get_template_part('partials/member-informations', 'member-informations'); ?>
     </div>
     <div class="mt-20 flex items-center">

@@ -33,7 +33,7 @@ $wp_query = new WP_Query($args);
 
 <section class="container mx-auto py-10 xl:px-10">
     <h2 class="section">Séries</h2>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 px-4">
+    <div class="grid grid-cols-1 md:grid-cols-2 custom-landscape:grid-cols-2 lg:grid-cols-3 gap-6 px-4">
         <?php if ($wp_query->have_posts()) : ?>
             <?php while ($wp_query->have_posts()) : $wp_query->the_post(); ?>
             <?php 
