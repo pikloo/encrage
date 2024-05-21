@@ -46,10 +46,13 @@ const serieGallery = new Swiper(".gallery", {
   breakpoints: {
     640: {
       slidesPerView: "auto",
-      centeredSlides: true,
+      // centeredSlides: true,
       spaceBetween: 100,
+      normalizeSlideIndex: false,
+      initialSlide: 0,
     },
   },
+  injectStyles: [`.swiper-wrapper { align-items: center, height:100% }`, `.swiper-slide { aheight:100% }`],
   on: {
     snapGridLengthChange:function(){
       if( this.snapGrid.length != this.slidesGrid.length ){
@@ -58,18 +61,6 @@ const serieGallery = new Swiper(".gallery", {
     }
   }
 });
-
-
-if(document.querySelector(".gallery")){
-  console.log("aaa");
-  serieGallery.slideTo(0,0)
-}
-
-
-
-
-
-
 
 
 //Zoom Image
