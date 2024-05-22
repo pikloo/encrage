@@ -16,7 +16,7 @@ const screenHeight = window.innerHeight;
 const portfolioTitle = document.querySelector(".portfolio-title");
 const mainSiteTitle = document.querySelector(".main-title");
 const aboutSerieSection = document.querySelector("#about");
-const gallerySerieSection = document.querySelector("#serie");
+const gallerySerieSection = document.querySelector(".gallery");
 const serieNavigation = document.querySelector(".serie-nav");
 
 

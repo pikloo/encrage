@@ -11,12 +11,8 @@ $args =  [
     'orderby' => 'date',
 ];
 
-if($is_home_page){
-    $args['tax_query'][] = [
-    'taxonomy' => 'serie_category',
-    'field' => 'slug',
-    'terms' => 'home'
-    ];
+if ($is_home_page) {
+    $selected_series = isset(get_option('encrage_settings')['encrage_home_series']) ? get_option('encrage_settings')['encrage_home_series'] : false;
 }
 
 if ($post_type == 'member') {
@@ -28,22 +24,40 @@ if ($post_type == 'member') {
     // $args['meta_key'] = 'year';
     // $args['orderby'] = 'meta_value_num';
 }
-$wp_query = new WP_Query($args);
 ?>
 
 <section class="container mx-auto py-10 xl:px-10">
     <h2 class="section">Séries</h2>
     <div class="grid grid-cols-1 md:grid-cols-2 custom-landscape:grid-cols-2 lg:grid-cols-3 gap-6 px-4">
-        <?php if ($wp_query->have_posts()) : ?>
-            <?php while ($wp_query->have_posts()) : $wp_query->the_post(); ?>
-            <?php 
-            get_template_part( 'partials/series/content', 'content', [
-                'is_home' => $is_home_page,
-                'is_member_page' => $post_type == 'member'
-            ] ); ?>
-            <?php endwhile; ?>
-        <?php endif; ?>
-        <?php wp_reset_postdata(); ?>
+        <?php if ($is_home_page && $selected_series) {
+            foreach ($selected_series as $serie) {
+                $args['p'] = $serie;
+                $wp_query = new WP_Query($args);
+                if ($wp_query->have_posts()) {
+                    while ($wp_query->have_posts()) {
+                        $wp_query->the_post();
+                        get_template_part('partials/series/content', 'content', [
+                            'is_home' => $is_home_page,
+                            'is_member_page' => $post_type == 'member'
+                        ]);
+                    }
+                    wp_reset_postdata();
+                }
+            }
+        } else if (!$is_home_page) {
+            $wp_query = new WP_Query($args);
+            $wp_query->have_posts();
+            while ($wp_query->have_posts()) {
+                $wp_query->the_post();
+                get_template_part('partials/series/content', 'content', [
+                    'is_home' => $is_home_page,
+                    'is_member_page' => $post_type == 'member'
+                ]);
+            }
+
+            wp_reset_postdata();
+        } ?>
+
     </div>
     <div class="mt-20 flex items-center">
         <svg class="to-top reveal" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" id="fi_12363698">
@@ -52,9 +66,9 @@ $wp_query = new WP_Query($args);
             </g>
         </svg>
         <?php if ($is_home_page) : ?>
-            <a aria-label="Voir plus de publications" class="button text-center" href="<?= esc_url(get_post_type_archive_link('serie'))?>" >Toutes les séries</a> 
-            <?php elseif (!$is_home_page && $wp_query->max_num_pages > 1) : ?>
-            <button aria-label="Charger plus de publications" class="button load-more" type="button">plus de séries</button> 
+            <a aria-label="Voir plus de publications" class="button text-center" href="<?= esc_url(get_post_type_archive_link('serie')) ?>">Toutes les séries</a>
+        <?php elseif (!$is_home_page && $wp_query->max_num_pages > 1) : ?>
+            <button aria-label="Charger plus de publications" class="button load-more" type="button">plus de séries</button>
         <?php endif; ?>
     </div>
 </section>

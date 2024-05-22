@@ -1,6 +1,6 @@
 <?php
 get_header();
-$logo_site = get_option('encrage_theme_options')['encrage_logo'];
+$logo_site = get_option('encrage_settings')['encrage_logo'];
 $logo_site_attachment_id = $logo_site ? pippin_get_image_id($logo_site) : null; 
 
 get_template_part('partials/header', 'header', [

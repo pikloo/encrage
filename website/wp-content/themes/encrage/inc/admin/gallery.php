@@ -14,10 +14,7 @@ if (!function_exists('gallery_logic')) {
      */
     function gallery_logic()
     {
-        global $post;
-
-        if (isset($post) && 'serie' != $post->post_type)
-            return;
+            
 ?>
         <script type="text/javascript">
             function remove_img(value, single = false) {
@@ -29,14 +26,6 @@ if (!function_exists('gallery_logic')) {
                     var parent = jQuery(value).parent().parent();
                     parent.remove();
                 }
-
-
-
-                // if (single) {
-                //     var html = '<input class="button add" type="button" value="+" onclick="open_media_uploader_image_alone();" title="Add image" />'
-                //     var target = jQuery('#logo_wrapper #add_gallery_single_row');
-                //     target.append(html);
-                // }
             }
             var media_uploader = null;
 
@@ -100,20 +89,15 @@ if (!function_exists('gallery_logic')) {
                 media_uploader = wp.media({
                     frame: "post",
                     state: "insert",
-                    // title: 'Choose Image',
-                    // button: {
-                    //     text: 'Choose Image'
-                    // },
                     multiple: false
                 });
                 media_uploader.on("insert", function() {
 
                     var image = media_uploader.state().get('selection').first().toJSON();
                     jQuery('#custom_image_preview').attr('src', image.url);
-                    jQuery('input[name="encrage_theme_options[encrage_logo]"]').val(image.url);
+                    jQuery('input[name="encrage_settings[encrage_logo]"]').val(image.url);
                     var html = '<div style="position:relative"><span class="button remove-single" onclick="remove_img(this, true)" title="Supprimer"><i class="fas fa-trash-alt"></i> Supprimer</span></div>';
                     jQuery('#image-single-preview-wrapper').append(html);
-                    // button.remove()
                 });
                 media_uploader.open();
             }

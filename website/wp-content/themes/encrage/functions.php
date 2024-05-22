@@ -68,7 +68,7 @@ if (!function_exists('load_admin_assets')) {
      */
     function load_admin_assets()
     {
-        $pages = ['toplevel_page_theme-options', 'serie'];
+        $pages = ['toplevel_page_encrage_settings_page', 'serie'];
 
         if (in_array(get_current_screen()->id, $pages)) {
             wp_enqueue_media();
