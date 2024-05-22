@@ -20,37 +20,36 @@ const gallerySerieSection = document.querySelector(".gallery");
 const serieNavigation = document.querySelector(".serie-nav");
 
 
-
-const aboutCallback = function (entries) {
+const galleryCallback = function (entries) {
 
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
-      aboutAnchorLink.setAttribute('aria-current', 'location');
-      serieAnchorLink.setAttribute('aria-current', 'false');
-      portfolioTitle.classList.add('fixed-porfolio-title');
-    }
-    else {
       serieAnchorLink.setAttribute('aria-current', 'location');
       aboutAnchorLink.setAttribute('aria-current', 'false');
       portfolioTitle.classList.remove('fixed-porfolio-title')
+    }
+    else {
+      aboutAnchorLink.setAttribute('aria-current', 'location');
+      serieAnchorLink.setAttribute('aria-current', 'false');
+      portfolioTitle.classList.add('fixed-porfolio-title');
     }
   });
 };
 
 
 
-const aboutSerieSectionObserver = new IntersectionObserver(aboutCallback, {
-  rootMargin: '50px',
-  threshold: 1
+const gallerySerieSectionObserver = new IntersectionObserver(galleryCallback, {
+  rootMargin: '-280px',
+  threshold: 0
 });
 
 
-if (aboutSerieSection) {
+if (gallerySerieSection) {
   window.addEventListener("scroll", () => {
-    aboutSerieSectionObserver.observe(aboutSerieSection);
+    gallerySerieSectionObserver.observe(gallerySerieSection);
   })
   window.addEventListener("touchmove", () => {
-    aboutSerieSectionObserver.observe(aboutSerieSection);
+    gallerySerieSectionObserver.observe(gallerySerieSection);
   })
 
 }

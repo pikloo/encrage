@@ -48,7 +48,7 @@ Version: 1.0
   }
 
   .serie-nav {
-    @apply relative pb-2 w-fit md:mx-auto;
+    @apply relative pb-5 w-fit md:mx-auto;
   }
 
   .serie-nav h2,

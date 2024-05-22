@@ -24,14 +24,14 @@ $loop = new WP_Query($args);
 <main class="overflow-hidden main relative">
     <?php while ($loop->have_posts()) : $loop->the_post(); ?>
         <!-- portfolio-title z-[11] md:top-28 text-white before:block before:absolute before:-inset-1 before:skew-y-3 before:bg-black before:shadow-lg before:shadow-black/50 inline-block -->
-        <div class="portfolio-title pt-2 bg-white/60 px-2 md:px-0 w-full z-[11] justify-center items-center flex gap-x-4">
+        <div class="portfolio-title pt-4 bg-white/60 px-2 md:px-0 w-full z-[11] justify-center items-center flex gap-x-4">
             <h1 class="p-0 mt-0"><?php the_title(); ?></h1>
             <div class="before:block before:absolute before:-inset-1 before:-skew-y-3 before:bg-black before:shadow-lg before:shadow-black/50 relative inline-block">
                 <span class="text-sm custom-landscape:text-sm sm:text-lg md:text-xl uppercase relative text-white"><?= esc_attr(get_the_title($photographer)) ?></span>
             </div>
             <p class="text-gray-500 text-sm custom-landscape:text-sm sm:text-lg md:text-xl relative"><?= esc_attr(get_post_meta(get_the_ID(), 'year', true)) ?></p>
         </div>
-        <section id="serie" class="relative h-[calc(100dvh-6rem)] custom-landscape:h-[calc(100dvh-6rem)] md:h-[calc(100dvh-10rem)] flex flex-col justify-between gap-y-3 md:gap-y-6 py-2">
+        <section id="serie" class="relative h-[calc(100dvh-7rem)] custom-landscape:h-[calc(100dvh-7rem)] md:h-[calc(100dvh-10rem)] flex flex-col justify-between gap-y-3 md:gap-y-6 py-2">
 
             <div class="swiper gallery lg:mt-4 relative h-full w-full">
                 <div class="swiper-wrapper">
