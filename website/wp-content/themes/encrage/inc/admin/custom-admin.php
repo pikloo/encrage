@@ -5,13 +5,19 @@ if (!current_user_can('manage_options')) {
     add_filter('show_admin_bar', '__return_false');
 }
 
-// if (!function_exists('custom_login_url')) {
-//     add_filter('login_url', 'custom_login_url', PHP_INT_MAX);
-//     function custom_login_url($login_url)
-//     {
-//         return str_replace('bureau', 'encrage-login', $login_url);
-//     }
-// }
+if (!function_exists('custom_login')) {
+    add_filter('init', 'custom_login', PHP_INT_MAX);
+    function custom_login($pagenow)
+    {
+        if ($pagenow === 'bureau.php' && empty($_REQUEST['action'])) {
+            wp_redirect(home_url('/bureau'));
+            exit();
+        } elseif ($pagenow === 'bureau.php?action=logout' && $_REQUEST['action'] === 'logout') {
+            wp_redirect(home_url());
+            exit();
+        }
+    }
+}
 
 if (!function_exists('custom_login_url')) {
     add_filter('logout_url', 'custom_logout_url', PHP_INT_MAX);

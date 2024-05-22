@@ -115,6 +115,7 @@ if (!function_exists('encrage_register_settings_home')) {
         register_setting(
             'encrage_settings',
             'encrage_settings',
+            'encrage_sanitize_theme_options'
             // 'encrage_handle_file_upload'
         );
 
@@ -152,15 +153,16 @@ if (!function_exists('encrage_sanitize_theme_options')) {
     {
         $sanitized_input = array();
 
-        foreach ($input as $key => $value) {
-            if (isset($input[$key])) {
-                if (!$input['encrage_home_slider']) {
-                    $sanitized_input[$key] = sanitize_text_field($input[$key]);
-                } else {
-                    //TODO: Vérifier les types MIME et poids de l'image
-                    $sanitized_input[$key] = $input[$key];
-                }
+        if (isset($input['encrage_home_slider']))
+            foreach ($input['encrage_home_slider'] as $key => $value) {
+                if (empty($value))
+                    unset($input['encrage_home_slider'][$key]);
             }
+
+
+        foreach ($input as $key => $value) {
+
+            $sanitized_input[$key] = $input[$key];
         }
 
         return $sanitized_input;
@@ -211,6 +213,7 @@ if (!function_exists('encrage_render_home_slider_field')) {
     {
         $options = get_option('encrage_settings');
         $slider = isset($options['encrage_home_slider']) ? $options['encrage_home_slider'] : '';
+        // var_dump($slider);
     ?>
 
         <div id="gallery_wrapper">

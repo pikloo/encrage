@@ -6,7 +6,7 @@
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  * @package encrage
  */
-
+require_once WP_CONTENT_DIR . '/themes/encrage/inc/admin/custom-admin.php';
 require_once WP_CONTENT_DIR . '/themes/encrage/inc/cpt-generator.php';
 
 if (!function_exists('theme_encrage_init')) {
@@ -178,4 +178,4 @@ require_once WP_CONTENT_DIR . '/themes/encrage/inc/post-types/release.php';
 require_once WP_CONTENT_DIR . '/themes/encrage/inc/admin/gallery.php';
 require_once WP_CONTENT_DIR . '/themes/encrage/inc/admin/options-page.php';
 require_once WP_CONTENT_DIR . '/themes/encrage/inc/load-more.php';
-require_once WP_CONTENT_DIR . '/themes/encrage/inc/admin/custom-admin.php';
+

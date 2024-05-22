@@ -72,6 +72,8 @@ if (!function_exists('gallery_logic')) {
                     var length = media_uploader.state().get("selection").length;
                     var images = media_uploader.state().get("selection").models
 
+                    console.log(images)
+
                     for (var i = 0; i < length; i++) {
                         var image_url = images[i].changed.url;
                         var box = jQuery('#master_box').html();
