@@ -309,16 +309,15 @@ Version: 1.0
     @apply rotate-180 duration-150;
   }
 
-  /* .gallery .swiper-wrapper {
-    align-items: center;
-    height: 100%;
+  h1.mentions-title {
+    @apply text-2xl custom-landscape:text-2xl md:text-3xl lg:text-4xl font-medium custom-landscape:first-letter:text-2xl first-letter:text-2xl md:first-letter:text-3xl lg:first-letter:text-4xl;
   }
 
-  .gallery .swiper-slide {
-    height: 100%;
+  .mentions-content h2 {
+    @apply text-xl custom-landscape:text-xl md:text-2xl lg:text-3xl font-medium custom-landscape:first-letter:text-2xl first-letter:text-2xl md:first-letter:text-3xl lg:first-letter:text-4xl;
   }
 
-  .gallery-img {
-    height: 100%;
-  } */
+  .mentions-content p {
+    @apply mb-4;
+  }
 }

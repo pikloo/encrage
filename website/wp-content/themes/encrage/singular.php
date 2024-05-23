@@ -21,7 +21,7 @@ $loop = new WP_Query($args);
         <?php
         $categories = get_the_category();
         ?>
-        <h1 class="mb-2"><?= the_title(); ?></h1>
+        <h1 class="mb-2 <?php if (!empty($categories) && $categories[0]->name == 'Légales') echo 'mentions-title' ?>"><?= the_title(); ?></h1>
         <div class="px-6 <?= $post->post_name === 'agence' ? 'text-center' : 'text-justify'  ?>  flex flex-col gap-y-10 lg:flex-row lg:gap-x-10 mt-10 lg:justify-evenly lg:items-center lg:mt-20">
             <?php if (has_post_thumbnail()) : ?>
                 <aside class="max-w-sm md:max-w-md">
@@ -30,7 +30,7 @@ $loop = new WP_Query($args);
             <?php endif; ?>
             <article class="reveal  
             <?php if (!empty($categories) && $categories[0]->name == 'Légales') {
-                echo 'mx-auto lg:max-w-screen-lg';
+                echo 'mx-auto lg:max-w-screen-lg mentions-content';
             } else {
                 echo 'mx-auto max-w-sm lg:max-w-xl lg:m-0 text-lg md:text-xl lg:text-2xl first-letter:text-xl lg:first-letter:text-2xl lg:first-letter:text-3xl duration-500';
             } ?>

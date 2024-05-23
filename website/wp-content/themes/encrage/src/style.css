@@ -1526,18 +1526,103 @@ header.menu-open {
   transition-duration: 150ms;
 }
 
-/* .gallery .swiper-wrapper {
-    align-items: center;
-    height: 100%;
+h1.mentions-title {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 500;
+}
+
+h1.mentions-title::first-letter {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+@media (min-width: 768px) {
+  h1.mentions-title {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
   }
 
-  .gallery .swiper-slide {
-    height: 100%;
+  h1.mentions-title::first-letter {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  h1.mentions-title {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
   }
 
-  .gallery-img {
-    height: 100%;
-  } */
+  h1.mentions-title::first-letter {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+}
+
+@media only screen and (max-width: 960px) and (orientation: landscape) {
+  h1.mentions-title {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
+  h1.mentions-title::first-letter {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+}
+
+.mentions-content h2 {
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 500;
+}
+
+.mentions-content h2::first-letter {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+@media (min-width: 768px) {
+  .mentions-content h2 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+
+  .mentions-content h2::first-letter {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .mentions-content h2 {
+    font-size: 1.875rem;
+    line-height: 2.25rem;
+  }
+
+  .mentions-content h2::first-letter {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+}
+
+@media only screen and (max-width: 960px) and (orientation: landscape) {
+  .mentions-content h2 {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
+  }
+
+  .mentions-content h2::first-letter {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+}
+
+.mentions-content p {
+  margin-bottom: 1rem;
+}
 
 .sr-only {
   position: absolute !important;
@@ -1818,14 +1903,6 @@ header.menu-open {
   align-content: center !important;
 }
 
-.items-start {
-  align-items: flex-start !important;
-}
-
-.items-end {
-  align-items: flex-end !important;
-}
-
 .items-center {
   align-items: center !important;
 }
@@ -2040,6 +2117,10 @@ header.menu-open {
   padding-bottom: 2rem !important;
 }
 
+.pb-2 {
+  padding-bottom: 0.5rem !important;
+}
+
 .pl-10 {
   padding-left: 2.5rem !important;
 }
@@ -2058,10 +2139,6 @@ header.menu-open {
 
 .pt-4 {
   padding-top: 1rem !important;
-}
-
-.pb-2 {
-  padding-bottom: 0.5rem !important;
 }
 
 .text-center {
