@@ -16,6 +16,7 @@ const screenHeight = window.innerHeight;
 const portfolioTitle = document.querySelector(".portfolio-title");
 const mainSiteTitle = document.querySelector(".main-title");
 const aboutSerieSection = document.querySelector("#about");
+const serieSection = document.querySelector("#serie");
 const gallerySerieSection = document.querySelector(".gallery");
 const serieNavigation = document.querySelector(".serie-nav");
 
@@ -23,6 +24,7 @@ const serieNavigation = document.querySelector(".serie-nav");
 const galleryCallback = function (entries) {
 
   entries.forEach((entry) => {
+    
     if (entry.isIntersecting) {
       serieAnchorLink.setAttribute('aria-current', 'location');
       aboutAnchorLink.setAttribute('aria-current', 'false');
@@ -77,10 +79,10 @@ if (aboutAnchorLink) {
   })
 }
 
-// //Taille de la section égale à la hauteur de l'écran - la haiteur du header et du titre du porfolio
-// if (gallerySerieSection){
-//   gallerySerieSection.style.height = `${screenHeight - header.offsetHeight - portfolioTitle.offsetHeight}px`;
-// }
+//Taille de la section égale à la hauteur de l'écran - la haiteur du header et du titre du porfolio
+if (serieSection){
+  serieSection.style.height = `${screenHeight - header.offsetHeight - portfolioTitle.offsetHeight}px`;
+}
 
 [...toTopButtons, ...imagesGallery].forEach(function (button) {
   button.addEventListener("click", backToTop);
@@ -136,6 +138,7 @@ targets.forEach(function (target) {
 
 //Main min height
 main.style.minHeight = `${screenHeight - footer.offsetHeight - header.offsetHeight}px`;
+main.style.paddingTop = `${header.offsetHeight}px`;
 
 //Scroll to photographers (home)
 const toDownButton = document.querySelector('.to-down');

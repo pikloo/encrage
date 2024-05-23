@@ -40,7 +40,7 @@ Version: 1.0
   }
 
   .main {
-    @apply custom-landscape:pt-16 pt-16 md:pt-28 custom-landscape:pb-4 pb-4 pb-8 bg-white;
+    @apply custom-landscape:pb-4 pb-4 pb-8 bg-white;
   }
 
   h2 {
@@ -48,7 +48,7 @@ Version: 1.0
   }
 
   .serie-nav {
-    @apply relative pb-5 w-fit md:mx-auto;
+    @apply relative w-fit md:mx-auto;
   }
 
   .serie-nav h2,

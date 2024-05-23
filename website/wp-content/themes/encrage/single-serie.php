@@ -31,7 +31,7 @@ $loop = new WP_Query($args);
             </div>
             <p class="text-gray-500 text-sm custom-landscape:text-sm sm:text-lg md:text-xl relative"><?= esc_attr(get_post_meta(get_the_ID(), 'year', true)) ?></p>
         </div>
-        <section id="serie" class="relative h-[calc(100dvh-7rem)] custom-landscape:h-[calc(100dvh-7rem)] md:h-[calc(100dvh-10rem)] flex flex-col justify-between gap-y-3 md:gap-y-6 py-2">
+        <section id="serie" class="relative flex flex-col justify-between gap-y-3 md:gap-y-6 py-2">
 
             <div class="swiper gallery lg:mt-4 relative h-full w-full">
                 <div class="swiper-wrapper">
@@ -45,7 +45,7 @@ $loop = new WP_Query($args);
                 <div class="swiper-button-next text-gray-500"></div>
                 <div class="swiper-button-prev text-gray-500"></div>
             </div>
-            <div class="bar-nav flex justify-between custom-landscape:justify-between md:justify-center px-4 items-start">
+            <div class="bar-nav flex justify-between custom-landscape:justify-between md:justify-center px-4 pb-2">
                 <button onclick="history.go(-1);" class="back-button uppercase font-bold flex items-center">
                     <svg version="1.1" id="fi_54321" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="791.966px" height="791.967px" viewBox="0 0 791.966 791.967" style="enable-background:new 0 0 791.966 791.967;" fill="currentColor" class="w-3 h-3 custom-landscape:w-3 custom-landscape:h-3 md:h-6 md:w-6" xml:space="preserve">
                         <g>
