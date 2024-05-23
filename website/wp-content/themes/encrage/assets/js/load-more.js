@@ -11,7 +11,7 @@ jQuery(function ($) {
 			'action': 'load_posts_by_ajax',
 			'page': ajax_posts.current_page,
 			'post_type': ajax_posts.post_type,
-			//   'security': '<?php echo wp_create_nonce("load_more_posts"); ?>'
+			'security': ajax_posts.nonce
 		};
 
 		$.ajax({

@@ -5,7 +5,7 @@ add_action('wp_ajax_nopriv_load_posts_by_ajax', 'load_posts_by_ajax_callback');
 
 function load_posts_by_ajax_callback()
 {
-  //   check_ajax_referer('load_more_posts', 'security');
+  check_ajax_referer('load_more_posts', 'security');
   $paged = $_POST['page'];
   $post_type = $_POST['post_type'];
 

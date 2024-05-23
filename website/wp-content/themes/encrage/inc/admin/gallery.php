@@ -39,7 +39,6 @@ if (!function_exists('gallery_logic')) {
                     var json = media_uploader.state().get("selection").first().toJSON();
                     var image_url = json.url;
                     var html = '<img class="gallery_img_img" src="' + image_url + '" height="55" width="55" onclick="open_media_uploader_image_this(this)"/>';
-                    console.log(image_url);
                     jQuery(obj).append(html);
                     jQuery(obj).find('.meta_image_url').val(image_url);
                 });
@@ -72,7 +71,6 @@ if (!function_exists('gallery_logic')) {
                     var length = media_uploader.state().get("selection").length;
                     var images = media_uploader.state().get("selection").models
 
-                    console.log(images)
 
                     for (var i = 0; i < length; i++) {
                         var image_url = images[i].changed.url;

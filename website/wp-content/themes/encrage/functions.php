@@ -74,6 +74,7 @@ if (!function_exists('load_admin_assets')) {
             wp_enqueue_media();
             wp_enqueue_style('fontAwesome', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css');
             wp_enqueue_style('gallery', get_theme_file_uri('/src/admin-gallery.css'), [], time());
+            wp_enqueue_style('option-page', get_theme_file_uri('/src/admin-option-page.css'), [], time());
             wp_enqueue_style('JQueryCss', 'https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.3/themes/ui-lightness/jquery-ui.min.css');
             wp_enqueue_script('JQuery', 'https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.3/jquery-ui.min.js', [], null, true);
         }

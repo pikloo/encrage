@@ -1,0 +1,28 @@
+.button.remove-field {
+    color: red;
+}
+
+.button.remove-field:hover {
+    color: inherit;
+}
+
+.button.add-field, .button.remove-field {
+    border: none;
+    font-size: 1.2em;
+    padding: 0px;
+    box-shadow: none;
+}
+
+.form-field__actions {
+    display: flex;
+    gap: 1rem;
+}
+
+#image-single-wrapper > fieldset {
+    display: flex;
+    flex-direction: column;
+}
+
+#image-single-wrapper > fieldset > label {
+    font-style: italic;
+}
