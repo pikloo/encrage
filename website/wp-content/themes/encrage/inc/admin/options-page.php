@@ -217,7 +217,7 @@ if (!function_exists('encrage_render_home_section')) {
     function encrage_render_home_section()
     {
         echo '<p>Réglages de la page d\'accueil du site.</p>';
-    }
+    }admin
 }
 
 if (!function_exists('encrage_render_logo_field')) {
