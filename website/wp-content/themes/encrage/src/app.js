@@ -24,7 +24,7 @@ const serieNavigation = document.querySelector(".serie-nav");
 const galleryCallback = function (entries) {
 
   entries.forEach((entry) => {
-    
+
     if (entry.isIntersecting) {
       serieAnchorLink.setAttribute('aria-current', 'location');
       aboutAnchorLink.setAttribute('aria-current', 'false');
@@ -74,13 +74,13 @@ if (aboutAnchorLink) {
     let link = e.currentTarget
     link.setAttribute('aria-current', 'location');
     serieAnchorLink.setAttribute('aria-current', 'false');
-    window.scrollTo({ top: serieNavigation.offsetHeight + serieNavigation.offsetTop - header.offsetHeight - portfolioTitle.offsetHeight  , behavior: "smooth" });
+    window.scrollTo({ top: serieNavigation.offsetHeight + serieNavigation.offsetTop - header.offsetHeight - portfolioTitle.offsetHeight, behavior: "smooth" });
     portfolioTitle.classList.add('fixed-porfolio-title')
   })
 }
 
 //Taille de la section égale à la hauteur de l'écran - la haiteur du header et du titre du porfolio
-if (serieSection){
+if (serieSection) {
   serieSection.style.height = `${screenHeight - header.offsetHeight - portfolioTitle.offsetHeight}px`;
 }
 
@@ -171,6 +171,39 @@ releases.forEach(function (release) {
     // document.querySelector(".main-header").classList.add("z-0", "duration-100");
   })
 });
+
+
+const popup = document.getElementById('popup');
+const closePopup = document.getElementById('closePopup');
+let hasShownPopup = false; // Évite de montrer la popup plusieurs fois
+
+// Fonction pour vérifier la position de défilement
+function checkScrollPosition() {
+  const scrollTop = window.scrollY; // Position actuelle de défilement
+  const windowHeight = window.innerHeight; // Hauteur de la fenêtre
+  const fullHeight = document.documentElement.scrollHeight; // Hauteur totale du document
+
+  // Vérifie si on a atteint 70% de la page
+  if ((scrollTop + windowHeight) / fullHeight >= 0.7 && !hasShownPopup) {
+    popup.classList.remove('hidden');
+    hasShownPopup = true; // Assure que la popup n'apparaît qu'une seule fois
+  }
+}
+
+// Fermer la popup lorsque l'on clique sur la croix
+closePopup.addEventListener('click', function () {
+  popup.classList.add('hidden');
+});
+
+// Fermer la popup lorsqu'on clique en dehors de l'image
+popup.addEventListener('click', function (event) {
+  if (event.target === popup) {
+    popup.classList.add('hidden');
+  }
+});
+
+// Écouteur de défilement
+window.addEventListener('scroll', checkScrollPosition);
 
 
 
