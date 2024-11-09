@@ -30,7 +30,9 @@
   "scripts": {
     "prod": "cross-env NODE_ENV=production webpack --mode production --progress",
     "dev": "cross-env NODE_ENV=development webpack --watch --mode development --progress",
-    "clean": "rm -rf build/*"
+    "clean": "rm -rf build/*",
+    "build:css": "npx tailwindcss -i ./input.css -o ./build/main.css --minify",
+    "watch:css": "npx tailwindcss -i ./input.css -o ./build/main.css --watch"
   },
   "keywords": [
     "wordpress",

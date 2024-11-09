@@ -25,6 +25,7 @@ $is_home = is_home();
     <div class="bg-white p-6 rounded-lg shadow-lg max-w-xs sm:max-w-md relative animate-popup">
         <button id="closePopup" class="absolute top-2 right-2 text-gray-500 hover:text-gray-700 text-lg font-bold">&times;</button>
         <img src="<?= esc_url(wp_get_upload_dir()['baseurl'] . '/2024/11/WhatsApp-Image-2024-11-09-at-00.51.24.jpeg'); ?>" alt="Popup Image" class="w-full h-auto rounded-lg">
+    </div>
 </div>
 <?php
 get_template_part('partials/footer', 'footer', [
