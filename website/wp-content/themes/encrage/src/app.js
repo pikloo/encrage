@@ -172,36 +172,36 @@ releases.forEach(function (release) {
 });
 
 
-const popup = document.getElementById('popup');
-const closePopup = document.getElementById('closePopup');
-let hasShownPopup = false; // Évite de montrer la popup plusieurs fois
+// const popup = document.getElementById('popup');
+// const closePopup = document.getElementById('closePopup');
+// let hasShownPopup = false; // Évite de montrer la popup plusieurs fois
 
-// Fonction pour vérifier la position de défilement
-function checkScrollPosition() {
-  const scrollTop = window.scrollY; // Position actuelle de défilement
-  const windowHeight = window.innerHeight; // Hauteur de la fenêtre
-  const fullHeight = document.documentElement.scrollHeight; // Hauteur totale du document
-  // Vérifie si on a atteint 70% de la page
-  if ((scrollTop + windowHeight) / fullHeight >= 0.7 && !hasShownPopup) {
-    popup && popup.classList.remove('hidden');
-    hasShownPopup = true; // Assure que la popup n'apparaît qu'une seule fois
-  }
-}
+// // Fonction pour vérifier la position de défilement
+// function checkScrollPosition() {
+//   const scrollTop = window.scrollY; // Position actuelle de défilement
+//   const windowHeight = window.innerHeight; // Hauteur de la fenêtre
+//   const fullHeight = document.documentElement.scrollHeight; // Hauteur totale du document
+//   // Vérifie si on a atteint 70% de la page
+//   if ((scrollTop + windowHeight) / fullHeight >= 0.7 && !hasShownPopup) {
+//     popup?.classList.remove('hidden');
+//     hasShownPopup = true; // Assure que la popup n'apparaît qu'une seule fois
+//   }
+// }
 
-// Fermer la popup lorsque l'on clique sur la croix
-closePopup && closePopup.addEventListener('click', function () {
-  popup.classList.add('hidden');
-});
+// // Fermer la popup lorsque l'on clique sur la croix
+// closePopup?.addEventListener('click', function () {
+//   popup.classList.add('hidden');
+// });
 
-// Fermer la popup lorsqu'on clique en dehors de l'image
-popup && popup.addEventListener('click', function (event) {
-  if (event.target === popup) {
-    popup.classList.add('hidden');
-  }
-});
+// // Fermer la popup lorsqu'on clique en dehors de l'image
+// popup?.addEventListener('click', function (event) {
+//   if (event.target === popup) {
+//     popup.classList.add('hidden');
+//   }
+// });
 
-// Écouteur de défilement
-window.addEventListener('scroll', checkScrollPosition);
+// // Écouteur de défilement
+// window.addEventListener('scroll', checkScrollPosition);
 
 
 
