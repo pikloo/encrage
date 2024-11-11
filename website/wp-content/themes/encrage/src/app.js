@@ -190,12 +190,12 @@ function checkScrollPosition() {
 }
 
 // Fermer la popup lorsque l'on clique sur la croix
-closePopup.addEventListener('click', function () {
+closePopup && closePopup.addEventListener('click', function () {
   popup.classList.add('hidden');
 });
 
 // Fermer la popup lorsqu'on clique en dehors de l'image
-popup.addEventListener('click', function (event) {
+popup && popup.addEventListener('click', function (event) {
   if (event.target === popup) {
     popup.classList.add('hidden');
   }
