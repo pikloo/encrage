@@ -2,7 +2,7 @@ import Swiper from 'swiper/bundle';
 import 'swiper/css/bundle';
 import mediumZoom from 'medium-zoom'
 
-//Swiper
+Swiper
 const sliderHome = new Swiper(".slider-home", {
   lazy: true,
   loop: true,
@@ -66,6 +66,7 @@ const serieGallery = new Swiper(".gallery", {
 //Zoom Image
 
 const zoom = mediumZoom(document.querySelectorAll('.release'), {
+
   scrollOffset: 0,
   background: 'rgba(148, 148, 148, 0.97)',
   margin: 24,
