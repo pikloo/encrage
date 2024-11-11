@@ -183,7 +183,6 @@ function checkScrollPosition() {
   const fullHeight = document.documentElement.scrollHeight; // Hauteur totale du document
   // Vérifie si on a atteint 70% de la page
   if ((scrollTop + windowHeight) / fullHeight >= 0.7 && !hasShownPopup) {
-    console.log(popup)
     popup && popup.classList.remove('hidden');
     hasShownPopup = true; // Assure que la popup n'apparaît qu'une seule fois
   }
