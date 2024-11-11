@@ -13,7 +13,7 @@ $sliderImages = isset(get_option('encrage_settings')['encrage_home_slider']) ? g
         </div> -->
 
     </div>
-    <section id="expo-encrage" class="">
+    <section id="expo-encrage">
         <img src="<?= esc_url(wp_get_upload_dir()['baseurl'] . '/2024/11/expo-encrage-tdtf.jpg'); ?>"
             alt="Expo Encrage TDTF"
             class="expo-encrage-image md:px-[100px] h-auto">
