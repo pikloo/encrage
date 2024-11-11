@@ -181,10 +181,10 @@ function checkScrollPosition() {
   const scrollTop = window.scrollY; // Position actuelle de défilement
   const windowHeight = window.innerHeight; // Hauteur de la fenêtre
   const fullHeight = document.documentElement.scrollHeight; // Hauteur totale du document
-
   // Vérifie si on a atteint 70% de la page
   if ((scrollTop + windowHeight) / fullHeight >= 0.7 && !hasShownPopup) {
-    popup.classList.remove('hidden');
+    console.log(popup)
+    popup && popup.classList.remove('hidden');
     hasShownPopup = true; // Assure que la popup n'apparaît qu'une seule fois
   }
 }
